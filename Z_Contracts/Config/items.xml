@@ -461,51 +461,51 @@
 		</item>
 		
 		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-		<!-- STUPIt BET -->
+		<!-- Stupid BET -->
 		
-		<item name="StupitBet1"> <!-- At grandma's in the village -->
+		<item name="StupidBet1"> <!-- At grandma's in the village -->
 			<property name="Extends" value="Cont_VehicleT1"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="CustomIconTint" value="FF8000"/>
-			<property name="DescriptionKey" value="StupitBet1Desc"/>
+			<property name="DescriptionKey" value="StupidBet1Desc"/>
 			<property class="Action0">
-				<property name="QuestGiven" value="treasure_stupitbet1"/>
+				<property name="QuestGiven" value="treasure_stupidbet1"/>
 			</property>
 		</item>
-		<item name="StupitBet2"> <!-- Feathers and bones -->
+		<item name="StupidBet2"> <!-- Feathers and bones -->
 			<property name="Extends" value="Cont_VehicleT1"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="CustomIconTint" value="FF8000"/>
-			<property name="DescriptionKey" value="StupitBet2Desc"/>
+			<property name="DescriptionKey" value="StupidBet2Desc"/>
 			<property class="Action0">
-				<property name="QuestGiven" value="treasure_stupitbet2"/>
+				<property name="QuestGiven" value="treasure_stupidbet2"/>
 			</property>
 		</item>
-		<item name="StupitBet3"> <!-- Search for classmates -->
+		<item name="StupidBet3"> <!-- Search for classmates -->
 			<property name="Extends" value="Cont_VehicleT1"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="CustomIconTint" value="FF8000"/>
-			<property name="DescriptionKey" value="StupitBet3Desc"/>
+			<property name="DescriptionKey" value="StupidBet3Desc"/>
 			<property class="Action0">
-				<property name="QuestGiven" value="treasure_stupitbet3"/>
+				<property name="QuestGiven" value="treasure_stupidbet3"/>
 			</property>
 		</item>
-		<item name="StupitBet4"> <!-- Incident in a strip club -->
+		<item name="StupidBet4"> <!-- Incident in a strip club -->
 			<property name="Extends" value="Cont_VehicleT1"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="CustomIconTint" value="FF8000"/>
-			<property name="DescriptionKey" value="StupitBet4Desc"/>
+			<property name="DescriptionKey" value="StupidBet4Desc"/>
 			<property class="Action0">
-				<property name="QuestGiven" value="treasure_stupitbet4"/>
+				<property name="QuestGiven" value="treasure_stupidbet4"/>
 			</property>
 		</item>
-		<item name="StupitBet5"> <!-- Traces around the bathhouse -->
+		<item name="StupidBet5"> <!-- Traces around the bathhouse -->
 			<property name="Extends" value="Cont_VehicleT1"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="CustomIconTint" value="FF8000"/>
-			<property name="DescriptionKey" value="StupitBet5Desc"/>
+			<property name="DescriptionKey" value="StupidBet5Desc"/>
 			<property class="Action0">
-				<property name="QuestGiven" value="treasure_stupitbet5"/>
+				<property name="QuestGiven" value="treasure_stupidbet5"/>
 			</property>
 		</item>
 		
@@ -1640,7 +1640,7 @@
 	
 	<append xpath="/items">
 	
-		<item name="TrinketStupitBet">
+		<item name="TrinketStupidBet">
 			<property name="HoldType" value="45"/>
 			<property name="CustomIcon" value="hubCaps"/>
 			<property name="CustomIconTint" value="FF8000"/>
@@ -1654,10 +1654,10 @@
 			<property name="SellableToTrader" value="false"/>
 		</item>
 		
-		<item name="Bonus_StupitBet">
+		<item name="Bonus_StupidBet">
 			<property name="CustomIcon" value="hubcapNoMine"/>
 			<property name="CustomIconTint" value="FF8000"/>
-			<property name="DescriptionKey" value="Bonus_StupitBetDesc"/>
+			<property name="DescriptionKey" value="Bonus_StupidBetDesc"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
@@ -1672,7 +1672,7 @@
 				<property name="Sound_start" value="read_skillbook"/>
 			</property>
 			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$Bonus_StupitBet" operation="add" value=".1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$Bonus_StupidBet" operation="add" value=".1"/>
 			</effect_group>
 		</item>
 		
