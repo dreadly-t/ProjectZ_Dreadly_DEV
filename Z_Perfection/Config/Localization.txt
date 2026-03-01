@@ -94,7 +94,7 @@ perkLearningAbilityRank1Desc,progression,Skills,,Schoolboy,Школьник,Esco
 perkLearningAbilityRank2Desc,progression,Skills,,Student,Студент,Estudiante
 perkLearningAbilityRank3Desc,progression,Skills,,Excellent student,Отличник,Estudiante sobresaliente
 perkLearningAbilityRank4Desc,progression,Skills,,Graduate student,Аспирант,Estudiante de posgrado
-perkLearningAbilityRank5Desc,progression,Skills,,Botanist,Ботаник,Botánico
+perkLearningAbilityRank5Desc,progression,Skills,,Wise guy,Ботаник,Botánico
 perkLearningAbilityRank6Desc,progression,Skills,,Teacher,Учитель,Maestro
 perkLearningAbilityRank7Desc,progression,Skills,,Lab assistant,Лаборант,Asistente de laboratorio
 perkLearningAbilityRank8Desc,progression,Skills,,Scientist,Ученый,Científico

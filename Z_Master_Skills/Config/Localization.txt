@@ -67,7 +67,7 @@ cntShippingCrateWorkingStiffs,blocks,Container,,Working Stiff [FFA463]Sealed[-] 
 cntShippingCrateBookstore,blocks,Container,,Crack-A-Book [FFA463]Sealed[-] Shipping Crate,[FFA463]Запечатанный[-] грузовой ящик «Crack-A-Book»,[FFA463]Caja de Envío Sellada[-] Crack-A-Book
 cntShippingCrateCarParts,blocks,Container,,Pass-N-Gas [FFA463]Sealed[-] Shipping Crate,[FFA463]Запечатанный[-] грузовой ящик «Pass-N-Gas»,[FFA463]Caja de Envío Sellada[-] Pass-N-Gas
 
-perkIntellectMasteryRank4Desc,progression,perk Int,,Botanist,Ботаник,Botánico
+perkIntellectMasteryRank4Desc,progression,perk Int,,Wise guy,Ботаник,Botánico
 perkIntellectMasteryRank4LongDesc,progression,perk Int,,"When training at the table, you get 2 times more experience. Possibility of creating Magazine Boosters.","При обучении за столом вы получаете в 2 раза больше опыта. Открывается возможность создавать бустеры журналов.","Al entrenar en la mesa, obtienes el doble de experiencia. Posibilidad de crear Magazine Boosters."
 
 perkIntellectMasteryRank5LongDesc,progression,perk Int,,Stun batons only take 2 hits to charge.,Оглушающий жезл заряжается всего за 2 удара.,La carga de la porra de aturdimiento está siempre lista.
