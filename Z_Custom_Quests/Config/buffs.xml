@@ -1,0 +1,26 @@
+<config>
+		
+	<append xpath="/buffs">
+		
+       <buff name="buffTrapEffect" hidden="true">
+            <stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryConcussion">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="75"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" fireOneBuff="true"
+					buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch"
+					weights=".7,.7,.3,.3"/>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryStunned01"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25"/>
+            </effect_group>
+			
+       </buff>
+		
+    </append>
+	
+</config>

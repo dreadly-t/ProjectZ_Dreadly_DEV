@@ -36,6 +36,8 @@
 				<requirement name="EntityHasMovementTag" tags="driving"/></triggered_effect>
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDrivingStatus">
 				<requirement name="!EntityHasMovementTag" tags="driving"/></triggered_effect>
+				
+			<triggered_effect trigger="onSelfJump" action="RemoveCVar" cvar="$raiderBootFallDMG"/>
 		</effect_group>
 					
 	</append>
@@ -54,6 +56,7 @@
 	<insertAfter xpath="/buffs/buff[@name='buffPlayerFallingDamage']/effect_group/triggered_effect[@value='@$raiderBootFallDMG']">
 		<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".impactSpeed" operation="subtract" value="@$BrittleBonesFallDMGDebuff"/>
 	</insertAfter>
+	<remove xpath="/buffs/buff[@name='buffPlayerFallingDamage']/effect_group/triggered_effect[@value='@$raiderBootFallDMG']"/>
 	
 	<append xpath="/buffs">
 	

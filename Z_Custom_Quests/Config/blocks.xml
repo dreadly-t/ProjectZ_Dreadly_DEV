@@ -1,0 +1,63 @@
+<config>
+	
+	<append xpath="/blocks">
+	
+		<!-- <block name="cntWallSafe_Player2"> -->
+			<!-- <property name="CreativeMode" value="Player"/> -->
+			<!-- <property name="Class" value="QuestLoot"/> -->
+			<!-- <property name="LootList" value="playerSmallSafes"/> -->
+			<!-- <property name="LockPickItem" value="resourceLockPick"/> -->
+			<!-- <property name="LockPickTime" value="15"/> -->
+			<!-- <property name="LockPickBreakChance" value="0.75"/> -->
+			<!-- <property name="CustomIcon" value="cntWallSafe"/> -->
+			<!-- <property name="DescriptionKey" value="cntGunSafeDesc"/> -->
+			<!-- <property name="DisplayType" value="blockHardened"/> -->
+			<!-- <property name="Material" value="Mmetal_hard"/> -->
+			<!-- <property name="Shape" value="ModelEntity"/> -->
+			<!-- <property name="Model" value="@:Entities/LootContainers/safeMetalWallClosePrefab.prefab"/> -->
+			<!-- <property name="HandleFace" value="South"/> -->
+			<!-- <property name="StabilitySupport" value="false"/> -->
+			<!-- <property name="EconomicValue" value="300"/> -->
+			<!-- <property class="RepairItems"> -->
+				<!-- <property name="resourceForgedIron" value="15"/> -->
+			<!-- </property> -->
+			<!-- <drop event="Destroy" count="0"/> -->
+			<!-- <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/> -->
+			<!-- <property name="DowngradeBlock" value="cntWallSafeInsecure_Player"/> -->
+			<!-- <property name="SortOrder1" value="B101"/> -->
+			<!-- <property name="SortOrder2" value="0000"/> -->
+			<!-- <property name="Group" value="Building,advBuilding"/> -->
+			<!-- <property name="Tags" value="safes,timecharge,lockedSafe"/> -->
+			<!-- <property name="FilterTags" value="MC_building,SC_loot"/> -->
+			<!-- <property name="SoundPickup" value="iron_misc_hvy2_grab"/> -->
+			<!-- <property name="SoundPlace" value="iron_misc_hvy2_place"/> -->
+		<!-- </block> -->
+		
+		<!-- <block name="cntFetchQuestSatchel2"> -->
+			<!-- <property name="CreativeMode" value="None"/> -->
+			<!-- <property name="Class" value="QuestLoot"/> -->
+			<!-- <property name="LootList" value="playerSmallSafes"/> -->
+			<!-- <property name="IndexName" value="FetchContainer"/> -->
+			<!-- <property name="CustomIconTint" value="80ff80"/> -->
+			<!-- <property name="Material" value="Mcloth"/> -->
+			<!-- <property name="Shape" value="ModelEntity"/> -->
+			<!-- <property name="Model" value="@:Entities/LootContainers/loot_satchelPrefab.prefab"/> -->
+			<!-- <property name="ModelOffset" value="0,0,0"/> -->
+			<!-- <property name="GndAlign" value="1"/> -->
+			<!-- <property name="LightOpacity" value="0"/> -->
+			<!-- <property name="WaterFlow" value="permitted"/> -->
+			<!-- <property name="Place" value="TowardsPlacerInverted"/> -->
+			<!-- <property name="Collide" value="melee,bullet,arrow,rocket"/> -->
+			<!-- <property name="IsTerrainDecoration" value="true"/> -->
+			<!-- <property name="StabilitySupport" value="false"/> -->
+			<!-- <property name="StabilityIgnore" value="true"/> -->
+			<!-- <property name="MaxDamage" value="500"/> -->
+			<!-- <drop event="Destroy" name="resourceCloth" count="0"/> -->
+			<!-- <property name="SortOrder1" value="LD01"/> -->
+			<!-- <property name="SortOrder2" value="0001"/> -->
+			<!-- <property name="FilterTags" value="MC_building,SC_loot"/> -->
+		<!-- </block> -->
+	
+	</append>
+	
+</config>
