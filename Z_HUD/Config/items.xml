@@ -1,0 +1,9 @@
+<projectz>
+
+	<insertafter xpath="/items/item/property[@name='AltItemTypeIcon' and @value='book_read']">
+		<property name="AltItemTypeIconColor" value="200,200,200,200" />
+		<property name="ItemTypeIconTint" value="255,184,0,200" />
+	</insertafter>
+  
+</projectz>
+  

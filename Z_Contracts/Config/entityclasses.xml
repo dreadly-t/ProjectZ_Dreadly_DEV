@@ -1,0 +1,113 @@
+<configs>
+	
+	<append xpath="/entity_classes/entity_class[@name='playerMale']">
+		<effect_group name="StupitBet">
+			<passive_effect name="BarteringSelling" operation="base_add" value="@$Bonus_StupitBet"/>
+		</effect_group>
+	</append>
+	
+	<!-- Adding tags to recognize zombie classes -->
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieJanitor']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,janitor</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieJanitorFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,anitor</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieJanitorRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,janitor</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieJanitorCharged']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,charged,janitor</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieJanitorInfernal']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,infernal,janitor</set>
+		
+	<set xpath="/entity_classes/entity_class[@name='zombieBiker']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,biker</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieBikerFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,biker</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieBikerRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,biker</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieBikerInfernal']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,infernal,biker</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieMoe']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,Moe</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMoeFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,Moe</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMoeRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,Moe</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMoeInfernal']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,infernal,Moe</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieFatHawaiian']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,FatHawaiian</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieFatHawaiianFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,FatHawaiian</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieFatHawaiianRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,FatHawaiian</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieFatHawaiianInfernal']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,infernal,FatHawaiian</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieFatCop']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,zombieCop,Cop</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieFatCopFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,zombieCop,Cop</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieFatCopRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,zombieCop,Cop</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieFatCopInfernal']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,infernal,zombieCop,Cop</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieNurse']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,Nurse</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieNurseFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,Nurse</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieNurseRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,Nurse</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieNurseCharged']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,charged,Nurse</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieMaleHazmat']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,Hazmat</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMaleHazmatFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,Hazmat</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMaleHazmatRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,Hazmat</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMaleHazmatCharged']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,charged,Hazmat</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMaleHazmatInfernal']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,infernal,Hazmat</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieBurnt']/property[@name='Tags']/@value">entity,zombie,walker,burnt,BurntZombie</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieBurntFeral']/property[@name='Tags']/@value">entity,zombie,walker,burnt,feral,BurntZombie</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieBurntRadiated']/property[@name='Tags']/@value">entity,zombie,walker,burnt,feral,radiated,BurntZombie</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieBurntCharged']/property[@name='Tags']/@value">entity,zombie,walker,burnt,feral,charged,BurntZombie</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieBurntInfernal']/property[@name='Tags']/@value">entity,zombie,walker,burnt,feral,infernal,BurntZombie</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieLumberjack']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,Lumberjack</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieLumberjackFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,Lumberjack</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieLumberjackRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,Lumberjack</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieLumberjackInfernal']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,infernal,Lumberjack</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieMutated']/property[@name='Tags']/@value">entity,zombie,walker,wasteland,Mutated</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMutatedFeral']/property[@name='Tags']/@value">entity,zombie,walker,wasteland,feral,Mutated</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMutatedRadiated']/property[@name='Tags']/@value">entity,zombie,walker,wasteland,feral,radiated,Mutated</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMutatedCharged']/property[@name='Tags']/@value">entity,zombie,walker,wasteland,feral,charged,Mutated</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMutatedInfernal']/property[@name='Tags']/@value">entity,zombie,walker,wasteland,feral,infernal,Mutated</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombiePartyGirl']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,PartyGirl</set>
+	<set xpath="/entity_classes/entity_class[@name='zombiePartyGirlFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,PartyGirl</set>
+	<set xpath="/entity_classes/entity_class[@name='zombiePartyGirlRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,PartyGirl</set>
+	<set xpath="/entity_classes/entity_class[@name='zombiePartyGirlCharged']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,charged,PartyGirl</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieMarlene']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,Marlene</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMarleneFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,Marlene</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMarleneRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,Marlene</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieMarleneCharged']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,charged,Marlene</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieDarlene']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,Darlene</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieDarleneFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,Darlene</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieDarleneRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,Darlene</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieDarleneCharged']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,charged,Darlene</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieDarleneInfernal']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,infernal,Darlene</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieJoe']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,Joe</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieJoeFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,Joe</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieJoeRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,Joe</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieJoeCharged']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,charged,Joe</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieSteve']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,Steve</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieSteveFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,Steve</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieSteveRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,Steve</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieSteveCharged']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,charged,Steve</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='zombieYo']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,Yo</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieYoFeral']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,Yo</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieYoRadiated']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,radiated,Yo</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieYoCharged']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,charged,Yo</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieYoInfernal']/property[@name='Tags']/@value">entity,zombie,walker,allbiome,feral,infernal,Yo</set>
+	
+	<!-- Adding tags to recognize animals classes -->
+	<set xpath="/entity_classes/entity_class[@name='animalRabbit']/property[@name='Tags']/@value">entity,animal,rabbit,perkAT01,perkAT02,perkAT03,smallAnimal</set>
+	<set xpath="/entity_classes/entity_class[@name='animalSnake']/property[@name='Tags']/@value">entity,animal,hostile,snake,perkAT01,perkAT02,perkAT03,smallAnimal</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='animalCoyote']/property[@name='Tags']/@value">entity,animal,hostile,coyote,perkAT02,perkAT03,mediumAnimal,Dogs</set>
+	<set xpath="/entity_classes/entity_class[@name='animalWolf']/property[@name='Tags']/@value">entity,animal,hostile,wolf,perkAT02,perkAT03,mediumAnimal,Dogs</set>
+	<set xpath="/entity_classes/entity_class[@name='animalZombieDog']/property[@name='Tags']/@value">entity,animal,zombie,hostile,dog,Dogs</set>
+	<set xpath="/entity_classes/entity_class[@name='animalBoar']/property[@name='Tags']/@value">entity,animal,hostile,boar,perkAT02,perkAT03,mediumAnimal,HogDefence</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='animalBear']/property[@name='Tags']/@value">entity,animal,hostile,bear,perkAT03,bigAnimal,Bear</set>
+	<set xpath="/entity_classes/entity_class[@name='animalBearSmall']/property[@name='Tags']/@value">entity,animal,hostile,bear,perkAT03,bigAnimal</set>
+	<set xpath="/entity_classes/entity_class[@name='animalMountainLion']/property[@name='Tags']/@value">entity,animal,hostile,mountainlion,perkAT03,bigAnimal,MountainLion</set>
+	
+	<set xpath="/entity_classes/entity_class[@name='animalZombieBear']/property[@name='Tags']/@value">entity,animal,zombie,hostile,bear,ZombieBear</set>
+	<set xpath="/entity_classes/entity_class[@name='animalDireWolf']/property[@name='Tags']/@value">entity,animal,zombie,hostile,wolf,perkAT02,perkAT03,DireWolf</set>
+
+</configs>

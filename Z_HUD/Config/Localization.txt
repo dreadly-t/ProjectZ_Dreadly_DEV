@@ -1,0 +1,4 @@
+Key,Source,Context,Changes,English,Russian,Spanish
+
+xuiLevel,UI,XUI,,LEVEL,УРОВЕНЬ,NIVEL
+xuiDayNew,UI,XUI,,DAY,ДЕНЬ,DÍA

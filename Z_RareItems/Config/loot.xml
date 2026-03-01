@@ -1,0 +1,1927 @@
+<config>
+		
+	<!-- Adding vanilla weapons and tools of quality 6 to loot -->
+	
+	<!-- Tier 0 -->
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='49,50']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='51,52']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='53,55']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='56,57']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='58,60']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='61,62']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='63,64']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='65,67']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='68,69']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='70,72']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='73,74']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='75,76']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='77,79']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='80,999999']"/>
+	
+	<insertAfter xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='46,48']">
+		<qualitytemplate level="49,50" default_quality="1">
+			<loot quality="1" prob="0.232"/>
+			<loot quality="2" prob="0.268"/>
+			<loot quality="3" prob="0.319"/>
+			<loot quality="4" prob="0.401"/>
+			<loot quality="6" prob="0.05"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="51,52" default_quality="1">
+			<loot quality="1" prob="0.228"/>
+			<loot quality="2" prob="0.264"/>
+			<loot quality="3" prob="0.315"/>
+			<loot quality="4" prob="0.397"/>
+			<loot quality="6" prob="0.1"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="53,55" default_quality="1">
+			<loot quality="1" prob="0.225"/>
+			<loot quality="2" prob="0.26"/>
+			<loot quality="3" prob="0.311"/>
+			<loot quality="4" prob="0.393"/>
+			<loot quality="6" prob="0.15"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="56,57" default_quality="1">
+			<loot quality="1" prob="0.222"/>
+			<loot quality="2" prob="0.257"/>
+			<loot quality="3" prob="0.308"/>
+			<loot quality="4" prob="0.389"/>
+			<loot quality="6" prob="0.2"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="58,60" default_quality="1">
+			<loot quality="1" prob="0.22"/>
+			<loot quality="2" prob="0.254"/>
+			<loot quality="3" prob="0.305"/>
+			<loot quality="4" prob="0.386"/>
+			<loot quality="6" prob="0.25"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="61,62" default_quality="1">
+			<loot quality="2" prob="0.252"/>
+			<loot quality="3" prob="0.302"/>
+			<loot quality="4" prob="0.383"/>
+			<loot quality="6" prob="0.3"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="63,64" default_quality="1">
+			<loot quality="2" prob="0.25"/>
+			<loot quality="3" prob="0.3"/>
+			<loot quality="4" prob="0.38"/>
+			<loot quality="6" prob="0.35"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="65,67" default_quality="1">
+			<loot quality="2" prob="0.247"/>
+			<loot quality="3" prob="0.297"/>
+			<loot quality="4" prob="0.378"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="68,69" default_quality="1">
+			<loot quality="3" prob="0.295"/>
+			<loot quality="4" prob="0.376"/>
+			<loot quality="6" prob="0.45"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="70,72" default_quality="1">
+			<loot quality="3" prob="0.293"/>
+			<loot quality="4" prob="0.374"/>
+			<loot quality="6" prob="0.5"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="73,74" default_quality="1">
+			<loot quality="4" prob="0.373"/>
+			<loot quality="6" prob="0.5"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="75,76" default_quality="1">
+			<loot quality="4" prob="0.371"/>
+			<loot quality="6" prob="0.5"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="77,79" default_quality="1">
+			<loot quality="4" prob="0.369"/>
+			<loot quality="6" prob="0.5"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="80,999999" default_quality="1">
+			<loot quality="6" prob="0.5"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+	</insertAfter>
+	
+	<!-- Tier 1 -->
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='125,127']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='128,129']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='130,132']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='133,134']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='135,136']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='137,139']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='140,141']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='142,144']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='145,146']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='147,148']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='149,151']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='152,153']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='154,156']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='157,158']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='159,160']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='161,163']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='164,165']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='166,168']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='169,170']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='171,172']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='173,175']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='176,177']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='178,180']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='181,182']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='183,184']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='185,187']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='188,189']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='190,192']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='193,194']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='195,999999']"/>
+	
+	<insertAfter xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='123,124']">
+		<qualitytemplate level="125,127" default_quality="1">
+			<loot quality="1" prob="0.24"/>
+			<loot quality="2" prob="0.277"/>
+			<loot quality="3" prob="0.33"/>
+			<loot quality="4" prob="0.413"/>
+			<loot quality="6" prob="0.02"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="128,129" default_quality="1">
+			<loot quality="2" prob="0.274"/>
+			<loot quality="3" prob="0.327"/>
+			<loot quality="4" prob="0.41"/>
+			<loot quality="6" prob="0.04"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="130,132" default_quality="1">
+			<loot quality="2" prob="0.272"/>
+			<loot quality="3" prob="0.324"/>
+			<loot quality="4" prob="0.407"/>
+			<loot quality="6" prob="0.06"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="133,134" default_quality="1">
+			<loot quality="2" prob="0.27"/>
+			<loot quality="3" prob="0.322"/>
+			<loot quality="4" prob="0.404"/>
+			<loot quality="6" prob="0.08"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="135,136" default_quality="1">
+			<loot quality="2" prob="0.268"/>
+			<loot quality="3" prob="0.319"/>
+			<loot quality="4" prob="0.401"/>
+			<loot quality="6" prob="0.1"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="137,139" default_quality="1">
+			<loot quality="2" prob="0.266"/>
+			<loot quality="3" prob="0.317"/>
+			<loot quality="4" prob="0.399"/>
+			<loot quality="6" prob="0.12"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="140,141" default_quality="1">
+			<loot quality="3" prob="0.315"/>
+			<loot quality="4" prob="0.397"/>
+			<loot quality="6" prob="0.14"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="142,144" default_quality="1">
+			<loot quality="3" prob="0.313"/>
+			<loot quality="4" prob="0.394"/>
+			<loot quality="6" prob="0.16"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="145,146" default_quality="1">
+			<loot quality="3" prob="0.311"/>
+			<loot quality="4" prob="0.393"/>
+			<loot quality="6" prob="0.18"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="147,148" default_quality="1">
+			<loot quality="3" prob="0.309"/>
+			<loot quality="4" prob="0.391"/>
+			<loot quality="6" prob="0.2"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="149,151" default_quality="1">
+			<loot quality="3" prob="0.308"/>
+			<loot quality="4" prob="0.389"/>
+			<loot quality="6" prob="0.22"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="152,153" default_quality="1">
+			<loot quality="3" prob="0.306"/>
+			<loot quality="4" prob="0.387"/>
+			<loot quality="6" prob="0.24"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="154,156" default_quality="1">
+			<loot quality="4" prob="0.386"/>
+			<loot quality="6" prob="0.26"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="157,158" default_quality="1">
+			<loot quality="4" prob="0.384"/>
+			<loot quality="6" prob="0.28"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="159,160" default_quality="1">
+			<loot quality="4" prob="0.383"/>
+			<loot quality="6" prob="0.3"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="161,163" default_quality="1">
+			<loot quality="4" prob="0.382"/>
+			<loot quality="6" prob="0.32"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="164,165" default_quality="1">
+			<loot quality="4" prob="0.38"/>
+			<loot quality="6" prob="0.34"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="166,168" default_quality="1">
+			<loot quality="4" prob="0.328"/>
+			<loot quality="6" prob="0.36"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="169,170" default_quality="1">
+			<loot quality="4" prob="0.323"/>
+			<loot quality="6" prob="0.38"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="171,172" default_quality="1">
+			<loot quality="4" prob="0.317"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="173,175" default_quality="1">
+			<loot quality="4" prob="0.312"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="176,177" default_quality="1">
+			<loot quality="4" prob="0.306"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="178,180" default_quality="1">
+			<loot quality="4" prob="0.301"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="181,182" default_quality="1">
+			<loot quality="4" prob="0.298"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="183,184" default_quality="1">
+			<loot quality="4" prob="0.295"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="185,187" default_quality="1">
+			<loot quality="4" prob="0.293"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="188,189" default_quality="1">
+			<loot quality="4" prob="0.29"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="190,192" default_quality="1">
+			<loot quality="4" prob="0.288"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="193,194" default_quality="1">
+			<loot quality="4" prob="0.286"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="195,999999" default_quality="1">
+			<loot quality="4" prob="0.444"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+	</insertAfter>
+	
+	<!-- Tier 2 -->
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='159,160']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='161,163']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='164,165']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='166,168']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='169,170']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='171,172']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='173,175']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='176,177']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='178,180']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='181,182']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='183,184']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='185,187']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='188,189']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='190,192']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='193,194']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='195,196']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='197,199']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='200,201']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='202,204']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='205,206']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='207,208']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='209,211']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='212,213']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='214,999999']"/>
+
+	<insertAfter xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='157,158']">
+		<qualitytemplate level="159,160" default_quality="1">
+			<loot quality="1" prob="0.247"/>
+			<loot quality="2" prob="0.285"/>
+			<loot quality="3" prob="0.339"/>
+			<loot quality="4" prob="0.423"/>
+			<loot quality="6" prob="0.015"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="161,163" default_quality="1">
+			<loot quality="1" prob="0.244"/>
+			<loot quality="2" prob="0.282"/>
+			<loot quality="3" prob="0.335"/>
+			<loot quality="4" prob="0.419"/>
+			<loot quality="6" prob="0.03"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="164,165" default_quality="1">
+			<loot quality="1" prob="0.241"/>
+			<loot quality="2" prob="0.279"/>
+			<loot quality="3" prob="0.332"/>
+			<loot quality="4" prob="0.415"/>
+			<loot quality="6" prob="0.045"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="166,168" default_quality="1">
+			<loot quality="2" prob="0.276"/>
+			<loot quality="3" prob="0.329"/>
+			<loot quality="4" prob="0.412"/>
+			<loot quality="6" prob="0.06"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="169,170" default_quality="1">
+			<loot quality="2" prob="0.274"/>
+			<loot quality="3" prob="0.326"/>
+			<loot quality="4" prob="0.409"/>
+			<loot quality="6" prob="0.075"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="171,172" default_quality="1">
+			<loot quality="2" prob="0.271"/>
+			<loot quality="3" prob="0.323"/>
+			<loot quality="4" prob="0.406"/>
+			<loot quality="6" prob="0.09"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="173,175" default_quality="1">
+			<loot quality="2" prob="0.269"/>
+			<loot quality="3" prob="0.321"/>
+			<loot quality="4" prob="0.403"/>
+			<loot quality="6" prob="0.105"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="176,177" default_quality="1">
+			<loot quality="2" prob="0.267"/>
+			<loot quality="3" prob="0.319"/>
+			<loot quality="4" prob="0.4"/>
+			<loot quality="6" prob="0.12"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="178,180" default_quality="1">
+			<loot quality="2" prob="0.265"/>
+			<loot quality="3" prob="0.316"/>
+			<loot quality="4" prob="0.398"/>
+			<loot quality="6" prob="0.135"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="181,182" default_quality="1">
+			<loot quality="3" prob="0.314"/>
+			<loot quality="4" prob="0.396"/>
+			<loot quality="6" prob="0.15"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="183,184" default_quality="1">
+			<loot quality="3" prob="0.312"/>
+			<loot quality="4" prob="0.394"/>
+			<loot quality="6" prob="0.165"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="185,187" default_quality="1">
+			<loot quality="3" prob="0.311"/>
+			<loot quality="4" prob="0.392"/>
+			<loot quality="6" prob="0.18"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="188,189" default_quality="1">
+			<loot quality="3" prob="0.309"/>
+			<loot quality="4" prob="0.39"/>
+			<loot quality="6" prob="0.195"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="190,192" default_quality="1">
+			<loot quality="3" prob="0.307"/>
+			<loot quality="4" prob="0.388"/>
+			<loot quality="6" prob="0.21"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="193,194" default_quality="1">
+			<loot quality="3" prob="0.306"/>
+			<loot quality="4" prob="0.387"/>
+			<loot quality="6" prob="0.225"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="195,196" default_quality="1">
+			<loot quality="4" prob="0.385"/>
+			<loot quality="6" prob="0.24"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="197,199" default_quality="1">
+			<loot quality="4" prob="0.384"/>
+			<loot quality="6" prob="0.255"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="200,201" default_quality="1">
+			<loot quality="4" prob="0.383"/>
+			<loot quality="6" prob="0.27"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="202,204" default_quality="1">
+			<loot quality="4" prob="0.381"/>
+			<loot quality="6" prob="0.285"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="205,206" default_quality="1">
+			<loot quality="4" prob="0.38"/>
+			<loot quality="6" prob="0.3"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="207,208" default_quality="1">
+			<loot quality="4" prob="0.326"/>
+			<loot quality="6" prob="0.3"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="209,211" default_quality="1">
+			<loot quality="4" prob="0.321"/>
+			<loot quality="6" prob="0.3"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="212,213" default_quality="1">
+			<loot quality="4" prob="0.315"/>
+			<loot quality="6" prob="0.3"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="214,999999" default_quality="1">
+			<loot quality="4" prob="0.3"/>
+			<loot quality="6" prob="0.3"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+	</insertAfter>
+	
+	<!-- Tier 3 -->
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='200,201']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='202,204']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='205,206']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='207,208']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='209,211']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='212,213']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='214,216']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='217,218']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='219,220']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='221,223']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='224,225']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='226,228']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='229,230']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='231,232']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='233,235']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='236,237']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='238,240']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='241,242']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='243,244']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='245,247']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='248,249']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='250,252']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='253,999999']"/>
+	
+	<insertAfter xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='197,199']">
+		<qualitytemplate level="200,201" default_quality="1">
+			<loot quality="1" prob="0.246"/>
+			<loot quality="2" prob="0.284"/>
+			<loot quality="3" prob="0.338"/>
+			<loot quality="4" prob="0.422"/>
+			<loot quality="6" prob="0.01"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="202,204" default_quality="1">
+			<loot quality="1" prob="0.243"/>
+			<loot quality="2" prob="0.281"/>
+			<loot quality="3" prob="0.334"/>
+			<loot quality="4" prob="0.418"/>
+			<loot quality="6" prob="0.02"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="205,206" default_quality="1">
+			<loot quality="1" prob="0.241"/>
+			<loot quality="2" prob="0.278"/>
+			<loot quality="3" prob="0.331"/>
+			<loot quality="4" prob="0.414"/>
+			<loot quality="6" prob="0.03"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="207,208" default_quality="1">
+			<loot quality="2" prob="0.275"/>
+			<loot quality="3" prob="0.328"/>
+			<loot quality="4" prob="0.411"/>
+			<loot quality="6" prob="0.04"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="209,211" default_quality="1">
+			<loot quality="2" prob="0.273"/>
+			<loot quality="3" prob="0.325"/>
+			<loot quality="4" prob="0.408"/>
+			<loot quality="6" prob="0.05"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="212,213" default_quality="1">
+			<loot quality="2" prob="0.271"/>
+			<loot quality="3" prob="0.323"/>
+			<loot quality="4" prob="0.405"/>
+			<loot quality="6" prob="0.06"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="214,216" default_quality="1">
+			<loot quality="2" prob="0.268"/>
+			<loot quality="3" prob="0.32"/>
+			<loot quality="4" prob="0.402"/>
+			<loot quality="6" prob="0.07"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="217,218" default_quality="1">
+			<loot quality="2" prob="0.266"/>
+			<loot quality="3" prob="0.318"/>
+			<loot quality="4" prob="0.4"/>
+			<loot quality="6" prob="0.08"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="219,220" default_quality="1">
+			<loot quality="2" prob="0.264"/>
+			<loot quality="3" prob="0.316"/>
+			<loot quality="4" prob="0.397"/>
+			<loot quality="6" prob="0.09"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="221,223" default_quality="1">
+			<loot quality="3" prob="0.314"/>
+			<loot quality="4" prob="0.395"/>
+			<loot quality="6" prob="0.1"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="224,225" default_quality="1">
+			<loot quality="3" prob="0.312"/>
+			<loot quality="4" prob="0.393"/>
+			<loot quality="6" prob="0.11"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="226,228" default_quality="1">
+			<loot quality="3" prob="0.31"/>
+			<loot quality="4" prob="0.391"/>
+			<loot quality="6" prob="0.12"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="229,230" default_quality="1">
+			<loot quality="3" prob="0.308"/>
+			<loot quality="4" prob="0.39"/>
+			<loot quality="6" prob="0.13"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="231,232" default_quality="1">
+			<loot quality="3" prob="0.307"/>
+			<loot quality="4" prob="0.388"/>
+			<loot quality="6" prob="0.14"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="233,235" default_quality="1">
+			<loot quality="4" prob="0.386"/>
+			<loot quality="6" prob="0.15"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="236,237" default_quality="1">
+			<loot quality="4" prob="0.385"/>
+			<loot quality="6" prob="0.16"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="238,240" default_quality="1">
+			<loot quality="4" prob="0.383"/>
+			<loot quality="6" prob="0.17"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="241,242" default_quality="1">
+			<loot quality="4" prob="0.382"/>
+			<loot quality="6" prob="0.18"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="243,244" default_quality="1">
+			<loot quality="4" prob="0.381"/>
+			<loot quality="6" prob="0.19"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="245,247" default_quality="1">
+			<loot quality="4" prob="0.38"/>
+			<loot quality="6" prob="0.2"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="248,249" default_quality="1">
+			<loot quality="4" prob="0.324"/>
+			<loot quality="6" prob="0.2"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="250,252" default_quality="1">
+			<loot quality="4" prob="0.319"/>
+			<loot quality="6" prob="0.2"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="253,999999" default_quality="1">
+			<loot quality="4" prob="0.30"/>
+			<loot quality="6" prob="0.2"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+	</insertAfter>
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- ARMOR LOOT quality  -->
+	
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='101,103']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='104,105']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='106,108']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='109,110']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='111,112']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='113,115']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='116,117']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='118,120']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='121,122']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='123,124']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='125,127']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='128,129']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='130,132']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='133,134']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='135,136']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='137,139']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='140,141']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='142,144']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='145,146']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='147,148']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='149,151']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='152,153']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='154,156']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='157,158']"/>
+	<remove xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='159,999999']"/>
+	
+	<insertAfter xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='99,100']">
+		<qualitytemplate level="101,103" default_quality="1">
+			<loot quality="2" prob="0.338"/>
+			<loot quality="3" prob="0.422"/>
+			<loot quality="4" prob="0.577"/>
+			<loot quality="6" prob="0.02"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="104,105" default_quality="1">
+			<loot quality="2" prob="0.335"/>
+			<loot quality="3" prob="0.419"/>
+			<loot quality="4" prob="0.573"/>
+			<loot quality="6" prob="0.04"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="106,108" default_quality="1">
+			<loot quality="2" prob="0.332"/>
+			<loot quality="3" prob="0.415"/>
+			<loot quality="4" prob="0.57"/>
+			<loot quality="6" prob="0.06"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="109,110" default_quality="1">
+			<loot quality="2" prob="0.33"/>
+			<loot quality="3" prob="0.412"/>
+			<loot quality="4" prob="0.567"/>
+			<loot quality="6" prob="0.06"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="111,112" default_quality="1">
+			<loot quality="3" prob="0.41"/>
+			<loot quality="4" prob="0.565"/>
+			<loot quality="6" prob="0.08"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="113,115" default_quality="1">
+			<loot quality="3" prob="0.407"/>
+			<loot quality="4" prob="0.562"/>
+			<loot quality="6" prob="0.1"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="116,117" default_quality="1">
+			<loot quality="3" prob="0.405"/>
+			<loot quality="4" prob="0.56"/>
+			<loot quality="6" prob="0.12"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="118,120" default_quality="1">
+			<loot quality="3" prob="0.403"/>
+			<loot quality="4" prob="0.558"/>
+			<loot quality="6" prob="0.14"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="121,122" default_quality="1">
+			<loot quality="3" prob="0.401"/>
+			<loot quality="4" prob="0.556"/>
+			<loot quality="6" prob="0.16"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="123,124" default_quality="1">
+			<loot quality="3" prob="0.399"/>
+			<loot quality="4" prob="0.554"/>
+			<loot quality="6" prob="0.18"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="125,127" default_quality="1">
+			<loot quality="4" prob="0.552"/>
+			<loot quality="6" prob="0.2"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="128,129" default_quality="1">
+			<loot quality="4" prob="0.551"/>
+			<loot quality="6" prob="0.22"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="130,132" default_quality="1">
+			<loot quality="4" prob="0.549"/>
+			<loot quality="6" prob="0.24"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="133,134" default_quality="1">
+			<loot quality="4" prob="0.548"/>
+			<loot quality="6" prob="0.26"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="135,136" default_quality="1">
+			<loot quality="4" prob="0.547"/>
+			<loot quality="6" prob="0.28"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="137,139" default_quality="1">
+			<loot quality="4" prob="0.545"/>
+			<loot quality="6" prob="0.3"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="140,141" default_quality="1">
+			<loot quality="4" prob="0.544"/>
+			<loot quality="6" prob="0.32"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="142,144" default_quality="1">
+			<loot quality="4" prob="0.541"/>
+			<loot quality="6" prob="0.34"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="145,146" default_quality="1">
+			<loot quality="4" prob="0.534"/>
+			<loot quality="6" prob="0.36"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="147,148" default_quality="1">
+			<loot quality="4" prob="0.527"/>
+			<loot quality="6" prob="0.38"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="149,151" default_quality="1">
+			<loot quality="4" prob="0.52"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="152,153" default_quality="1">
+			<loot quality="4" prob="0.514"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="154,156" default_quality="1">
+			<loot quality="4" prob="0.508"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="157,158" default_quality="1">
+			<loot quality="4" prob="0.502"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+		<qualitytemplate level="159,999999" default_quality="1">
+			<loot quality="4" prob="0.556"/>
+			<loot quality="6" prob="0.4"/>
+			<loot quality="5" prob="1"/>
+		</qualitytemplate>
+	</insertAfter>
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- RANGE WEAPON -->
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- RIFLE - TIER 0 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_DeadEye']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT0_DeadEye" loot_quality_template="QLTemplateT0">
+			<item name="gunRifleT0PipeRifle"/>
+			<item name="gunRifleT0PipeRifleRareCrusher" prob=".15"/>
+			<item name="gunRifleT0PipeRifleRareKnockdown" prob=".15"/>
+			<item name="gunRifleT0PipeRifleRareFasthands" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<!-- RIFLE - TIER 1 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_DeadEye']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT1_DeadEye" loot_quality_template="QLTemplateT1">
+			<item name="gunRifleT1HuntingRifle"/>
+			<item name="gunRifleT1HuntingRifleRareExperienced" prob=".15"/>
+			<item name="gunRifleT1HuntingRifleRareApple" prob=".15"/>
+			<item name="gunRifleT1HuntingRifleRareFasthands" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT1']">
+		<item name="gunRifleT1HuntingRifleRareExperienced" prob=".15"/>
+		<item name="gunRifleT1HuntingRifleRareApple" prob=".15"/>
+		<item name="gunRifleT1HuntingRifleRareFasthands" prob=".15"/>
+	</append>
+	
+	<!-- RIFLE - TIER 2 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_DeadEye']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT2_DeadEye" loot_quality_template="QLTemplateT2">
+			<item name="gunRifleT2LeverActionRifle"/>
+			<item name="gunRifleT2LeverActionRifleRareUniversal" prob=".15"/>
+			<item name="gunRifleT2LeverActionRifleRareVampire" prob=".15"/>
+			<item name="gunRifleT2LeverActionRifleRareUnkillable" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT2']">
+		<item name="gunRifleT2LeverActionRifleRareUniversal" prob=".15"/>
+		<item name="gunRifleT2LeverActionRifleRareVampire" prob=".15"/>
+		<item name="gunRifleT2LeverActionRifleRareUnkillable" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="gunRifleT2LeverActionRifleRareUniversal" prob=".15"/>
+		<item name="gunRifleT2LeverActionRifleRareVampire" prob=".15"/>
+		<item name="gunRifleT2LeverActionRifleRareUnkillable" prob=".15"/>
+	</append>
+	
+	<!-- RIFLE - TIER 3 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT3_DeadEye']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT3_DeadEye" loot_quality_template="QLTemplateT3">
+			<item name="gunRifleT3SniperRifle"/>
+			<item name="gunRifleT3SniperRifleRareCrusher" prob=".15"/>
+			<item name="gunRifleT3SniperRifleRareUnkillable" prob=".15"/>
+			<item name="gunRifleT3SniperRifleRareKnockdown" prob=".15"/>
+			<item name="gunRifleT3SniperRifleRareStable" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT3']">
+		<item name="gunRifleT3SniperRifleRareCrusher" prob=".15"/>
+		<item name="gunRifleT3SniperRifleRareUnkillable" prob=".15"/>
+		<item name="gunRifleT3SniperRifleRareKnockdown" prob=".15"/>
+		<item name="gunRifleT3SniperRifleRareStable" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="gunRifleT3SniperRifleRareCrusher" prob=".15"/>
+		<item name="gunRifleT3SniperRifleRareUnkillable" prob=".15"/>
+		<item name="gunRifleT3SniperRifleRareKnockdown" prob=".15"/>
+		<item name="gunRifleT3SniperRifleRareStable" prob=".15"/>
+	</append>
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- SHOTGUN - TIER 0 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Boomstick']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT0_Boomstick" loot_quality_template="QLTemplateT0">
+			<item name="gunShotgunT0PipeShotgun"/>
+			<item name="gunShotgunT0PipeShotgunRareCrusher" prob=".15"/>
+			<item name="gunShotgunT0PipeShotgunRareExperienced" prob=".15"/>
+			<item name="gunShotgunT0PipeShotgunRareFasthands" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<!-- SHOTGUN - TIER 1 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Boomstick']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT1_Boomstick" loot_quality_template="QLTemplateT1">
+			<item name="gunShotgunT1DoubleBarrel"/>
+			<item name="gunShotgunT1DoubleBarrelRareSweeper" prob=".15"/>
+			<item name="gunShotgunT1DoubleBarrelRareUnkillable" prob=".15"/>
+			<item name="gunShotgunT1DoubleBarrelRareFasthands" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT1']">
+		<item name="gunShotgunT1DoubleBarrelRareSweeper" prob=".15"/>
+		<item name="gunShotgunT1DoubleBarrelRareUnkillable" prob=".15"/>
+		<item name="gunShotgunT1DoubleBarrelRareFasthands" prob=".15"/>
+	</append>
+	
+	<!-- SHOTGUN - TIER 2 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Boomstick']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT2_Boomstick" loot_quality_template="QLTemplateT2">
+			<item name="gunShotgunT2PumpShotgun"/>
+			<item name="gunShotgunT2PumpShotgunRareCrusher" prob=".15"/>
+			<item name="gunShotgunT2PumpShotgunRareExperienced" prob=".15"/>
+			<item name="gunShotgunT2PumpShotgunRareUniversal" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT2']">
+		<item name="gunShotgunT2PumpShotgunRareCrusher" prob=".15"/>
+		<item name="gunShotgunT2PumpShotgunRareExperienced" prob=".15"/>
+		<item name="gunShotgunT2PumpShotgunRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="gunShotgunT2PumpShotgunRareCrusher" prob=".15"/>
+		<item name="gunShotgunT2PumpShotgunRareExperienced" prob=".15"/>
+		<item name="gunShotgunT2PumpShotgunRareUniversal" prob=".15"/>
+	</append>
+	
+	<!-- SHOTGUN - TIER 3 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT3_Boomstick']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT3_Boomstick" loot_quality_template="QLTemplateT3">
+			<item name="gunShotgunT3AutoShotgun"/>
+			<item name="gunShotgunT3AutoShotgunRareCrusher" prob=".15"/>
+			<item name="gunShotgunT3AutoShotgunRareUnkillable" prob=".15"/>
+			<item name="gunShotgunT3AutoShotgunRareSnowstorm" prob=".15"/>
+			<item name="gunShotgunT3AutoShotgunRareUniversal" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT3']">
+		<item name="gunShotgunT3AutoShotgunRareCrusher" prob=".15"/>
+		<item name="gunShotgunT3AutoShotgunRareUnkillable" prob=".15"/>
+		<item name="gunShotgunT3AutoShotgunRareSnowstorm" prob=".15"/>
+		<item name="gunShotgunT3AutoShotgunRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="gunShotgunT3AutoShotgunRareCrusher" prob=".15"/>
+		<item name="gunShotgunT3AutoShotgunRareUnkillable" prob=".15"/>
+		<item name="gunShotgunT3AutoShotgunRareSnowstorm" prob=".15"/>
+		<item name="gunShotgunT3AutoShotgunRareUniversal" prob=".15"/>
+	</append>
+
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- AUTOMATIC WEAPON - TIER 0 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Machinegunner']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT0_Machinegunner" loot_quality_template="QLTemplateT0">
+			<item name="gunMGT0PipeMachineGun"/>
+			<item name="gunMGT0PipeMachineGunRareCrusher" prob=".15"/>
+			<item name="gunMGT0PipeMachineGunRareUniversal" prob=".15"/>
+			<item name="gunMGT0PipeMachineGunRareUnkillable" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<!-- AUTOMATIC WEAPON - TIER 1 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Machinegunner']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT1_Machinegunner" loot_quality_template="QLTemplateT1">
+			<item name="gunMGT1AK47"/>
+			<item name="gunMGT1AK47RareCrusher" prob=".15"/>
+			<item name="gunMGT1AK47RareExperienced" prob=".15"/>
+			<item name="gunMGT1AK47RareUnkillable" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='prefabQuestLoot']">
+		<item name="gunMGT1AK47RareCrusher" mods="barrelAttachments,sideAttachments,smallTopAttachments,trigger" mod_chance=".50" prob=".15"/>
+		<item name="gunMGT1AK47RareExperienced" mods="barrelAttachments,sideAttachments,smallTopAttachments,trigger" mod_chance=".50" prob=".15"/>
+		<item name="gunMGT1AK47RareUnkillable" mods="barrelAttachments,sideAttachments,smallTopAttachments,trigger" mod_chance=".50" prob=".15"/>
+	</append>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT1']">
+		<item name="gunMGT1AK47RareCrusher" prob=".15"/>
+		<item name="gunMGT1AK47RareExperienced" prob=".15"/>
+		<item name="gunMGT1AK47RareUnkillable" prob=".15"/>
+	</append>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_AK47']">
+		<item name="gunMGT1AK47RareCrusher" prob=".15"/>
+		<item name="gunMGT1AK47RareExperienced" prob=".15"/>
+		<item name="gunMGT1AK47RareUnkillable" prob=".15"/>
+	</append>
+	
+	<!-- AUTOMATIC WEAPON - TIER 2 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Machinegunner']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT2_Machinegunner" loot_quality_template="QLTemplateT2">
+			<item name="gunMGT2TacticalAR"/>
+			<item name="gunMGT2TacticalARRareRapidfire" prob=".15"/>
+			<item name="gunMGT2TacticalARRareApple" prob=".15"/>
+			<item name="gunMGT2TacticalARRareExperienced" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT2']">
+		<item name="gunMGT2TacticalARRareRapidfire" prob=".15"/>
+		<item name="gunMGT2TacticalARRareApple" prob=".15"/>
+		<item name="gunMGT2TacticalARRareExperienced" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="gunMGT2TacticalARRareRapidfire" prob=".15"/>
+		<item name="gunMGT2TacticalARRareApple" prob=".15"/>
+		<item name="gunMGT2TacticalARRareExperienced" prob=".15"/>
+	</append>
+	
+	<!-- AUTOMATIC WEAPON - TIER 3 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT3_Machinegunner']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT3_Machinegunner" loot_quality_template="QLTemplateT3">
+			<item name="gunMGT3M60"/>
+			<item name="gunMGT3M60RareSnowstorm" prob=".15"/>
+			<item name="gunMGT3M60RareUniversal" prob=".15"/>
+			<item name="gunMGT3M60RareUnkillable" prob=".15"/>
+			<item name="gunMGT3M60RareStable" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT3']">
+		<item name="gunMGT3M60RareSnowstorm" prob=".15"/>
+		<item name="gunMGT3M60RareUniversal" prob=".15"/>
+		<item name="gunMGT3M60RareUnkillable" prob=".15"/>
+		<item name="gunMGT3M60RareStable" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="gunMGT3M60RareSnowstorm" prob=".15"/>
+		<item name="gunMGT3M60RareUniversal" prob=".15"/>
+		<item name="gunMGT3M60RareUnkillable" prob=".15"/>
+		<item name="gunMGT3M60RareStable" prob=".15"/>
+	</append>
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- ARCHERY - TIER 0 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Archery']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT0_Archery" loot_quality_template="QLTemplateT0">
+			<item name="gunBowT0PrimitiveBow"/>
+			<item name="gunBowT0PrimitiveBowRareRobinhood" prob=".15"/>
+			<item name="gunBowT0PrimitiveBowRareNinja" prob=".15"/>
+			<item name="gunBowT0PrimitiveBowRareVampire" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<!-- BOW - TIER 1 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Archery01']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT1_Archery01" loot_quality_template="QLTemplateT1">
+			<item name="gunBowT1WoodenBow"/>
+			<item name="gunBowT1WoodenBowRareRobinhood" prob=".15"/>
+			<item name="gunBowT1WoodenBowRareNinja" prob=".15"/>
+			<item name="gunBowT1WoodenBowRareVampire" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT1']">
+		<item name="gunBowT1WoodenBowRareRobinhood" prob=".15"/>
+		<item name="gunBowT1WoodenBowRareNinja" prob=".15"/>
+		<item name="gunBowT1WoodenBowRareVampire" prob=".15"/>
+	</append>
+	
+	<!-- CROSSBOW - TIER 1 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Archery02']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT1_Archery02" loot_quality_template="QLTemplateT1">
+			<item name="gunBowT1IronCrossbow"/>
+			<item name="gunBowT1IronCrossbowRareRobinhood" prob=".15"/>
+			<item name="gunBowT1IronCrossbowRareNinja" prob=".15"/>
+			<item name="gunBowT1IronCrossbowRareVampire" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT1']">
+		<item name="gunBowT1IronCrossbowRareRobinhood" prob=".15"/>
+		<item name="gunBowT1IronCrossbowRareNinja" prob=".15"/>
+		<item name="gunBowT1IronCrossbowRareVampire" prob=".15"/>
+	</append>
+	
+	<!-- BOW - TIER 3 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT3_Archery01']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT3_Archery01" loot_quality_template="QLTemplateT2">
+			<item name="gunBowT3CompoundBow"/>
+			<item name="gunBowT3CompoundBowRareRobinhood" prob=".15"/>
+			<item name="gunBowT3CompoundBowRareNinja" prob=".15"/>
+			<item name="gunBowT3CompoundBowRareVampire" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<!-- CROSSBOW - TIER 3 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT3_Archery02']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT3_Archery02" loot_quality_template="QLTemplateT2">
+			<item name="gunBowT3CompoundCrossbow"/>
+			<item name="gunBowT3CompoundCrossbowRareRobinhood" prob=".15"/>
+			<item name="gunBowT3CompoundCrossbowRareNinja" prob=".15"/>
+			<item name="gunBowT3CompoundCrossbowRareVampire" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT2']">
+		<item name="gunBowT3CompoundBowRareRobinhood" prob=".15"/>
+		<item name="gunBowT3CompoundBowRareNinja" prob=".15"/>
+		<item name="gunBowT3CompoundBowRareVampire" prob=".15"/>
+		<item name="gunBowT3CompoundCrossbowRareRobinhood" prob=".15"/>
+		<item name="gunBowT3CompoundCrossbowRareNinja" prob=".15"/>
+		<item name="gunBowT3CompoundCrossbowRareVampire" prob=".15"/>
+	</append>
+
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- PISTOL - TIER 0 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Gunslinger']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT0_Gunslinger" loot_quality_template="QLTemplateT0">
+			<item name="gunHandgunT0PipePistol"/>
+			<item name="gunHandgunT0PipePistolRareExperienced" prob=".15"/>
+			<item name="gunHandgunT0PipePistolRareApple" prob=".15"/>
+			<item name="gunHandgunT0PipePistolRareFasthands" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	<append xpath="/lootcontainers/lootgroup[@name='groupFootlockerWeapons01']">
+		<item name="gunHandgunT0PipePistolRareExperienced" prob=".15"/>
+		<item name="gunHandgunT0PipePistolRareApple" prob=".15"/>
+		<item name="gunHandgunT0PipePistolRareFasthands" prob=".15"/>
+	</append>
+	
+	<!-- PISTOL - TIER 1 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Gunslinger']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT1_Gunslinger" loot_quality_template="QLTemplateT1">
+			<item name="gunHandgunT1Pistol"/>
+			<item name="gunHandgunT1PistolRareCrusher" prob=".15"/>
+			<item name="gunHandgunT1PistolRareUnkillable" prob=".15"/>
+			<item name="gunHandgunT1PistolRareUniversal" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT1']">
+		<item name="gunHandgunT1PistolRareCrusher" prob=".15"/>
+		<item name="gunHandgunT1PistolRareUnkillable" prob=".15"/>
+		<item name="gunHandgunT1PistolRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupFootlockerWeapons02']">
+		<item name="gunHandgunT1PistolRareCrusher" prob=".15"/>
+		<item name="gunHandgunT1PistolRareUnkillable" prob=".15"/>
+		<item name="gunHandgunT1PistolRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupFootlockerWeapons02']">
+		<item name="gunHandgunT1PistolRareCrusher" prob=".15"/>
+		<item name="gunHandgunT1PistolRareUnkillable" prob=".15"/>
+		<item name="gunHandgunT1PistolRareUniversal" prob=".15"/>
+	</append>
+	
+	<!-- PISTOL - TIER 2 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Gunslinger']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT2_Gunslinger" loot_quality_template="QLTemplateT2">
+			<item name="gunHandgunT2Magnum44"/>
+			<item name="gunHandgunT2Magnum44RareFasthands" prob=".15"/>
+			<item name="gunHandgunT2Magnum44RareSweeper" prob=".15"/>
+			<item name="gunHandgunT2Magnum44RareRespect" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT2']">
+		<item name="gunHandgunT2Magnum44RareFasthands" prob=".15"/>
+		<item name="gunHandgunT2Magnum44RareSweeper" prob=".15"/>
+		<item name="gunHandgunT2Magnum44RareRespect" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="gunHandgunT2Magnum44RareFasthands" prob=".15"/>
+		<item name="gunHandgunT2Magnum44RareSweeper" prob=".15"/>
+		<item name="gunHandgunT2Magnum44RareRespect" prob=".15"/>
+	</append>
+	
+	<!-- SMG5 - TIER 3 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT3_Gunslinger01']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT3_Gunslinger01" loot_quality_template="QLTemplateT3">
+			<item name="gunHandgunT3SMG5"/>
+			<item name="gunHandgunT3SMG5RareSnowstorm" prob=".15"/>
+			<item name="gunHandgunT3SMG5RareUnkillable" prob=".15"/>
+			<item name="gunHandgunT3SMG5RareStable" prob=".15"/>
+			<item name="gunHandgunT3SMG5RareUniversal" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT3']">
+		<item name="gunHandgunT3SMG5RareSnowstorm" prob=".15"/>
+		<item name="gunHandgunT3SMG5RareUnkillable" prob=".15"/>
+		<item name="gunHandgunT3SMG5RareStable" prob=".15"/>
+		<item name="gunHandgunT3SMG5RareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="gunHandgunT3SMG5RareSnowstorm" prob=".15"/>
+		<item name="gunHandgunT3SMG5RareUnkillable" prob=".15"/>
+		<item name="gunHandgunT3SMG5RareStable" prob=".15"/>
+		<item name="gunHandgunT3SMG5RareUniversal" prob=".15"/>
+	</append>
+	
+	<!-- PISTOL - TIER 3 -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupWeaponsT3_Gunslinger02']"/>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+		<lootgroup name="groupWeaponsT3_Gunslinger02" loot_quality_template="QLTemplateT3">
+			<item name="gunHandgunT3DesertVulture"/>
+			<item name="gunHandgunT3DesertVultureRareExperienced" prob=".15"/>
+			<item name="gunHandgunT3DesertVultureRareUniversal" prob=".15"/>
+			<item name="gunHandgunT3DesertVultureRareKnockdown" prob=".15"/>
+			<item name="gunHandgunT3DesertVultureRareVampire" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsRangedT3']">
+		<item name="gunHandgunT3DesertVultureRareExperienced" prob=".15"/>
+		<item name="gunHandgunT3DesertVultureRareUniversal" prob=".15"/>
+		<item name="gunHandgunT3DesertVultureRareKnockdown" prob=".15"/>
+		<item name="gunHandgunT3DesertVultureRareVampire" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="gunHandgunT3DesertVultureRareExperienced" prob=".15"/>
+		<item name="gunHandgunT3DesertVultureRareUniversal" prob=".15"/>
+		<item name="gunHandgunT3DesertVultureRareKnockdown" prob=".15"/>
+		<item name="gunHandgunT3DesertVultureRareVampire" prob=".15"/>
+	</append>
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- MELEE WEAPON -->
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->	
+	<!-- SPEAR - TIER 0 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_All']">
+		<item name="meleeWpnSpearT0StoneSpearRareConvenient" prob=".15"/>
+		<item name="meleeWpnSpearT0StoneSpearRareExperienced" prob=".15"/>
+		<item name="meleeWpnSpearT0StoneSpearRareVampire" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Melee']">
+		<item name="meleeWpnSpearT0StoneSpearRareConvenient" prob=".15"/>
+		<item name="meleeWpnSpearT0StoneSpearRareExperienced" prob=".15"/>
+		<item name="meleeWpnSpearT0StoneSpearRareVampire" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier0melee']">
+		<item name="meleeWpnSpearT0StoneSpearRareConvenient" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSpearT0StoneSpearRareExperienced" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSpearT0StoneSpearRareVampire" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- SPEAR - TIER 1 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Melee']">
+		<item name="meleeWpnSpearT1IronSpearRareExperienced" prob=".15"/>
+		<item name="meleeWpnSpearT1IronSpearRareUnkillable" prob=".15"/>
+		<item name="meleeWpnSpearT1IronSpearRareCrusher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT1']">
+		<item name="meleeWpnSpearT1IronSpearRareExperienced" prob=".15"/>
+		<item name="meleeWpnSpearT1IronSpearRareUnkillable" prob=".15"/>
+		<item name="meleeWpnSpearT1IronSpearRareCrusher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier1melee']">
+		<item name="meleeWpnSpearT1IronSpearRareExperienced" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSpearT1IronSpearRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSpearT1IronSpearRareCrusher" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- SPEAR - TIER 3 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+		<item name="meleeWpnSpearT3SteelSpearRareAwl" prob=".15"/>
+		<item name="meleeWpnSpearT3SteelSpearRareConvenient" prob=".15"/>
+		<item name="meleeWpnSpearT3SteelSpearRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT2']">
+		<item name="meleeWpnSpearT3SteelSpearRareAwl" prob=".15"/>
+		<item name="meleeWpnSpearT3SteelSpearRareConvenient" prob=".15"/>
+		<item name="meleeWpnSpearT3SteelSpearRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="meleeWpnSpearT3SteelSpearRareAwl" prob=".15"/>
+		<item name="meleeWpnSpearT3SteelSpearRareConvenient" prob=".15"/>
+		<item name="meleeWpnSpearT3SteelSpearRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2melee']">
+		<item name="meleeWpnSpearT3SteelSpearRareAwl" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSpearT3SteelSpearRareConvenient" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSpearT3SteelSpearRareUniversal" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- CLUB - TIER 0 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_All']">
+		<item name="meleeWpnClubT0WoodenClubRareConvenient" prob=".15"/>
+		<item name="meleeWpnClubT0WoodenClubRareCrusher" prob=".15"/>
+		<item name="meleeWpnClubT0WoodenClubRareKnockdown" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Melee']">
+		<item name="meleeWpnClubT0WoodenClubRareConvenient" prob=".15"/>
+		<item name="meleeWpnClubT0WoodenClubRareCrusher" prob=".15"/>
+		<item name="meleeWpnClubT0WoodenClubRareKnockdown" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier0melee']">
+		<item name="meleeWpnClubT0WoodenClubRareConvenient" random_durability="false" prob=".15"/>
+		<item name="meleeWpnClubT0WoodenClubRareCrusher" random_durability="false" prob=".15"/>
+		<item name="meleeWpnClubT0WoodenClubRareKnockdown" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- CLUB - TIER 1 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Melee']">
+		<item name="meleeWpnClubT1BaseballBatRareExperienced" prob=".15"/>
+		<item name="meleeWpnClubT1BaseballBatRareChampion" prob=".15"/>
+		<item name="meleeWpnClubT1BaseballBatRareVampire" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT1']">
+		<item name="meleeWpnClubT1BaseballBatRareExperienced" prob=".15"/>
+		<item name="meleeWpnClubT1BaseballBatRareChampion" prob=".15"/>
+		<item name="meleeWpnClubT1BaseballBatRareVampire" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier1melee']">
+		<item name="meleeWpnClubT1BaseballBatRareExperienced" random_durability="false" prob=".15"/>
+		<item name="meleeWpnClubT1BaseballBatRareChampion" random_durability="false" prob=".15"/>
+		<item name="meleeWpnClubT1BaseballBatRareVampire" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- CLUB - TIER 3 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+		<item name="meleeWpnClubT3SteelClubRareExperienced" prob=".15"/>
+		<item name="meleeWpnClubT3SteelClubRareUniversal" prob=".15"/>
+		<item name="meleeWpnClubT3SteelClubRareUnkillable" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT2']">
+		<item name="meleeWpnClubT3SteelClubRareExperienced" prob=".15"/>
+		<item name="meleeWpnClubT3SteelClubRareUniversal" prob=".15"/>
+		<item name="meleeWpnClubT3SteelClubRareUnkillable" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="meleeWpnClubT3SteelClubRareExperienced" prob=".15"/>
+		<item name="meleeWpnClubT3SteelClubRareUniversal" prob=".15"/>
+		<item name="meleeWpnClubT3SteelClubRareUnkillable" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2melee']">
+		<item name="meleeWpnClubT3SteelClubRareExperienced" random_durability="false" prob=".15"/>
+		<item name="meleeWpnClubT3SteelClubRareUniversal" random_durability="false" prob=".15"/>
+		<item name="meleeWpnClubT3SteelClubRareUnkillable" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- SLEDGEHAMMER - TIER 0 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_All']">
+		<item name="meleeWpnSledgeT0StoneSledgehammerRareConvenient" prob=".15"/>
+		<item name="meleeWpnSledgeT0StoneSledgehammerRareCrusher" prob=".15"/>
+		<item name="meleeWpnSledgeT0StoneSledgehammerRareKnockdown" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Melee']">
+		<item name="meleeWpnSledgeT0StoneSledgehammerRareConvenient" prob=".15"/>
+		<item name="meleeWpnSledgeT0StoneSledgehammerRareCrusher" prob=".15"/>
+		<item name="meleeWpnSledgeT0StoneSledgehammerRareKnockdown" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier0melee']">
+		<item name="meleeWpnSledgeT0StoneSledgehammerRareConvenient" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSledgeT0StoneSledgehammerRareCrusher" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSledgeT0StoneSledgehammerRareKnockdown" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- SLEDGEHAMMER - TIER 1 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Melee']">
+		<item name="meleeWpnSledgeT1IronSledgehammerRareExperienced" prob=".15"/>
+		<item name="meleeWpnSledgeT1IronSledgehammerRareUnkillable" prob=".15"/>
+		<item name="meleeWpnSledgeT1IronSledgehammerRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT1']">
+		<item name="meleeWpnSledgeT1IronSledgehammerRareExperienced" prob=".15"/>
+		<item name="meleeWpnSledgeT1IronSledgehammerRareUnkillable" prob=".15"/>
+		<item name="meleeWpnSledgeT1IronSledgehammerRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT1Bonus']">
+		<item name="meleeWpnSledgeT1IronSledgehammerRareExperienced" prob=".15"/>
+		<item name="meleeWpnSledgeT1IronSledgehammerRareUnkillable" prob=".15"/>
+		<item name="meleeWpnSledgeT1IronSledgehammerRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier1melee']">
+		<item name="meleeWpnSledgeT1IronSledgehammerRareExperienced" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSledgeT1IronSledgehammerRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSledgeT1IronSledgehammerRareUniversal" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- SLEDGEHAMMER - TIER 3 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareChampion" prob=".15"/>
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareConvenient" prob=".15"/>
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareVampire" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT2']">
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareChampion" prob=".15"/>
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareConvenient" prob=".15"/>
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareVampire" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareChampion" prob=".15"/>
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareConvenient" prob=".15"/>
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareVampire" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2melee']">
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareChampion" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareConvenient" random_durability="false" prob=".15"/>
+		<item name="meleeWpnSledgeT3SteelSledgehammerRareVampire" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- KNUCKLE - TIER 0 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_All']">
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareStunner" prob=".15"/>
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareExperienced" prob=".15"/>
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_MeleeNoStone']">
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareStunner" prob=".15"/>
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareExperienced" prob=".15"/>
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupFootlockerWeapons01']">
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareStunner" prob=".15"/>
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareExperienced" prob=".15"/>
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Melee']">
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareStunner" prob=".15"/>
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareExperienced" prob=".15"/>
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier0melee']">
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareStunner" random_durability="false" prob=".15"/>
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareExperienced" random_durability="false" prob=".15"/>
+		<item name="meleeWpnKnucklesT0LeatherKnucklesRareUniversal" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- KNUCKLE - TIER 1 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Melee']">
+		<item name="meleeWpnKnucklesT1IronKnucklesRareConvenient" prob=".15"/>
+		<item name="meleeWpnKnucklesT1IronKnucklesRareUnkillable" prob=".15"/>
+		<item name="meleeWpnKnucklesT1IronKnucklesRareCrusher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT1']">
+		<item name="meleeWpnKnucklesT1IronKnucklesRareConvenient" prob=".15"/>
+		<item name="meleeWpnKnucklesT1IronKnucklesRareUnkillable" prob=".15"/>
+		<item name="meleeWpnKnucklesT1IronKnucklesRareCrusher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupFootlockerWeapons02']">
+		<item name="meleeWpnKnucklesT1IronKnucklesRareConvenient" prob=".15"/>
+		<item name="meleeWpnKnucklesT1IronKnucklesRareUnkillable" prob=".15"/>
+		<item name="meleeWpnKnucklesT1IronKnucklesRareCrusher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier1melee']">
+		<item name="meleeWpnKnucklesT1IronKnucklesRareConvenient" random_durability="false" prob=".15"/>
+		<item name="meleeWpnKnucklesT1IronKnucklesRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeWpnKnucklesT1IronKnucklesRareCrusher" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- KNUCKLE - TIER 3 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareAwl" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareConvenient" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareExperienced" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareButcher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT2']">
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareAwl" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareConvenient" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareExperienced" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareButcher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareAwl" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareConvenient" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareExperienced" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareButcher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2melee']">
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareAwl" random_durability="false" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareConvenient" random_durability="false" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareExperienced" random_durability="false" prob=".15"/>
+		<item name="meleeWpnKnucklesT3SteelKnucklesRareButcher" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- BLADE - TIER 0 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_All']">
+		<item name="meleeWpnBladeT0BoneKnifeRareAwl" prob=".15"/>
+		<item name="meleeWpnBladeT0BoneKnifeRareVampire" prob=".15"/>
+		<item name="meleeWpnBladeT0BoneKnifeRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_MeleeNoStone']">
+		<item name="meleeWpnBladeT0BoneKnifeRareAwl" prob=".15"/>
+		<item name="meleeWpnBladeT0BoneKnifeRareVampire" prob=".15"/>
+		<item name="meleeWpnBladeT0BoneKnifeRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupFootlockerWeapons01']">
+		<item name="meleeWpnBladeT0BoneKnifeRareAwl" prob=".15"/>
+		<item name="meleeWpnBladeT0BoneKnifeRareVampire" prob=".15"/>
+		<item name="meleeWpnBladeT0BoneKnifeRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Melee']">
+		<item name="meleeWpnBladeT0BoneKnifeRareAwl" prob=".15"/>
+		<item name="meleeWpnBladeT0BoneKnifeRareVampire" prob=".15"/>
+		<item name="meleeWpnBladeT0BoneKnifeRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier0melee']">
+		<item name="meleeWpnBladeT0BoneKnifeRareAwl" random_durability="false" prob=".15"/>
+		<item name="meleeWpnBladeT0BoneKnifeRareVampire" random_durability="false" prob=".15"/>
+		<item name="meleeWpnBladeT0BoneKnifeRareUniversal" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- BLADE - TIER 1 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Melee']">
+		<item name="meleeWpnBladeT1HuntingKnifeRareButcher" prob=".15"/>
+		<item name="meleeWpnBladeT1HuntingKnifeRareExperienced" prob=".15"/>
+		<item name="meleeWpnBladeT1HuntingKnifeRareCrusher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT1']">
+		<item name="meleeWpnBladeT1HuntingKnifeRareButcher" prob=".15"/>
+		<item name="meleeWpnBladeT1HuntingKnifeRareExperienced" prob=".15"/>
+		<item name="meleeWpnBladeT1HuntingKnifeRareCrusher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupToilet02']">
+		<item name="meleeWpnBladeT1HuntingKnifeRareButcher" prob=".15"/>
+		<item name="meleeWpnBladeT1HuntingKnifeRareExperienced" prob=".15"/>
+		<item name="meleeWpnBladeT1HuntingKnifeRareCrusher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupFootlockerWeapons02']">
+		<item name="meleeWpnBladeT1HuntingKnifeRareButcher" prob=".15"/>
+		<item name="meleeWpnBladeT1HuntingKnifeRareExperienced" prob=".15"/>
+		<item name="meleeWpnBladeT1HuntingKnifeRareCrusher" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier1melee']">
+		<item name="meleeWpnBladeT1HuntingKnifeRareButcher" random_durability="false" prob=".15"/>
+		<item name="meleeWpnBladeT1HuntingKnifeRareExperienced" random_durability="false" prob=".15"/>
+		<item name="meleeWpnBladeT1HuntingKnifeRareCrusher" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- BLADE - TIER 3 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+		<item name="meleeWpnBladeT3MacheteRareConvenient" prob=".15"/>
+		<item name="meleeWpnBladeT3MacheteRareUnkillable" prob=".15"/>
+		<item name="meleeWpnBladeT3MacheteRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT2']">
+		<item name="meleeWpnBladeT3MacheteRareConvenient" prob=".15"/>
+		<item name="meleeWpnBladeT3MacheteRareUnkillable" prob=".15"/>
+		<item name="meleeWpnBladeT3MacheteRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="meleeWpnBladeT3MacheteRareConvenient" prob=".15"/>
+		<item name="meleeWpnBladeT3MacheteRareUnkillable" prob=".15"/>
+		<item name="meleeWpnBladeT3MacheteRareUniversal" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2melee']">
+		<item name="meleeWpnBladeT3MacheteRareConvenient" random_durability="false" prob=".15"/>
+		<item name="meleeWpnBladeT3MacheteRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeWpnBladeT3MacheteRareUniversal" random_durability="false" prob=".15"/>
+	</append>	
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- BATON - TIER 0 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_All']">
+		<item name="meleeWpnBatonT0PipeBatonRareConvenient" prob=".15"/>
+		<item name="meleeWpnBatonT0PipeBatonRareVampire" prob=".15"/>
+		<item name="meleeWpnBatonT0PipeBatonRareStunner" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_MeleeNoStone']">
+		<item name="meleeWpnBatonT0PipeBatonRareConvenient" prob=".15"/>
+		<item name="meleeWpnBatonT0PipeBatonRareVampire" prob=".15"/>
+		<item name="meleeWpnBatonT0PipeBatonRareStunner" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Electrocutioner']">
+		<item name="meleeWpnBatonT0PipeBatonRareConvenient" prob=".15"/>
+		<item name="meleeWpnBatonT0PipeBatonRareVampire" prob=".15"/>
+		<item name="meleeWpnBatonT0PipeBatonRareStunner" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_Melee']">
+		<item name="meleeWpnBatonT0PipeBatonRareConvenient" prob=".15"/>
+		<item name="meleeWpnBatonT0PipeBatonRareVampire" prob=".15"/>
+		<item name="meleeWpnBatonT0PipeBatonRareStunner" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier0melee']">
+		<item name="meleeWpnBatonT0PipeBatonRareConvenient" random_durability="false" prob=".15"/>
+		<item name="meleeWpnBatonT0PipeBatonRareVampire" random_durability="false" prob=".15"/>
+		<item name="meleeWpnBatonT0PipeBatonRareStunner" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- BATON - TIER 2 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+		<item name="meleeWpnBatonT2StunBatonRareConvenient" prob=".15"/>
+		<item name="meleeWpnBatonT2StunBatonRareUnkillable" prob=".15"/>
+		<item name="meleeWpnBatonT2StunBatonRareExperienced" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT2']">
+		<item name="meleeWpnBatonT2StunBatonRareConvenient" prob=".15"/>
+		<item name="meleeWpnBatonT2StunBatonRareUnkillable" prob=".15"/>
+		<item name="meleeWpnBatonT2StunBatonRareExperienced" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupStunBaton']">
+		<item name="meleeWpnBatonT2StunBatonRareConvenient" prob=".15"/>
+		<item name="meleeWpnBatonT2StunBatonRareUnkillable" prob=".15"/>
+		<item name="meleeWpnBatonT2StunBatonRareExperienced" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="meleeWpnBatonT2StunBatonRareConvenient" prob=".15"/>
+		<item name="meleeWpnBatonT2StunBatonRareUnkillable" prob=".15"/>
+		<item name="meleeWpnBatonT2StunBatonRareExperienced" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2melee']">
+		<item name="meleeWpnBatonT2StunBatonRareConvenient" random_durability="false" prob=".15"/>
+		<item name="meleeWpnBatonT2StunBatonRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeWpnBatonT2StunBatonRareExperienced" random_durability="false" prob=".15"/>
+	</append>	
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- TOOL -->
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->	
+	<!-- AXE - TIER 0 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT0']">
+		<item name="meleeToolRepairT0StoneAxeRareLumberjack" prob=".15"/>
+		<item name="meleeToolRepairT0StoneAxeRareMiner" prob=".15"/>
+		<item name="meleeToolRepairT0StoneAxeRareUnkillable" prob=".15"/>
+		<item name="meleeToolRepairT0StoneAxeRareConvenient" prob=".15"/>
+	</append>
+	
+	<!-- AXE - TIER 1 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT1Bonus']">
+		<item name="meleeToolAxeT1IronFireaxeRareLumberjack" prob=".15"/>
+		<item name="meleeToolAxeT1IronFireaxeRareUnkillable" prob=".15"/>
+		<item name="meleeToolAxeT1IronFireaxeRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT1']">
+		<item name="meleeToolAxeT1IronFireaxeRareLumberjack" prob=".15"/>
+		<item name="meleeToolAxeT1IronFireaxeRareUnkillable" prob=".15"/>
+		<item name="meleeToolAxeT1IronFireaxeRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestToolsT1']">
+		<item name="meleeToolAxeT1IronFireaxeRareLumberjack" prob=".15"/>
+		<item name="meleeToolAxeT1IronFireaxeRareUnkillable" prob=".15"/>
+		<item name="meleeToolAxeT1IronFireaxeRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupFireTruck03']">
+		<item name="meleeToolAxeT1IronFireaxeRareLumberjack" prob=".15"/>
+		<item name="meleeToolAxeT1IronFireaxeRareUnkillable" prob=".15"/>
+		<item name="meleeToolAxeT1IronFireaxeRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier1tool']">
+		<item name="meleeToolAxeT1IronFireaxeRareLumberjack" random_durability="false" prob=".15"/>
+		<item name="meleeToolAxeT1IronFireaxeRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeToolAxeT1IronFireaxeRareConvenient" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- AXE - TIER 2 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT2']">
+		<item name="meleeToolAxeT2SteelAxeRareLumberjack" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareUnkillable" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareConvenient" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareChampion" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestToolsT2']">
+		<item name="meleeToolAxeT2SteelAxeRareLumberjack" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareUnkillable" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareConvenient" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareChampion" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="meleeToolAxeT2SteelAxeRareLumberjack" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareUnkillable" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareConvenient" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareChampion" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2tool']">
+		<item name="meleeToolAxeT2SteelAxeRareLumberjack" random_durability="false" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareConvenient" random_durability="false" prob=".15"/>
+		<item name="meleeToolAxeT2SteelAxeRareChampion" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- PICKAXE - TIER 1 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT1Bonus']">
+		<item name="meleeToolPickT1IronPickaxeRareMetalist" prob=".15"/>
+		<item name="meleeToolPickT1IronPickaxeRareMason" prob=".15"/>
+		<item name="meleeToolPickT1IronPickaxeRareUnkillable" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT1']">
+		<item name="meleeToolPickT1IronPickaxeRareMetalist" prob=".15"/>
+		<item name="meleeToolPickT1IronPickaxeRareMason" prob=".15"/>
+		<item name="meleeToolPickT1IronPickaxeRareUnkillable" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestToolsT1']">
+		<item name="meleeToolPickT1IronPickaxeRareMetalist" prob=".15"/>
+		<item name="meleeToolPickT1IronPickaxeRareMason" prob=".15"/>
+		<item name="meleeToolPickT1IronPickaxeRareUnkillable" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier1tool']">
+		<item name="meleeToolPickT1IronPickaxeRareMetalist" random_durability="false" prob=".15"/>
+		<item name="meleeToolPickT1IronPickaxeRareMason" random_durability="false" prob=".15"/>
+		<item name="meleeToolPickT1IronPickaxeRareUnkillable" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- PICKAXE - TIER 2 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT2']">
+		<item name="meleeToolPickT2SteelPickaxeRareMetalist" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareMason" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareUnkillable" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestToolsT2']">
+		<item name="meleeToolPickT2SteelPickaxeRareMetalist" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareMason" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareUnkillable" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="meleeToolPickT2SteelPickaxeRareMetalist" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareMason" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareUnkillable" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2tool']">
+		<item name="meleeToolPickT2SteelPickaxeRareMetalist" random_durability="false" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareMason" random_durability="false" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeToolPickT2SteelPickaxeRareConvenient" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- SHOVEL - TIER 0 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT0']">
+		<item name="meleeToolShovelT0StoneShovelRareDigger" prob=".15"/>
+		<item name="meleeToolShovelT0StoneShovelRareUnkillable" prob=".15"/>
+		<item name="meleeToolShovelT0StoneShovelRareConvenient" prob=".15"/>
+	</append>
+	
+	<!-- SHOVEL - TIER 1 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT1Bonus']">
+		<item name="meleeToolShovelT1IronShovelRareDigger" prob=".15"/>
+		<item name="meleeToolShovelT1IronShovelRareUnkillable" prob=".15"/>
+		<item name="meleeToolShovelT1IronShovelRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT1']">
+		<item name="meleeToolShovelT1IronShovelRareDigger" prob=".15"/>
+		<item name="meleeToolShovelT1IronShovelRareUnkillable" prob=".15"/>
+		<item name="meleeToolShovelT1IronShovelRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestToolsT1']">
+		<item name="meleeToolShovelT1IronShovelRareDigger" prob=".15"/>
+		<item name="meleeToolShovelT1IronShovelRareUnkillable" prob=".15"/>
+		<item name="meleeToolShovelT1IronShovelRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier1tool']">
+		<item name="meleeToolShovelT1IronShovelRareDigger" random_durability="false" prob=".15"/>
+		<item name="meleeToolShovelT1IronShovelRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeToolShovelT1IronShovelRareConvenient" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- SHOVEL - TIER 2 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT2']">
+		<item name="meleeToolShovelT2SteelShovelRareDigger" prob=".15"/>
+		<item name="meleeToolShovelT2SteelShovelRareUnkillable" prob=".15"/>
+		<item name="meleeToolShovelT2SteelShovelRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestToolsT2']">
+		<item name="meleeToolShovelT2SteelShovelRareDigger" prob=".15"/>
+		<item name="meleeToolShovelT2SteelShovelRareUnkillable" prob=".15"/>
+		<item name="meleeToolShovelT2SteelShovelRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="meleeToolShovelT2SteelShovelRareDigger" prob=".15"/>
+		<item name="meleeToolShovelT2SteelShovelRareUnkillable" prob=".15"/>
+		<item name="meleeToolShovelT2SteelShovelRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2tool']">
+		<item name="meleeToolShovelT2SteelShovelRareDigger" random_durability="false" prob=".15"/>
+		<item name="meleeToolShovelT2SteelShovelRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeToolShovelT2SteelShovelRareConvenient" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- SALVAGE - TIER 1 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT1']">
+		<item name="meleeToolSalvageT1WrenchRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT1Bonus']">
+		<item name="meleeToolSalvageT1WrenchRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT1Wrench']">
+		<item name="meleeToolSalvageT1WrenchRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupCarWeaponsTools']">
+		<item name="meleeToolSalvageT1WrenchRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestToolsT1']">
+		<item name="meleeToolSalvageT1WrenchRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWrench']">
+		<item name="meleeToolSalvageT1WrenchRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier1tool']">
+		<item name="meleeToolSalvageT1WrenchRareScavenger" random_durability="false" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeToolSalvageT1WrenchRareConvenient" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- SALVAGE - TIER 2 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT2']">
+		<item name="meleeToolSalvageT2RatchetRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT2RatchetRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT2RatchetRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestToolsT2']">
+		<item name="meleeToolSalvageT2RatchetRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT2RatchetRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT2RatchetRareConvenient" prob=".15"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2tool']">
+		<item name="meleeToolSalvageT2RatchetRareScavenger" random_durability="false" prob=".15"/>
+		<item name="meleeToolSalvageT2RatchetRareUnkillable" random_durability="false" prob=".15"/>
+		<item name="meleeToolSalvageT2RatchetRareConvenient" random_durability="false" prob=".15"/>
+	</append>
+	
+	<!-- MOTOR TOOL - TIER 3 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT3']">
+		<item name="meleeToolSalvageT3ImpactDriverRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT3ImpactDriverRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT3ImpactDriverRareConvenient" prob=".15"/>
+		
+		<item name="meleeToolPickT3AugerRareMetalist" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareMason" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareDigger" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareUnkillable" prob=".15"/>
+		
+		<item name="meleeToolAxeT3ChainsawRareLumberjack" prob=".15"/>
+		<item name="meleeToolAxeT3ChainsawRareUnkillable" prob=".15"/>		
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestToolsT3']">
+		<item name="meleeToolSalvageT3ImpactDriverRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT3ImpactDriverRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT3ImpactDriverRareConvenient" prob=".15"/>
+		
+		<item name="meleeToolPickT3AugerRareMetalist" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareMason" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareDigger" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareUnkillable" prob=".15"/>
+		
+		<item name="meleeToolAxeT3ChainsawRareLumberjack" prob=".15"/>
+		<item name="meleeToolAxeT3ChainsawRareUnkillable" prob=".15"/>		
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<item name="meleeToolSalvageT3ImpactDriverRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT3ImpactDriverRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT3ImpactDriverRareConvenient" prob=".15"/>
+		
+		<item name="meleeToolPickT3AugerRareMetalist" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareMason" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareDigger" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareUnkillable" prob=".15"/>
+		
+		<item name="meleeToolAxeT3ChainsawRareLumberjack" prob=".15"/>
+		<item name="meleeToolAxeT3ChainsawRareUnkillable" prob=".15"/>		
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier3tool']">
+		<item name="meleeToolSalvageT3ImpactDriverRareScavenger" prob=".15"/>
+		<item name="meleeToolSalvageT3ImpactDriverRareUnkillable" prob=".15"/>
+		<item name="meleeToolSalvageT3ImpactDriverRareConvenient" prob=".15"/>
+		
+		<item name="meleeToolPickT3AugerRareMetalist" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareMason" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareDigger" prob=".15"/>
+		<item name="meleeToolPickT3AugerRareUnkillable" prob=".15"/>
+		
+		<item name="meleeToolAxeT3ChainsawRareLumberjack" prob=".15"/>
+		<item name="meleeToolAxeT3ChainsawRareUnkillable" prob=".15"/>		
+	</append>
+	
+</config>

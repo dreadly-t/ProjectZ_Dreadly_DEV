@@ -1,0 +1,288 @@
+<config>
+		
+	<append xpath="/gameevents">
+		
+		<action_sequence name="AlexRebirth">
+			<property name="action_type" value="Game"/>
+			<property name="target_type" value="Entity"/>
+			<property name="allow_while_dead" value="false"/>
+			
+			<action class="SpawnEntity">
+				<property name="entity_names" value="bossAlexHalf"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="min_distance" value="8"/>
+				<property name="max_distance" value="16"/>
+				<property name="spawn_type" value="Position"/>
+			</action>
+		</action_sequence>
+			
+		<!-- *** DEVOURER MINIOS -->
+		<action_sequence name="eventDevourerMinions">
+			<property name="action_type" value="Game"/>
+			<property name="target_type" value="Entity"/>
+			<property name="allow_while_dead" value="false"/>
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+			<property name="phase" value="0"/>
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="zombies"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="2"/>
+					</requirement>
+					<action class="Delay">
+						<property name="time" value="20"/>
+					</action>
+					<action class="SpawnEntity">
+						<property name="entity_names" value="DevourerMinion"/>
+						<property name="spawn_count" value="1"/>
+						<property name="air_spawn" value="false"/>
+						<property name="add_to_group" value="zombies"/>
+						<property name="safe_spawn" value="true"/>
+						<property name="min_distance" value="8"/>
+						<property name="max_distance" value="16"/>
+						<property name="spawn_type" value="Position"/>
+					</action>
+					<action class="PlaySound">
+						<property name="sound" value="zombiemalealert" param1="alertsound"/>
+						<property name="phase" value="1"/>
+					</action>
+				</decision>
+			</loop>
+		</action_sequence>
+		
+		<!-- *** BEAR DADDY MINIOS -->
+		<action_sequence name="eventBearDaddyMinions">
+			<property name="action_type" value="Game"/>
+			<property name="target_type" value="Entity"/>
+			<property name="allow_while_dead" value="false"/>
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+			<property name="phase" value="0"/>
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="zombies"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="1"/>
+					</requirement>
+					<action class="Delay">
+						<property name="time" value="20"/>
+					</action>
+					<action class="SpawnEntity">
+						<property name="entity_names" value="BearDaddyMinion"/>
+						<property name="spawn_count" value="1"/>
+						<property name="air_spawn" value="false"/>
+						<property name="add_to_group" value="zombies"/>
+						<property name="safe_spawn" value="true"/>
+						<property name="min_distance" value="8"/>
+						<property name="max_distance" value="16"/>
+						<property name="spawn_type" value="Position"/>
+					</action>
+					<action class="PlaySound">
+						<property name="sound" value="zombiemalealert" param1="alertsound"/>
+						<property name="phase" value="1"/>
+					</action>
+				</decision>
+			</loop>
+		</action_sequence>
+		
+		<!-- *** GARGUL MINIOS -->
+		<action_sequence name="eventGargulMinions">
+			<property name="action_type" value="Game"/>
+			<property name="target_type" value="Entity"/>
+			<property name="allow_while_dead" value="false"/>
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+			<property name="phase" value="0"/>
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="zombies"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="2"/>
+					</requirement>
+					<action class="Delay">
+						<property name="time" value="20"/>
+					</action>
+					<action class="SpawnEntity">
+						<property name="entity_names" value="GargulMinion"/>
+						<property name="spawn_count" value="1"/>
+						<property name="air_spawn" value="false"/>
+						<property name="add_to_group" value="zombies"/>
+						<property name="safe_spawn" value="true"/>
+						<property name="min_distance" value="8"/>
+						<property name="max_distance" value="16"/>
+						<property name="spawn_type" value="Position"/>
+						<property name="air_spawn" value="true"/>
+					</action>
+					<action class="PlaySound">
+						<property name="sound" value="zombiemalealert" param1="alertsound"/>
+						<property name="phase" value="1"/>
+					</action>
+				</decision>
+			</loop>
+		</action_sequence>
+		
+		<!-- *** VENOM MINIOS -->
+		<action_sequence name="eventVenomMinions">
+			<property name="action_type" value="Game"/>
+			<property name="target_type" value="Entity"/>
+			<property name="allow_while_dead" value="false"/>
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+			<property name="phase" value="0"/>
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="zombies"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="2"/>
+					</requirement>
+					<action class="Delay">
+						<property name="time" value="20"/>
+					</action>
+					<action class="SpawnEntity">
+						<property name="entity_names" value="VenomMinion"/>
+						<property name="spawn_count" value="1"/>
+						<property name="air_spawn" value="false"/>
+						<property name="add_to_group" value="zombies"/>
+						<property name="safe_spawn" value="true"/>
+						<property name="min_distance" value="8"/>
+						<property name="max_distance" value="16"/>
+						<property name="spawn_type" value="Position"/>
+						<property name="air_spawn" value="true"/>
+					</action>
+					<action class="PlaySound">
+						<property name="sound" value="zombiemalealert" param1="snakealert"/>
+						<property name="phase" value="1"/>
+					</action>
+				</decision>
+			</loop>
+		</action_sequence>
+		
+		<!-- *** WILD BOARS -->
+		<action_sequence name="spawnerWildBoars">
+			<property name="action_type" value="Game"/>
+			<property name="target_type" value="Entity"/>
+			<property name="allow_while_dead" value="false"/>
+			<property name="refund_inactivity" value="false"/>
+			
+			<loop class="For">
+				<property name="phase" value="1" />
+				<property name="loop_count" value="3" />
+				
+				<action class="SpawnEntity">
+					<property name="entity_names" value="animalBoar"/>
+					<property name="spawn_count" value="1"/>
+					<property name="max_distance" value="5"/>
+					<property name="min_distance" value="10"/>
+				</action>
+				
+				<action class="Delay">
+					<property name="time" value="2"/>
+				</action>				
+			</loop>
+		</action_sequence>
+		
+		<!-- *** VETERAN BROTHERHOOD -->
+		<action_sequence name="spawnerVeteranBrotherhood">
+			<property name="action_type" value="Game"/>
+			<property name="target_type" value="Entity"/>
+			<property name="allow_while_dead" value="false"/>
+			<property name="refund_inactivity" value="false"/>
+			
+			<loop class="For">
+				<property name="phase" value="1" />
+				<property name="loop_count" value="2" />
+				
+				<action class="SpawnEntity">
+					<property name="entity_names" value="zombieDemolition,zombieSoldierFeral,zombieSoldierRadiated"/>
+					<property name="spawn_count" value="1"/>
+					<property name="max_distance" value="5"/>
+					<property name="min_distance" value="10"/>
+				</action>
+				
+				<action class="Delay">
+					<property name="time" value="2"/>
+				</action>				
+			</loop>
+		</action_sequence>
+		
+		<!-- *** ANCIENT YETI ICE ROAR -->
+		<action_sequence name="spawnerAncientYetiIceRoar">
+			<property name="action_type" value="Game"/>
+			<property name="target_type" value="Entity"/>
+			<property name="allow_while_dead" value="false"/>
+			<property name="refund_inactivity" value="false"/>
+			
+			<loop class="For">
+				<property name="phase" value="1" />
+				<property name="loop_count" value="2" />
+				
+				<action class="SpawnEntity">
+					<property name="entity_names" value="zombieFrostclawFeral,zombieFrostclawRadiated,zombieFrostclawCharged,zombieFrostclawInfernal"/>
+					<property name="spawn_count" value="1"/>
+					<property name="max_distance" value="5"/>
+					<property name="min_distance" value="10"/>
+				</action>
+				
+				<action class="Delay">
+					<property name="time" value="2"/>
+				</action>				
+			</loop>
+		</action_sequence>
+		
+		<!-- Veteran drop item -->
+		<action_sequence name="BossesDropItem">
+			<requirement class="HasHeld" />
+			
+			<action class="DropHeldItem">
+				<property name="drop_sound" value="itemdropped"/>
+			</action>
+		</action_sequence>
+		
+		<!-- *** CARRIER HORDE -->
+		<action_sequence name="eventCarrierHorde">
+			<property name="action_type" value="Game"/>
+			<property name="target_type" value="Entity"/>
+			<property name="allow_while_dead" value="false"/>
+			<property name="refund_inactivity" value="false"/>
+		
+			<loop class="While">
+			<property name="phase" value="0"/>
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="zombies"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="3"/>
+					</requirement>
+					<action class="Delay">
+						<property name="time" value="25"/>
+					</action>
+					<action class="SpawnEntity">
+						<property name="entity_names" value="bossBitch,bossBurningFlesh,bossCholera,zombieCarrierActive,zombieCarrierDef"/>
+						<property name="spawn_count" value="1"/>
+						<property name="air_spawn" value="false"/>
+						<property name="add_to_group" value="zombies"/>
+						<property name="safe_spawn" value="true"/>
+						<property name="min_distance" value="4"/>
+						<property name="max_distance" value="8"/>
+						<property name="spawn_type" value="Position"/>
+					</action>
+					<action class="PlaySound">
+						<property name="sound" value="zombiemalealert" param1="alertsound"/>
+						<property name="phase" value="1"/>
+					</action>
+				</decision>
+			</loop>
+		</action_sequence>
+		
+		<action_sequence name="eventPlayerBonusReward">
+			<action class="AddItems">
+				<property name="added_items" value="donateZCoin" />
+				<property name="added_item_counts" value="5" />
+			</action>	
+		</action_sequence>
+		
+	</append>
+	
+</config>

@@ -1,0 +1,45 @@
+<configs>
+
+	<append xpath="/entity_classes/entity_class[@name='playerMale']">
+				
+		<effect_group name="Self Traits">
+			<!-- <triggered_effect trigger="onSelfFirstSpawn" action="CallGameEvent" event="startSelfTraits"/> -->
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="$NewSelfTraits" operation="set" value="1"/>
+			
+			<!-- Brittle Bones -->
+			<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger" weights=".15,.15">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger" weights=".3,.3">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger" weights=".5,.5">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="3"/></triggered_effect>
+				
+			<!-- Weak Immunity -->
+			<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffInfectionCatch" weights=".1">
+				<requirement name="ProgressionLevel" progression_name="perkAllergySufferer" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffInfectionCatch" weights=".2">
+				<requirement name="ProgressionLevel" progression_name="perkAllergySufferer" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffInfectionCatch" weights=".3">
+				<requirement name="ProgressionLevel" progression_name="perkAllergySufferer" operation="Equals" value="3"/></triggered_effect>
+			
+			<!-- Crusher -->			
+			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01">
+				<requirement name="HoldingItemHasTags" tags="perkJavelinMaster,perkPummelPete,perkSkullCrusher"/>
+				<requirement name="ProgressionLevel" progression_name="perkCrusher" operation="Equals" value="1"/>
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01">
+				<requirement name="HoldingItemHasTags" tags="perkJavelinMaster,perkPummelPete,perkSkullCrusher"/>
+				<requirement name="ProgressionLevel" progression_name="perkCrusher" operation="Equals" value="2"/>
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01">
+				<requirement name="HoldingItemHasTags" tags="perkJavelinMaster,perkPummelPete,perkSkullCrusher"/>
+				<requirement name="ProgressionLevel" progression_name="perkCrusher" operation="Equals" value="3"/>
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+			</triggered_effect>
+		</effect_group>
+		
+	</append>
+	
+</configs>

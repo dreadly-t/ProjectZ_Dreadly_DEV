@@ -1,0 +1,118 @@
+<config>
+	
+	<!-- Reduced the amount of ammo in infected cleanup crates -->
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT1']/item/@count">1</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT2']/item/@count">2</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT3']/item[@group='groupAmmoLarge']/@count">1</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT4']/item[@group='groupAmmoLarge']/@count">2</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT5']/item[@group='groupAmmoLarge']/@count">6</set>
+	
+	<!-- Increasing the inventory size for a drone -->
+	<set xpath="/lootcontainers/lootcontainer[@name='roboticDrone']/@size">8,4</set>
+	
+	<!-- Magazines and books much less often from loot boxes -->
+	<remove xpath="/lootcontainers/lootgroup[@name='groupZpackBoss']/item[@group='groupZpackBoss02']"/>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackBoss']">
+		<item group="groupZpackBoss02" count="2" prob=".4" force_prob="true"/>
+	</append>
+	<set xpath="/lootcontainers/lootgroup[@name='groupZpackBoss']/item[@group='groupAmmoLarge']/@count">1</set>
+	
+	<remove xpath="/lootcontainers/lootgroup[@name='groupZpackBoss04']/item[@group='booksRareOnlyScaled']"/>
+	<remove xpath="/lootcontainers/lootgroup[@name='groupZpackStrong']/item[@group='groupZpackStrong02']"/>
+	<remove xpath="/lootcontainers/lootgroup[@name='groupZpackStrong']/item[@group='groupAmmoLarge']"/>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackStrong']">
+		<item group="groupZpackStrong02" prob=".35" force_prob="true"/>
+		<item group="groupAmmoLarge" prob=".6" force_prob="true"/>
+	</append>
+	<remove xpath="/lootcontainers/lootgroup[@name='groupZpackReg']/item[@group='groupZpackReg02']"/>
+	<remove xpath="/lootcontainers/lootgroup[@name='groupZpackReg']/item[@group='groupAmmoLarge']"/>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackReg']">
+		<item group="groupZpackReg02" prob=".25" force_prob="true"/>
+		<item group="groupAmmoLarge" prob=".3" force_prob="true"/>
+	</append>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupMedicalRare']">
+		<item name="drinkCanMegaCrush" loot_prob_template="med"/>
+	</append>
+	
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT5']">
+		<lootgroup name="PreciousMetals">
+			<item name="resourceRawDiamond" count="1" loot_stage_count_mod="0.003"/>
+			<item name="resourceGoldNugget" count="2,3" loot_stage_count_mod="0.003"/>
+			<item name="resourceSilverNugget" count="5,8" loot_stage_count_mod="0.003"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT3']">
+		<item group="PreciousMetals" count="1"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT4']">
+		<item group="PreciousMetals" count="2"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5']">
+		<item group="PreciousMetals" count="3"/>
+	</append>
+	
+	<remove xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT5_08']/item[@name='questRewardT4FoodBundle']"/>
+	
+	<!-- Balance loot AMMO -->
+	<!-- 9mm -->
+	<set xpath="/lootcontainers/lootgroup[@name='group9mmSmall']/item/@count">3,5</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group9mmSmall']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group9mmMedium']/item/@count">6,9</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group9mmMedium']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group9mmLarge']/item/@count">10,16</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group9mmLarge']/item/@loot_stage_count_mod">0.006</set>
+	<!-- .44 -->
+	<set xpath="/lootcontainers/lootgroup[@name='group44MagnumSmall']/item/@count">3,5</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group44MagnumSmall']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group44MagnumMedium']/item/@count">6,9</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group44MagnumMedium']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group44MagnumLarge']/item/@count">10,16</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group44MagnumLarge']/item/@loot_stage_count_mod">0.006</set>
+	<!-- 7.62 -->
+	<set xpath="/lootcontainers/lootgroup[@name='group762mmSmall']/item/@count">2,4</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group762mmSmall']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group762mmMedium']/item/@count">4,6</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group762mmMedium']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group762mmLarge']/item/@count">8,12</set>
+	<set xpath="/lootcontainers/lootgroup[@name='group762mmLarge']/item/@loot_stage_count_mod">0.006</set>
+	<!-- Shotgun -->
+	<set xpath="/lootcontainers/lootgroup[@name='groupShotgunShellSmall']/item/@count">1,2</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupShotgunShellSmall']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupShotgunShellMedium']/item/@count">2,4</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupShotgunShellMedium']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupShotgunShellLarge']/item/@count">4,6</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupShotgunShellLarge']/item/@loot_stage_count_mod">0.006</set>
+	<!-- Arrows -->
+	<set xpath="/lootcontainers/lootgroup[@name='groupArrowSmall']/item/@count">3,5</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupArrowSmall']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupArrowMedium']/item/@count">6,9</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupArrowMedium']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupArrowLarge']/item/@count">10,16</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupArrowLarge']/item/@loot_stage_count_mod">0.006</set>
+	<!-- Crossbow Bolt -->
+	<set xpath="/lootcontainers/lootgroup[@name='groupCrossbowBoltSmall']/item/@count">2,4</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupCrossbowBoltSmall']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupCrossbowBoltMedium']/item/@count">4,7</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupCrossbowBoltMedium']/item/@loot_stage_count_mod">0.006</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupCrossbowBoltLarge']/item/@count">8,12</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupCrossbowBoltLarge']/item/@loot_stage_count_mod">0.006</set>
+	
+	<set xpath="/lootcontainers/lootgroup[@name='groupAmmoMunitions']/item[@group='groupAmmoLarge']/@count">2</set>
+	
+	<!-- Balanced AMMO with infect -->
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT1']/item[@group='groupAmmoMunitions']/@count">1</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT2']/item[@group='groupAmmoMunitions']/@count">2</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT3']/item[@group='groupAmmoMunitions']/@count">2</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT3']/item[@group='groupAmmoLarge']/@count">1</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT4']/item[@group='groupAmmoMunitions']/@count">3</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT4']/item[@group='groupAmmoLarge']/@count">3</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT5']/item[@group='groupAmmoMunitions']/@count">3</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupInfestedT5']/item[@group='groupAmmoLarge']/@count">7</set>
+	
+	<!-- Balance cementmixer and dew collector drop -->
+	<set xpath="/lootcontainers/lootgroup[@name='groupForge']/item[@name='workstationSkillMagazine']/@loot_prob_template">guaranteed</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupCementMixerLoot']/item[@name='workstationSkillMagazine']/@loot_prob_template">guaranteed</set>
+	
+</config>

@@ -1,0 +1,1448 @@
+ <config>
+	
+	<append xpath="/items">
+	
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- START QUEST -->
+		
+		<item name="note1_startQuest">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="cntBookPile13"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="note1_startQuestDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem,DonateBooks"/>
+			<property name="Stacknumber" value="1"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="startQuest1"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="note2_startQuest">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="cntBookPile13"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="note2_startQuestDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="questItem"/>
+			<property name="Stacknumber" value="1"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="startQuest2"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="note3_startQuest">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="cntBookPile13"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="note3_startQuestDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="questItem"/>
+			<property name="Stacknumber" value="1"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="startQuest3"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="note4_startQuest">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="cntBookPile13"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="note4_startQuestDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="questItem,DonateBooks"/>
+			<property name="Stacknumber" value="1"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="startQuest4"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<!-- A set of starting items after completing the starting quest chain -->
+		<item name="startBundle">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleFood"/>
+			<property name="CustomIconTint" value="FFFFFF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="startBundleDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="modArmorHelmetLight,drinkJarYuccaJuice,foodBaconAndEggs,foodHoney"/>
+				<property name="Create_item_count" value="1,10,5,1"/>
+			</property>
+		</item>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- BETTER WEAPON -->
+		
+		<!-- Better Than Just Pipes -->
+		<item name="BetterWeapon_MeleeT1"> <!-- PART 1 -->			
+			<property name="Tags" value="PZ_weapon"/>
+			<property name="CustomIcon" value="cntBookPile07"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="BetterWeapon_MeleeT1Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem"/>
+			<property name="Stacknumber" value="1"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="BetterWeaponMeleeT1"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		<item name="BetterWeapon_MeleeLightT1">	
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="CustomIcon" value="bundleKnife"/>
+			<property name="DescriptionKey" value="BetterWeapon_MeleeLightT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponMeleeLightT1"/>
+			</property>
+		</item>
+		<item name="BetterWeapon_MeleeHeavyT1">		
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="CustomIcon" value="bundleSledge"/>
+			<property name="DescriptionKey" value="BetterWeapon_MeleeHeavyT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponMeleeHeavyT1"/>
+			</property>
+		</item>
+		
+		<!-- Reward - MELEE T1 -->			
+		<item name="Reward_MeleeT1_Spear">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleSpear"/>
+			<property name="CustomIconTint" value="FFFFFF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="Reward_MeleeT1_SpearDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnSpearT1IronSpear,resourceRepairKit"/>
+				<property name="Create_item_count" value="1-3,1"/>
+			</property>
+		</item>
+		<item name="Reward_MeleeT1_Club">
+			<property name="Extends" value="Reward_MeleeT1_Spear"/>
+			<property name="CustomIcon" value="bundleClub"/>
+			<property name="DescriptionKey" value="Reward_MeleeT1_ClubDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnClubT1BaseballBat,resourceRepairKit"/>
+			</property>
+		</item>
+		<item name="Reward_MeleeT1_Sledgehammer">
+			<property name="Extends" value="Reward_MeleeT1_Spear"/>
+			<property name="CustomIcon" value="bundleSledge"/>
+			<property name="DescriptionKey" value="Reward_MeleeT1_SledgehammerDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnSledgeT1IronSledgehammer,resourceRepairKit"/>
+			</property>
+		</item>
+		<item name="Reward_MeleeT1_Knuckles">
+			<property name="Extends" value="Reward_MeleeT1_Spear"/>
+			<property name="CustomIcon" value="bundleKnuckles"/>
+			<property name="DescriptionKey" value="Reward_MeleeT1_KnucklesDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnKnucklesT1IronKnuckles,resourceRepairKit"/>
+			</property>
+		</item>
+		<item name="Reward_MeleeT1_Knife">
+			<property name="Extends" value="Reward_MeleeT1_Spear"/>
+			<property name="CustomIcon" value="bundleKnife"/>
+			<property name="DescriptionKey" value="Reward_MeleeT1_KnifeDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnBladeT1HuntingKnife,resourceRepairKit"/>
+			</property>
+		</item>
+		<item name="Reward_MeleeT1_JunkSledge">
+			<property name="Extends" value="Reward_MeleeT1_Spear"/>
+			<property name="CustomIcon" value="bundleTurrets"/>
+			<property name="DescriptionKey" value="Reward_MeleeT1_JunkSledgeDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunBotT1JunkSledge,resourceRepairKit"/>
+			</property>
+		</item>
+		
+		<item name="BetterWeapon_RangeT1"> <!-- PART 2 -->
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_RangeT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponRangeT1"/>
+			</property>
+		</item>
+		
+		<!-- Reward - RANGE T1 -->
+		<item name="Reward_RangeT1_Rifle">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRifle"/>
+			<property name="CustomIconTint" value="FFFFFF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="Reward_RangeT1_RifleDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunRifleT1HuntingRifle,ammo762mmBulletBall"/>
+				<property name="Create_item_count" value="1-2,60"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT1_Shotgun">
+			<property name="Extends" value="Reward_RangeT1_Rifle"/>
+			<property name="CustomIcon" value="bundleShotgun"/>
+			<property name="DescriptionKey" value="Reward_RangeT1_ShotgunDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunShotgunT1DoubleBarrel,ammoShotgunShell"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT1_MachineGun">
+			<property name="Extends" value="Reward_RangeT1_Rifle"/>
+			<property name="CustomIcon" value="bundleMachineGun"/>
+			<property name="DescriptionKey" value="Reward_RangeT1_MachineGunDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunMGT1AK47,ammo762mmBulletBall"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT1_Archery">
+			<property name="Extends" value="Reward_RangeT1_Rifle"/>
+			<property name="CustomIcon" value="bundleBow"/>
+			<property name="DescriptionKey" value="Reward_RangeT1_ArcheryDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunBowT1WoodenBow,ammoArrowIron"/>
+				<property name="Create_item_count" value="1-3,90"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT1_Pistol">
+			<property name="Extends" value="Reward_RangeT1_Rifle"/>
+			<property name="CustomIcon" value="bundleRevolver"/>
+			<property name="DescriptionKey" value="Reward_RangeT1_PistolDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunHandgunT1Pistol,ammo9mmBulletBall"/>
+				<property name="Create_item_count" value="1-2,90"/>
+			</property>
+		</item>
+		
+		<!-- Almost like in a store -->
+		<item name="BetterWeapon_MeleeT2"> <!-- PART 1 -->	
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_MeleeT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponMeleeT2"/>
+			</property>
+		</item>
+		<item name="BetterWeapon_MeleeLightT2">	
+			<property name="Extends" value="BetterWeapon_MeleeLightT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_MeleeLightT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponMeleeLightT2"/>
+			</property>
+		</item>
+		<item name="BetterWeapon_MeleeHeavyT2">		
+			<property name="Extends" value="BetterWeapon_MeleeHeavyT1"/>
+			<property name="CustomIcon" value="bundleSledge"/>
+			<property name="DescriptionKey" value="BetterWeapon_MeleeHeavyT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponMeleeHeavyT2"/>
+			</property>
+		</item>
+		
+		<!-- Reward - MELEE T2 -->
+		<item name="Reward_MeleeT2_Spear">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleSpear"/>
+			<property name="CustomIconTint" value="42C234"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="Reward_MeleeT2_SpearDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnSpearT3SteelSpear,resourceRepairKit"/>
+				<property name="Create_item_count" value="1-3,1"/>
+			</property>
+		</item>
+		<item name="Reward_MeleeT2_Club">
+			<property name="Extends" value="Reward_MeleeT2_Spear"/>
+			<property name="CustomIcon" value="bundleClub"/>
+			<property name="DescriptionKey" value="Reward_MeleeT2_ClubDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnClubT3SteelClub,resourceRepairKit"/>
+			</property>
+		</item>
+		<item name="Reward_MeleeT2_Sledgehammer">
+			<property name="Extends" value="Reward_MeleeT2_Spear"/>
+			<property name="CustomIcon" value="bundleSledge"/>
+			<property name="DescriptionKey" value="Reward_MeleeT2_SledgehammerDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnSledgeT3SteelSledgehammer,resourceRepairKit"/>
+			</property>
+		</item>
+		<item name="Reward_MeleeT2_Knuckles">
+			<property name="Extends" value="Reward_MeleeT2_Spear"/>
+			<property name="CustomIcon" value="bundleKnuckles"/>
+			<property name="DescriptionKey" value="Reward_MeleeT2_KnucklesDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnKnucklesT3SteelKnuckles,resourceRepairKit"/>
+			</property>
+		</item>
+		<item name="Reward_MeleeT2_Knife">
+			<property name="Extends" value="Reward_MeleeT2_Spear"/>
+			<property name="CustomIcon" value="bundleKnife"/>
+			<property name="DescriptionKey" value="Reward_MeleeT2_KnifeDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnBladeT3Machete,resourceRepairKit"/>
+			</property>
+		</item>
+		<item name="Reward_MeleeT2_StunBaton">
+			<property name="Extends" value="Reward_MeleeT2_Spear"/>
+			<property name="CustomIcon" value="bundleKnife"/>
+			<property name="DescriptionKey" value="Reward_MeleeT2_StunBatonDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnBatonT2StunBaton,resourceRepairKit"/>
+			</property>
+		</item>
+				
+		<item name="BetterWeapon_RangeT2"> <!-- PART 2 -->
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_RangeT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponRangeT2"/>
+			</property>
+		</item>
+		
+		<!-- Quests - RANGE T2 -->		
+		<item name="questRangeT2_Rifle">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="CustomIcon" value="bookRifleWorld"/>
+			<property name="DescriptionKey" value="questRangeT2_RifleDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="RangeT2_Rifle"/>
+			</property>
+		</item>
+		<item name="questRangeT2_Shotgun">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="CustomIcon" value="bookShotgunWeekly"/>
+			<property name="DescriptionKey" value="questRangeT2_ShotgunDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="RangeT2_Shotgun"/>
+			</property>
+		</item>
+		<item name="questRangeT2_MachineGun">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="CustomIcon" value="bookTacticalWarfare"/>
+			<property name="DescriptionKey" value="questRangeT2_MachineGunDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="RangeT2_machineGuns"/>
+			</property>
+		</item>
+		<item name="questRangeT2_Archery">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="CustomIcon" value="bookBowHunters"/>
+			<property name="DescriptionKey" value="questRangeT2_ArcheryDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="RangeT2_Archery"/>
+			</property>
+		</item>
+		<item name="questRangeT2_Pistol">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="CustomIcon" value="bookHandgunMagazine"/>
+			<property name="DescriptionKey" value="questRangeT2_PistolDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="RangeT2_Pistol"/>
+			</property>
+		</item>
+		
+		<!-- Reward - RANGE T2 -->
+		<item name="Reward_RangeT2_Rifle">
+			<property name="Extends" value="Reward_RangeT1_Rifle"/>
+			<property name="CustomIconTint" value="42C234"/>
+			<property name="DescriptionKey" value="questRewardRifleBundletT2Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunRifleT2LeverActionRifle,ammo762mmBulletBall"/>
+				<property name="Create_item_count" value="1-2,100"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT2_Shotgun">
+			<property name="Extends" value="Reward_RangeT2_Rifle"/>
+			<property name="CustomIcon" value="bundleShotgun"/>
+			<property name="DescriptionKey" value="Reward_RangeT2_ShotgunDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunShotgunT2PumpShotgun,ammoShotgunShell"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT2_MachineGun">
+			<property name="Extends" value="Reward_RangeT2_Rifle"/>
+			<property name="CustomIcon" value="bundleMachineGun"/>
+			<property name="DescriptionKey" value="Reward_RangeT2_MachineGunDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunMGT2TacticalAR,ammo762mmBulletBall"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT2_Archery">
+			<property name="Extends" value="Reward_RangeT2_Rifle"/>
+			<property name="CustomIcon" value="bundleBow"/>
+			<property name="DescriptionKey" value="Reward_RangeT2_ArcheryDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunBowT1IronCrossbow,ammoCrossbowBoltIron"/>
+				<property name="Create_item_count" value="1-3,150"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT2_Pistol">
+			<property name="Extends" value="Reward_RangeT2_Rifle"/>
+			<property name="CustomIcon" value="bundleRevolver"/>
+			<property name="DescriptionKey" value="Reward_RangeT2_PistolDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunHandgunT2Magnum44,ammo44MagnumBulletBall"/>
+				<property name="Create_item_count" value="1-2,125"/>
+			</property>
+		</item>
+		
+		<!-- Military power -->
+		<item name="BetterWeapon_RangeT3">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_RangeT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponRangeT3"/>
+			</property>
+		</item>
+		
+		<!-- Quests - RANGE T3 -->		
+		<item name="questRangeT3_Rifle">
+			<property name="Extends" value="questRangeT2_Rifle"/>
+			<property name="DescriptionKey" value="questRangeT3_RifleDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="RangeT3_Rifle"/>
+			</property>
+		</item>
+		<item name="questRangeT3_Shotgun">
+			<property name="Extends" value="questRangeT2_Shotgun"/>
+			<property name="DescriptionKey" value="questRangeT3_ShotgunDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="RangeT3_Shotgun"/>
+			</property>
+		</item>
+		<item name="questRangeT3_MachineGun">
+			<property name="Extends" value="questRangeT2_MachineGun"/>
+			<property name="DescriptionKey" value="questRangeT3_MachineGunDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="RangeT3_machineGuns"/>
+			</property>
+		</item>
+		<item name="questRangeT3_Archery">
+			<property name="Extends" value="questRangeT2_Archery"/>
+			<property name="DescriptionKey" value="questRangeT3_ArcheryDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="RangeT3_Archery"/>
+			</property>
+		</item>
+		<item name="questRangeT3_Pistol">
+			<property name="Extends" value="questRangeT2_Pistol"/>
+			<property name="DescriptionKey" value="questRangeT3_PistolDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="RangeT3_Pistols"/>
+			</property>
+		</item>
+		
+		<!-- Reward - RANGE T3 -->
+		<item name="Reward_RangeT3_Rifle">
+			<property name="Extends" value="Reward_RangeT1_Rifle"/>
+			<property name="CustomIconTint" value="5096FF"/>
+			<property name="DescriptionKey" value="Reward_RangeT3_RifleDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunRifleT3SniperRifle,ammo762mmBulletBall"/>
+				<property name="Create_item_count" value="1-2,180"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT3_Shotgun">
+			<property name="Extends" value="Reward_RangeT3_Rifle"/>
+			<property name="CustomIcon" value="bundleShotgun"/>
+			<property name="DescriptionKey" value="Reward_RangeT3_ShotgunDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunShotgunT3AutoShotgun,ammoShotgunShell"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT3_MachineGun">
+			<property name="Extends" value="Reward_RangeT3_Rifle"/>
+			<property name="CustomIcon" value="bundleMachineGun"/>
+			<property name="DescriptionKey" value="Reward_RangeT3_MachineGunDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunMGT3M60,ammo762mmBulletBall"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT3_Bow">
+			<property name="Extends" value="Reward_RangeT3_Rifle"/>
+			<property name="CustomIcon" value="bundleBow"/>
+			<property name="DescriptionKey" value="Reward_RangeT3_BowDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunBowT3CompoundBow,ammoArrowSteelAP"/>
+				<property name="Create_item_count" value="1-3,250"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT3_Crossbow">
+			<property name="Extends" value="Reward_RangeT3_Rifle"/>
+			<property name="CustomIcon" value="bundleBow"/>
+			<property name="DescriptionKey" value="Reward_RangeT3_CrossbowDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunBowT3CompoundCrossbow,ammoCrossbowBoltSteelAP"/>
+				<property name="Create_item_count" value="1-3,250"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT3_SMG">
+			<property name="Extends" value="Reward_RangeT3_Rifle"/>
+			<property name="CustomIcon" value="bundleRevolver"/>
+			<property name="DescriptionKey" value="Reward_RangeT3_SMGDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunHandgunT3SMG5,ammo9mmBulletBall"/>
+				<property name="Create_item_count" value="1-2,250"/>
+			</property>
+		</item>
+		<item name="Reward_RangeT3_DesertVulture">
+			<property name="Extends" value="Reward_RangeT3_Rifle"/>
+			<property name="CustomIcon" value="bundleRevolver"/>
+			<property name="DescriptionKey" value="Reward_RangeT3_DesertVultureDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunHandgunT3DesertVulture,ammo44MagnumBulletBall"/>
+				<property name="Create_item_count" value="1-2,150"/>
+			</property>
+		</item>
+		
+		<!-- Reliable modifications -->
+		<item name="BetterWeapon_ImpMods">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_ImpModsDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponImpMods"/>
+			</property>
+		</item>
+		<item name="BetterWeapon_ImpModsMelee">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_ImpModsMeleeDesc"/>
+			<property name="CustomIcon" value="bundleMeleeMods"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponMeleeImpMods"/>
+			</property>
+		</item>
+		<item name="BetterWeapon_ImpModsRange">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_ImpModsRangeDesc"/>
+			<property name="CustomIcon" value="bundleRangedMods"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponRangeImpMods"/>
+			</property>
+		</item>
+
+		<!-- Unique modifications -->
+		<item name="BetterWeapon_UniqueMods">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_UniqueModsDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponUniqueMods"/>
+			</property>
+		</item>
+		<item name="BetterWeapon_UniqueModsMelee">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_UniqueModsMeleeDesc"/>
+			<property name="CustomIcon" value="bundleMeleeMods"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponMeleeUniqueMods"/>
+			</property>
+		</item>
+		<item name="BetterWeapon_UniqueModsRange">
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_UniqueModsRangeDesc"/>
+			<property name="CustomIcon" value="bundleRangedMods"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponRangeUniqueMods"/>
+			</property>
+		</item>
+		
+		<!-- The Last Hunt -->
+		<item name="BetterWeapon_LastHunt1"> <!-- PART 1 -->
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_LastHunt1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponLastHunt1"/>
+			</property>
+		</item>
+		<item name="BetterWeapon_LastHunt2"> <!-- PART 2 -->
+			<property name="Extends" value="BetterWeapon_MeleeT1"/>
+			<property name="DescriptionKey" value="BetterWeapon_LastHunt2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="BetterWeaponLastHunt2"/>
+			</property>
+		</item>
+
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- RESOURCES COLLECTOR -->
+		
+		<!-- Workstation contracts -->
+		<item name="Ingredients_ResCollector1">
+			<property name="Tags" value="Ingredients"/>
+			<property name="CustomIcon" value="meleeToolPickT1IronPickaxe"/>
+			<property name="CustomIconTint" value="FAFF63"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="Ingredients_Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MFuelBarrelPolymer"/>
+			<property name="Group" value="questItem"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+		</item>
+		<item name="Ingredients_ResCollector2">
+			<property name="Extends" value="Ingredients_ResCollector1"/>
+			<property name="CustomIcon" value="meleeToolPickT2SteelPickaxe"/>
+		</item>
+		<item name="Ingredients_ResCollector3">
+			<property name="Extends" value="Ingredients_ResCollector1"/>
+			<property name="CustomIcon" value="meleeToolPickT3Auger"/>
+		</item>
+		<item name="Ingredients_ResCollector4">
+			<property name="Extends" value="Ingredients_ResCollector1"/>
+			<property name="CustomIcon" value="smallEngine"/>
+		</item>
+		<item name="Ingredients_ResCollector5">
+			<property name="Extends" value="Ingredients_ResCollector1"/>
+			<property name="CustomIcon" value="modMeleeStunBatonRepulsor"/>
+		</item>
+		<item name="Ingredients_ResCollector6">
+			<property name="Extends" value="Ingredients_ResCollector1"/>
+			<property name="CustomIcon" value="bundleTools"/>
+		</item>
+		
+		<item name="Chapter1_resCollector">
+			<property name="Extends" value="note1_startQuest"/>
+			<property name="CustomIconTint" value="FAFF63"/>
+			<property name="DescriptionKey" value="Chapter1_resCollectorDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="ResCollector1"/>
+			</property>
+		</item>
+		
+		<item name="Chapter2_resCollector">
+			<property name="Extends" value="note1_startQuest"/>
+			<property name="CustomIconTint" value="FAFF63"/>
+			<property name="DescriptionKey" value="Chapter2_resCollectorDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="ResCollector2"/>
+			</property>
+		</item>
+		
+		<item name="Chapter3_resCollector">
+			<property name="Extends" value="note1_startQuest"/>
+			<property name="CustomIconTint" value="FAFF63"/>
+			<property name="DescriptionKey" value="Chapter3_resCollectorDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="ResCollector3"/>
+			</property>
+		</item>
+		
+		<item name="Chapter4_resCollector">
+			<property name="Extends" value="note1_startQuest"/>
+			<property name="CustomIconTint" value="FAFF63"/>
+			<property name="DescriptionKey" value="Chapter4_resCollectorDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="ResCollector4"/>
+			</property>
+		</item>
+		
+		<item name="Chapter5_resCollector">
+			<property name="Extends" value="note1_startQuest"/>
+			<property name="CustomIconTint" value="FAFF63"/>
+			<property name="DescriptionKey" value="Chapter5_resCollectorDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="ResCollector5"/>
+			</property>
+		</item>
+		
+		<item name="Chapter6_resCollector">
+			<property name="Extends" value="note1_startQuest"/>
+			<property name="CustomIconTint" value="FAFF63"/>
+			<property name="DescriptionKey" value="Chapter6_resCollectorDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="ResCollector6"/>
+			</property>
+		</item>
+		
+		<!-- New Home Quest -->
+		
+		<item name="Chapter1_newHome">
+			<property name="Extends" value="note1_startQuest"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="Chapter1_newHomeDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="NewHome1"/>
+			</property>
+		</item>
+		
+		<item name="Chapter2_newHome">
+			<property name="Extends" value="note1_startQuest"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="Chapter2_newHomeDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="NewHome2"/>
+			</property>
+		</item>
+		
+		<item name="Chapter3_newHome">
+			<property name="Extends" value="note1_startQuest"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="Chapter3_newHomeDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="NewHome3"/>
+			</property>
+		</item>
+		
+		<item name="Chapter4_newHome">
+			<property name="Extends" value="note1_startQuest"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="Chapter4_newHomeDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="NewHome4"/>
+			</property>
+		</item>
+		
+		<!-- RADIO -->
+		
+		<item name="bookRareSamples1">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="bookWasteTreasuresHoney"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="bookRareSamples1Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem,DonateBooks"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="RareSamples1"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="bookRareSamples2">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="bookWasteTreasuresHoney"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="bookRareSamples2Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="RareSamples2"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="bookRareSamples3">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="bookWasteTreasuresHoney"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="bookRareSamples3Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="RareSamples3"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="bookRareSamples4">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="bookWasteTreasuresHoney"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="bookRareSamples4Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="RareSamples4"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="bookRareSamples5">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="bookWasteTreasuresHoney"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="bookRareSamples5Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="RareSamples5"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="bookRareSamples6">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="bookWasteTreasuresHoney"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="bookRareSamples6Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="RareSamples6"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="bookRareSamples7">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="bookWasteTreasuresHoney"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="bookRareSamples7Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="RareSamples7"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="bookRareSamples8">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="bookWasteTreasuresHoney"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="bookRareSamples8Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="RareSamples8"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="bookRareSamples9">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="bookWasteTreasuresHoney"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="bookRareSamples9Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="RareSamples9"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<item name="bookRareSamples10">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="bookWasteTreasuresHoney"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="bookRareSamples10Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="RareSamples10"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- *** Survive_Quest_Rewards NOT USE -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- TIER 1 -->
+		<item name="questRewardPistolBundleT1">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRevolver"/>
+			<property name="CustomIconTint" value="FFFF00"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardPipePistolBundleDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunHandgunT1Pistol,ammo9mmBulletBall"/>
+				<property name="Create_item_count" value="1,60"/>
+			</property>
+		</item>
+		<item name="questRewardShotgunBundleT1">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleShotgun"/>
+			<property name="CustomIconTint" value="FFFF00"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardPipeShotgunBundleDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunShotgunT1DoubleBarrel,ammoShotgunShell"/>
+				<property name="Create_item_count" value="1,60"/>
+			</property>
+		</item>
+		<item name="questRewardRifleBundletT1">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRifle"/>
+			<property name="CustomIconTint" value="FFFF00"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardPipeRifleBundleDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunRifleT1HuntingRifle,ammo762mmBulletBall"/>
+				<property name="Create_item_count" value="1,60"/>
+			</property>
+		</item>
+		<item name="questRewardMachineGunBundleT1">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleMachineGun"/>
+			<property name="CustomIconTint" value="FFFF00"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardPipeMachineGunBundleDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunMGT1AK47,ammo762mmBulletBall"/>
+				<property name="Create_item_count" value="1,60"/>
+			</property>
+		</item>
+		
+		<!-- TIER 2 -->
+		<item name="questRewardPistolBundleT2">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRevolver"/>
+			<property name="CustomIconTint" value="42C234"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardPistolBundleT2Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunHandgunT2Magnum44,ammo44MagnumBulletHP"/>
+				<property name="Create_item_count" value="1,100"/>
+			</property>
+		</item>
+		<item name="questRewardShotgunBundleT2">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleShotgun"/>
+			<property name="CustomIconTint" value="42C234"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardShotgunBundleT2Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunShotgunT2PumpShotgun,ammoShotgunShell"/>
+				<property name="Create_item_count" value="1,100"/>
+			</property>
+		</item>
+		<item name="questRewardRifleBundletT2">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRifle"/>
+			<property name="CustomIconTint" value="42C234"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardRifleBundletT2Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunRifleT2LeverActionRifle,ammo762mmBulletBall"/>
+				<property name="Create_item_count" value="1,100"/>
+			</property>
+		</item>
+		<item name="questRewardMachineGunBundleT2">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleMachineGun"/>
+			<property name="CustomIconTint" value="42C234"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardMachineGunBundleT2Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunMGT2TacticalAR,ammo762mmBulletBall"/>
+				<property name="Create_item_count" value="1,100"/>
+			</property>
+		</item>
+		
+		<!-- TIER 3 -->
+		<item name="questRewardPistolBundleT3">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRevolver"/>
+			<property name="CustomIconTint" value="5096FF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardPistolBundleT3Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunHandgunT3SMG5,ammo9mmBulletBall"/>
+				<property name="Create_item_count" value="1,180"/>
+			</property>
+		</item>
+		<item name="questRewardShotgunBundleT3">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleShotgun"/>
+			<property name="CustomIconTint" value="5096FF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardShotgunBundleT3Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunShotgunT3AutoShotgun,ammoShotgunShell"/>
+				<property name="Create_item_count" value="1,180"/>
+			</property>
+		</item>
+		<item name="questRewardRifleBundletT3">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRifle"/>
+			<property name="CustomIconTint" value="5096FF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardRifleBundletT3Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunRifleT3SniperRifle,ammo762mmBulletBall"/>
+				<property name="Create_item_count" value="1,180"/>
+			</property>
+		</item>
+		<item name="questRewardMachineGunBundleT3">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleMachineGun"/>
+			<property name="CustomIconTint" value="5096FF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardMachineGunBundleT3Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunMGT3M60,ammo762mmBulletBall"/>
+				<property name="Create_item_count" value="1,180"/>
+			</property>
+		</item>
+
+		<!-- TIER 4 -->
+		<item name="questRewardSledgehammerImpT4">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleSledge"/>
+			<property name="CustomIconTint" value="A42ACC"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardSledgehammerImpT4Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnSledgeT4SteelSledgehammerImp"/>
+				<property name="Create_item_count" value="1"/>
+			</property>
+		</item>
+		<item name="questRewardClubImpBundleT4">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleClub"/>
+			<property name="CustomIconTint" value="A42ACC"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardClubImpBundleT4Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnClubT4SteelClubImp"/>
+				<property name="Create_item_count" value="1"/>
+			</property>
+		</item>
+		<item name="questRewardSpearImpBundleT4">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleSpear"/>
+			<property name="CustomIconTint" value="A42ACC"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardSpearImpBundleT4Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnSpearT4SteelSpearImp"/>
+				<property name="Create_item_count" value="1"/>
+			</property>
+		</item>
+		<item name="questRewardPlasmaBatonBundletT4">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleTurrets"/>
+			<property name="CustomIconTint" value="A42ACC"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardPlasmaBatonBundletT4Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnBatonT4PlasmaBaton"/>
+				<property name="Create_item_count" value="1"/>
+			</property>
+		</item>
+		<item name="questRewardMacheteImpBundleT4">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleKnife"/>
+			<property name="CustomIconTint" value="A42ACC"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardMacheteImpBundleT4Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnBladeT4MacheteImp"/>
+				<property name="Create_item_count" value="1"/>
+			</property>
+		</item>
+		
+		<!-- TIER 5 -->
+		<item name="questRewardPistolBundleT5">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRevolver"/>
+			<property name="CustomIconTint" value="A42ACC"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardPistolBundleT5Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunHandgunT4SMG5Imp,ammo9mmBulletBall"/>
+				<property name="Create_item_count" value="1,600"/>
+			</property>
+		</item>
+		<item name="questRewardShotgunBundleT5">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleShotgun"/>
+			<property name="CustomIconTint" value="A42ACC"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardShotgunBundleT5Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunShotgunT4AutoShotgunImp,ammoShotgunShell"/>
+				<property name="Create_item_count" value="1,300"/>
+			</property>
+		</item>
+		<item name="questRewardRifleBundletT5">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRifle"/>
+			<property name="CustomIconTint" value="A42ACC"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardRifleBundletT5Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunRifleT4SniperRifleImp,ammo762mmBulletBall"/>
+				<property name="Create_item_count" value="1,300"/>
+			</property>
+		</item>
+		<item name="questRewardMachineGunBundleT5">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleMachineGun"/>
+			<property name="CustomIconTint" value="A42ACC"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardMachineGunBundleT5Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunMGT4M60Imp,ammo762mmBulletBall"/>
+				<property name="Create_item_count" value="1,300"/>
+			</property>
+		</item>
+		
+		<!-- TIER 6 -->
+		<item name="questRewardMacheteIndianaT6">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleKnife"/>
+			<property name="CustomIconTint" value="FFB800"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardMacheteIndianaT6Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnBladeT5MacheteIndiana,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="1,1"/>
+			</property>
+		</item>
+		<item name="questRewardMausClawsT6">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleKnuckles"/>
+			<property name="CustomIconTint" value="FFB800"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardMausClawsT6Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnMausClaws,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="1,1"/>
+			</property>
+		</item>
+		<item name="questRewardAxeBarbarianT6">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleClub"/>
+			<property name="CustomIconTint" value="FFB800"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardAxeBarbarianT6Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnClubT5SteelAxeBarbarian,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="1,1"/>
+			</property>
+		</item>
+		<item name="questRewardSledgehammerDestructorT6">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleSledge"/>
+			<property name="CustomIconTint" value="FFB800"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardSledgehammerDestructorT6Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnSledgeT5SteelSledgehammerDestructor,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="1,1"/>
+			</property>
+		</item>
+		<item name="questRewardSpearCombistickT6">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleSpear"/>
+			<property name="CustomIconTint" value="FFB800"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardSpearCombistickT6Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="meleeWpnSpearT5SteelSpearCombistick,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="1,1"/>
+			</property>
+		</item>
+		
+		<!-- TIER 7 -->
+		<item name="questRewardPistolBundleT6">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRevolver"/>
+			<property name="CustomIconTint" value="FFB800"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardPistolBundleT6Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunHandgunT5SMG5Zinger,ammo9mmBulletHP,ammo9mmBulletAP,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="1,300,300,1"/>
+			</property>
+		</item>
+		<item name="questRewardShotgunBundleT6">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleShotgun"/>
+			<property name="CustomIconTint" value="FFB800"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardShotgunBundleT6Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunShotgunT5AutoShotgunEraser,ammoShotgunSlug,ammoShotgunBreachingSlug,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="1,150,150,1"/>
+			</property>
+		</item>
+		<item name="questRewardRifleBundletT6">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRifle"/>
+			<property name="CustomIconTint" value="FFB800"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardRifleBundletT6Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunRifleT5SniperRifleGaus,ammo762mmBulletHP,ammo762mmBulletAP,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="1,150,150,1"/>
+			</property>
+		</item>
+		<item name="questRewardMachineGunBundleT6">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleMachineGun"/>
+			<property name="CustomIconTint" value="FFB800"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardMachineGunBundleT6Desc"/>
+			<property class="Action0">
+				<property name="Create_item" value="gunMGT5M60Bulldog,ammo44MagnumBulletHP,ammo44MagnumBulletAP,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="1,300,300,1"/>
+			</property>
+		</item>
+		
+		<!-- TIER 8 -->
+		<item name="questRewardPistolBundleT7">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRevolver"/>
+			<property name="CustomIconTint" value="C27E53"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardPistolBundleT7Desc"/>
+			<property class="Action0">
+				<property name="Random_item" value="ZingerLegArsonist,ZingerLegURANUS,ZingerLegBreeze,ZingerLegUnkillable,ZingerLegAvenger,ZingerLegBerserk"/>
+				<property name="Random_item_count" value="1,1,1,1,1,1"/>
+				<property name="Create_item" value="ammo9mmBulletDU,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="300,1"/>
+			</property>
+		</item>
+			<item name="questRewardShotgunBundleT7">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleShotgun"/>
+			<property name="CustomIconTint" value="C27E53"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardShotgunBundleT7Desc"/>
+			<property class="Action0">
+				<property name="Random_item" value="EraserLegArsonist,EraserLegURANUS,EraserLegUnkillable,EraserLegAvenger,EraserLegBerserk"/>
+				<property name="Random_item_count" value="1,1,1,1,1"/>
+				<property name="Create_item" value="ammoShotgunSlugDU,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="150,1"/>
+			</property>
+		</item>
+		<item name="questRewardRifleBundletT7">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleRifle"/>
+			<property name="CustomIconTint" value="C27E53"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardRifleBundletT7Desc"/>
+			<property class="Action0">
+				<property name="Random_item" value="GausLegArsonist,GausLegTesla,GausLegURANUS,GausLegUnkillable"/>
+				<property name="Random_item_count" value="1,1,1,1"/>
+				<property name="Create_item" value="ammo762mmBulletDU,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="150,1"/>
+			</property>
+		</item>
+		<item name="questRewardMachineGunBundleT7">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleMachineGun"/>
+			<property name="CustomIconTint" value="C27E53"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="questRewardMachineGunBundleT7Desc"/>
+			<property class="Action0">
+				<property name="Random_item" value="BulldogLegArsonist,BulldogLegURANUS,BulldogLegBreeze,BulldogLegUnkillable,BulldogLegAvenger,BulldogLegBerserk"/>
+				<property name="Random_item_count" value="1,1,1,1,1,1"/>
+				<property name="Create_item" value="ammo44MagnumBulletDU,resourceRepairKitLeg"/>
+				<property name="Create_item_count" value="300,1"/>
+			</property>
+		</item>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- *** Boundle Quest Rewards -->
+		
+		<item name="UniqueToolsModsBundle">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="modRoboticDroneCargoMod"/>
+			<property name="CustomIconTint" value="FAFF63"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="UniqueToolsModsBundleDesc"/>
+			<property name="Group" value="Reward"/>
+			<property class="Action0">
+				<property name="Random_item" value="modIncreasedBatteryUnique,modReactorElectricUnique,modElongatedCoreUnique,modReinforcedPartsUnique,modLuckyMiningUnique,modEnhancedMechanismsUnique,modFastMechanismsUnique,modSpareBoxUnique"/>
+				<property name="Random_item_count" value="1"/>
+			</property>
+		</item>
+		
+		<item name="ImpModsBundle">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="modRoboticDroneCargoMod"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="ImpModsBundleDesc"/>
+			<property name="Group" value="Reward"/>
+			<property class="Action0">
+				<property name="Random_item" value="modMotorBooster,modReactorBooster,modIncreasedBattery,modReactorElectric,modElongatedCore,modReinforcedParts,modEnhancedMechanisms,modFastMechanisms,modSpareBox,modBandolierImp,modSmartGlass,modGunDrumMagazineExtenderImp,modGunMagazineExtenderImp,modGunMeleeRadRemoverImp,modGunCrippleEmImp,modGunRiflePartsImp,modGunPistolPartsImp,modGunM60PartsImp,modGunShotgunPartsImp,modGunForegripImp,modGunBipodImp,modGunSoundSuppressorSilencerImp,modGunBoosterExp,modGunDamageAccumulatorExp,modMeleeDimondPartsHeavy,modMeleeDimondPartsLight,modMeleeErgonomicGripImp,modMeleeTheHunterImp,modMeleeTerribleSpikesImp,modJetPack,modArmorLSSHelmet,modArmorLSSOutfit,modArmorLSSGloves,modArmorLSSBoots,modBandolierImp,modLuckyMining"/>
+				<property name="Random_item_count" value="1"/>
+			</property>
+		</item>
+		<item name="ImpModsMeleeBundle">
+			<property name="Extends" value="ImpModsBundle"/>
+			<property name="DescriptionKey" value="ImpModsBundleDesc"/>
+			<property class="Action0">
+				<property name="Random_item" value="modSurgicalBlade,modMeleeDimondPartsHeavy,modMeleeDimondPartsLight,modMeleeErgonomicGripImp,modMeleeTheHunterImp,modMeleeTerribleSpikesImp"/>
+				<property name="Random_count" value="2"/>
+			</property>
+		</item>
+		<item name="ImpModsRangeBundle">
+			<property name="Extends" value="ImpModsBundle"/>
+			<property name="DescriptionKey" value="ImpModsBundleDesc"/>
+			<property class="Action0">
+				<property name="Random_item" value="modGunDrumMagazineExtenderImp,modGunMagazineExtenderImp,modGunMeleeRadRemoverImp,modGunCrippleEmImp,modGunForegripImp,modGunBipodImp,modGunSoundSuppressorSilencerImp,modGunBoosterExp,modGunDamageAccumulatorExp,modGunRiflePartsImp,modGunPistolPartsImp,modGunM60PartsImp,modGunShotgunPartsImp"/>
+				<property name="Random_count" value="2"/>
+			</property>
+		</item>
+		
+		<item name="UniqueModsBundle">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="modRoboticDroneCargoMod"/>
+			<property name="CustomIconTint" value="FFB800"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="UniqueModsBundleDesc"/>
+			<property name="Group" value="Reward"/>
+			<property class="Action0">
+				<property name="Random_item" value="modIncreasedBatteryUnique,modReactorElectricUnique,modElongatedCoreUnique,modReinforcedPartsUnique,modLuckyMiningUnique,modSurgicalBladeUnique,modReliableWinding,modGunDrumMagazineExtenderUnique,modGunMagazineExtenderUnique,modGunMeleeRadRemoverUnique,modGunCrippleEmUnique,modGunRiflePartsUnique,modGunPistolPartsUnique,modGunM60PartsUnique,modGunShotgunPartsUnique,modGunForegripUnique,modGunBipodUnique,modGunSoundSuppressorSilencerUnique,modGunBoosterUnique,modGunDamageAccumulatorUnique,modOkGoogle,modMeleeDimondPartsHeavyUnique,modMeleeDimondPartsLightUnique,modMeleeErgonomicGripUnique,modMeleeTheHunterUnique,modMeleeTerribleSpikesUnique,modMeleeClubBurningUnique,modMeleeElectroUnique,modVehicleSuperChargerUnique,modReactorAcceleratorExp,modVehicleFuelSystemUnique,modVehiclePlowUnique,modVehicleArmorUnique,modStabilityBooster"/>
+				<property name="Random_item_count" value="1"/>
+			</property>
+		</item>
+		<item name="UniqueModsMeleeBundle">
+			<property name="Extends" value="UniqueModsBundle"/>
+			<property name="DescriptionKey" value="UniqueModsMeleeBundleDesc"/>
+			<property class="Action0">
+				<property name="Random_item" value="modSurgicalBladeUnique,modMeleeErgonomicGripUnique,modMeleeTheHunterUnique,modMeleeTerribleSpikesUnique,modMeleeElectroUnique,modMeleeDimondPartsHeavyUnique,modMeleeDimondPartsLightUnique"/>
+				<property name="Random_item_count" value="1"/>
+			</property>
+		</item>
+		<item name="UniqueModsRangeBundle">
+			<property name="Extends" value="UniqueModsBundle"/>
+			<property name="DescriptionKey" value="UniqueModsRangeBundleDesc"/>
+			<property class="Action0">
+				<property name="Random_item" value="modGunDrumMagazineExtenderUnique,modGunMagazineExtenderUnique,modGunMeleeRadRemoverUnique,modGunCrippleEmUnique,modGunForegripUnique,modGunBipodUnique,modGunSoundSuppressorSilencerUnique,modGunBoosterUnique,modGunDamageAccumulatorUnique,modGunRiflePartsUnique,modGunPistolPartsUnique,modGunM60PartsUnique,modGunShotgunPartsUnique"/>
+				<property name="Random_item_count" value="1"/>
+			</property>
+		</item>
+
+	</append>
+	
+</config>

@@ -1,0 +1,102 @@
+<config>
+	
+	<set xpath="/item_modifiers/item_modifier[@name='modArmorPlatingBasic']/@blocked_tags">noMods,rescuer,predator,maus</set>
+	<set xpath="/item_modifiers/item_modifier[@name='modArmorPlatingReinforced']/@blocked_tags">noMods,rescuer,predator,maus</set>
+	
+	<append xpath="/item_modifiers">
+		
+		<!-- Enhanced equipment -->
+		
+		<item_modifier name="modEnhancedSpear" installable_tags="enhancedMelee" modifier_tags="enhanced" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="DescriptionKey" value="modEnhancedSpearDesc"/>
+			<property name="Material" value="MUniversalParts"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="CustomIcon" value="meleeWpnSpearT1IronSpear"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$modEnhancedSpear" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$modEnhancedSpear"/>
+			</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="modEnhancedClub" installable_tags="enhancedMelee" modifier_tags="enhanced" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="DescriptionKey" value="modEnhancedClubDesc"/>
+			<property name="Material" value="MUniversalParts"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="CustomIcon" value="meleeWpnClubT1BaseballBat"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$modEnhancedClub" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$modEnhancedClub"/>
+			</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="modEnhancedSledgehammer" installable_tags="enhancedMelee" modifier_tags="enhanced" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="DescriptionKey" value="modEnhancedSledgehammerDesc"/>
+			<property name="Material" value="MUniversalParts"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="CustomIcon" value="meleeWpnSledgeT1IronSledgehammer"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$modEnhancedSledgehammer" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$modEnhancedSledgehammer"/>
+			</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="modEnhancedKnuckles" installable_tags="enhancedMelee" modifier_tags="enhanced" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="DescriptionKey" value="modEnhancedKnucklesDesc"/>
+			<property name="Material" value="MUniversalParts"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="CustomIcon" value="meleeWpnKnucklesT1IronKnuckles"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$modEnhancedKnuckles" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$modEnhancedKnuckles"/>
+			</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="modEnhancedKnife" installable_tags="enhancedMelee" modifier_tags="enhanced" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="DescriptionKey" value="modEnhancedKnifeDesc"/>
+			<property name="Material" value="MUniversalParts"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="CustomIcon" value="meleeWpnBladeT1HuntingKnife"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$modEnhancedKnife" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$modEnhancedKnife"/>
+			</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="modEnhancedStunBaton" installable_tags="enhancedMelee" modifier_tags="enhanced" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="DescriptionKey" value="modEnhancedStunBatonDesc"/>
+			<property name="Material" value="MUniversalParts"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="CustomIcon" value="meleeWpnBatonT2StunBaton"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$modEnhancedStunBaton" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$modEnhancedStunBaton"/>
+			</effect_group>
+		</item_modifier>
+		
+	</append>
+	
+</config>

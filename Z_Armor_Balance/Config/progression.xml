@@ -1,0 +1,9 @@
+<config>
+	
+	<!-- <remove xpath="/progression/perks/perk[@name='perkMotherLode']/effect_group/passive_effect[@name='HarvestCount']"/> -->
+		
+	<!-- <append xpath="/progression/perks/perk[@name='perkMotherLode']/effect_group">	 -->
+		<!-- <triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$MiningHarvestCountMain" operation="set" value="0,.2,.4,.6,.8,1"/> -->
+	<!-- </append> -->
+
+</config>

@@ -1,0 +1,181 @@
+<configs>
+
+	<append xpath="/ui_display_info/item_display">
+
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- LIGHT ARMOR -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->	
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- ROGUE IMPROVED-->
+		
+		<item_display_info display_type="armorRogueHelmetImp" display_group="groupAttire" extends="armorLight" >
+			<display_entry name="dPlayerExpGainKill" title_key="statPlayerExpGainKill" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dLootQuantity" title_key="statMoneyLootQuantity" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorRogueOutfitImp" display_group="groupAttire" extends="armorLight" >
+			<display_entry name="dCarryCapacity"  title_key="statCarryCapacity" display_leading_plus="true"/>
+			<display_entry name="dNaturalCritHealing" title_key="statNaturalCritHealing" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorRogueGlovesImp" display_group="groupAttire" extends="armorLight" >
+			<display_entry name="dEnhancedAtackSpeed" title_key="statAttacksPerMinuteEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dReloadSpeedMultiplierArchery" title_key="statReloadSpeedArchery" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dLootTime" title_key="statLootTime" display_type="Percent" display_leading_plus="true" negative_preferred="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorRogueBootsImp" display_group="groupAttire" extends="armorLight" >
+			<display_entry name="dStaminaRestEnhanced" title_key="statStaminaRestEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dCrouchSpeed" title_key="statCrouchSpeed" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dSneakEffectiveness" title_key="statSneakEffectiveness" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- ENFORCER IMPROVED-->
+		
+		<item_display_info display_type="armorEnforcerHelmetImp" display_group="groupAttire" extends="armorLight" >
+			<display_entry name="dPlayerExpGainKill" title_key="statPlayerExpGainKill" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dBarteringSelling" title_key="statBarteringSelling" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorEnforcerOutfitImp" display_group="groupAttire" extends="armorLight" >
+			<display_entry name="dCarryCapacity"  title_key="statCarryCapacity" display_leading_plus="true"/>
+			<display_entry name="dCritResist" title_key="statCritResist" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorEnforcerGlovesImp" display_group="groupAttire" extends="armorLight" >
+			<display_entry name="dEnhancedAtackSpeed" title_key="statAttacksPerMinuteEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dReloadSpeedMultiplierGunslinger" title_key="statReloadSpeedGunslinger" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorEnforcerBootsImp" display_group="groupAttire" extends="armorLight" >
+			<display_entry name="dStaminaRestEnhanced" title_key="statStaminaRestEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dStaminaMax" title_key="statMaxStaminaBonus" display_leading_plus="true"/>
+		</item_display_info>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- MEDUUM ARMOR -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- RANGER IMPROVED-->
+		
+		<item_display_info display_type="armorRangerHelmetImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dPlayerExpGainKill" title_key="statPlayerExpGainKill" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="BarteringBuying" title_key="statBarteringSellBuy" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorRangerOutfitImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dCarryCapacity"  title_key="statCarryCapacity" display_leading_plus="true"/>
+			<display_entry name="dHealthMax" title_key="statMaxHealthBonus" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorRangerGlovesImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dEnhancedAtackSpeed" title_key="statAttacksPerMinuteEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dReloadSpeedMultiplier"  title_key="statReloadSpeedMultiplier" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorRangerBootsImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dStaminaRestEnhanced" title_key="statStaminaRestEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dStaminaMax" title_key="statMaxStaminaBonus" display_leading_plus="true"/>
+		</item_display_info>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- COMMANDO IMPROVED-->
+		
+		<item_display_info display_type="armorCommandoHelmetImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dPlayerExpGainKill" title_key="statPlayerExpGainKill" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dHealingSpeed" title_key="statHealingSpeed" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorCommandoOutfitImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dCarryCapacity"  title_key="statCarryCapacity" display_leading_plus="true"/>
+			<display_entry name="dNaturalCritHealing" title_key="statNaturalCritHealing" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorCommandoGlovesImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dEnhancedAtackSpeed" title_key="statAttacksPerMinuteEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dReloadSpeedAutomaticWeapon"  title_key="statReloadSpeedAutomaticWeapon" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorCommandoBootsImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dStaminaRestEnhanced" title_key="statStaminaRestEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dFallDamage"  title_key="statSafeFallDist" display_type="Decimal1" display_leading_plus="true"/>
+		</item_display_info>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- ASSASSIN IMPROVED -->
+		
+		<item_display_info display_type="armorAssassinHelmetImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dPlayerExpGainKill" title_key="statPlayerExpGainKill" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dEntityDamageSneak" title_key="statEntityDamageSneak" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorAssassinOutfitImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dCarryCapacity"  title_key="statCarryCapacity" display_leading_plus="true"/>
+			<display_entry name="dSneakEffectiveness" title_key="statSneakEffectiveness" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorAssassinGlovesImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dEnhancedAtackSpeed" title_key="statAttacksPerMinuteEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dReloadSpeedMultiplierSniper"  title_key="statReloadSpeedSniper" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorAssassinBootsImp" display_group="groupAttire" extends="armorMediumNew" >
+			<display_entry name="dStaminaRestEnhanced" title_key="statStaminaRestEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dNoiseMultiplier" title_key="statSneakSprint" display_type="Percent" show_inverted="true"/>
+		</item_display_info>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- HEAVY ARMOR -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- NOMAD IMPROVED -->
+		
+		<item_display_info display_type="armorNomadHelmetImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dPlayerExpGainKill" title_key="statPlayerExpGainKill" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dFoodWaterUse" title_key="statNomadFoodWater" display_type="Percent"/>
+		</item_display_info>
+		<item_display_info display_type="armorNomadOutfitImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dCarryCapacity"  title_key="statCarryCapacity" display_leading_plus="true"/>
+			<display_entry name="dNaturalCritHealing"  title_key="statNaturalCritHealing" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorNomadGlovesImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dEnhancedAtackSpeed" title_key="statAttacksPerMinuteEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dReloadSpeedShotgun" title_key="statReloadSpeedShotgun" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorNomadBootsImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dStaminaRestEnhanced" title_key="statStaminaRestEnhanced" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dFallDamage" title_key="statSafeFallDist" display_type="Decimal1" display_leading_plus="true"/>
+		</item_display_info>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- NERD IMPROVED -->
+		
+		<item_display_info display_type="armorNerdHelmetImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dPlayerExpGain" title_key="statShowPlayerExpGain" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dTrapsExpGain"  title_key="statTrapsExpGain" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorNerdOutfitImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dAttributeLevel" title_key="statNerdSkillPointChance" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dBookwormChance" title_key="statBookwormChance" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorNerdGlovesImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dNerdAtackSpeed" title_key="statAttacksPerMinuteStunBaton" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dNerdReloadSpeed" title_key="statReloadSpeedTurrets" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorNerdBootsImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dRunSpeed" title_key="statRunSpeed" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dFallDamage" title_key="statSafeFallDist" display_type="Decimal1" display_leading_plus="true"/>
+		</item_display_info>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- RAIDER IMPROVED -->
+		
+		<item_display_info display_type="armorRaiderHelmetImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dPlayerExpGainKillMelee" title_key="statPlayerExpGainKillMelee" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dHealingSpeed"  title_key="statHealingSpeed" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorRaiderOutfitImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dHealthMax" title_key="statMaxHealthBonus" display_leading_plus="true"/>
+			<display_entry name="dNaturalCritHealing" title_key="statNaturalCritHealing" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorRaiderGlovesImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dRaiderAtackSpeed" title_key="statAttacksPerMinuteMelee" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dReloadSpeedMultiplier"  title_key="statReloadSpeedMultiplier" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorRaiderBootsImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dStaminaRestMelee" title_key="statStaminaRestMelee" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dFallDamage" title_key="statSafeFallDist" display_type="Decimal1" display_leading_plus="true"/>
+		</item_display_info>
+	
+	</append>
+	
+</configs>

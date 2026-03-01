@@ -1,0 +1,1993 @@
+<config>
+	
+	<append xpath="/buffs/buff[@name='buffStatusCheck01']">
+		<effect_group>
+			<!-- Fear Dark -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$FearDarkStatus" operation="set" value="1">
+				<requirement name="IsNight"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$FearDarkStatus" operation="set" value="2">
+				<requirement name="!IsNight"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$FearDarkStatus" operation="set" value="2">
+				<requirement name="CVarCompare" cvar="$HelmetLightOn" operation="Equals" value="1"/>
+				<requirement name="IsNight"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$FearDarkStatus" operation="set" value="2">
+				<requirement name="CVarCompare" cvar="$NightVisionOn" operation="Equals" value="1"/>
+				<requirement name="IsNight"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$FearDarkStatus" operation="set" value="2">
+				<requirement name="CVarCompare" cvar="$GunFlashlightOn" operation="Equals" value="1"/>
+				<requirement name="IsNight"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$FearDarkStatus" operation="set" value="2">
+				<requirement name="CVarCompare" cvar="$BurningShaftOn" operation="Equals" value="1"/>
+				<requirement name="IsNight"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$FearDarkStatus" operation="set" value="2">
+				<requirement name="HoldingItemHasTags" tags="heldTorch"/>
+				<requirement name="IsNight"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGroupCheck" target="selfOtherPlayers" target_tags="party,ally"/>
+				
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDrivingStatus">
+				<requirement name="EntityHasMovementTag" tags="driving"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDrivingStatus">
+				<requirement name="!EntityHasMovementTag" tags="driving"/></triggered_effect>
+		</effect_group>
+					
+	</append>
+	
+	<append xpath="/buffs/buff[@name='buffStatusCheck02']">
+		<effect_group>			
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$FearPainDebuff">
+				<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="LT" value="1"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$critHitNaturalHealingRate" operation="add" value="@$FearPainDebuff">
+				<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="GTE" value="1"/>
+			</triggered_effect>
+		</effect_group>
+	</append>
+	
+	<insertAfter xpath="/buffs/buff[@name='buffPlayerFallingDamage']/effect_group/triggered_effect[@value='@$raiderBootFallDMG']">
+		<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".impactSpeed" operation="subtract" value="@$BrittleBonesFallDMGDebuff"/>
+	</insertAfter>
+	
+	<append xpath="/buffs">
+	
+		<buff name="buffYautjaStart" hidden="true">
+			<stack_type value="replace"/>
+			<duration value=".5"/>
+			<effect_group name='Negative Traits'>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveCVar" cvar="$SelfTraitsProgressionStatus"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ResetProgression" reset_skills="true" reset_levels="true" reset_books="true" reset_crafting="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RefreshPerks"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="PassiveSkills_Reset"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDeathFoodDrinkAdjust"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="twitch_reverse" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffYautja"/>
+				
+			</effect_group>
+		</buff>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- self Traits Challenge -->
+		<buff name="buffYautja" name_key="buffYautjaName" description_key="buffYautjaDesc" icon="ui_game_symbol_ninja" icon_color="225,145,225" hidden="false" remove_on_death="false">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<display_value_key value="buffYautja"/>
+			<display_value value="xxx"/>
+			
+			<effect_group name="Start Reset">
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setNegativeSelfTraits"/>
+			</effect_group>
+			
+		</buff>
+				
+		<!-- <buff name="buffSelfTraitsDelay" hidden="true"> -->
+			<!-- <stack_type value="ignore"/> -->
+			<!-- <duration value="5"/> -->
+			
+			<!-- <effect_group> -->
+				<!-- <triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="NewSelfTraits"/> -->
+			<!-- </effect_group>			 -->
+		<!-- </buff> -->
+		
+		<buff name="buffDrivingStatus" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		
+		<!-- <buff name="buffGroupCheck" icon="ui_game_symbol_players" icon_color="150,150,150"> -->
+		<buff name="buffGroupCheck" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+				
+		<!-- Defining character traits -->
+		
+		<buff name="buffCharacterSelfTraitsDistr" hidden="true">
+			<stack_type value="replace"/>
+			<update_rate value=".2"/>
+						
+			<effect_group name='Negative Traits'>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffNegTraitsCharacterAdd,buffPosTraitsCharacterAdd"/>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="set" value="6"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountBonus" operation="set" value="randomint(0,8)"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="add" value="@$NegTraitsCountBonus"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".NegTraitsCount" operation="set" value="@$NegTraitsCount"/>
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="$NegTraitsCount"/> -->
+				
+				<!-- Reset Current Self Traits	-->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsDementia_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsObesity_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsDistrophia_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsAlarmism_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsBrittleBones_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsWeakling_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsAllergySufferer_Current" operation="set" value="0"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsWeakImmunity_Current" operation="set" value="0"/> -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsClumsy_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsPacifist_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsFearDark_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsFearAnimals_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsFearZombie_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsFearFire_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsFearPain_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsSocialPhobia_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsUnlucker_Current" operation="set" value="0"/>				
+			</effect_group>
+			
+			<effect_group name='Positive Traits'>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="set" value="4"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCountBonus" operation="set" value="randomint(0,4)"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="add" value="@$PosTraitsCountBonus"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".PosTraitsCount" operation="set" value="@$PosTraitsCount"/>
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="$PosTraitsCount"/> -->
+				
+				<!-- Reset Current Self Traits	-->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsGenius_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsAthleticBuild_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCourage_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsBodybuilder_Current" operation="set" value="0"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsFastAdaptation_Current" operation="set" value="0"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsHardening_Current" operation="set" value="0"/> -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCharismatic_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsLuckyGuy_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsJackOfAllTrades_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsExperiencedHunter_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCrusher_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsFearless_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsVeteranWasteland_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsSchumacher_Current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsTeamPlayer_Current" operation="set" value="0"/>			
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$SelfTraitsProgressionStatus" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffSelfTraitsCounters"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffNegTraitsCharacterAdd"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffResetPerksProxy"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffCharacterSelfTraitsDistr">
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="LTE" value="0"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="LTE" value="0"/>
+				</triggered_effect>
+			</effect_group>
+		
+		</buff>
+		
+		<buff name="buffNegTraitsCharacterAdd" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffNegTraitsCharacterAdd">
+					<requirement name="!HasBuff" buff="buffCharacterSelfTraitsDistr"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPosTraitsCharacterAdd">
+					<requirement name="!HasBuff" buff="buffPosTraitsCharacterAdd"/>
+					<requirement name="HasBuff" buff="buffCharacterSelfTraitsDistr"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group name='Negative Traits'>
+				
+				<!-- Dementia -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountDementia_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsDementia_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountDementia_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountDementia_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountDementia_Add" operation="set" value="0"/>
+				
+				<!-- Obesity -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountObesity_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsObesity_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountObesity_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountObesity_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountObesity_Add" operation="set" value="0"/>
+				
+				<!-- Distrophia -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountDistrophia_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsDistrophia_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountDistrophia_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountDistrophia_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountDistrophia_Add" operation="set" value="0"/>
+				
+				<!-- Alarmism -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountAlarmism_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsAlarmism_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountAlarmism_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountAlarmism_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountAlarmism_Add" operation="set" value="0"/>
+				
+				<!-- BrittleBones -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountBrittleBones_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsBrittleBones_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountBrittleBones_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountBrittleBones_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountBrittleBones_Add" operation="set" value="0"/>
+				
+				<!-- Weakling -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountWeakling_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsWeakling_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountWeakling_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountWeakling_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountWeakling_Add" operation="set" value="0"/>
+				
+				<!-- AllergySufferer -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountAllergySufferer_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsAllergySufferer_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountAllergySufferer_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountAllergySufferer_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountAllergySufferer_Add" operation="set" value="0"/>
+				
+				<!-- WeakImmunity -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountWeakImmunity_Add" operation="set" value="randomint(0,1)"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="LTE" value="2"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="LT" value="1"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="LT" value="1"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="LT" value="1"/> -->
+				<!-- </triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsWeakImmunity_Current" operation="add" value="1"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsCountWeakImmunity_Add" operation="Equals" value="1"/> -->
+				<!-- </triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsCountWeakImmunity_Add" operation="Equals" value="1"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/> -->
+				<!-- </triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountWeakImmunity_Add" operation="set" value="0"/> -->
+				
+				<!-- Clumsy -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountClumsy_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsClumsy_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountClumsy_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountClumsy_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountClumsy_Add" operation="set" value="0"/>
+				
+				<!-- Pacifist -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountPacifist_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsPacifist_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountPacifist_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountPacifist_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountPacifist_Add" operation="set" value="0"/>
+				
+				<!-- FearDark -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountFearDark_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsFearDark_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountFearDark_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountFearDark_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountFearDark_Add" operation="set" value="0"/>
+				
+				<!-- FearAnimals -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountFearAnimals_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsFearAnimals_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountFearAnimals_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountFearAnimals_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountFearAnimals_Add" operation="set" value="0"/>
+				
+				<!-- FearZombie -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountFearZombie_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsFearZombie_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountFearZombie_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountFearZombie_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountFearZombie_Add" operation="set" value="0"/>
+				
+				<!-- FearFire -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountFearFire_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsFearFire_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountFearFire_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountFearFire_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountFearFire_Add" operation="set" value="0"/>
+				
+				<!-- FearPain -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountFearPain_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsFearPain_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountFearPain_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountFearPain_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountFearPain_Add" operation="set" value="0"/>
+				
+				<!-- SocialPhobia -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountSocialPhobia_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsSocialPhobia_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountSocialPhobia_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountSocialPhobia_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountSocialPhobia_Add" operation="set" value="0"/>
+				
+				<!-- Unlucker -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountUnlucker_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsUnlucker_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountUnlucker_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsCountUnlucker_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$NegTraitsCountUnlucker_Add" operation="set" value="0"/>
+				
+			</effect_group>
+						
+		</buff>
+		
+		<buff name="buffPosTraitsCharacterAdd" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPosTraitsCharacterAdd">
+					<requirement name="!HasBuff" buff="buffCharacterSelfTraitsDistr"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNegTraitsCharacterAdd">
+					<requirement name="!HasBuff" buff="buffNegTraitsCharacterAdd"/>
+					<requirement name="HasBuff" buff="buffCharacterSelfTraitsDistr"/>
+				</triggered_effect>
+				
+			</effect_group>
+			
+			<effect_group name='Positive Traits'>
+			
+				<!-- Genius -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsGenius_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsGenius_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+								
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+								
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsGenius_Add" operation="set" value="0"/>
+				
+				<!-- AthleticBuild -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsAthleticBuild_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsAthleticBuild_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsAthleticBuild_Add" operation="set" value="0"/>
+				
+				<!-- Bodybuilder -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsBodybuilder_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsBodybuilder_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsBodybuilder_Add" operation="set" value="0"/>
+												
+				<!-- Courage -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCourage_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCourage_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCourage_Add" operation="set" value="0"/>
+								
+				<!-- FastAdaptation -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsFastAdaptation_Add" operation="set" value="randomint(0,1)"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="LTE" value="2"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="LT" value="1"/> -->
+				<!-- </triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsFastAdaptation_Current" operation="add" value="1"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Add" operation="Equals" value="1"/> -->
+				<!-- </triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Add" operation="Equals" value="1"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/> -->
+				<!-- </triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsFastAdaptation_Add" operation="set" value="0"/> -->
+				
+				<!-- Hardening -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsHardening_Add" operation="set" value="randomint(0,1)"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="LTE" value="2"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="LT" value="1"/> -->
+				<!-- </triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsHardening_Current" operation="add" value="1"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Add" operation="Equals" value="1"/> -->
+				<!-- </triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Add" operation="Equals" value="1"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/> -->
+				<!-- </triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsHardening_Add" operation="set" value="0"/> -->
+				
+				<!-- Charismatic -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCharismatic_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCharismatic_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCharismatic_Add" operation="set" value="0"/>
+				
+				<!-- LuckyGuy -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsLuckyGuy_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsLuckyGuy_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsLuckyGuy_Add" operation="set" value="0"/>
+				
+				<!-- JackOfAllTrades -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsJackOfAllTrades_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsJackOfAllTrades_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsJackOfAllTrades_Add" operation="set" value="0"/>
+				
+				<!-- ExperiencedHunter -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsExperiencedHunter_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsExperiencedHunter_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsExperiencedHunter_Add" operation="set" value="0"/>
+				
+				<!-- Crusher -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCrusher_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCrusher_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCrusher_Add" operation="set" value="0"/>
+				
+				<!-- Fearless -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsFearless_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsFearless_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsFearless_Add" operation="set" value="0"/>
+				
+				<!-- VeteranWasteland -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsVeteranWasteland_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsVeteranWasteland_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsVeteranWasteland_Add" operation="set" value="0"/>
+				
+				<!-- Schumacher -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsSchumacher_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsSchumacher_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsSchumacher_Add" operation="set" value="0"/>
+				
+				<!-- TeamPlayer -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsTeamPlayer_Add" operation="set" value="randomint(0,1)">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="LTE" value="2"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsTeamPlayer_Current" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Add" operation="Equals" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsCount" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Add" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$PosTraitsCount" operation="GT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PosTraitsTeamPlayer_Add" operation="set" value="0"/>			
+								
+			</effect_group>
+									
+		</buff>
+			
+		<buff name="buffResetPerksProxy" hidden="true" remove_on_death="false">
+			<stack_type value="replace"/>
+			<duration value=".5"/>
+			
+			<effect_group name="Set CVAR's">
+				<!-- Dementia -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse1" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse1" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse2" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse1" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse2" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadWorse3" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$NegTraitsDementia_Current" operation="EQ" value="3"/></triggered_effect>
+				
+				<!-- Obesity -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity1" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity1" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity2" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity1" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity2" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerObesity3" operation="set" value="43200">
+					<requirement name="CVarCompare" cvar="$NegTraitsObesity_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- Distrophia -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia1" operation="set" value="5400">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia1" operation="set" value="5400">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia2" operation="set" value="5400">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia1" operation="set" value="5400">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia2" operation="set" value="5400">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerDistrophia3" operation="set" value="10800">
+					<requirement name="CVarCompare" cvar="$NegTraitsDistrophia_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- Alarmism -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAlarmism3" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$NegTraitsAlarmism_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- BrittleBones -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones1" operation="set" value="7200">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones1" operation="set" value="7200">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones2" operation="set" value="7200">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones1" operation="set" value="7200">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones2" operation="set" value="7200">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBrittleBones3" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- Weakling -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling1" operation="set" value="10800">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling1" operation="set" value="10800">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling2" operation="set" value="10800">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling1" operation="set" value="10800">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling2" operation="set" value="10800">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakling3" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$NegTraitsWeakling_Current" operation="EQ" value="3"/></triggered_effect>
+				
+				<!-- AllergySufferer -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer2" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer2" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAllergySufferer3" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$NegTraitsAllergySufferer_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- WeakImmunity -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity1" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="0"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity2" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="0"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity3" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="0"/></triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity1" operation="set" value="14400"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="1"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity2" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="1"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity3" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="1"/></triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity1" operation="set" value="14400"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="2"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity2" operation="set" value="28800"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="2"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity3" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="2"/></triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity1" operation="set" value="14400"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="3"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity2" operation="set" value="28800"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="3"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerWeakImmunity3" operation="set" value="43200"> -->
+					<!-- <requirement name="CVarCompare" cvar="$NegTraitsWeakImmunity_Current" operation="EQ" value="3"/></triggered_effect> -->
+					
+				<!-- Clumsy -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy1" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy1" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy2" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy1" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy2" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterClumsy3" operation="set" value="1000">
+					<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- Pacifist -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist1" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist1" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist2" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist1" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist2" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterPacifist3" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- FearDark -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark2" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark2" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearDark3" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearDark_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- FearAnimals -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals1" operation="set" value="200">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals1" operation="set" value="200">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals2" operation="set" value="200">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals1" operation="set" value="200">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals2" operation="set" value="200">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearAnimals3" operation="set" value="400">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="EQ" value="3"/></triggered_effect>
+				
+				<!-- FearZombie -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie1" operation="set" value="2000">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie1" operation="set" value="2000">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie2" operation="set" value="2000">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie1" operation="set" value="2000">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie2" operation="set" value="2000">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterFearZombie3" operation="set" value="4000">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- FearFire -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire2" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire2" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearFire3" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearFire_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- FearPain -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain1" operation="set" value="10800">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain1" operation="set" value="10800">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain2" operation="set" value="10800">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain1" operation="set" value="10800">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain2" operation="set" value="10800">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearPain3" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="3"/></triggered_effect>
+				
+				<!-- SocialPhobia -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSocialPhobia3" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$NegTraitsSocialPhobia_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- Unlucker -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker1" operation="set" value="1500">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker1" operation="set" value="1500">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker2" operation="set" value="1500">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker3" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker1" operation="set" value="1500">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker2" operation="set" value="1500">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterUnlucker3" operation="set" value="6000">
+					<requirement name="CVarCompare" cvar="$NegTraitsUnlucker_Current" operation="EQ" value="3"/></triggered_effect>
+
+				<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+				<!-- Genius -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter0" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter1" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter2" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter1" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter2" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter2" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BooksReadBetter2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsGenius_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- AthleticBuild -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild0" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild1" operation="set" value="43200">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild2" operation="set" value="57600">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild1" operation="set" value="43200">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild2" operation="set" value="57600">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild2" operation="set" value="57600">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerAthleticBuild2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsAthleticBuild_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- Courage -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage0" operation="set" value="7200">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerCourage2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCourage_Current" operation="EQ" value="3"/></triggered_effect>
+								
+				<!-- Bodybuilder -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder0" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder1" operation="set" value="36000">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder2" operation="set" value="43200">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder1" operation="set" value="36000">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder2" operation="set" value="43200">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder2" operation="set" value="43200">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerBodybuilder2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsBodybuilder_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- FastAdaptation -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation0" operation="set" value="14400"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="0"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation1" operation="set" value="28800"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="0"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation2" operation="set" value="43200"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="0"/></triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation0" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="1"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation1" operation="set" value="28800"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="1"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation2" operation="set" value="43200"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="1"/></triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation0" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="2"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation1" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="2"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation2" operation="set" value="43200"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="2"/></triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation0" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="3"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation1" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="3"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFastAdaptation2" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsFastAdaptation_Current" operation="EQ" value="3"/></triggered_effect> -->
+					
+				<!-- Hardening -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening0" operation="set" value="7200"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="0"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening1" operation="set" value="14400"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="0"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening2" operation="set" value="21600"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="0"/></triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening0" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="1"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening1" operation="set" value="14400"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="1"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening2" operation="set" value="21600"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="1"/></triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening0" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="2"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening1" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="2"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening2" operation="set" value="21600"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="2"/></triggered_effect> -->
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening0" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="3"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening1" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="3"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerHardening2" operation="set" value="0"> -->
+					<!-- <requirement name="CVarCompare" cvar="$PosTraitsHardening_Current" operation="EQ" value="3"/></triggered_effect> -->
+				
+				<!-- Charismatic -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic0" operation="set" value="50">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic1" operation="set" value="50">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic2" operation="set" value="100">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic1" operation="set" value="50">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic2" operation="set" value="100">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic2" operation="set" value="100">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="3"/></triggered_effect>
+				
+				<!-- LuckyGuy -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy0" operation="set" value="2000">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy1" operation="set" value="3000">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy2" operation="set" value="5000">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy1" operation="set" value="3000">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy2" operation="set" value="5000">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy2" operation="set" value="5000">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterLuckyGuy2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsLuckyGuy_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- JackOfAllTrades -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades0" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades1" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades2" operation="set" value="1000">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades1" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades2" operation="set" value="1000">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades2" operation="set" value="1000">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterJackOfAllTrades2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- ExperiencedHunter -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter0" operation="set" value="200">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter1" operation="set" value="200">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter2" operation="set" value="400">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter1" operation="set" value="200">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter2" operation="set" value="400">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter2" operation="set" value="400">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterExperiencedHunter2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsExperiencedHunter_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- Crusher -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher0" operation="set" value="500">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher1" operation="set" value="1250">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher2" operation="set" value="2500">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher1" operation="set" value="1250">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher2" operation="set" value="2500">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher2" operation="set" value="2500">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCrusher2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsCrusher_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- Fearless -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless0" operation="set" value="7200">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerFearless2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsFearless_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- VeteranWasteland -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland0" operation="set" value="100">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland1" operation="set" value="175">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland2" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland1" operation="set" value="175">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland2" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland2" operation="set" value="250">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterVeteranWasteland2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsVeteranWasteland_Current" operation="EQ" value="3"/></triggered_effect>
+					
+				<!-- Schumacher -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher0" operation="set" value="7200">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher1" operation="set" value="14400">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher2" operation="set" value="21600">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerSchumacher2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsSchumacher_Current" operation="EQ" value="3"/></triggered_effect>
+								
+				<!-- TeamPlayer -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer0" operation="set" value="28800">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer1" operation="set" value="36000">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer2" operation="set" value="43200">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="0"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer1" operation="set" value="36000">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer2" operation="set" value="43200">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="1"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer2" operation="set" value="43200">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="2"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer0" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer1" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="TimerTeamPlayer2" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$PosTraitsTeamPlayer_Current" operation="EQ" value="3"/></triggered_effect>
+			</effect_group>
+						
+			<effect_group name='Add Progress Event'>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="RefreshSelfTraits"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="ShowStatsSelfTraits"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$SelfTraitsProgressionStatus" operation="set" value="1"/>
+			</effect_group>
+		
+		</buff>
+		
+		<buff name="buffCounterCharismatic" hidden="true" remove_on_death="false">
+			<stack_type value="replace"/>
+			<duration value=".1"/>
+			
+			<effect_group name='Add Progress'>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic0" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic1" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CounterCharismatic2" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$PosTraitsCharismatic_Current" operation="EQ" value="2"/></triggered_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffRecoverSelfTraits" hidden="true" remove_on_death="false">
+			<stack_type value="replace"/>
+			<duration value=".5"/>
+			
+			<effect_group name='Add Progress Event'>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="RecoverPerksSelfTraits"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="RecoverPerksPassiveEffects"/>
+			</effect_group>
+			
+		</buff>
+		
+		<!-- Used to check if you are on grass -->
+		<buff name="buffAllergyGrass" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="2"/>
+		</buff>
+		
+		<buff name="buffPerkTeamPlayer" name_key="buffPerkTeamPlayerName" description_key="buffPerkTeamPlayerDesc" icon="ui_game_symbol_adventure" icon_color="255,184,0" icon_blink="false" hidden="false">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+
+			<effect_group>
+				<requirement name="CVarCompare" cvar="TeamPlayerLevel" operation="GTE" value="1"/>
+					<passive_effect name="LootStage" operation="perc_add" value=".05"/>
+					<passive_effect name="PlayerExpGain" operation="perc_add" value=".05"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="CVarCompare" cvar="TeamPlayerLevel" operation="GTE" value="2"/>
+					<passive_effect name="LootStage" operation="perc_add" value=".1"/>
+					<passive_effect name="PlayerExpGain" operation="perc_add" value=".1"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="CVarCompare" cvar="TeamPlayerLevel" operation="GTE" value="3"/>
+					<passive_effect name="LootStage" operation="perc_add" value=".15"/>
+					<passive_effect name="PlayerExpGain" operation="perc_add" value=".15"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="CVarCompare" cvar="TeamPlayerLevel" operation="LTE" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPerkTeamPlayer"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RefreshPerks"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RefreshPerks"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="TeamPlayerLevel"/>
+				
+				<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffPerkTeamPlayer"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffPerkTeamPlayer"/>
+			</effect_group>
+		</buff>
+		
+		<!-- Bonus distribution of personal qualities -->
+		
+		<buff name="buffTestNegativeTraits0" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkDementia0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkObesity0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkDistrophia0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkAlarmism0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkBrittleBones0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkWeakling0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkAllergySufferer0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkClumsy0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkPacifist0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkFearDark0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkFearAnimals0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkFearZombie0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkFearFire0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkFearPain0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkSocialPhobia0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkUnlucker0"/>
+			</effect_group>
+		</buff>
+		<buff name="buffNegativeTraits0" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<requirement name="!HasBuff" buff="buffYautja"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkDementia0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkObesity0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkDistrophia0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkAlarmism0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkBrittleBones0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkWeakling0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkAllergySufferer0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkClumsy0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkPacifist0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkFearDark0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkFearAnimals0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkFearZombie0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkFearFire0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkFearPain0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkSocialPhobia0"/>
+					<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkUnlucker0"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffTraitGenius3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkGenius3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitAthleticBuild3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkAthleticBuild3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitCourage3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkCourage3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitBodybuilder3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkBodybuilder3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitLuckyGuy3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkLuckyGuy3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitJackOfAllTrades3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkJackOfAllTrades3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitCharismatic3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkCharismatic3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitExperiencedHunter3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkExperiencedHunter3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitCrusher3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkCrusher3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitFearless3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkFearless3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitVeteranWasteland3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkVeteranWasteland3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitSchumacher3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkSchumacher3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffTraitTeamPlayer3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="setPerkTeamPlayer3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</buff>
+		
+	</append>
+	
+	<append xpath="/buffs/buff[@name='buffPlayerFallingDamage']">
+		<effect_group name="Brittle Bones">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".impactSpeed" operation="add" value=".1">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="1"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".impactSpeed" operation="add" value=".25">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="2"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".impactSpeed" operation="add" value=".5">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="2"/>
+			</triggered_effect>
+		</effect_group>
+	</append>
+	
+</config>

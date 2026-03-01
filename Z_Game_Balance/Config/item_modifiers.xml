@@ -1,0 +1,30 @@
+<config>
+	
+	<!-- The repulsor effect is switchable. -->
+	<remove xpath="/item_modifiers/item_modifier[@name='modMeleeStunBatonRepulsor']/effect_group"/>
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeStunBatonRepulsor']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffmodMeleeStunBatonRepulsor">
+				<requirement name="!HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+		</effect_group>
+	</append>
+	
+	<set xpath="/item_modifiers/item_modifier[@name='modArmorAgility']/@installable_tags">armorHands</set>
+	<set xpath="/item_modifiers/item_modifier[@name='modArmorStrength']/@installable_tags">armorHands</set>
+	<set xpath="/item_modifiers/item_modifier[@name='modArmorPerception']/@installable_tags">armorHands</set>
+	<set xpath="/item_modifiers/item_modifier[@name='modArmorFortitude']/@installable_tags">armorHands</set>
+	<set xpath="/item_modifiers/item_modifier[@name='modArmorIntellect']/@installable_tags">armorHands</set>
+
+	<!-- <set xpath="/item_modifiers/item_modifier[@name='modVehicleStorage']/@installable_tags">dupeerror</set> -->
+	
+	<!-- <set xpath="/item_modifiers/item_modifier[@name='modArmorInsulatedLinerT1']/effect_group/passive_effect[@name='HypothermalResist']/@value">4</set> -->
+	<!-- <set xpath="/item_modifiers/item_modifier[@name='modArmorInsulatedLinerT1']/effect_group/passive_effect[@name='HyperthermalResist']/@value">-2</set> -->
+	<!-- <set xpath="/item_modifiers/item_modifier[@name='modArmorInsulatedLinerT2']/effect_group/passive_effect[@name='HypothermalResist']/@value">6</set> -->
+	<!-- <set xpath="/item_modifiers/item_modifier[@name='modArmorInsulatedLinerT2']/effect_group/passive_effect[@name='HyperthermalResist']/@value">-3</set> -->
+	<!-- <set xpath="/item_modifiers/item_modifier[@name='modArmorInsulatedLinerT3']/effect_group/passive_effect[@name='HypothermalResist']/@value">10</set> -->
+	<!-- <set xpath="/item_modifiers/item_modifier[@name='modArmorInsulatedLinerT3']/effect_group/passive_effect[@name='HyperthermalResist']/@value">-5</set> -->
+	
+</config>

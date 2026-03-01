@@ -1,0 +1,22 @@
+<config>
+	
+	<insertAfter xpath="/quests/quest[@id='tier1_fetch']/objective[@type='InteractWithNPC']">
+		<action type="GameEvent" id="CounterCharismaticEvent" phase="4"/>
+    </insertAfter>
+	<insertAfter xpath="/quests/quest[@id='tier1_clear']/objective[@type='InteractWithNPC']">
+		<action type="GameEvent" id="CounterCharismaticEvent" phase="4"/>
+    </insertAfter>
+	<insertAfter xpath="/quests/quest[@id='tier2_clear_infested']/objective[@type='InteractWithNPC']">
+		<action type="GameEvent" id="CounterCharismaticEvent" phase="4"/>
+    </insertAfter>
+	<insertAfter xpath="/quests/quest[@id='tier2_restore_power']/objective[@type='InteractWithNPC']">
+		<action type="GameEvent" id="CounterCharismaticEvent" phase="4"/>
+    </insertAfter>
+	<insertAfter xpath="/quests/quest[@id='tier2_fetch_clear']/objective[@type='InteractWithNPC']">
+		<action type="GameEvent" id="CounterCharismaticEvent" phase="4"/>
+    </insertAfter>
+	<insertAfter xpath="/quests/quest[@id='tier1_buried_supplies']/objective[@type='InteractWithNPC']">
+		<action type="GameEvent" id="CounterCharismaticEvent" phase="4"/>
+    </insertAfter>
+		
+</config>

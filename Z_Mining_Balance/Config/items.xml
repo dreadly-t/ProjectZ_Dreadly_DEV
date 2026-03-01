@@ -1,0 +1,6 @@
+<config>
+	
+	<set xpath="/items/item[@name='resourcePotassiumNitratePowder']/property[@name='Material']/@value">MresourcePotassiumNitrate</set>
+	<set xpath="/items/item[@name='meleeToolPickT3Auger']/effect_group/passive_effect[@name='PlayerExpGain']/@value">-.42</set>
+
+</config>

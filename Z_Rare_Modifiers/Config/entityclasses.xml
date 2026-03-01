@@ -1,0 +1,16 @@
+<configs>
+
+	<!-- <append xpath="/entity_classes/entity_class[@name='playerMale']"> -->
+		
+		<!-- <effect_group name="Storm Resist"> -->
+			<!-- <requirement name="CVarCompare" cvar="$StormResistHelmet" operation="EQ" value="1"/> -->
+			<!-- <requirement name="CVarCompare" cvar="$StormResistOutfit" operation="EQ" value="1"/> -->
+			<!-- <requirement name="CVarCompare" cvar="$StormResistGloves" operation="EQ" value="1"/> -->
+			<!-- <requirement name="CVarCompare" cvar="$StormResistBoots" operation="EQ" value="1"/> -->
+		
+			<!-- <passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffBurnt_Storm,buffDesert_Storm_Stage02,buffSnow_Storm,buffWasteland_Storm"/> -->
+		<!-- </effect_group> -->
+		
+	<!-- </append> -->
+	
+</configs>

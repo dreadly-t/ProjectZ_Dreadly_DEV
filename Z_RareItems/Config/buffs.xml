@@ -1,0 +1,82 @@
+<config>
+	
+	<append xpath="/buffs">
+		
+		<buff name="buffRareRobinhood1" name_key="buffRareRobinhoodName" description_key="buffRareRobinhood1Desc" icon_color="250,255,99" icon="ui_game_symbol_archery">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffRareRobinhood1">
+					<requirement name="!HoldingItemHasTags" tags="perkArchery"/></triggered_effect>
+			
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".5" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".25">
+					<requirement name="HoldingItemHasTags" tags="perkArchery"/>
+				</passive_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffRareRobinhood2" name_key="buffRareRobinhoodName" description_key="buffRareRobinhood2Desc" icon_color="250,255,99" icon="ui_game_symbol_archery">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffRareRobinhood2">
+					<requirement name="!HoldingItemHasTags" tags="perkArchery"/></triggered_effect>
+			
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="1" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".5">
+					<requirement name="HoldingItemHasTags" tags="perkArchery"/>
+				</passive_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffRareRobinhood3" name_key="buffRareRobinhoodName" description_key="buffRareRobinhood3Desc" icon_color="250,255,99" icon="ui_game_symbol_archery">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffRareRobinhood3">
+					<requirement name="!HoldingItemHasTags" tags="perkArchery"/></triggered_effect>
+			
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="2" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="1">
+					<requirement name="HoldingItemHasTags" tags="perkArchery"/>
+				</passive_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffSnowstormWeapon" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="6"/>
+			<update_rate value="2"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$SnowstormWeaponCounter" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$SnowstormWeaponCounter" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SnowstormWeaponCounter" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$SnowstormWeaponCounter"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$SnowstormWeaponDuration" operation="LT" value="2"/>
+					<passive_effect name="RunSpeed" operation="perc_add" value="-.5"/>
+					<passive_effect name="WalkSpeed" operation="perc_add" value="-.5"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$SnowstormWeaponDuration" operation="GTE" value="2"/>
+				<requirement name="CVarCompare" cvar="$SnowstormWeaponDuration" operation="LT" value="4"/>
+					<passive_effect name="RunSpeed" operation="perc_add" value="-.25"/>
+					<passive_effect name="WalkSpeed" operation="perc_add" value="-.25"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$SnowstormWeaponDuration" operation="GTE" value="4"/>
+					<passive_effect name="RunSpeed" operation="perc_add" value="-.1"/>
+					<passive_effect name="WalkSpeed" operation="perc_add" value="-.1"/>
+			</effect_group>
+		</buff>
+	
+	</append>
+	
+</config>

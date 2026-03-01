@@ -1,0 +1,59 @@
+<config>
+
+	<!-- New Parkour -->
+	<remove xpath="/progression/perks/perk[@name='perkParkour']/effect_group/passive_effect[@name='JumpStrength']"/>
+	<append xpath="/progression/perks/perk[@name='perkParkour']/effect_group">
+		<passive_effect name="JumpStrength" operation="perc_add" level="2,3,4,5" value=".39,.39,.75,.75">
+			<requirement name="CVarCompare" cvar="$JetPackParkourBlock" operation="LT" value="1"/></passive_effect>
+	</append>
+	
+	<!-- Bookworm Chance -->
+	<set xpath="/progression/perks/perk[@name='perkIntellectMastery']/effect_group/triggered_effect[@cvar='$perkBookwormChance']/@cvar">$perkIntellectMasteryBonus</set>
+	
+	<!-- Point Chance -->	
+	<remove xpath="/progression/perks/perk[@name='perkIntellectMastery']/effect_group/triggered_effect[(contains(@trigger, 'onPerkLevelChanged')) and contains(@cvar, '$perkIntellectMasteryPointChance')]"/>
+	<remove xpath="/progression/perks/perk[@name='perkIntellectMastery']/effect_group/triggered_effect[(contains(@trigger, 'onPerkLevelChanged')) and contains(@cvar, '$pointChanceFlag')]"/>
+	<remove xpath="/progression/perks/perk[@name='perkIntellectMastery']/effect_group/triggered_effect[(contains(@trigger, 'onPerkLevelChanged')) and contains(@cvar, '$nerdOutfitSkillPointChance')]"/>
+	<remove xpath="/progression/perks/perk[@name='perkIntellectMastery']/effect_group/triggered_effect[(contains(@trigger, 'onSelfProgressionUpdate')) and contains(@cvar, '$perkIntellectMasteryPointChance,$pointChanceFlag,$nerdOutfitSkillPointChance')]"/>
+	
+	<append xpath="/progression/perks/perk[@name='perkIntellectMastery']">
+		<effect_group>
+			<triggered_effect trigger="onPerkLevelChanged" action="ModifyCVar" cvar="$perkIntellectMasteryPointChanceBonus" operation="set" value="25">
+				 <requirement name="ProgressionLevel" progression_name="perkIntellectMastery" operation="GTE" value="3" /></triggered_effect>
+			<triggered_effect trigger="onSelfProgressionUpdate" action="RemoveCVar" cvar="$perkIntellectMasteryPointChanceBonus">
+				 <requirement name="ProgressionLevel" progression_name="perkIntellectMastery" operation="LT" value="3" /></triggered_effect>
+		</effect_group>
+	</append>
+	
+	<!-- Add mod armor AR -->
+	<insertAfter xpath="/progression/crafting_skills/crafting_skill[@name='craftingArmor']/display_entry[@icon='armorRaiderHelmet']">
+		<display_entry icon="modArmorPlatingReinforced,modArmorPlatingReinforced,modArmorPerception,modArmorStrength,modArmorFortitude,modArmorAgility,modArmorIntellect,modArmorPlatingReinforced,modArmorPlatingReinforced,modArmorTreasureHunter,resourceArmorCraftingKit" name_key="armorModsT5" has_quality="false" unlock_level="25,50,50,50,50,50,50,75,100,100,100" >
+			<unlock_entry item="modArmorARResistHelmet" unlock_tier="1" />
+			<unlock_entry item="modArmorAROutfit" unlock_tier="2" />
+			<unlock_entry item="modArmorPerception" unlock_tier="3" />
+			<unlock_entry item="modArmorStrength" unlock_tier="4" />
+			<unlock_entry item="modArmorFortitude" unlock_tier="5" />
+			<unlock_entry item="modArmorAgility" unlock_tier="6" />
+			<unlock_entry item="modArmorIntellect" unlock_tier="7" />
+			<unlock_entry item="modArmorARGloves" unlock_tier="8" />
+			<unlock_entry item="modArmorARBoots" unlock_tier="9" />
+			<unlock_entry item="modArmorTreasureHunter" unlock_tier="10" />
+			<unlock_entry item="resourceArmorCraftingKitImp" unlock_tier="11" />
+		</display_entry>
+	</insertAfter>
+	
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingArmor']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="modArmorARResistHelmet"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modArmorAROutfit"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modArmorPerception"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modArmorStrength"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modArmorFortitude"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modArmorAgility"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modArmorIntellect"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="modArmorARGloves"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1" tags="modArmorARBoots"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1" tags="modArmorTreasureHunter"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1" tags="resourceArmorCraftingKitImp"/>
+	</append>
+	
+</config>

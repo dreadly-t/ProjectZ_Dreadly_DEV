@@ -1,0 +1,651 @@
+<config>
+	
+	<append xpath="/items">
+	
+		<item name="TraitsCharacterRefresh">
+			<property name="CustomIcon" value="decoMannequinMale"/>
+			<property name="TintColor" value="255,102,102"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			<property name="ItemTypeIcon" value="character"/>
+			<property name="DescriptionKey" value="TraitsCharacterRefreshDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="DonateBooks"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="twitch_cooldown_started"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCharacterSelfTraitsDistr">
+					<requirement name="CVarCompare" cvar="$onChallengeAllNegative" operation="LT" value="1"/></triggered_effect>
+			</effect_group>
+		</item>
+		
+		<item name="setNegativeSelfTraits">
+			<property name="CustomIcon" value="decoMannequinMale"/>
+			<property name="TintColor" value="225,145,225"/>
+			<property name="CustomIconTint" value="E092FF"/>
+			<property name="ItemTypeIcon" value="character"/>
+			<property name="DescriptionKey" value="setNegativeSelfTraitsDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="DonateBooks"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="4"/>
+				<property name="Create_item" value="drinkJarEmpty"/>
+				<property name="Use_jar_refund" value="true"/>
+				<property name="PromptTitle" value="selfTraitsChallengePromptTitle"/>
+				<property name="PromptDescription" value="selfTraitsChallengePromptDesc"/>
+				<property name="Sound_start" value="twitch_cooldown_started"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffYautjaStart"/>
+			</effect_group>
+		</item>
+		
+		<item name="exitChallenge">
+			<property name="CustomIcon" value="decoMannequinMale"/>
+			<property name="TintColor" value="225,145,225"/>
+			<property name="CustomIconTint" value="8426A9"/>
+			<property name="ItemTypeIcon" value="character"/>
+			<property name="DescriptionKey" value="exitChallengeDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="DonateBooks"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="twitch_reverse"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$onChallengeAllNegative" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffYautja"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="YautjaCancelTooltip"/>
+			</effect_group>
+		</item>
+		
+		<item name="seasonChallangeYautjaBundle">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="adminQuestTicketMaster"/>
+			<property name="CustomIconTint" value="E092FF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="seasonChallangeYautjaBundleDesc"/>
+			<property name="Group" value="Challenge"/>
+			<property class="Action0">
+				<property name="Create_item" value="setNegativeSelfTraits,exitChallenge"/>
+				<property name="Create_item_count" value="1,1"/>
+			</property>
+		</item>
+		
+		<item name="AddLevelTraits">
+			<property name="CustomIcon" value="cntBookPile09"/>
+			<property name="TintColor" value="90,255,117"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="DescriptionKey" value="AddLevelTraitsDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="Stacknumber" value="150"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="twitch_cooldown_started"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$BrainStatusUp" operation="add" value="1"/>
+			</effect_group>
+		</item>
+		
+		<item name="TraitsCharisma">
+			<property name="Extends" value="AddLevelTraits"/>
+			<property name="CustomIcon" value="cntBookPile09"/>
+			<property name="TintColor" value="90,255,117"/>
+			<property name="CustomIconTint" value="5AFF75"/>
+			<property name="DescriptionKey" value="AddLevelTraitsDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="Stacknumber" value="150"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="twitch_cooldown_started"/>
+			</property>
+						
+			<effect_group tiered="false">
+				<requirement name="ProgressionLevel" progression_name="perkCharismatic" operation="LT" value="1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PosTraitsCharismatic_Current" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CounterCharismatic0" operation="set" value="50"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CounterCharismatic1" operation="set" value="50"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CounterCharismatic2" operation="set" value="100"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ProgressionLevel" progression_name="perkCharismatic" operation="EQ" value="1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PosTraitsCharismatic_Current" operation="set" value="1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CounterCharismatic0" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CounterCharismatic1" operation="set" value="50"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CounterCharismatic2" operation="set" value="100"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ProgressionLevel" progression_name="perkCharismatic" operation="EQ" value="2"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$PosTraitsCharismatic_Current" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CounterCharismatic0" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CounterCharismatic1" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CounterCharismatic2" operation="set" value="100"/>
+			</effect_group>
+		</item>
+		
+		<item name="RemoveLevelTraits">
+			<property name="CustomIcon" value="cntBookPile09"/>
+			<property name="TintColor" value="255,43,43"/>
+			<property name="CustomIconTint" value="FF2B2B"/>
+			<property name="DescriptionKey" value="AddLevelTraitsDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="Stacknumber" value="150"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="twitch_cooldown_started"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$BrainStatusDowm" operation="set" value="1"/>
+			</effect_group>
+		</item>
+		
+		<!-- NEGATIVE -->		
+		<item name="TestObesity3">
+			<property name="CustomIcon" value="cntBookPile09"/>
+			<property name="TintColor" value="212,49,0"/>
+			<property name="CustomIconTint" value="D43100"/>
+			<property name="DescriptionKey" value="AddLevelTraitsDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="Stacknumber" value="150"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="twitch_cooldown_started"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkObesity3"/>
+			</effect_group>
+		</item>
+		
+		<item name="TestObesity2">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkObesity2"/>
+			</effect_group>
+		</item>
+		<item name="TestObesity1">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkObesity1"/>
+			</effect_group>
+		</item>
+		<item name="TestObesity0">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkObesity0"/>
+			</effect_group>
+		</item>
+		
+		<item name="TestNegativeTraits0">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTestNegativeTraits0"/>
+			</effect_group>
+		</item>
+		
+		<item name="NegativeTraits0">
+			<property name="Extends" value="TestObesity3"/>
+			<property name="DescriptionKey" value="NegativeTraits0Desc"/>
+			<property name="Group" value="Books,BooksOnly,TCReading,DonateBooks"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffNegativeTraits0">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		
+		<item name="TestDementia3">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkDementia3"/>
+			</effect_group>
+		</item>
+		<item name="TestDistrophia">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkDistrophia3"/>
+			</effect_group>
+		</item>
+		<item name="TestAlarmism">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkAlarmism3"/>
+			</effect_group>
+		</item>
+		<item name="TestBrittleBones">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkBrittleBones3"/>
+			</effect_group>
+		</item>
+		<item name="TestWeakling">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkWeakling3"/>
+			</effect_group>
+		</item>
+		<item name="TestAllergySufferer">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkAllergySufferer3"/>
+			</effect_group>
+		</item>
+		<item name="TestWeakImmunity">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkWeakImmunity3"/>
+			</effect_group>
+		</item>
+		<item name="TestClumsy">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkClumsy3"/>
+			</effect_group>
+		</item>
+		
+		<item name="TestPacifist1">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkPacifist1"/>
+			</effect_group>
+		</item>
+		<item name="TestPacifist">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkPacifist3"/>
+			</effect_group>
+		</item>
+		<item name="TestFearDark">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkFearDark3"/>
+			</effect_group>
+		</item>
+		<item name="TestFearAnimals">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkFearAnimals3"/>
+			</effect_group>
+		</item>
+		<item name="TestFearZombie">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkFearZombie3"/>
+			</effect_group>
+		</item>
+		<item name="TestFearFire">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkFearFire3"/>
+			</effect_group>
+		</item>
+		<item name="TestFearPain">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkFearPain3"/>
+			</effect_group>
+		</item>
+		<item name="TestSocialPhobia">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkSocialPhobia3"/>
+			</effect_group>
+		</item>
+		<item name="TestUnlucker">
+			<property name="Extends" value="TestObesity3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="setPerkUnlucker3"/>
+			</effect_group>
+		</item>
+		
+		<!-- POSITIVE -->
+		<item name="TraitGenius3">
+			<property name="Extends" value="TestObesity3"/>
+			<property name="TintColor" value="49,212,0"/>
+			<property name="CustomIconTint" value="31D400"/>
+			<property name="DescriptionKey" value="TraitGeniusBuildDesc"/>
+			<property name="Group" value="Books,BooksOnly,TCReading,DonateBooks"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitGenius3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<item name="TraitAthleticBuild3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitAthleticBuild3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitAthleticBuild3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<item name="TraitCourage3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitCourage3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitCourage3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<item name="TraitBodybuilder3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitBodybuilder3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitBodybuilder3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<!-- <item name="TraitFastAdaptation3"> -->
+			<!-- <property name="Extends" value="TraitGenius3"/> -->
+			<!-- <property name="DescriptionKey" value="TraitFastAdaptation3Desc"/> -->
+			<!-- <effect_group tiered="false"> -->
+				<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitFastAdaptation3"> -->
+					<!-- <requirement name="!HasBuff" buff="buffYautja"/></triggered_effect> -->
+			<!-- </effect_group> -->
+		<!-- </item> -->
+		<!-- <item name="TraitHardening3"> -->
+			<!-- <property name="Extends" value="TraitGenius3"/> -->
+			<!-- <property name="DescriptionKey" value="TraitHardening3Desc"/> -->
+			<!-- <effect_group tiered="false"> -->
+				<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitHardening3"> -->
+					<!-- <requirement name="!HasBuff" buff="buffYautja"/></triggered_effect> -->
+			<!-- </effect_group> -->
+		<!-- </item> -->
+		<item name="TraitLuckyGuy3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitLuckyGuy3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitLuckyGuy3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<item name="TraitJackOfAllTrades3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitJackOfAllTrades3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitJackOfAllTrades3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<item name="TraitCharismatic3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitCharismatic3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitCharismatic3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<item name="TraitExperiencedHunter3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitExperiencedHunter3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitExperiencedHunter3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<item name="TraitCrusher3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitCrusher3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitCrusher3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<item name="TraitFearless3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitFearless3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitFearless3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<item name="TraitVeteranWasteland3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitVeteranWasteland3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitVeteranWasteland3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<item name="TraitSchumacher3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitSchumacher3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitSchumacher3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+		<item name="TraitTeamPlayer3">
+			<property name="Extends" value="TraitGenius3"/>
+			<property name="DescriptionKey" value="TraitTeamPlayer3Desc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffTraitTeamPlayer3">
+					<requirement name="!HasBuff" buff="buffYautja"/></triggered_effect>
+			</effect_group>
+		</item>
+	</append>
+	
+	<!-- PerkBrittleBones -->
+	<append xpath="/items/item[@name='foodEgg']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="15">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="15">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="15">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="3"/></triggered_effect>
+		</effect_group>
+	</append>
+	<!-- WeakImmunity -->
+	<append xpath="/items/item[@name='foodHoney']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerWeakImmunity1" operation="subtract" value="15">
+				<requirement name="ProgressionLevel" progression_name="perkWeakImmunity" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerWeakImmunity2" operation="subtract" value="15">
+				<requirement name="ProgressionLevel" progression_name="perkWeakImmunity" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerWeakImmunity3" operation="subtract" value="15">
+				<requirement name="ProgressionLevel" progression_name="perkWeakImmunity" operation="Equals" value="3"/></triggered_effect>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[starts-with(@name, 'book')]">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$ReadBookCount" operation="add" value="1"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[contains(@name, 'Magazine')]">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$ReadBookCount" operation="add" value="1"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[contains(@name, 'Schematic')]">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$ReadBookCount" operation="add" value="1"/>
+		</effect_group>
+	</append>
+	
+	<remove xpath="/items/item[@name='drinkJarGrandpasForgettingElixir']/effect_group"/>
+
+	<insertAfter xpath="/items/item[@name='drinkJarGrandpasForgettingElixir']/property[@name='HoldType']">
+		<property name="Tags" value="selfTraitsRefresh"/>
+	</insertAfter>
+	
+
+	<append xpath="/items/item[@name='drinkJarGrandpasForgettingElixir']">
+		<effect_group tiered="false" name="Drink Tier Trader">
+			<requirement name="NotHasBuff" buff="buffIsOnFire"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true"/>
+				<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="RecoverPerksSelfTraits"/> -->
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRecoverSelfTraits"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RefreshPerks"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="twitch_reverse" play_in_head="true"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkJarGrandpasForgettingElixirTooltip"/>
+		</effect_group>
+	</append>
+	
+	<insertAfter xpath="/items/item[@name='drinkJarRiverWater']/effect_group/triggered_effect[@buff='buffDysenteryCatchDrink']">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink">
+			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="15"/>
+			<requirement name="ProgressionLevel" progression_name="perkWeakImmunity" operation="Equals" value="1"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink">
+			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="30"/>
+			<requirement name="ProgressionLevel" progression_name="perkWeakImmunity" operation="Equals" value="2"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink">
+			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="50"/>
+			<requirement name="ProgressionLevel" progression_name="perkWeakImmunity" operation="Equals" value="3"/>
+		</triggered_effect>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='foodShamSandwich']/effect_group/triggered_effect[@buff='buffDysenteryCatchFood']">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="15"/>
+			<requirement name="ProgressionLevel" progression_name="perkWeakImmunity" operation="Equals" value="1"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="30"/>
+			<requirement name="ProgressionLevel" progression_name="perkWeakImmunity" operation="Equals" value="2"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="50"/>
+			<requirement name="ProgressionLevel" progression_name="perkWeakImmunity" operation="Equals" value="3"/>
+		</triggered_effect>
+	</insertAfter>
+	
+	<append xpath="/items/item[@name='foodCropCorn']">
+		<effect_group tiered="false" name="Brittle Bones Recovery">
+			<requirement name="CVarCompare" cvar="$SelfTraitsProgressionStatus" operation="EQ" value="1"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="3">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="3">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="3">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>	
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='foodCropGraceCorn']">
+		<effect_group tiered="false" name="Brittle Bones Recovery">
+			<requirement name="CVarCompare" cvar="$SelfTraitsProgressionStatus" operation="EQ" value="1"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="10">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="10">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="10">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>	
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='foodCropPotato']">
+		<effect_group tiered="false" name="Brittle Bones Recovery">
+			<requirement name="CVarCompare" cvar="$SelfTraitsProgressionStatus" operation="EQ" value="1"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>	
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='foodCropMushrooms']">
+		<effect_group tiered="false" name="Brittle Bones Recovery">
+			<requirement name="CVarCompare" cvar="$SelfTraitsProgressionStatus" operation="EQ" value="1"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>	
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='foodCropMushroomsRadiated']">
+		<effect_group tiered="false" name="Brittle Bones Recovery">
+			<requirement name="CVarCompare" cvar="$SelfTraitsProgressionStatus" operation="EQ" value="1"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>	
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='foodCropYuccaFruit']">
+		<effect_group tiered="false" name="Brittle Bones Recovery">
+			<requirement name="CVarCompare" cvar="$SelfTraitsProgressionStatus" operation="EQ" value="1"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>	
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='foodCropPumpkin']">
+		<effect_group tiered="false" name="Brittle Bones Recovery">
+			<requirement name="CVarCompare" cvar="$SelfTraitsProgressionStatus" operation="EQ" value="1"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>	
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='foodCropBlueberries']">
+		<effect_group tiered="false" name="Brittle Bones Recovery">
+			<requirement name="CVarCompare" cvar="$SelfTraitsProgressionStatus" operation="EQ" value="1"/>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="5">
+					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>	
+		</effect_group>
+	</append>
+	
+</config>

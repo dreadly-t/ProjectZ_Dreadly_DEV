@@ -1,0 +1,80 @@
+<configs>
+			
+	<append xpath="/entity_classes/entity_class[@name='playerMale']">
+				
+		<effect_group>
+			<requirement name="!HasBuff" buff="buffInjuryBleeding"/>
+			<requirement name="!HasBuff" buff="buffInternalBleeding"/>
+			<requirement name="!HasBuff" buff="buffIsOnFire"/>
+			<requirement name="!HasBuff" buff="buffDrowning03"/>
+			<requirement name="!HasBuff" buff="buffShocked"/>
+			<requirement name="!HasBuff" buff="buffRadiationPool"/>
+			<requirement name="!HasBuff" buff="buffTwitchBurn"/>
+			<requirement name="!HasBuff" buff="buffTwitchShocked"/>
+			<requirement name="!HasBuff" buff="buffTwitchRadiation"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$MissChance"/>
+				<triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_at_self="true"/>
+				<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
+				<passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+		</effect_group>
+		
+		<!-- perk Aggressor -->
+		<effect_group name="perkAggressor lvl 1">
+			<requirement name="ProgressionLevel" progression_name="perkAggressor" operation="EQ" value="1"/>
+				<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" event="actionAggressorMiniboss">
+					<requirement name="EntityTagCompare" target="other" tags="miniboss"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" event="actionAggressorBoss">
+					<requirement name="EntityTagCompare" target="other" tags="boss"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="4"/>
+				</triggered_effect>		
+		</effect_group>
+		<effect_group name="perkAggressor lvl 2">
+			<requirement name="ProgressionLevel" progression_name="perkAggressor" operation="EQ" value="2"/>
+				<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" event="actionAggressorMiniboss">
+					<requirement name="EntityTagCompare" target="other" tags="miniboss"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" event="actionAggressorBoss">
+					<requirement name="EntityTagCompare" target="other" tags="boss"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="8"/>
+				</triggered_effect>		
+		</effect_group>
+		<effect_group name="perkAggressor lvl 3">
+			<requirement name="ProgressionLevel" progression_name="perkAggressor" operation="EQ" value="3"/>
+				<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" event="actionAggressorMiniboss">
+					<requirement name="EntityTagCompare" target="other" tags="miniboss"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" event="actionAggressorBoss">
+					<requirement name="EntityTagCompare" target="other" tags="boss"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="12"/>
+				</triggered_effect>		
+		</effect_group>
+		<effect_group name="perkAggressor lvl 4">
+			<requirement name="ProgressionLevel" progression_name="perkAggressor" operation="EQ" value="4"/>
+				<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" event="actionAggressorMiniboss">
+					<requirement name="EntityTagCompare" target="other" tags="miniboss"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="32"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" event="actionAggressorBoss">
+					<requirement name="EntityTagCompare" target="other" tags="boss"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="16"/>
+				</triggered_effect>		
+		</effect_group>
+		<effect_group name="perkAggressor lvl 5">
+			<requirement name="ProgressionLevel" progression_name="perkAggressor" operation="EQ" value="5"/>
+				<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" event="actionAggressorMiniboss">
+					<requirement name="EntityTagCompare" target="other" tags="miniboss"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" event="actionAggressorBoss">
+					<requirement name="EntityTagCompare" target="other" tags="boss"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+				</triggered_effect>		
+		</effect_group>
+	
+	</append>
+
+</configs>

@@ -1,0 +1,164 @@
+<config>
+	
+	<append xpath="/items">
+		<!-- 9mm -->
+		<item name="ammoDisBundle9mmBulletBall">
+			<property name="Extends" value="ammoBundleMaster"/>
+			<property name="CustomIcon" value="ammo9mmBulletBall"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="320"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+				<property name="Create_item_count" value="75,75,75"/>
+			</property>
+		</item>
+		<item name="ammoDisBundle9mmBulletHP">
+			<property name="Extends" value="ammoBundleMaster"/>
+			<property name="CustomIcon" value="ammo9mmBulletHP"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="430"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+				<property name="Create_item_count" value="150,75,75"/>
+			</property>
+		</item>
+		<item name="ammoDisBundle9mmBulletAP">
+			<property name="Extends" value="ammoBundleMaster"/>
+			<property name="CustomIcon" value="ammo9mmBulletAP"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="500"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+				<property name="Create_item_count" value="150,150,75"/>
+			</property>
+		</item>
+		<!-- .44 -->
+		<item name="ammoDisBundle44MagnumBulletBall">
+			<property name="Extends" value="ammoBundleMaster"/>
+			<property name="CustomIcon" value="ammo44MagnumBulletBall"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="UnlockedBy" value="perkEnforcerComplete"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="430"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+				<property name="Create_item_count" value="75,150,75"/>
+			</property>
+		</item>
+		<item name="ammoDisBundle44MagnumBulletHP">
+			<property name="Extends" value="ammoDisBundle44MagnumBulletBall"/>
+			<property name="CustomIcon" value="ammo44MagnumBulletHP"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="UnlockedBy" value="perkEnforcerComplete"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="500"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+				<property name="Create_item_count" value="150,150,75"/>
+			</property>
+		</item>
+		<item name="ammoDisBundle44MagnumBulletAP">
+			<property name="Extends" value="ammoDisBundle44MagnumBulletBall"/>
+			<property name="CustomIcon" value="ammo44MagnumBulletAP"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="UnlockedBy" value="perkEnforcerComplete"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="550"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+				<property name="Create_item_count" value="150,225,75"/>
+			</property>
+		</item>
+		<!-- 7.62mm -->
+		<item name="ammoDisBundle762mmBulletBall">
+			<property name="Extends" value="ammoBundleMaster"/>
+			<property name="CustomIcon" value="ammo762mmBulletBall"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="UnlockedBy" value="perkSniperComplete"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="400"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+				<property name="Create_item_count" value="75,225,75"/>
+			</property>
+		</item>
+		<item name="ammoDisBundle762mmBulletHP">
+			<property name="Extends" value="ammoDisBundle762mmBulletBall"/>
+			<property name="CustomIcon" value="ammo762mmBulletHp"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="UnlockedBy" value="perkSniperComplete"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="600"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+				<property name="Create_item_count" value="150,225,75"/>
+			</property>
+		</item>
+		<item name="ammoDisBundle762mmBulletAP">
+			<property name="Extends" value="ammoDisBundle762mmBulletBall"/>
+			<property name="CustomIcon" value="ammo762mmBulletAP"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="UnlockedBy" value="perkSniperComplete"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="700"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+				<property name="Create_item_count" value="150,375,75"/>
+			</property>
+		</item>
+		<!-- Shotgun -->
+		<item name="ammoDisBundleShotgunShell">
+			<property name="Extends" value="ammoBundleMaster"/>
+			<property name="CustomIcon" value="ammoShotgunShell"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="UnlockedBy" value="perkShotgunMessiahComplete"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="400"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceBuckshot,resourceGunPowder,resourcePaper"/>
+				<property name="Create_item_count" value="60,240,60"/>
+			</property>
+		</item>
+		<item name="ammoDisBundleShotgunSlug">
+			<property name="Extends" value="ammoDisBundleShotgunShell"/>
+			<property name="CustomIcon" value="ammoShotgunSlug"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="UnlockedBy" value="perkShotgunMessiahComplete"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="750"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceScrapPolymers"/>
+				<property name="Create_item_count" value="120,300,60"/>
+			</property>
+		</item>
+		<item name="ammoDisBundleShotgunBreachingSlug">
+			<property name="Extends" value="ammoDisBundleShotgunShell"/>
+			<property name="CustomIcon" value="ammoShotgunBreachingSlug"/>
+			<property name="CustomIconTint" value="FFA463"/>
+			<property name="DescriptionKey" value="AmmoDisassemblyDesc"/>
+			<property name="UnlockedBy" value="perkShotgunMessiahComplete"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="750"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceForgedSteel,resourceClayLump,resourceGunPowder,resourceScrapPolymers"/>
+				<property name="Create_item_count" value="180,120,240,60"/>
+			</property>
+		</item>
+				
+	</append>
+	
+</config>

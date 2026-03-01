@@ -1,0 +1,21 @@
+<config>
+	
+	<!-- Balance of resources obtained from dismantling the forge -->
+	<remove xpath="/blocks/block[@name='forge']/drop[@name='resourceLeather']"/>
+	<set xpath="/blocks/block[@name='forge']/drop[@name='resourceRockSmall']/@count">50</set>
+	<set xpath="/blocks/block[@name='forge']/drop[@name='resourceClayLump']/@count">25</set>
+	
+	<set xpath="/blocks/block[(starts-with(@name, 'terr')) and contains(@name, 'Ore')]/drop[@name='resourceRawDiamond']/@prob">.03</set>
+	<set xpath="/blocks/block[(starts-with(@name, 'terr')) and contains(@name, 'Ore')]/drop[@name='resourceGoldNugget']/@prob">.06</set>
+	<set xpath="/blocks/block[(starts-with(@name, 'terr')) and contains(@name, 'Ore')]/drop[@name='resourceSilverNugget']/@prob">.09</set>
+	
+	<insertAfter xpath="/blocks/block[(starts-with(@name, 'terr')) and contains(@name, 'Ore')]/drop[@name='resourceGoldNugget']">
+		<drop event="Harvest" name="resourceRawDiamond" prob=".01" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".025" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".05" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceRawDiamond" prob=".016" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".05" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".1" count="5" tag="modPreciousMetalsUnique"/>
+	</insertAfter>
+	
+</config>

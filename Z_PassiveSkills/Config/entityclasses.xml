@@ -1,0 +1,2065 @@
+<configs>
+	<!-- Edit player entity to increase inventory size -->
+	<append xpath="/entity_classes/entity_class[@name='playerMale']">
+		
+		<effect_group name="Buff Resist">
+			<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01">
+				<requirement name="ProgressionLevel" progression_name="perkWinterTimer" operation="EQ" value="10"/></passive_effect>
+			
+			<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffBurningMolotov,BuffHellishHeatWeak,BuffHellishHeatMedium,BuffHellishHeatStrong">
+				<requirement name="ProgressionLevel" progression_name="perkBurntTimer" operation="EQ" value="10"/></passive_effect>
+		</effect_group>
+		
+		<effect_group name="Kill Counters">
+		
+			<!-- WEAPON EXPERT -->
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountSniperExpert" operation="add" value="1">
+				<requirement name="HoldingItemHasTags" tags="perkDeadEye"/>
+				<requirement name="!ItemHasTags" tags="perkTurrets"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountShotgunExpert" operation="add" value="1">
+				<requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+				<requirement name="!ItemHasTags" tags="perkTurrets"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountAutomaticWeaponExpert" operation="add" value="1">
+				<requirement name="HoldingItemHasTags" tags="perkMachineGunner"/>
+				<requirement name="!ItemHasTags" tags="perkTurrets"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountPistolExpert" operation="add" value="1">
+				<requirement name="HoldingItemHasTags" tags="perkGunslinger"/>
+				<requirement name="!ItemHasTags" tags="perkTurrets"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBowsExpert" operation="add" value="1">
+				<requirement name="HoldingItemHasTags" tags="perkArchery"/>
+				<requirement name="!ItemHasTags" tags="perkTurrets"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+					
+			<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTurretKill">
+				<requirement name="ItemHasTags" tags="perkTurrets"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountMeleeHeavyExpert" operation="add" value="1">
+				<requirement name="HoldingItemHasTags" tags="perkJavelinMaster,perkPummelPete,perkSkullCrusher"/>
+				<requirement name="!ItemHasTags" tags="perkTurrets"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountMeleeLightExpert" operation="add" value="1">
+				<requirement name="HoldingItemHasTags" tags="perkBrawler,perkDeepCuts,perkElectrocutioner"/>
+				<requirement name="!ItemHasTags" tags="perkTurrets"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountRoboticsExpert" operation="add" value="1">
+				<requirement name="HoldingItemHasTags" tags="perkTurrets"/>
+				<requirement name="ItemHasTags" tags="perkTurrets"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+			
+			<!-- DEAD HUNT -->
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountTotalHunt" operation="add" value="1">
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/></triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountNightHunt" operation="add" value="1">
+				<requirement name="IsNight"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBullsEye" operation="add" value="1">
+				<requirement name="HitLocation" body_parts="Head"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountRangeHunt" operation="add" value="1">
+				<requirement name="HoldingItemHasTags" tags="ranged"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountMeleeHunt" operation="add" value="1">
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+				<requirement name="!EntityTagCompare" target="other" tags="vehicle"/>
+			</triggered_effect>	
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountEliteHunt" operation="add" value="1">
+				<requirement name="EntityTagCompare" target="other" tags="Elite"/>
+			</triggered_effect>
+			
+			<!-- BOSS EXPERT -->
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBossDevourer" operation="add" value="1">
+				<requirement name="EntityTagCompare" target="other" tags="bossDevourer"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBossGargul" operation="add" value="1">
+				<requirement name="EntityTagCompare" target="other" tags="bossGargul"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBossBearDaddy" operation="add" value="1">
+				<requirement name="EntityTagCompare" target="other" tags="bossBearDaddy"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBossBitch" operation="add" value="1">
+				<requirement name="EntityTagCompare" target="other" tags="bossBitch"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBossBurningFlesh" operation="add" value="1">
+				<requirement name="EntityTagCompare" target="other" tags="bossBurningFlesh"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBossCholera" operation="add" value="1">
+				<requirement name="EntityTagCompare" target="other" tags="bossCholera"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBossBull" operation="add" value="1">
+				<requirement name="EntityTagCompare" target="other" tags="bossBull"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBossShocker" operation="add" value="1">
+				<requirement name="EntityTagCompare" target="other" tags="bossShocker"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBossVeteran" operation="add" value="1">
+				<requirement name="EntityTagCompare" target="other" tags="bossVeteran"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="CountBossCarrier" operation="add" value="1">
+				<requirement name="EntityTagCompare" target="other" tags="bossCarrier"/>
+			</triggered_effect>
+			
+		</effect_group>
+		
+		<!-- WEAPON EXPERT LEVEL UP -->
+		
+		<effect_group name="Sniper Expert">
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="175"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="350"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="450"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="550"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="700"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="850"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="1000"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="1200"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="1400"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="1600"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="1800"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="2000"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="2300"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="2650"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="2900"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="3200"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="4000"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="4400"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffSniperExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountSniperExpert" operation="GTE" value="5000"/>
+					<requirement name="ProgressionLevel" progression_name="perkSniperExpert" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Shotgun Expert">
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="175"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="350"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="450"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="550"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="700"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="850"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="1000"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="1200"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="1400"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="1600"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="1800"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="2000"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="2300"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="2650"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="2900"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="3200"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="4000"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="4400"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffShotgunExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountShotgunExpert" operation="GTE" value="5000"/>
+					<requirement name="ProgressionLevel" progression_name="perkShotgunExpert" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Automatic Weapon Expert">
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="175"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="350"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="450"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="550"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="700"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="850"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="1000"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="1200"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="1400"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="1600"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="1800"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="2000"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="2300"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="2650"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="2900"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="3200"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="4000"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="4400"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutomaticWeaponExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountAutomaticWeaponExpert" operation="GTE" value="5000"/>
+					<requirement name="ProgressionLevel" progression_name="perkAutomaticWeaponExpert" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Pistol Expert">
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="175"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="350"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="450"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="550"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="700"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="850"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="1000"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="1200"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="1400"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="1600"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="1800"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="2000"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="2300"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="2650"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="2900"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="3200"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="4000"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="4400"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPistolExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountPistolExpert" operation="GTE" value="5000"/>
+					<requirement name="ProgressionLevel" progression_name="perkPistolExpert" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Bows Expert">
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="175"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="350"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="450"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="550"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="700"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="850"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="1000"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="1200"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="1400"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="1600"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="1800"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="2000"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="2300"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="2650"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="2900"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="3200"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="4000"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="4400"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBowsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBowsExpert" operation="GTE" value="5000"/>
+					<requirement name="ProgressionLevel" progression_name="perkBowsExpert" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Robotics Expert">
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="14"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="29"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="59"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="99"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="174"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="249"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="349"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="449"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="549"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="699"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="849"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="999"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="1199"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="1399"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="1599"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="1799"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="1999"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="2299"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="2649"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="2899"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="3199"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="3599"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="3999"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="4399"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRoboticsExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRoboticsExpert" operation="GTE" value="4999"/>
+					<requirement name="ProgressionLevel" progression_name="perkRoboticsExpert" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Melee Heavy Expert">
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="175"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="350"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="450"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="550"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="700"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="850"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="1000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="1200"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="1400"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="1600"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="1800"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="2000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="2300"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="2650"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="2900"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="3200"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="4000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="4400"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHeavyExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHeavyExpert" operation="GTE" value="5000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHeavyExpert" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Melee Light Expert">
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="175"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="350"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="450"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="550"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="700"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="850"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="1000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="1200"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="1400"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="1600"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="1800"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="2000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="2300"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="2650"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="2900"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="3200"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="4000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="4400"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeLightExpert_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeLightExpert" operation="GTE" value="5000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeLightExpert" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<!-- DEAD HUNT LEVEL UP -->
+		
+		<effect_group name="Total Hunt">
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="75"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="150"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="300"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="500"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="875"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="1250"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="1750"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="2250"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="2750"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="3500"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="4250"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="5000"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="6000"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="7000"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="8000"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="9000"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="10000"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="11500"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="13250"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="14500"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="16000"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="18000"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="20000"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="22000"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffTotalHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountTotalHunt" operation="GTE" value="25000"/>
+					<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Night Hunt">
+			<requirement name="IsNight"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="45"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="180"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="300"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="525"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="750"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="1050"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="1350"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="1650"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="2100"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="2550"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="3000"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="4200"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="4800"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="5400"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="6000"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="6900"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="7950"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="8700"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="9600"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="10800"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="12000"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="13200"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffNightHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountNightHunt" operation="GTE" value="15000"/>
+					<requirement name="ProgressionLevel" progression_name="perkNightHunt" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Bull's eye">
+			<requirement name="HitLocation" body_parts="Head"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="175"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="350"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="450"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="550"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="700"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="850"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="1000"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="1200"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="1400"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="1600"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="1800"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="2000"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="2300"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="2650"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="2900"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="3200"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="4000"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="4400"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBullsEye_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBullsEye" operation="GTE" value="5000"/>
+					<requirement name="ProgressionLevel" progression_name="perkBullsEye" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Range Hunt">
+			<requirement name="HoldingItemHasTags" tags="ranged"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="45"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="180"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="300"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="525"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="750"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="1050"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="1350"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="1650"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="2100"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="2550"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="3000"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="4200"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="4800"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="5400"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="6000"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="6900"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="7950"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="8700"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="9600"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="10800"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="12000"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="13200"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffRangeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountRangeHunt" operation="GTE" value="15000"/>
+					<requirement name="ProgressionLevel" progression_name="perkRangeHunt" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Melee Hunt">
+			<requirement name="HoldingItemHasTags" tags="melee"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="120"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="200"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="350"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="500"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="700"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="900"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="1100"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="1400"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="1700"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="2000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="2400"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="2800"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="3200"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="4000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="4600"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="5300"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="5800"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="6400"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="7200"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="8000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="8800"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffMeleeHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountMeleeHunt" operation="GTE" value="10000"/>
+					<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		<effect_group name="Elite Zombie">
+			<requirement name="EntityTagCompare" target="other" tags="Elite"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="175"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="350"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="450"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="550"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="700"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="850"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="11"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="1000"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="12"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="1200"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="13"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="1400"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="14"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="1600"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="15"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="1800"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="16"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="2000"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="17"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="2300"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="18"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="2650"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="19"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="2900"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="3200"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="21"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="3600"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="22"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="4000"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="23"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="4400"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="24"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffEliteHunt_LevelUP">
+					<requirement name="CVarCompare" cvar="CountEliteHunt" operation="GTE" value="5000"/>
+					<requirement name="ProgressionLevel" progression_name="perkEliteHunt" operation="LT" value="25"/>
+				</triggered_effect>
+				
+		</effect_group>
+		
+		
+		<!-- BOSS EXPERT -->
+		<effect_group name="Boss Devourer">
+			<requirement name="EntityTagCompare" target="other" tags="bossDevourer"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossDevourer_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossDevourer" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossDevourer_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossDevourer" operation="GTE" value="5"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossDevourer_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossDevourer" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossDevourer_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossDevourer" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossDevourer_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossDevourer" operation="GTE" value="25"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossDevourer_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossDevourer" operation="GTE" value="35"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossDevourer_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossDevourer" operation="GTE" value="50"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossDevourer_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossDevourer" operation="GTE" value="70"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossDevourer_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossDevourer" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossDevourer_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossDevourer" operation="GTE" value="120"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="LT" value="10"/>
+				</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Boss Gargul">
+			<requirement name="EntityTagCompare" target="other" tags="bossGargul"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossGargul_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossGargul" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossGargul_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossGargul" operation="GTE" value="5"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossGargul_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossGargul" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossGargul_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossGargul" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossGargul_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossGargul" operation="GTE" value="25"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossGargul_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossGargul" operation="GTE" value="35"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossGargul_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossGargul" operation="GTE" value="50"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossGargul_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossGargul" operation="GTE" value="70"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossGargul_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossGargul" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossGargul_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossGargul" operation="GTE" value="120"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="LT" value="10"/>
+				</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Boss BearDaddy">
+			<requirement name="EntityTagCompare" target="other" tags="bossBearDaddy"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBearDaddy_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBearDaddy" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBearDaddy_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBearDaddy" operation="GTE" value="5"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBearDaddy_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBearDaddy" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBearDaddy_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBearDaddy" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBearDaddy_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBearDaddy" operation="GTE" value="25"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBearDaddy_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBearDaddy" operation="GTE" value="35"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBearDaddy_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBearDaddy" operation="GTE" value="50"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBearDaddy_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBearDaddy" operation="GTE" value="70"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBearDaddy_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBearDaddy" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBearDaddy_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBearDaddy" operation="GTE" value="120"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="LT" value="10"/>
+				</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Boss Bitch">
+			<requirement name="EntityTagCompare" target="other" tags="bossBitch"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBitch_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBitch" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBitch" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBitch_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBitch" operation="GTE" value="5"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBitch" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBitch_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBitch" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBitch" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBitch_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBitch" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBitch" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBitch_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBitch" operation="GTE" value="25"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBitch" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBitch_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBitch" operation="GTE" value="35"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBitch" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBitch_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBitch" operation="GTE" value="50"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBitch" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBitch_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBitch" operation="GTE" value="70"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBitch" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBitch_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBitch" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBitch" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBitch_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBitch" operation="GTE" value="120"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBitch" operation="LT" value="10"/>
+				</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Boss BurningFlesh">
+			<requirement name="EntityTagCompare" target="other" tags="bossBurningFlesh"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBurningFlesh_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBurningFlesh" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBurningFlesh" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBurningFlesh_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBurningFlesh" operation="GTE" value="5"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBurningFlesh" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBurningFlesh_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBurningFlesh" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBurningFlesh" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBurningFlesh_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBurningFlesh" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBurningFlesh" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBurningFlesh_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBurningFlesh" operation="GTE" value="25"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBurningFlesh" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBurningFlesh_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBurningFlesh" operation="GTE" value="35"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBurningFlesh" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBurningFlesh_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBurningFlesh" operation="GTE" value="50"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBurningFlesh" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBurningFlesh_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBurningFlesh" operation="GTE" value="70"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBurningFlesh" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBurningFlesh_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBurningFlesh" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBurningFlesh" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBurningFlesh_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBurningFlesh" operation="GTE" value="120"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBurningFlesh" operation="LT" value="10"/>
+				</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Boss Cholera">
+			<requirement name="EntityTagCompare" target="other" tags="bossCholera"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCholera_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCholera" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCholera" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCholera_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCholera" operation="GTE" value="5"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCholera" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCholera_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCholera" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCholera" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCholera_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCholera" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCholera" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCholera_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCholera" operation="GTE" value="25"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCholera" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCholera_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCholera" operation="GTE" value="35"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCholera" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCholera_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCholera" operation="GTE" value="50"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCholera" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCholera_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCholera" operation="GTE" value="70"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCholera" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCholera_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCholera" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCholera" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCholera_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCholera" operation="GTE" value="120"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCholera" operation="LT" value="10"/>
+				</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Boss Bull">
+			<requirement name="EntityTagCompare" target="other" tags="bossBull"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBull_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBull" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBull" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBull_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBull" operation="GTE" value="3"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBull" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBull_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBull" operation="GTE" value="6"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBull" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBull_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBull" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBull" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBull_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBull" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBull" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBull_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBull" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBull" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBull_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBull" operation="GTE" value="28"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBull" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBull_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBull" operation="GTE" value="36"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBull" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBull_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBull" operation="GTE" value="48"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBull" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossBull_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossBull" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossBull" operation="LT" value="10"/>
+				</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Boss Shocker">
+			<requirement name="EntityTagCompare" target="other" tags="bossShocker"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossShocker_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossShocker" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossShocker" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossShocker_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossShocker" operation="GTE" value="3"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossShocker" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossShocker_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossShocker" operation="GTE" value="6"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossShocker" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossShocker_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossShocker" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossShocker" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossShocker_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossShocker" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossShocker" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossShocker_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossShocker" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossShocker" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossShocker_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossShocker" operation="GTE" value="28"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossShocker" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossShocker_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossShocker" operation="GTE" value="36"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossShocker" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossShocker_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossShocker" operation="GTE" value="48"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossShocker" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossShocker_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossShocker" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossShocker" operation="LT" value="10"/>
+				</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Boss Veteran">
+			<requirement name="EntityTagCompare" target="other" tags="bossVeteran"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossVeteran_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossVeteran" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossVeteran" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossVeteran_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossVeteran" operation="GTE" value="3"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossVeteran" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossVeteran_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossVeteran" operation="GTE" value="6"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossVeteran" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossVeteran_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossVeteran" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossVeteran" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossVeteran_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossVeteran" operation="GTE" value="15"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossVeteran" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossVeteran_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossVeteran" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossVeteran" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossVeteran_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossVeteran" operation="GTE" value="28"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossVeteran" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossVeteran_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossVeteran" operation="GTE" value="36"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossVeteran" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossVeteran_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossVeteran" operation="GTE" value="48"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossVeteran" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossVeteran_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossVeteran" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossVeteran" operation="LT" value="10"/>
+				</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Boss Carrier">
+			<requirement name="EntityTagCompare" target="other" tags="bossCarrier"/>
+				<!-- Skill Level UP -->
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCarrier_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCarrier" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCarrier" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCarrier_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCarrier" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCarrier" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCarrier_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCarrier" operation="GTE" value="4"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCarrier" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCarrier_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCarrier" operation="GTE" value="6"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCarrier" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCarrier_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCarrier" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCarrier" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCarrier_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCarrier" operation="GTE" value="14"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCarrier" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCarrier_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCarrier" operation="GTE" value="18"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCarrier" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCarrier_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCarrier" operation="GTE" value="24"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCarrier" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCarrier_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCarrier" operation="GTE" value="32"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCarrier" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBossCarrier_LevelUP">
+					<requirement name="CVarCompare" cvar="CountBossCarrier" operation="GTE" value="40"/>
+					<requirement name="ProgressionLevel" progression_name="perkBossCarrier" operation="LT" value="10"/>
+				</triggered_effect>
+		</effect_group>
+				
+	</append>
+	
+</configs>

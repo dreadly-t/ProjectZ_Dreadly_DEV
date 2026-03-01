@@ -1,0 +1,432 @@
+<config>
+	
+	<append xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group">
+		
+		<effect_group>
+			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="Buff_SmallCase_Spawner">
+				<requirement name="HasBuff" buff="Buff_SmallCase_Spawner"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="Buff_MediumCase_Spawner">
+				<requirement name="HasBuff" buff="Buff_MediumCase_Spawner"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="Buff_BigCase_Spawner">
+				<requirement name="HasBuff" buff="Buff_BigCase_Spawner"/>
+			</triggered_effect>
+		</effect_group>
+
+	</append>
+	
+	<append xpath="/buffs">
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- EXPEDITION QUEST'S -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<buff name="Buff_Exp_Reconnaissance_Status" name_key="Buff_Exp_Reconnaissance_StatusName" tooltip_key="Buff_Exp_StatusTooltip" description_key="Buff_Exp_Reconnaissance_StatusDesc" remove_on_death="false" icon="ui_game_symbol_adventure" icon_color="66,194,52">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffExpReconDisplay"/>
+			<display_value_format value="time"/>
+			
+			<effect_group>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="Reconnaissance" />
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpReconDuration" operation="set" value="2700"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpReconDuration" operation="multiply" value=".9">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpReconDuration" operation="multiply" value=".8">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpReconDuration" operation="multiply" value=".7">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpReconDuration" operation="multiply" value=".6">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpReconDuration" operation="multiply" value=".5">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="5"/></triggered_effect>
+					
+					
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".Exp_ReconnaissanceRewardChance" operation="set" value="100"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffExpReconDuration" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffExpReconDisplay" operation="set" value="@$buffExpReconDuration"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="Buff_Exp_Reconnaissance_Status">
+					<requirement name="CVarCompare" cvar="$buffExpReconDuration" operation="LTE" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="Exp_Reconnaissance_Complite"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$buffExpReconDuration,.Exp_ReconnaissanceRewardChance,.buffExpReconDisplay"/>
+				
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_Reconnaissance_status" operation="set" value="0"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="Exp_Reconnaissance_statusCheck"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="Buff_Exp_Reconnaissance_Status"> -->
+					<!-- <requirement name="CVarCompare" cvar="Exp_Reconnaissance_status" operation="EQ" value="1"/></triggered_effect> -->
+				<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="Exp_Reconnaissance_status"/> -->
+			</effect_group>
+
+		</buff>
+	
+		<buff name="Buff_Exp_Activity_Status" name_key="Buff_Exp_Activity_StatusName" tooltip_key="Buff_Exp_StatusTooltip" description_key="Buff_Exp_Activity_StatusDesc" remove_on_death="false" icon="ui_game_symbol_adventure" icon_color="255,255,0">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffExpActivityDisplay"/>
+			<display_value_format value="time"/>
+			
+			<effect_group>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="Activity" />
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpActivityDuration" operation="set" value="3600"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpActivityDuration" operation="multiply" value=".9">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpActivityDuration" operation="multiply" value=".8">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpActivityDuration" operation="multiply" value=".7">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpActivityDuration" operation="multiply" value=".6">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpActivityDuration" operation="multiply" value=".5">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="5"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_ActivityRewardCVAR" operation="set" value="randomint(0,99)"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_ActivityRewardChance" operation="set" value="80"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_ActivityRewardChance" operation="add" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_ActivityRewardChance" operation="add" value="8">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_ActivityRewardChance" operation="add" value="12">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_ActivityRewardChance" operation="add" value="16">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_ActivityRewardChance" operation="add" value="20">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="5"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_ActivityRewardBonus" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".Exp_ActivityRewardChance" operation="set" value="@Exp_ActivityRewardChance"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffExpActivityDuration" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffExpActivityDisplay" operation="set" value="@$buffExpActivityDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="Buff_Exp_Activity_Status">
+					<requirement name="CVarCompare" cvar="$buffExpActivityDuration" operation="LT" value="1"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="Exp_ActivityRewardChance" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="Exp_ActivityRewardBonus" operation="GTE" value="25"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="Exp_ActivityRewardBonus" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="Exp_ActivityRewardBonus" operation="GTE" value="25"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="Exp_ActivityRewardChance" operation="set" value="100">
+					<requirement name="CVarCompare" cvar="Exp_InfectionRewardChance" operation="GTE" value="100"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".Exp_ActivityRewardChance" operation="set" value="@Exp_ActivityRewardChance"/>
+
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="Exp_Activity_Complite">
+					<requirement name="CVarCompare" cvar="Exp_ActivityRewardCVAR" operation="LTE" value="@Exp_ActivityRewardChance"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="Exp_Activity_Fail">
+					<requirement name="CVarCompare" cvar="Exp_ActivityRewardCVAR" operation="GT" value="@Exp_ActivityRewardChance"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="Exp_ActivityRewardCVAR,Exp_ActivityRewardChance,.Exp_ActivityRewardChance,Exp_ActivityRewardBonus,$buffExpActivityDuration,.buffExpActivityDisplay"/>
+			</effect_group>
+			
+			<effect_group name="Increasing Chance">
+				<requirement_group op="or">
+					<requirement name="InBiome" biome="3"/>
+					<requirement name="InBiome" biome="9"/>
+				</requirement_group>
+					<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="Exp_ActivityRewardBonus" operation="add" value="1"/>
+			</effect_group>
+			
+			<effect_group name="Expedition Result">
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="Exp_Activity_Complite">
+					<requirement name="CVarCompare" cvar="Exp_ActivityRewardCVAR" operation="LTE" value="@Exp_ActivityRewardChance"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="Exp_Activity_Fail">
+					<requirement name="CVarCompare" cvar="Exp_ActivityRewardCVAR" operation="GT" value="@Exp_ActivityRewardChance"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="Exp_ActivityRewardCVAR,Exp_ActivityRewardChance,.Exp_ActivityRewardChance,Exp_ActivityRewardBonus,$buffExpActivityDuration,.buffExpActivityDisplay"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="Buff_Exp_Infection_Status" name_key="Buff_Exp_Infection_StatusName" tooltip_key="Buff_Exp_StatusTooltip" description_key="Buff_Exp_Infection_StatusDesc" remove_on_death="false" icon="ui_game_symbol_adventure" icon_color="255,160,50">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffExpInfectionDisplay"/>
+			<display_value_format value="time"/>
+			
+			<effect_group>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="Infection" />
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpInfectionDuration" operation="set" value="5400"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpInfectionDuration" operation="multiply" value=".9">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpInfectionDuration" operation="multiply" value=".8">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpInfectionDuration" operation="multiply" value=".7">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpInfectionDuration" operation="multiply" value=".6">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpInfectionDuration" operation="multiply" value=".5">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="5"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_InfectionRewardCVAR" operation="set" value="randomint(0,99)"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_InfectionRewardChance" operation="set" value="60"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_InfectionRewardChance" operation="add" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_InfectionRewardChance" operation="add" value="8">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_InfectionRewardChance" operation="add" value="12">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_InfectionRewardChance" operation="add" value="16">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_InfectionRewardChance" operation="add" value="20">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="5"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_InfectionRewardBonus" operation="set" value="0"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".Exp_InfectionRewardChance" operation="set" value="@Exp_InfectionRewardChance"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffExpInfectionDuration" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffExpInfectionDisplay" operation="set" value="@$buffExpInfectionDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="Buff_Exp_Infection_Status">
+					<requirement name="CVarCompare" cvar="$buffExpInfectionDuration" operation="LT" value="1"/>
+				</triggered_effect>				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="Exp_InfectionRewardChance" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="Exp_InfectionRewardBonus" operation="GTE" value="30"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="Exp_InfectionRewardBonus" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="Exp_InfectionRewardBonus" operation="GTE" value="30"/></triggered_effect>
+					
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="Exp_InfectionRewardChance" operation="set" value="100">
+					<requirement name="CVarCompare" cvar="Exp_InfectionRewardChance" operation="GTE" value="100"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".Exp_InfectionRewardChance" operation="set" value="@Exp_InfectionRewardChance"/>
+			</effect_group>
+			
+			<effect_group name="Increasing Chance">
+				<requirement_group op="or">
+					<requirement name="InBiome" biome="5"/>
+					<requirement name="InBiome" biome="1"/>
+				</requirement_group>
+					<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="Exp_InfectionRewardBonus" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="Exp_InfectionRewardChance" operation="add" value="1">
+						<requirement name="EntityTagCompare" target="other" tags="miniboss"/></triggered_effect>
+					<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="Exp_InfectionRewardChance" operation="add" value="3">
+						<requirement name="EntityTagCompare" target="other" tags="boss"/></triggered_effect>
+			</effect_group>
+			
+			<effect_group name="Expedition Result">
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="Exp_Infection_Complite">
+					<requirement name="CVarCompare" cvar="Exp_InfectionRewardCVAR" operation="LTE" value="@Exp_InfectionRewardChance"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="Exp_Infection_Fail">
+					<requirement name="CVarCompare" cvar="Exp_InfectionRewardCVAR" operation="GT" value="@Exp_InfectionRewardChance"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="Exp_InfectionRewardCVAR,Exp_InfectionRewardChance,.Exp_InfectionRewardChance,Exp_InfectionRewardBonus,.buffExpInfectionDisplay,$buffExpInfectionDuration"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="Buff_Exp_Deadzone_Status" name_key="Buff_Exp_Deadzone_StatusName" tooltip_key="Buff_Exp_StatusTooltip" description_key="Buff_Exp_Deadzone_StatusDesc" remove_on_death="false" icon="ui_game_symbol_adventure" icon_color="255,20,0">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffExpDeadzoneDisplay"/>
+			<display_value_format value="time"/>
+			
+			<effect_group>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="Deadzone" />
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpDeadzoneDuration" operation="set" value="7200"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpDeadzoneDuration" operation="multiply" value=".9">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpDeadzoneDuration" operation="multiply" value=".8">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpDeadzoneDuration" operation="multiply" value=".7">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpDeadzoneDuration" operation="multiply" value=".6">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpDeadzoneDuration" operation="multiply" value=".5">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="5"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_DeadzoneRewardCVAR" operation="set" value="randomint(0,99)"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_DeadzoneRewardChance" operation="set" value="40"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_DeadzoneRewardChance" operation="add" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_DeadzoneRewardChance" operation="add" value="8">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_DeadzoneRewardChance" operation="add" value="12">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_DeadzoneRewardChance" operation="add" value="16">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_DeadzoneRewardChance" operation="add" value="20">
+					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="5"/></triggered_effect>
+					
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="Exp_DeadzoneRewardBonus" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".Exp_DeadzoneRewardChance" operation="set" value="@Exp_DeadzoneRewardChance"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffExpDeadzoneDuration" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffExpDeadzoneDisplay" operation="set" value="@$buffExpDeadzoneDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="Buff_Exp_Deadzone_Status">
+					<requirement name="CVarCompare" cvar="$buffExpDeadzoneDuration" operation="LT" value="1"/>
+				</triggered_effect>		
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="Exp_DeadzoneRewardChance" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="Exp_DeadzoneRewardBonus" operation="GTE" value="35"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="Exp_DeadzoneRewardBonus" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="Exp_DeadzoneRewardBonus" operation="GTE" value="35"/></triggered_effect>
+					
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="Exp_DeadzoneRewardChance" operation="set" value="100">
+					<requirement name="CVarCompare" cvar="Exp_DeadzoneRewardChance" operation="GTE" value="100"/></triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".Exp_DeadzoneRewardChance" operation="set" value="@Exp_DeadzoneRewardChance"/>
+			</effect_group>
+			
+			<effect_group name="Increasing Chance">
+				<requirement name="InBiome" biome="8"/>
+					<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="Exp_DeadzoneRewardBonus" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="Exp_DeadzoneRewardChance" operation="add" value="1">
+						<requirement name="EntityTagCompare" target="other" tags="miniboss"/></triggered_effect>
+					<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="Exp_DeadzoneRewardChance" operation="add" value="3">
+						<requirement name="EntityTagCompare" target="other" tags="boss"/></triggered_effect>
+			</effect_group>
+			
+			<effect_group name="Expedition Result">
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="Exp_Deadzone_Complite">
+					<requirement name="CVarCompare" cvar="Exp_DeadzoneRewardCVAR" operation="LTE" value="@Exp_DeadzoneRewardChance"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="Exp_Deadzone_Fail">
+					<requirement name="CVarCompare" cvar="Exp_DeadzoneRewardCVAR" operation="GT" value="@Exp_DeadzoneRewardChance"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="Exp_DeadzoneRewardCVAR,Exp_DeadzoneRewardChance,.Exp_DeadzoneRewardChance,Exp_DeadzoneRewardBonus,$buffExpDeadzoneDuration,.buffExpDeadzoneDisplay"/>
+			</effect_group>
+
+		</buff>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- AMMO REQUEST -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<buff name="Buff_Ammo_SmallCase_Status" remove_on_death="false" hidden="true">
+			<duration value="0"/>
+			<stack_type value="replace"/>
+			
+			<effect_group>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="smallcase" />
+			</effect_group>
+		</buff>
+		<buff name="Buff_Ammo_BigCase_Status" remove_on_death="false" hidden="true">
+			<duration value="0"/>
+			<stack_type value="replace"/>
+			
+			<effect_group>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="bigcase" />
+			</effect_group>
+		</buff>
+		<buff name="Buff_Ammo_LargeCase_block" remove_on_death="false" hidden="true">
+			<duration value="0"/>
+			<stack_type value="replace"/>
+			
+			<effect_group>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="largecase" />
+			</effect_group>
+		</buff>
+		
+		<!-- Random spawn miniboss -->
+		<buff name="Buff_Ammo_LargeWave_Miniboss" remove_on_death="false" hidden="true">
+			<duration value="0"/>
+			<stack_type value="replace"/>
+			<update_rate value="3"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$BossLimit" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$MiniBossSpawnChance" operation="set" value="randomint(1,100)"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="Buff_Ammo_LargeWave_Miniboss">
+					<requirement name="CVarCompare" cvar="$BossLimit" operation="GT" value="2"/></triggered_effect>
+					
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$BossLimit"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$MiniBossSpawnChance"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$BossLimit" operation="LTE" value="2"/>
+				<requirement name="CVarCompare" cvar="$MiniBossSpawnChance" operation="LTE" value="10"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$BossLimit" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="Spawner_Miniboss"/>
+			</effect_group>
+			
+		</buff>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- ALLOY'S -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- Launching a wave of small cases -->
+		
+		<buff name="Buff_SmallCase_Spawner" remove_on_death="true" hidden="true">
+			<duration value="60"/>
+			<stack_type value="replace"/>
+			
+			<effect_group>			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SmallCase_Status" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="SmallCase_Event_Spawner"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="SmallCase_Status"/>
+			</effect_group>
+
+		</buff>
+		
+		<!-- Launching a wave of medium cases -->
+		<buff name="Buff_MediumCase_Spawner" hidden="true" remove_on_death="true">
+			<duration value="120"/>
+			<stack_type value="replace"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="MediumCase_Status" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="MediumCase_Event_Spawner"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="MediumCase_Status"/>
+			</effect_group>
+
+		</buff>
+		
+		<!-- Launching a wave of Big cases -->
+		<buff name="Buff_BigCase_Spawner" hidden="true" remove_on_death="true">
+			<duration value="180"/>
+			<stack_type value="replace"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BigCase_Status" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="BigCase_Event_Spawner"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="BigCase_Status"/>
+			</effect_group>
+
+		</buff>
+		
+		<!-- Zombie Buffs -->
+		<buff name="EnemyDot_Buff">
+			<stack_type value="ignore"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="SetNavObject" nav_object="EnemyDot" add="true" />
+			</effect_group>
+		</buff>
+		
+		<buff name="Zombie_BlockDamage_Buff">
+			<stack_type value="replace"/>
+			<effect_group>
+				<passive_effect name="BlockDamage" operation="base_add" value="300"/>	    
+			</effect_group>
+		</buff>
+		
+		<!-- New ammo -->
+		<buff name="buff_AmmoSmall_Start" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="Spawner_Ammo_SmallWave"/>	  
+			</effect_group>
+		</buff>
+		
+		<buff name="buff_AmmoBig_Start" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" target="self" event="Spawner_Ammo_BigWave"/>	    
+			</effect_group>
+		</buff>
+				
+	</append>
+	
+</config>

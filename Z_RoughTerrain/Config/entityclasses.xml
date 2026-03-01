@@ -1,0 +1,6 @@
+<configs>
+	
+	<append xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/effect_group">
+		<passive_effect name="BuffResistance" operation="base_set" value="60" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+	</append>
+</configs>

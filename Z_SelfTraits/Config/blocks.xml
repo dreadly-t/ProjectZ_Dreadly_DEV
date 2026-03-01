@@ -1,0 +1,18 @@
+<config>
+	
+	<!-- Grass -->
+	<append xpath="/blocks/block[@name='treeGrassMaster']">
+		<property name="BuffsWhenWalkedOn" value="buffAllergyGrass"/>
+	</append>
+	
+	<append xpath="/blocks/block[@name='campfire']">
+		<property name="ActiveRadiusEffects" value="buffCampfireAOE,3"/>
+	</append>
+	<append xpath="/blocks/block[@name='forge']">
+		<property name="ActiveRadiusEffects" value="buffCampfireAOE,5"/>
+	</append>
+	<append xpath="/blocks/block[@name='chemistryStation']">
+		<property name="ActiveRadiusEffects" value="buffCampfireAOE,3"/>
+	</append>
+	
+</config>

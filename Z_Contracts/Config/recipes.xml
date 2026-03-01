@@ -1,0 +1,192 @@
+<config>
+	
+	<append xpath="/recipes">
+		
+		<recipe name="RareCont_Bundle" craft_time="10" count="1" craft_area="radioStation">
+			<ingredient name="QuestNotes" count="18"/>
+		</recipe>
+		
+		<recipe name="Bonus_StupitBet" count="1" craft_time="5">
+			<ingredient name="TrinketStupitBet" count="10"/>
+		</recipe>
+	
+		<recipe name="Ingredients_FoodT1" count="1" craft_time="5">
+			<ingredient name="foodRawMeat" count="20"/>
+			<ingredient name="drinkJarRiverWater" count="2"/>
+			<ingredient name="casinoCoin" count="100"/>
+		</recipe>
+		<recipe name="Ingredients_FoodT2" count="1" craft_time="5">
+			<ingredient name="foodRawMeat" count="35"/>
+			<ingredient name="drinkJarBoiledWater" count="5"/>
+			<ingredient name="foodCropCorn" count="12"/>
+			<ingredient name="casinoCoin" count="250"/>
+		</recipe>
+		<recipe name="Ingredients_FoodT3" count="1" craft_time="5">
+			<ingredient name="foodRawMeat" count="50"/>
+			<ingredient name="drinkJarBoiledWater" count="8"/>
+			<ingredient name="foodCropCorn" count="15"/>
+			<ingredient name="foodCropPotato" count="15"/>
+			<ingredient name="casinoCoin" count="350"/>
+		</recipe>
+		<recipe name="Ingredients_FoodT4" count="1" craft_time="5">
+			<ingredient name="foodRawMeat" count="65"/>
+			<ingredient name="drinkJarBoiledWater" count="12"/>
+			<ingredient name="foodCanPeas" count="5"/>
+			<ingredient name="foodCropGraceCorn" count="20"/>
+			<ingredient name="casinoCoin" count="500"/>
+		</recipe>
+		
+		<recipe name="Ingredients_WorkstationT1" count="1" craft_time="5">
+			<ingredient name="toolDewFilter" count="3"/>
+			<ingredient name="resourceScrapPolymers" count="300"/>
+			<ingredient name="resourceMetalPipe" count="150"/>
+		</recipe>
+		
+		<recipe name="Ingredients_WorkstationT2" count="1" craft_time="5">
+			<ingredient name="workbench" count="3"/>
+			<ingredient name="resourceForgedSteel" count="200"/>
+			<ingredient name="resourceMechanicalParts" count="500"/>
+		</recipe>
+		<recipe name="Ingredients_WorkstationT3" count="1" craft_time="5">
+			<ingredient name="cementMixer" count="3"/>
+			<ingredient name="resourceMechanicalParts" count="250"/>
+			<ingredient name="resourceCement" count="2500"/>
+			<ingredient name="resourceRockSmall" count="2500"/>
+			<ingredient name="resourceCrushedSand" count="2500"/>
+		</recipe>
+		<recipe name="Ingredients_WorkstationT4" count="1" craft_time="5">
+			<ingredient name="forge" count="3"/>
+			<ingredient name="resourceForgedSteel" count="250"/>
+			<ingredient name="resourceCobblestones" count="3000"/>
+			<ingredient name="resourceLeather" count="500"/>
+		</recipe>
+		<recipe name="Ingredients_WorkstationT5" count="1" craft_time="5">
+			<ingredient name="chemistryStation" count="3"/>
+			<ingredient name="resourceForgedSteel" count="150"/>
+			<ingredient name="resourceMetalPipe" count="250"/>
+			<ingredient name="glassBlockVariantHelper" count="150"/>
+		</recipe>
+		
+		<recipe name="Ingredients_ArmorT1" count="1" craft_time="5">
+			<ingredient name="resourceYuccaFibers" count="100"/>
+			<ingredient name="resourceLeather" count="20"/>
+		</recipe>
+		<recipe name="Ingredients_ArmorT2" count="1" craft_time="5">
+			<ingredient name="resourceForgedIron" count="45"/>
+			<ingredient name="resourceLeather" count="25"/>
+		</recipe>
+		<recipe name="Ingredients_ArmorT3" count="1" craft_time="5">
+			<ingredient name="resourceForgedSteel" count="75"/>
+			<ingredient name="resourceLeather" count="50"/>
+		</recipe>
+		
+		<recipe name="Ingredients_RepairT1" count="1" craft_time="5">
+			<ingredient name="resourceForgedIron" count="25"/>
+			<ingredient name="resourceGlue" count="25"/>
+		</recipe>
+		<recipe name="Ingredients_RepairT2" count="1" craft_time="5">
+			<ingredient name="resourceForgedSteel" count="25"/>
+			<ingredient name="resourceDuctTape" count="25"/>
+		</recipe>
+		<recipe name="Ingredients_RepairT3" count="1" craft_time="5">
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceDuctTape" count="50"/>
+		</recipe>
+		
+		<recipe name="Ingredients_HealthT1" count="1" craft_time="5">
+			<ingredient name="resourceTestosteroneExtract" count="5"/>
+			<ingredient name="resourceMutationSamples" count="20"/>
+			<ingredient name="resourceSpices" count="1"/>
+		</recipe>
+		<recipe name="Ingredients_HealthT2" count="1" craft_time="5">
+			<ingredient name="resourceTestosteroneExtract" count="25"/>
+			<ingredient name="resourceMutationSamples" count="100"/>
+			<ingredient name="resourceSpices" count="5"/>
+		</recipe>
+		<recipe name="Ingredients_HealthT3" count="1" craft_time="5">
+			<ingredient name="resourceTestosteroneExtract" count="50"/>
+			<ingredient name="resourceMutationSamples" count="500"/>
+			<ingredient name="resourceSpices" count="25"/>
+		</recipe>
+		<recipe name="Ingredients_StaminaT1" count="1" craft_time="5">
+			<ingredient name="foodRottingFlesh" count="20"/>
+			<ingredient name="resourceMutationSamples" count="20"/>
+			<ingredient name="resourceSpices" count="1"/>
+		</recipe>
+		<recipe name="Ingredients_StaminaT2" count="1" craft_time="5">
+			<ingredient name="foodRottingFlesh" count="100"/>
+			<ingredient name="resourceMutationSamples" count="100"/>
+			<ingredient name="resourceSpices" count="5"/>
+		</recipe>
+		<recipe name="Ingredients_StaminaT3" count="1" craft_time="5">
+			<ingredient name="foodRottingFlesh" count="500"/>
+			<ingredient name="resourceMutationSamples" count="500"/>
+			<ingredient name="resourceSpices" count="25"/>
+		</recipe>
+		<recipe name="Ingredients_JumpStrength" count="1" craft_time="5">
+			<ingredient name="foodRawMeat" count="150"/>
+			<ingredient name="resourceMutationSamples" count="100"/>
+			<ingredient name="resourceSpices" count="5"/>
+		</recipe>
+		<recipe name="Ingredients_Mobility" count="1" craft_time="5">
+			<ingredient name="resourceBone" count="300"/>
+			<ingredient name="resourceMutationSamples" count="100"/>
+			<ingredient name="resourceSpices" count="5"/>
+		</recipe>
+		<recipe name="Ingredients_HiddenStrike" count="1" craft_time="5">
+			<ingredient name="resourceLeather" count="150"/>
+			<ingredient name="resourceMutationSamples" count="100"/>
+			<ingredient name="resourceSpices" count="5"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_Forest" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="100"/>
+			<ingredient name="casinoCoin" count="150"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_BurntForest" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="100"/>
+			<ingredient name="casinoCoin" count="150"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_Desert" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="100"/>
+			<ingredient name="casinoCoin" count="150"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_Snow" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="100"/>
+			<ingredient name="casinoCoin" count="150"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_Wasteland" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="100"/>
+			<ingredient name="casinoCoin" count="150"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_Pistol" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="250"/>
+			<ingredient name="casinoCoin" count="500"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_MeleeLight" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="250"/>
+			<ingredient name="casinoCoin" count="500"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_Shotgun" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="250"/>
+			<ingredient name="casinoCoin" count="500"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_Rifle" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="250"/>
+			<ingredient name="casinoCoin" count="500"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_MachineGun" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="250"/>
+			<ingredient name="casinoCoin" count="500"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_MeleeHeavy" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="250"/>
+			<ingredient name="casinoCoin" count="500"/>
+		</recipe>
+		<recipe name="Ingredients_Damage_All" count="1" craft_time="5">
+			<ingredient name="resourceMutationSamples" count="500"/>
+			<ingredient name="casinoCoin" count="1500"/>
+		</recipe>		
+	
+	</append>
+	
+</config>

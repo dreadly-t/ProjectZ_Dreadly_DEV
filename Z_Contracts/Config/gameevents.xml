@@ -1,0 +1,55 @@
+<config>
+		
+	<append xpath="/gameevents">
+		
+		<!-- Getting a bonus to rare specimens from minibosses -->
+		<action_sequence name="action_addBonus_MiniBossSample">					
+			<action class="ModifyCVar">
+				<property name="phase" value="0" />
+				<property name="cvar" value="LegBonus_MinibossSamples" />
+				<property name="operation" value="add" />
+				<property name="value" value=".05" />
+			</action>
+			
+			<action class="PlaySound">
+				<property name="sound" value="read_skillbook" />
+				<property name="inside_head" value="true" />
+				<property name="can_disable" value="false" />
+			</action>
+		</action_sequence>
+		
+		<!-- Getting a bonus to rare specimens from bosses -->
+		<action_sequence name="action_addBonus_BossSample">					
+			<action class="ModifyCVar">
+				<property name="phase" value="0" />
+				<property name="cvar" value="LegBonus_BossSamples" />
+				<property name="operation" value="add" />
+				<property name="value" value=".025" />
+			</action>
+			
+			<action class="PlaySound">
+				<property name="sound" value="read_skillbook" />
+				<property name="inside_head" value="true" />
+				<property name="can_disable" value="false" />
+			</action>
+		</action_sequence>
+		
+		<!-- Getting a bonus to rare specimens from all -->
+		<action_sequence name="action_addBonus_AllSample">					
+			<action class="ModifyCVar">
+				<property name="phase" value="0" />
+				<property name="cvar" value="LegBonus_AllSamples" />
+				<property name="operation" value="add" />
+				<property name="value" value=".01" />
+			</action>
+			
+			<action class="PlaySound">
+				<property name="sound" value="read_skillbook" />
+				<property name="inside_head" value="true" />
+				<property name="can_disable" value="false" />
+			</action>
+		</action_sequence>
+		
+	</append>
+	
+</config>

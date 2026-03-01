@@ -1,0 +1,91 @@
+<config>
+	
+	<append xpath="/recipes">
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- CRAFT AMMO -->
+		<!-- 7.62 -->
+		<recipe name="ammo762mmBulletHP" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceGunPowder" count="2"/>
+			<ingredient name="ammo762mmBulletBall" count="1"/>
+		</recipe>
+		<recipe name="ammo762mmBulletAP" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceBulletTip" count="1"/>
+			<ingredient name="resourceGunPowder" count="2"/>
+			<ingredient name="ammo762mmBulletBall" count="1"/>
+		</recipe>
+		
+		<!-- 9mm -->
+		<recipe name="ammo9mmBulletHP" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceGunPowder" count="1"/>
+			<ingredient name="ammo9mmBulletBall" count="1"/>
+		</recipe>
+		<recipe name="ammo9mmBulletAP" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceBulletTip" count="1"/>
+			<ingredient name="resourceGunPowder" count="1"/>
+			<ingredient name="ammo9mmBulletBall" count="1"/>
+		</recipe>
+		<!-- .44 -->
+		<recipe name="ammo44MagnumBulletHP" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceBulletTip" count="1"/>
+			<ingredient name="ammo44MagnumBulletBall" count="1"/>
+		</recipe>
+		<recipe name="ammo44MagnumBulletAP" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceBulletTip" count="1"/>
+			<ingredient name="resourceGunPowder" count="1"/>
+			<ingredient name="ammo44MagnumBulletBall" count="1"/>
+		</recipe>
+		<!-- Shotgun -->
+		<recipe name="ammoShotgunSlug" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceBulletTip" count="1"/>
+			<ingredient name="resourceGunPowder" count="1"/>
+			<ingredient name="ammoShotgunShell" count="1"/>
+		</recipe>
+		<recipe name="ammoShotgunBreachingSlug" count="1" craft_time="9" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceForgedSteel" count="3"/>
+			<ingredient name="resourceClayLump" count="2"/>
+			<ingredient name="ammoShotgunShell" count="1"/>
+		</recipe>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- Disassembly AMMO -->
+		<recipe name="ammoDisBundle9mmBulletBall" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammo9mmBulletBall" count="100"/>
+		</recipe>
+		<recipe name="ammoDisBundle9mmBulletHP" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammo9mmBulletHP" count="100"/>
+		</recipe>
+		<recipe name="ammoDisBundle9mmBulletAP" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammo9mmBulletAP" count="100"/>
+		</recipe>
+		<recipe name="ammoDisBundle44MagnumBulletBall" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammo44MagnumBulletBall" count="100"/>
+		</recipe>
+		<recipe name="ammoDisBundle44MagnumBulletHP" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammo44MagnumBulletHP" count="100"/>
+		</recipe>
+		<recipe name="ammoDisBundle44MagnumBulletAP" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammo44MagnumBulletAP" count="100"/>
+		</recipe>
+		<recipe name="ammoDisBundle762mmBulletBall" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammo762mmBulletBall" count="100"/>
+		</recipe>
+		<recipe name="ammoDisBundle762mmBulletHP" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammo762mmBulletHP" count="100"/>
+		</recipe>
+		<recipe name="ammoDisBundle762mmBulletAP" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammo762mmBulletAP" count="100"/>
+		</recipe>
+		<recipe name="ammoDisBundleShotgunShell" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammoShotgunShell" count="100"/>
+		</recipe>
+		<recipe name="ammoDisBundleShotgunSlug" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammoShotgunSlug" count="100"/>
+		</recipe>
+		<recipe name="ammoDisBundleShotgunBreachingSlug" count="1" craft_time="45" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="ammoShotgunBreachingSlug" count="100"/>
+		</recipe>
+
+	</append>
+	
+</config>

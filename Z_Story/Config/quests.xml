@@ -1,0 +1,1866 @@
+<config>
+	
+	<!-- <insertAfter  xpath="/quests/quest[@id='intro_buried_supplies']/reward[@type='Exp']"> -->
+		<!-- <reward type="Item" id="note5_startQuest" value="1"/> -->
+	<!-- </insertAfter> -->
+	
+	<insertAfter  xpath="/quests/quest[@id='quest_whiteRiverCitizen1']/reward[@type='Exp']">
+		<reward type="Item" id="Chapter1_newHome" value="1"/>
+		<reward type="Item" id="Chapter1_resCollector" value="1"/>
+		<reward type="Item" id="bookRareSamples1" value="1"/>
+	</insertAfter>
+	
+	<append xpath="/quests" >
+	
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- START QUEST -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<quest id="startQuest1">
+			<property name="name_key" value="startQuest1Name"/>
+			<property name="description_key" value="startQuest1Offer"/>
+			<property name="subtitle_key" value="startQuest1_subtitle"/>
+			<property name="statement_key" value="startQuest1_statement"/>
+			<property name="icon" value="ui_game_symbol_quest" />
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="treasure"/>	
+			<property name="offer_key" value="startQuest1Offer"/>
+			
+			<reward type="Exp" value="500"/>
+			<reward type="LootItem" id="note2_startQuest" value="1"/>
+		</quest>
+		
+		<quest id="startQuest2">
+			<property name="name_key" value="startQuest2Name"/>
+			<property name="description_key" value="startQuest2Offer"/>
+			<property name="subtitle_key" value="startQuest2_subtitle"/>
+			<property name="statement_key" value="startQuest2_statement"/>
+			<property name="response_key" value="startQuest2_response"/>
+			<property name="icon" value="ui_game_symbol_quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="startQuest2Offer"/>
+						
+			<action type="GameEvent" id="EventStartBleeding" phase="1"/>
+			<objective type="Time">
+				<property name="phase" value="2"/>
+				<property name="time" value="5"/>
+			</objective>
+			
+			<action type="GameEvent" id="action_give_knife" phase="3"/>
+			<objective type="Time">
+				<property name="phase" value="3"/>
+				<property name="time" value="1"/>
+			</objective>
+			
+			<reward type="Exp" value="500"/>
+			<reward type="LootItem" id="medicalFirstAidBandage" value="1"/>
+			<reward type="LootItem" id="note3_startQuest" value="1"/>
+		</quest>
+		
+		<quest id="startQuest3">
+			<property name="name_key" value="startQuest3Name"/>
+			<property name="description_key" value="startQuest3Offer"/>
+			<property name="subtitle_key" value="startQuest3_subtitle"/>
+			<property name="statement_key" value="startQuest3_statement"/>
+			<property name="response_key" value="startQuest3_response"/>
+			<property name="icon" value="ui_game_symbol_quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="startQuest3Offer"/>
+						
+			<objective type="EntityKill" value="1" phase="1"/>
+			<action type="GameEvent" id="Spawner_startZombie" phase="1"/>
+			
+			<reward type="Exp" value="1000"/>
+			<reward type="LootItem" id="note4_startQuest" value="1"/>
+		</quest>
+				
+		<quest id="startQuest4">
+			<property name="name_key" value="startQuest4Name"/>
+			<property name="description_key" value="startQuest4Offer"/>
+			<property name="subtitle_key" value="startQuest4_subtitle"/>
+			<property name="statement_key" value="startQuest4_statement"/>
+			<property name="response_key" value="startQuest4_response"/>
+			<property name="icon" value="ui_game_symbol_quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="startQuest4Offer"/>
+						
+			<objective type="ReturnToNPC">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+			
+			<reward type="Exp" value="1000"/>
+			<reward type="LootItem" id="startBundle" value="1"/>
+			<reward type="LootItem" id="BetterWeapon_MeleeT1" value="1"/>
+		</quest>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- BETTER WEAPON -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- Better Than Just Pipes -->
+		<quest id="BetterWeaponMeleeT1">				
+			<property name="name_key" value="BetterWeaponMeleeT1Name"/>
+			<property name="description_key" value="BetterWeaponMeleeT1Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponMeleeT1Offer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<objective type="EntityKill" value="75" phase="1"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="1000"/>
+			<reward type="Item" id="casinoCoin" value="500"/>
+			<reward type="LootItem" id="BetterWeapon_RangeT1" value="1"/>
+			
+			<reward type="Item" id="BetterWeapon_MeleeLightT1" ischosen="true" value="1"/>
+			<reward type="Item" id="BetterWeapon_MeleeHeavyT1" ischosen="true" value="1"/>
+		</quest>
+		<quest id="BetterWeaponMeleeLightT1"> <!-- Light -->				
+			<property name="name_key" value="BetterWeaponMeleeLightName"/>
+			<property name="description_key" value="BetterWeaponMeleeLightT1Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponMeleeLightT1Offer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="3"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Melee_Light" phase="1"/>
+			<objective type="EntityKill" value="50" phase="1"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="500"/>
+			<reward type="Item" id="casinoCoin" value="250"/>
+			
+			<reward type="Item" id="Reward_MeleeT1_Knuckles" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_MeleeT1_Knife" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_MeleeT1_JunkSledge" ischosen="true" value="1"/>
+		</quest>
+		<quest id="BetterWeaponMeleeHeavyT1"> <!-- Heavy -->				
+			<property name="name_key" value="BetterWeaponMeleeeHeavyName"/>
+			<property name="description_key" value="BetterWeaponMeleeHeavyT1Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponMeleeHeavyT1Offer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="3"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Melee_Heavy" phase="1"/>
+			<objective type="EntityKill" value="50" phase="1"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="500"/>
+			<reward type="Item" id="casinoCoin" value="250"/>
+			
+			<reward type="Item" id="Reward_MeleeT1_Spear" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_MeleeT1_Club" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_MeleeT1_Sledgehammer" ischosen="true" value="1"/>
+		</quest>
+		
+		<quest id="BetterWeaponRangeT1">		
+			<property name="name_key" value="BetterWeaponRangeT1Name"/>
+			<property name="description_key" value="BetterWeaponRangeT1Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponRangeT1Offer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="5"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<objective type="EntityKill" value="100" phase="1"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="1500"/>
+			<reward type="Item" id="casinoCoin" value="1000"/>
+			<reward type="LootItem" id="BetterWeapon_MeleeT2" value="1"/>
+			
+			<reward type="Item" id="Reward_RangeT1_Rifle" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_RangeT1_Shotgun" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_RangeT1_MachineGun" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_RangeT1_Archery" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_RangeT1_Pistol" ischosen="true" value="1"/>
+		</quest>
+		
+		<!-- Almost like in a store -->
+		<quest id="BetterWeaponMeleeT2">		
+			<property name="name_key" value="BetterWeaponMeleeT2Name"/>
+			<property name="description_key" value="BetterWeaponMeleeT2Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponMeleeT2Offer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<objective type="EntityKill" value="150" phase="1"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="2500"/>
+			<reward type="Item" id="casinoCoin" value="1500"/>
+			<reward type="LootItem" id="BetterWeapon_RangeT2" value="1"/>
+			
+			<reward type="Item" id="BetterWeapon_MeleeLightT2" ischosen="true" value="1"/>
+			<reward type="Item" id="BetterWeapon_MeleeHeavyT2" ischosen="true" value="1"/>
+		</quest>
+		<quest id="BetterWeaponMeleeLightT2"> <!-- Light -->				
+			<property name="name_key" value="BetterWeaponMeleeLightName"/>
+			<property name="description_key" value="BetterWeaponMeleeLightT2Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponMeleeLightT2Offer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="3"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Melee_Light" phase="1"/>
+			<objective type="EntityKill" value="100" phase="1"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="1500"/>
+			
+			<reward type="Item" id="Reward_MeleeT2_Knuckles" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_MeleeT2_Knife" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_MeleeT2_StunBaton" ischosen="true" value="1"/>
+		</quest>
+		<quest id="BetterWeaponMeleeHeavyT2"> <!-- Heavy -->				
+			<property name="name_key" value="BetterWeaponMeleeeHeavyName"/>
+			<property name="description_key" value="BetterWeaponMeleeHeavyT2Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponMeleeHeavyT2Offer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="3"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Melee_Heavy" phase="1"/>
+			<objective type="EntityKill" value="100" phase="1"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="1500"/>
+			
+			<reward type="Item" id="Reward_MeleeT2_Spear" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_MeleeT2_Club" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_MeleeT2_Sledgehammer" ischosen="true" value="1"/>
+		</quest>
+		
+		<quest id="BetterWeaponRangeT2">		
+			<property name="name_key" value="BetterWeaponRangeT2Name"/>
+			<property name="description_key" value="BetterWeaponRangeT2Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponRangeT2Offer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="5"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<objective type="EntityKill" value="250" phase="1"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="2500"/>
+			<reward type="Item" id="casinoCoin" value="1500"/>
+			<reward type="LootItem" id="BetterWeapon_RangeT3" value="1"/>
+			
+			<reward type="Item" id="questRangeT2_Rifle" ischosen="true" value="1"/>
+			<reward type="Item" id="questRangeT2_Shotgun" ischosen="true" value="1"/>
+			<reward type="Item" id="questRangeT2_MachineGun" ischosen="true" value="1"/>
+			<reward type="Item" id="questRangeT2_Archery" ischosen="true" value="1"/>
+			<reward type="Item" id="questRangeT2_Pistol" ischosen="true" value="1"/>
+		</quest>
+		
+		<quest id="RangeT2_Rifle">		
+			<property name="name_key" value="RangeT2_RifleName"/>
+			<property name="description_key" value="RangeT2_RifleOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_map_cursor"/>
+			<property name="subtitle_key" value="BetterWeapon_rifle"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+			<property name="offer_key" value="RangeT2_RifleOffer"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_rifle" phase="1"/>
+			<objective type="EntityKill" value="150" phase="1">
+				<property name="target_tags" value="zombie"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+			
+			<reward type="Exp" value="1500"/>
+			<reward type="LootItem" id="Reward_RangeT2_Rifle" value="1"/>
+			
+			<reward type="Item" id="riflesSkillMagazine" ischosen="true" value="5"/>
+			<reward type="Item" id="gunRifleT1HuntingRifleParts" ischosen="true" value="15"/>
+		</quest>
+		<quest id="RangeT2_Shotgun">		
+			<property name="name_key" value="RangeT2_ShotgunName"/>
+			<property name="description_key" value="RangeT2_ShotgunOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_shotgun"/>
+			<property name="subtitle_key" value="BetterWeapon_shotgun"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+			<property name="offer_key" value="RangeT2_ShotgunOffer"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Shotgun" phase="1"/>
+			<objective type="EntityKill" value="150" phase="1">
+				<property name="target_tags" value="zombie"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+			
+			<reward type="Exp" value="1500"/>
+			<reward type="LootItem" id="Reward_RangeT2_Shotgun" value="1"/>
+			
+			<reward type="Item" id="shotgunsSkillMagazine" ischosen="true" value="5"/>
+			<reward type="Item" id="gunShotgunT1DoubleBarrelParts" ischosen="true" value="15"/>
+		</quest>
+		<quest id="RangeT2_machineGuns">		
+			<property name="name_key" value="RangeT2_machineGunsName"/>
+			<property name="description_key" value="RangeT2_machineGunsOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_rifle"/>
+			<property name="subtitle_key" value="BetterWeapon_machineGun"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+			<property name="offer_key" value="RangeT2_machineGunsOffer"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_MachineGun" phase="1"/>
+			<objective type="EntityKill" value="150" phase="1">
+				<property name="target_tags" value="zombie"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+			
+			<reward type="Exp" value="1500"/>
+			<reward type="LootItem" id="Reward_RangeT2_MachineGun" value="1"/>
+			
+			<reward type="Item" id="machineGunsSkillMagazine" ischosen="true" value="5"/>
+			<reward type="Item" id="gunMGT1AK47Parts" ischosen="true" value="15"/>
+		</quest>
+		<quest id="RangeT2_Archery">		
+			<property name="name_key" value="RangeT2_ArcheryName"/>
+			<property name="description_key" value="RangeT2_ArcheryOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_archery"/>
+			<property name="subtitle_key" value="BetterWeapon_archery"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+			<property name="offer_key" value="RangeT2_ArcheryOffer"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Archery" phase="1"/>
+			<objective type="EntityKill" value="75" phase="1">
+				<property name="target_tags" value="zombie"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+			
+			<reward type="Exp" value="1500"/>
+			<reward type="LootItem" id="Reward_RangeT2_Archery" value="1"/>
+			
+			<reward type="Item" id="bowsSkillMagazine" ischosen="true" value="5"/>
+			<reward type="Item" id="gunBowT1WoodenBowParts" ischosen="true" value="15"/>
+		</quest>
+		<quest id="RangeT2_Pistol">		
+			<property name="name_key" value="RangeT2_PistolName"/>
+			<property name="description_key" value="RangeT2_PistolOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_gunslinger"/>
+			<property name="subtitle_key" value="BetterWeapon_pistol"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+			<property name="offer_key" value="RangeT2_PistolOffer"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Pistol" phase="1"/>
+			<objective type="EntityKill" value="150" phase="1">
+				<property name="target_tags" value="zombie"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+			
+			<reward type="Exp" value="1500"/>
+			<reward type="LootItem" id="Reward_RangeT2_Pistol" value="1"/>
+			
+			<reward type="Item" id="handgunsSkillMagazine" ischosen="true" value="5"/>
+			<reward type="Item" id="gunHandgunT1PistolParts" ischosen="true" value="15"/>
+		</quest>
+		
+		<!-- Military power -->
+		<quest id="BetterWeaponRangeT3">		
+			<property name="name_key" value="BetterWeaponRangeT3Name"/>
+			<property name="description_key" value="BetterWeaponRangeT3Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponRangeT3Offer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="5"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<objective type="EntityKill" value="150" phase="1"/>
+			<objective type="EntityKill" value="150" phase="2"/>
+			<objective type="EntityKill" value="150" phase="3"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="3500"/>
+			<reward type="Item" id="casinoCoin" value="2000"/>
+			<reward type="LootItem" id="BetterWeapon_ImpMods" value="1"/>
+			
+			<reward type="Item" id="questRangeT3_Rifle" ischosen="true" value="1"/>
+			<reward type="Item" id="questRangeT3_Shotgun" ischosen="true" value="1"/>
+			<reward type="Item" id="questRangeT3_MachineGun" ischosen="true" value="1"/>
+			<reward type="Item" id="questRangeT3_Archery" ischosen="true" value="1"/>
+			<reward type="Item" id="questRangeT3_Pistol" ischosen="true" value="1"/>
+		</quest>
+
+		<quest id="RangeT3_Rifle">		
+			<property name="name_key" value="RangeT3_RifleName"/>
+			<property name="description_key" value="RangeT3_RifleOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_map_cursor"/>
+			<property name="subtitle_key" value="BetterWeapon_rifle"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+			<property name="offer_key" value="RangeT3_RifleOffer"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_rifle" phase="1"/>
+			<objective type="EntityKill" value="250" phase="1">
+				<property name="target_tags" value="zombie"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+			
+			<reward type="Exp" value="2500"/>
+			<reward type="LootItem" id="Reward_RangeT3_Rifle" value="1"/>
+			
+			<reward type="Item" id="riflesSkillMagazine" ischosen="true" value="10"/>
+			<reward type="Item" id="gunRifleT1HuntingRifleParts" ischosen="true" value="25"/>
+		</quest>
+		<quest id="RangeT3_Shotgun">		
+			<property name="name_key" value="RangeT3_ShotgunName"/>
+			<property name="description_key" value="RangeT3_ShotgunOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_shotgun"/>
+			<property name="subtitle_key" value="BetterWeapon_shotgun"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+			<property name="offer_key" value="RangeT3_ShotgunOffer"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Shotgun" phase="1"/>
+			<objective type="EntityKill" value="250" phase="1">
+				<property name="target_tags" value="zombie"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+			
+			<reward type="Exp" value="2500"/>
+			<reward type="LootItem" id="Reward_RangeT3_Shotgun" value="1"/>
+			
+			<reward type="Item" id="shotgunsSkillMagazine" ischosen="true" value="10"/>
+			<reward type="Item" id="gunShotgunT1DoubleBarrelParts" ischosen="true" value="25"/>
+		</quest>
+		<quest id="RangeT3_machineGuns">		
+			<property name="name_key" value="RangeT3_machineGunsName"/>
+			<property name="description_key" value="RangeT3_machineGunsOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_rifle"/>
+			<property name="subtitle_key" value="BetterWeapon_machineGun"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+			<property name="offer_key" value="RangeT3_machineGunsOffer"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_MachineGun" phase="1"/>
+			<objective type="EntityKill" value="250" phase="1">
+				<property name="target_tags" value="zombie"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+			
+			<reward type="Exp" value="2500"/>
+			<reward type="LootItem" id="Reward_RangeT3_MachineGun" value="1"/>
+			
+			<reward type="Item" id="machineGunsSkillMagazine" ischosen="true" value="10"/>
+			<reward type="Item" id="gunMGT1AK47Parts" ischosen="true" value="25"/>
+		</quest>
+		<quest id="RangeT3_Archery">		
+			<property name="name_key" value="RangeT3_ArcheryName"/>
+			<property name="description_key" value="RangeT3_ArcheryOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_archery"/>
+			<property name="subtitle_key" value="BetterWeapon_archery"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="3"/>
+			<property name="offer_key" value="RangeT3_ArcheryOffer"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Archery" phase="1"/>
+			<objective type="EntityKill" value="125" phase="1">
+				<property name="target_tags" value="zombie"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+			
+			<reward type="Exp" value="2500"/>
+			<reward type="LootItem" id="bowsSkillMagazine10" value="1"/>
+			
+			<reward type="Item" id="Reward_RangeT3_Bow" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_RangeT3_Crossbow" ischosen="true" value="1"/>
+			<reward type="Item" id="gunBowT1WoodenBowParts" ischosen="true" value="25"/>
+		</quest>
+		
+		<quest id="RangeT3_Pistols">		
+			<property name="name_key" value="RangeT3_PistolName"/>
+			<property name="description_key" value="RangeT3_PistolOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_gunslinger"/>
+			<property name="subtitle_key" value="BetterWeapon_pistol"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+			<property name="offer_key" value="RangeT3_PistolOffer"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Pistol" phase="1"/>
+			<objective type="EntityKill" value="250" phase="1">
+				<property name="target_tags" value="zombie"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+			
+			<reward type="Exp" value="2500"/>
+			<reward type="LootItem" id="handgunsSkillMagazine" value="1"/>
+			
+			<reward type="Item" id="Reward_RangeT3_SMG" ischosen="true" value="1"/>
+			<reward type="Item" id="Reward_RangeT3_DesertVulture" ischosen="true" value="1"/>
+		</quest>
+
+		<!-- Reliable modifications -->
+		<quest id="BetterWeaponImpMods">		
+			<property name="name_key" value="BetterWeaponImpModsName"/>
+			<property name="description_key" value="BetterWeaponImpModsOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponImpModsOffer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<objective type="EntityKill" value="250" phase="1"/>
+			<objective type="EntityKill" value="250" phase="2"/>
+			<objective type="EntityKill" value="250" phase="3"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="7500"/>
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="LootItem" id="BetterWeapon_UniqueMods" value="1"/>
+			
+			<reward type="Item" id="BetterWeapon_ImpModsMelee" ischosen="true" value="1"/>
+			<reward type="Item" id="BetterWeapon_ImpModsRange" ischosen="true" value="1"/>
+		</quest>
+		<quest id="BetterWeaponMeleeImpMods">			
+			<property name="name_key" value="BetterWeaponMeleeImpModsName"/>
+			<property name="description_key" value="BetterWeaponMeleeImpModsOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponMeleeImpModsOffer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="5"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Melee" phase="1"/>
+			<objective type="EntityKill" value="250" phase="1"/>
+			<requirement type="Quests.Requirements.Buff" id="Holding_Melee" phase="2"/>
+			<objective type="EntityKill" value="250" phase="2"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="7500"/>
+			<reward type="LootItem" id="casinoCoin5000" value="1"/>
+			
+			<reward type="LootItem" id="ImpModsMeleeReward" ischosen="true"/>
+			<reward type="LootItem" id="ImpModsMeleeReward" ischosen="true"/>
+			<reward type="LootItem" id="ImpModsMeleeReward" ischosen="true"/>
+			<reward type="LootItem" id="ImpModsMeleeReward" ischosen="true"/>
+			<reward type="LootItem" id="ImpModsMeleeReward" ischosen="true"/>
+		</quest>
+		<quest id="BetterWeaponRangeImpMods">			
+			<property name="name_key" value="BetterWeaponRangeImpModsName"/>
+			<property name="description_key" value="BetterWeaponRangeImpModsOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponRangeImpModsOffer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="5"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Range" phase="1"/>
+			<objective type="EntityKill" value="250" phase="1"/>
+			<requirement type="Quests.Requirements.Buff" id="Holding_Range" phase="2"/>
+			<objective type="EntityKill" value="250" phase="2"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="7500"/>
+			<reward type="LootItem" id="casinoCoin5000" value="1"/>
+			
+			<reward type="LootItem" id="ImpModsRangeReward" ischosen="true"/>
+			<reward type="LootItem" id="ImpModsRangeReward" ischosen="true"/>
+			<reward type="LootItem" id="ImpModsRangeReward" ischosen="true"/>
+			<reward type="LootItem" id="ImpModsRangeReward" ischosen="true"/>
+			<reward type="LootItem" id="ImpModsRangeReward" ischosen="true"/>
+		</quest>
+
+		<!-- Unique modifications -->
+		<quest id="BetterWeaponUniqueMods">		
+			<property name="name_key" value="BetterWeaponUniqueModsName"/>
+			<property name="description_key" value="BetterWeaponUniqueModsOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponUniqueModsOffer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<objective type="EntityKill" value="250" phase="1"/>
+			<objective type="EntityKill" value="250" phase="2"/>
+			<objective type="EntityKill" value="250" phase="3"/>
+			<objective type="EntityKill" value="250" phase="4"/>
+			<objective type="EntityKill" value="250" phase="5"/>
+			<objective type="EntityKill" value="250" phase="6"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="7"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="7"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="7500"/>
+			<reward type="Item" id="casinoCoin" value="5000"/>
+			<reward type="LootItem" id="BetterWeapon_LastHunt1" value="1"/>
+			
+			<reward type="Item" id="BetterWeapon_UniqueModsMelee" ischosen="true" value="1"/>
+			<reward type="Item" id="BetterWeapon_UniqueModsRange" ischosen="true" value="1"/>
+		</quest>
+		<quest id="BetterWeaponMeleeUniqueMods">			
+			<property name="name_key" value="BetterWeaponMeleeUniqueModsName"/>
+			<property name="description_key" value="BetterWeaponMeleeUniqueModsOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponMeleeUniqueModsOffer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="5"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Melee" phase="1"/>
+			<objective type="EntityKill" value="250" phase="1"/>
+			<requirement type="Quests.Requirements.Buff" id="Holding_Melee" phase="2"/>
+			<objective type="EntityKill" value="250" phase="2"/>
+			<requirement type="Quests.Requirements.Buff" id="Holding_Melee" phase="3"/>
+			<objective type="EntityKill" value="250" phase="3"/>
+			<requirement type="Quests.Requirements.Buff" id="Holding_Melee" phase="4"/>
+			<objective type="EntityKill" value="250" phase="4"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="5"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="5"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="7500"/>
+			<reward type="LootItem" id="casinoCoin5000" value="1"/>
+			
+			<reward type="LootItem" id="UniqueModsMeleeReward" ischosen="true"/>
+			<reward type="LootItem" id="UniqueModsMeleeReward" ischosen="true"/>
+			<reward type="LootItem" id="UniqueModsMeleeReward" ischosen="true"/>
+			<reward type="LootItem" id="UniqueModsMeleeReward" ischosen="true"/>
+			<reward type="LootItem" id="UniqueModsMeleeReward" ischosen="true"/>
+		</quest>
+		<quest id="BetterWeaponRangeUniqueMods">			
+			<property name="name_key" value="BetterWeaponRangeUniqueModsName"/>
+			<property name="description_key" value="BetterWeaponRangeUniqueModsOffer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponRangeUniqueModsOffer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="5"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<requirement type="Quests.Requirements.Buff" id="Holding_Range" phase="1"/>
+			<objective type="EntityKill" value="250" phase="1"/>
+			<requirement type="Quests.Requirements.Buff" id="Holding_Range" phase="2"/>
+			<objective type="EntityKill" value="250" phase="2"/>
+			<requirement type="Quests.Requirements.Buff" id="Holding_Range" phase="3"/>
+			<objective type="EntityKill" value="250" phase="3"/>
+			<requirement type="Quests.Requirements.Buff" id="Holding_Range" phase="4"/>
+			<objective type="EntityKill" value="250" phase="4"/>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="5"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="5"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="7500"/>
+			<reward type="LootItem" id="casinoCoin5000" value="1"/>
+			
+			<reward type="LootItem" id="UniqueModsRangeReward" ischosen="true"/>
+			<reward type="LootItem" id="UniqueModsRangeReward" ischosen="true"/>
+			<reward type="LootItem" id="UniqueModsRangeReward" ischosen="true"/>
+			<reward type="LootItem" id="UniqueModsRangeReward" ischosen="true"/>
+			<reward type="LootItem" id="UniqueModsRangeReward" ischosen="true"/>
+		</quest>
+
+		<!-- The Last Hunt -->
+		<quest id="BetterWeaponLastHunt1">		
+			<property name="name_key" value="BetterWeaponLastHunt1Name"/>
+			<property name="description_key" value="BetterWeaponLastHunt1Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponLastHunt1Offer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+					
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeapon_completion"/>
+			
+			<objective type="EntityKill" value="50" phase="1">
+				<property name="target_tags" value="miniboss"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="50000"/>
+			<reward type="LootItem" id="casinoCoin15000" value="1"/>
+			<reward type="LootItem" id="BetterWeapon_LastHunt2" count="1"/>
+			
+			<reward type="LootItem" id="UniqueParts5" ischosen="true"/>
+			<reward type="LootItem" id="SkillPointBundle5" ischosen="true"/>
+		</quest>
+		<quest id="BetterWeaponLastHunt2">		
+			<property name="name_key" value="BetterWeaponLastHunt2Name"/>
+			<property name="description_key" value="BetterWeaponLastHunt2Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="offer_key" value="BetterWeaponLastHunt2Offer"/>
+			<property name="category_key" value="quest"/>
+			<property name="icon" value="ui_game_symbol_skull"/>
+			<property name="subtitle_key" value="BetterWeapon"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="reward_choices_count" value="2"/>
+						
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_BetterWeaponEnd_completion"/>
+			
+			<objective type="EntityKill" value="25" phase="1">
+				<property name="target_tags" value="boss"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="100000"/>
+			<reward type="LootItem" id="casinoCoin25000" value="1"/>
+			
+			<reward type="LootItem" id="UniqueParts20" ischosen="true"/>
+			<reward type="LootItem" id="SkillPointBundle25" ischosen="true"/>
+		</quest>
+				
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- Rare Samples -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<quest id="RareSamples1">
+			<property name="name_key" value="RareSamples1Name"/>
+			<property name="description_key" value="RareSamples1Desc"/>
+			<property name="subtitle_key" value="quest_radio"/>
+			<property name="statement_key" value="quest_radio"/>
+			<property name="response_key" value="quest_radio"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="RareSamples1Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			
+			<objective type="FetchKeep" id="radioStation" value="1" phase="1"/>
+			<objective type="BlockPlace" id="radioStation" value="1" phase="2"/>
+			
+			<reward type="Exp" value="2500"/>
+			<reward type="LootItem" id="bookRareSamples2" value="1"/>
+		</quest>
+		
+		<quest id="RareSamples2">
+			<property name="name_key" value="RareSamples2Name"/>
+			<property name="description_key" value="RareSamples2Desc"/>
+			<property name="subtitle_key" value="quest_suprequest"/>
+			<property name="statement_key" value="quest_suprequest"/>
+			<property name="response_key" value="quest_suprequest"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="RareSamples2Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+					
+			<objective type="Craft" id="resourceResourceSet" value="10" phase="1"/>
+			<objective type="Craft" id="requestExperimentalAlloysSmall" value="1" phase="2"/>
+			<objective type="FetchKeep" id="resourceExperimentalAlloys" value="10" phase="3"/>
+
+			<reward type="Exp" value="2500"/>
+			<reward type="LootItem" id="bookRareSamples3" value="1"/>
+			<reward type="LootItem" id="modSurgicalBladeSchematic" value="1"/>
+		</quest>
+		
+		<quest id="RareSamples3">
+			<property name="name_key" value="RareSamples3Name"/>
+			<property name="description_key" value="RareSamples3Desc"/>
+			<property name="subtitle_key" value="quest_craftmod"/>
+			<property name="statement_key" value="quest_craftmod"/>
+			<property name="response_key" value="quest_craftmod"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="RareSamples3Offer"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+					
+			<objective type="Craft" id="modSurgicalBlade" value="1" phase="1"/>
+			
+			<reward type="Exp" value="2500"/>
+			<reward type="LootItem" id="bookRareSamples4" value="1"/>
+		</quest>
+		
+		<quest id="RareSamples4">
+			<property name="name_key" value="RareSamples4Name"/>
+			<property name="description_key" value="RareSamples4Desc"/>
+			<property name="subtitle_key" value="quest_killradzombie"/>
+			<property name="statement_key" value="quest_killradzombie"/>
+			<property name="response_key" value="quest_killradzombie"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="RareSamples4Offer"/>
+			<property name="icon" value="ui_game_symbol_zombie"/>
+			
+			<objective type="EntityKill" value="25" phase="1">
+				<property name="target_tags" value="elite"/>
+				<property name="objective_name_key" value="ObjectiveElite_key"/>
+			</objective>
+			
+			<objective type="EntityKill" value="50" phase="1">
+				<property name="target_tags" value="radiated"/>
+				<property name="objective_name_key" value="ObjectiveRadiates_key"/>
+			</objective>
+			
+			<objective type="FetchKeep" id="resourceMutationSamples" value="60" phase="1"/>
+			
+			<reward type="Exp" value="15000"/>
+			<reward type="LootItem" id="bookRareSamples5" value="1"/>
+		</quest>
+		
+		<quest id="RareSamples5">
+			<property name="name_key" value="RareSamples5Name"/>
+			<property name="description_key" value="RareSamples5Desc"/>
+			<property name="subtitle_key" value="quest_rareammo"/>
+			<property name="statement_key" value="quest_rareammo"/>
+			<property name="response_key" value="quest_rareammo"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="RareSamples5Offer"/>
+			<property name="icon" value="ui_game_symbol_airdrop"/>
+			
+			<objective type="Craft" id="ammo762SmallCase100_Quest" value="1" phase="1"/>
+			<objective type="FetchKeep" id="ammo762mmBulletDU" value="100" phase="2"/>
+			
+			<reward type="Exp" value="2500"/>
+			<reward type="LootItem" id="bookRareSamples6" value="1"/>
+		</quest>
+		
+		<quest id="RareSamples6">
+			<property name="name_key" value="RareSamples6Name"/>
+			<property name="description_key" value="RareSamples6Desc"/>
+			<property name="subtitle_key" value="quest_RadResist"/>
+			<property name="statement_key" value="quest_RadResist"/>
+			<property name="response_key" value="quest_RadResist"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="RareSamples6Offer"/>
+			<property name="icon" value="ui_game_symbol_zombie"/>
+
+			<objective type="FetchKeep" id="armorNomadHelmet" value="1" phase="1"/>
+			<objective type="FetchKeep" id="armorNomadOutfit" value="1" phase="1"/>
+			<objective type="FetchKeep" id="armorNomadGloves" value="1" phase="1"/>
+			<objective type="FetchKeep" id="armorNomadBoots" value="1" phase="1"/>
+			
+			<objective type="Wear" id="armorNomadHelmet" phase="2"/>
+			<objective type="Wear" id="armorNomadOutfit" phase="2"/>
+			<objective type="Wear" id="armorNomadGloves" phase="2"/>
+			<objective type="Wear" id="armorNomadBoots" phase="2"/>
+			
+			<reward type="Exp" value="5000"/>
+			<reward type="LootItem" id="bookRareSamples7" value="1"/>
+		</quest>
+		
+		<quest id="RareSamples7">
+			<property name="name_key" value="RareSamples7Name"/>
+			<property name="description_key" value="RareSamples7Desc"/>
+			<property name="subtitle_key" value="quest_RadResist"/>
+			<property name="statement_key" value="quest_RadResist"/>
+			<property name="response_key" value="quest_RadResist"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="RareSamples7Offer"/>
+			<property name="icon" value="ui_game_symbol_radiation"/>
+			
+			<objective type="FetchKeep" id="modArmorARResistHelmet" value="1" phase="1"/>
+			<objective type="FetchKeep" id="modArmorAROutfit" value="1" phase="1"/>
+			<objective type="FetchKeep" id="modArmorARGloves" value="1" phase="1"/>
+			<objective type="FetchKeep" id="modArmorARBoots" value="1" phase="1"/>
+			
+			<objective type="FetchKeep" id="drugAntiRadPills" value="5" phase="2"/>		
+			
+			<reward type="Exp" value="5000"/>
+			<reward type="LootItem" id="bookRareSamples8" value="1"/>
+		</quest>
+		
+		<quest id="RareSamples8">
+			<property name="name_key" value="RareSamples8Name"/>
+			<property name="description_key" value="RareSamples8Desc"/>
+			<property name="subtitle_key" value="quest_zombie_minibosses"/>
+			<property name="statement_key" value="quest_zombie_minibosses"/>
+			<property name="response_key" value="quest_zombie_minibosses"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="RareSamples8Offer"/>
+			<property name="icon" value="ui_game_symbol_radiation"/>
+					
+			<objective type="EntityKill" value="2" phase="1">
+				<property name="target_tags" value="bossDevourer"/>
+				<property name="objective_name_key" value="ObjectiveDevourer_key"/>
+			</objective>
+			
+			<objective type="EntityKill" value="2" phase="1">
+				<property name="target_tags" value="bossBearDaddy"/>
+				<property name="objective_name_key" value="ObjectiveBearDaddy_key"/>
+			</objective>
+			
+			<objective type="EntityKill" value="2" phase="1">
+				<property name="target_tags" value="bossGargul"/>
+				<property name="objective_name_key" value="ObjectiveGargul_key"/>
+			</objective>
+			
+			<objective type="FetchKeep" id="resourceMutationSamples" value="250" phase="1"/>
+			
+			<reward type="Exp" value="30000"/>
+			<reward type="LootItem" id="bookRareSamples9" value="1"/>
+			<reward type="LootItem" id="ImpModsBundle" value="1"/>
+		</quest>
+		
+		<quest id="RareSamples9">
+			<property name="name_key" value="RareSamples9Name"/>
+			<property name="description_key" value="RareSamples9Desc"/>
+			<property name="subtitle_key" value="quest_zombie_bosses"/>
+			<property name="statement_key" value="quest_zombie_bosses"/>
+			<property name="response_key" value="quest_zombie_bosses"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="RareSamples9Offer"/>
+			<property name="icon" value="ui_game_symbol_zombie"/>
+						
+			<objective type="EntityKill" value="1" phase="1">
+				<property name="target_tags" value="bossBull"/>
+				<property name="objective_name_key" value="ObjectiveBull_key"/>
+			</objective>
+			
+			<objective type="EntityKill" value="1" phase="1">
+				<property name="target_tags" value="bossShocker"/>
+				<property name="objective_name_key" value="ObjectiveShocker_key"/>
+			</objective>
+			
+			<objective type="EntityKill" value="1" phase="1">
+				<property name="target_tags" value="bossVeteran"/>
+				<property name="objective_name_key" value="ObjectiveVeteran_key"/>
+			</objective>
+			
+			<objective type="FetchKeep" id="resourceMutationSamples" value="500" phase="1"/>
+			
+			<reward type="Exp" value="50000"/>
+			<reward type="LootItem" id="bookRareSamples10" value="1"/>
+			<reward type="LootItem" id="UniqueModsBundle" value="1"/>
+		</quest>
+		
+		<quest id="RareSamples10">
+			<property name="name_key" value="RareSamples10Name"/>
+			<property name="description_key" value="RareSamples10Desc"/>
+			<property name="subtitle_key" value="quest_wasteland"/>
+			<property name="statement_key" value="quest_wasteland"/>
+			<property name="response_key" value="quest_wasteland"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="true"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="RareSamples10Offer"/>
+			<property name="icon" value="ui_game_symbol_check"/>
+			
+			<objective type="EntityKill" value="1" phase="1">
+				<property name="target_tags" value="bossCarrier"/>
+				<property name="objective_name_key" value="ObjectiveCarrier_key"/>
+			</objective>
+			
+			<reward type="Exp" value="75000"/>
+			<reward type="LootItem" id="SkillPointBundle5" value="1"/>
+		</quest>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- New Home Quest's -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<quest id="NewHome1">
+			<property name="name_key" value="NewHome1Name"/>
+			<property name="description_key" value="NewHome1Offer"/>
+			<property name="subtitle_key" value="quest_newhome"/>
+			<property name="statement_key" value="quest_newhome"/>
+			<property name="response_key" value="quest_newhome"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="NewHome1Offer"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="reward_choices_count" value="3"/>
+			<property name="icon" value="ui_game_symbol_hammer"/>
+			
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_Contract_complite"/>
+			
+			<objective type="BlockPlace" id="frameShapes:VariantHelper" value="100" phase="1"/>
+			<objective type="BlockUpgrade" id="frameShapes:VariantHelper" value="100" phase="2"/>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+						
+			<reward type="Exp" value="1500"/>
+			<reward type="Item" id="Chapter2_newHome" value="1"/>
+			
+			<reward type="Item" id="meleeToolRepairT0StoneAxe" ischosen="true" value="6"/>
+			<reward type="Item" id="resourceWood" ischosen="true" value="400"/>
+			<reward type="Item" id="woodShapes:VariantHelper" ischosen="true" value="50"/>
+		</quest>
+		
+		<quest id="NewHome2">
+			<property name="name_key" value="NewHome2Name"/>
+			<property name="description_key" value="NewHome2Offer"/>
+			<property name="subtitle_key" value="quest_newhome"/>
+			<property name="statement_key" value="quest_newhome"/>
+			<property name="response_key" value="quest_newhome"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="NewHome2Offer"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="reward_choices_count" value="4"/>
+			<property name="icon" value="ui_game_symbol_hammer"/>
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_Contract_complite"/>
+			
+			<objective type="BlockUpgrade" id="woodShapes:VariantHelper" value="100" phase="1"/>
+			<objective type="BlockUpgrade" id="oldWoodDoor" value="1" phase="1"/>
+			<objective type="BlockUpgrade" id="woodHatch" value="1" phase="1"/>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+						
+			<reward type="Exp" value="2500"/>
+			<reward type="Item" id="Chapter3_newHome" value="1"/>
+			
+			<reward type="Item" id="meleeToolRepairT1ClawHammer" ischosen="true" value="2"/>
+			<reward type="Item" id="armorLumberjackHelmet" ischosen="true" value="2"/>
+			<reward type="Item" id="resourceCobblestones" ischosen="true" value="500"/>
+			<reward type="Item" id="cobblestoneShapes:VariantHelper" ischosen="true" value="50"/>
+		</quest>
+		
+		<quest id="NewHome3">
+			<property name="name_key" value="NewHome3Name"/>
+			<property name="description_key" value="NewHome3Offer"/>
+			<property name="subtitle_key" value="quest_newhome"/>
+			<property name="statement_key" value="quest_newhome"/>
+			<property name="response_key" value="quest_newhome"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="NewHome3Offer"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="reward_choices_count" value="4"/>
+			<property name="icon" value="ui_game_symbol_hammer"/>
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_Contract_complite"/>
+			
+			<objective type="BlockUpgrade" id="cobblestoneShapes:VariantHelper" value="100" phase="1"/>
+			<objective type="BlockUpgrade" id="ironHatchBlockVariantHelper" value="2" phase="1"/>
+			<objective type="BlockUpgrade" id="ironDoorBlockVariantHelper" value="2" phase="1"/>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+						
+			<reward type="Exp" value="3500"/>
+			<reward type="Item" id="Chapter4_newHome" value="1"/>
+			
+			<reward type="Item" id="meleeToolRepairT3Nailgun" ischosen="true" value="2"/>
+			<reward type="Item" id="armorLumberjackHelmet" ischosen="true" value="4"/>
+			<reward type="Item" id="resourceConcreteMix" ischosen="true" value="500"/>
+			<reward type="Item" id="concreteShapes:VariantHelper" ischosen="true" value="50"/>
+		</quest>
+		
+		<quest id="NewHome4">
+			<property name="name_key" value="NewHome4Name"/>
+			<property name="description_key" value="NewHome4Offer"/>
+			<property name="subtitle_key" value="quest_newhome"/>
+			<property name="statement_key" value="quest_newhome"/>
+			<property name="response_key" value="quest_newhome"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="NewHome4Offer"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="reward_choices_count" value="4"/>
+			<property name="icon" value="ui_game_symbol_hammer"/>
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_Contract_complite"/>
+			
+			<objective type="BlockUpgrade" id="concreteShapes:VariantHelper" value="100" phase="1"/>
+			<objective type="BlockPlace" id="vaultDoor01_Powered" value="2" phase="1"/>
+			<objective type="BlockPlace" id="vaultHatch01_Powered" value="2" phase="1"/>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+						
+			<reward type="Exp" value="5000"/>
+			
+			<reward type="Item" id="meleeToolRepairT4NailgunImp" ischosen="true" value="2"/>
+			<reward type="Item" id="armorLumberjackHelmet" ischosen="true" value="6"/>
+			<reward type="Item" id="resourceDurablAlloys" ischosen="true" value="25"/>
+			<reward type="Item" id="steelShapes:VariantHelper" ischosen="true" value="50"/>
+		</quest>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- Resources Collector Quest's -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<quest id="ResCollector1">
+			<property name="name_key" value="ResCollector1Name"/>
+			<property name="description_key" value="ResCollector1Offer"/>
+			<property name="subtitle_key" value="quest_conditions"/>
+			<property name="statement_key" value="quest_conditions"/>
+			<property name="response_key" value="quest_conditions"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="ResCollector1Offer"/>
+			<property name="reward_choices_count" value="4"/>
+			<property name="icon" value="ui_game_symbol_tool"/>
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_Contract_complite"/>
+			
+			<objective type="EntityKill" value="5" phase="1">
+				<property name="target_tags" value="UtilityWorker"/>
+				<property name="objective_name_key" value="ObjectiveBuilders_key"/>
+			</objective>
+			
+			<objective type="FetchKeep" id="resourceScrapIron" value="250" phase="2"/>
+			<objective type="FetchKeep" id="resourceWood" value="50" phase="2"/>
+			<objective type="FetchKeep" id="resourceMetalPipe" value="5" phase="2"/>
+			
+			<objective type="Craft" id="Ingredients_ResCollector1" value="1" phase="3"/>
+			<objective type="Fetch" id="Ingredients_ResCollector1" value="1" phase="4"/>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+						
+			<reward type="Exp" value="1500"/>
+			<reward type="Item" id="Chapter2_resCollector" value="1"/>
+			
+			<reward type="Item" id="meleeToolPickT1IronPickaxe" ischosen="true" value="2"/>
+			<reward type="Item" id="meleeToolShovelT1IronShovel" ischosen="true" value="2"/>
+			<reward type="Item" id="meleeToolAxeT1IronFireaxe" ischosen="true" value="2"/>
+			<reward type="Item" id="meleeToolSalvageT1Wrench" ischosen="true" value="2"/>
+		</quest>
+		
+		<quest id="ResCollector2">
+			<property name="name_key" value="ResCollector2Name"/>
+			<property name="description_key" value="ResCollector2Offer"/>
+			<property name="subtitle_key" value="quest_conditions"/>
+			<property name="statement_key" value="quest_conditions"/>
+			<property name="response_key" value="quest_conditions"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="ResCollector2Offer"/>
+			<property name="reward_choices_count" value="4"/>
+			<property name="icon" value="ui_game_symbol_tool"/>
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_Contract_complite"/>
+			
+			<objective type="EntityKill" value="10" phase="1">
+				<property name="target_tags" value="UtilityWorker"/>
+				<property name="objective_name_key" value="ObjectiveBuilders_key"/>
+			</objective>
+			
+			<objective type="FetchKeep" id="resourceForgedIron" value="50" phase="2"/>
+			<objective type="FetchKeep" id="resourceWood" value="50" phase="2"/>
+			<objective type="FetchKeep" id="UniversalParts" value="15" phase="2"/>
+			
+			<objective type="Craft" id="Ingredients_ResCollector2" value="1" phase="3"/>
+			<objective type="Fetch" id="Ingredients_ResCollector2" value="1" phase="4"/>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+						
+			<reward type="Exp" value="2500"/>
+			<reward type="Item" id="Chapter3_resCollector" value="1"/>
+			
+			<reward type="Item" id="meleeToolPickT2SteelPickaxe" ischosen="true" value="2"/>
+			<reward type="Item" id="meleeToolShovelT2SteelShovel" ischosen="true" value="2"/>
+			<reward type="Item" id="meleeToolAxeT2SteelAxe" ischosen="true" value="2"/>
+			<reward type="Item" id="meleeToolSalvageT2Ratchet" ischosen="true" value="2"/>
+		</quest>
+		
+		<quest id="ResCollector3">
+			<property name="name_key" value="ResCollector3Name"/>
+			<property name="description_key" value="ResCollector3Offer"/>
+			<property name="subtitle_key" value="quest_conditions"/>
+			<property name="statement_key" value="quest_conditions"/>
+			<property name="response_key" value="quest_conditions"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="ResCollector3Offer"/>
+			<property name="reward_choices_count" value="3"/>
+			<property name="icon" value="ui_game_symbol_tool"/>
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_Contract_complite"/>
+			
+			<objective type="EntityKill" value="15" phase="1">
+				<property name="target_tags" value="UtilityWorker"/>
+				<property name="objective_name_key" value="ObjectiveBuilders_key"/>
+			</objective>
+			
+			<objective type="FetchKeep" id="resourceForgedSteel" value="50" phase="2"/>
+			<objective type="FetchKeep" id="resourceMechanicalParts" value="25" phase="2"/>
+			<objective type="FetchKeep" id="UniversalParts" value="25" phase="2"/>
+			
+			<objective type="Craft" id="Ingredients_ResCollector3" value="1" phase="3"/>
+			<objective type="Fetch" id="Ingredients_ResCollector3" value="1" phase="4"/>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+						
+			<reward type="Exp" value="3500"/>
+			<reward type="Item" id="Chapter4_resCollector" value="1"/>
+			
+			<reward type="Item" id="meleeToolAxeT3Chainsaw" ischosen="true" value="2"/>
+			<reward type="Item" id="meleeToolPickT3Auger" ischosen="true" value="2"/>
+			<reward type="Item" id="meleeToolSalvageT3ImpactDriver" ischosen="true" value="2"/>
+		</quest>
+		
+		<quest id="ResCollector4">
+			<property name="name_key" value="ResCollector4Name"/>
+			<property name="description_key" value="ResCollector4Offer"/>
+			<property name="subtitle_key" value="quest_conditions"/>
+			<property name="statement_key" value="quest_conditions"/>
+			<property name="response_key" value="quest_conditions"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="ResCollector4Offer"/>
+			<property name="reward_choices_count" value="3"/>
+			<property name="icon" value="ui_game_symbol_tool"/>
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_Contract_complite"/>
+			
+			<objective type="EntityKill" value="20" phase="1">
+				<property name="target_tags" value="UtilityWorker"/>
+				<property name="objective_name_key" value="ObjectiveBuilders_key"/>
+			</objective>
+			
+			<objective type="FetchKeep" id="resourceForgedSteel" value="100" phase="2"/>
+			<objective type="FetchKeep" id="resourceMechanicalParts" value="25" phase="2"/>
+			<objective type="FetchKeep" id="resourceElectricParts" value="25" phase="2"/>
+			<objective type="FetchKeep" id="UniversalParts" value="25" phase="2"/>
+			
+			<objective type="Craft" id="Ingredients_ResCollector4" value="1" phase="3"/>
+			<objective type="Fetch" id="Ingredients_ResCollector4" value="1" phase="4"/>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+						
+			<reward type="Exp" value="5000"/>
+			<reward type="Item" id="Chapter5_resCollector" value="1"/>
+			
+			<reward type="Item" id="meleeToolSalvageT4ImpactDriverImp" ischosen="true" value="2"/>
+			<reward type="Item" id="meleeToolPickT4AugerImp" ischosen="true" value="2"/>
+			<reward type="Item" id="meleeToolAxeT4ChainsawImp" ischosen="true" value="2"/>
+		</quest>
+		
+		<quest id="ResCollector5">
+			<property name="name_key" value="ResCollector5Name"/>
+			<property name="description_key" value="ResCollector5Offer"/>
+			<property name="subtitle_key" value="quest_conditions"/>
+			<property name="statement_key" value="quest_conditions"/>
+			<property name="response_key" value="quest_conditions"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="ResCollector5Offer"/>
+			<property name="reward_choices_count" value="2"/>
+			<property name="icon" value="ui_game_symbol_tool"/>
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_Contract_complite"/>
+			
+			<objective type="EntityKill" value="25" phase="1">
+				<property name="target_tags" value="UtilityWorker"/>
+				<property name="objective_name_key" value="ObjectiveBuilders_key"/>
+			</objective>
+			
+			<objective type="FetchKeep" id="resourceUltraStrengthAlloys" value="15" phase="2"/>
+			<objective type="FetchKeep" id="resourceElectricPartsImp" value="10" phase="2"/>
+			<objective type="FetchKeep" id="UniversalParts" value="50" phase="2"/>
+			
+			<objective type="Craft" id="Ingredients_ResCollector5" value="1" phase="3"/>
+			<objective type="Fetch" id="Ingredients_ResCollector5" value="1" phase="4"/>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+						
+			<reward type="Exp" value="7500"/>
+			<reward type="Item" id="Chapter6_resCollector" value="1"/>
+			
+			<reward type="Item" id="meleeToolSalvageT5ImpactDriverReact" ischosen="true" value="2"/>
+			<reward type="Item" id="meleeToolPickT5AugerReact" ischosen="true" value="2"/>		
+		</quest>
+		
+		<quest id="ResCollector6">
+			<property name="name_key" value="ResCollector6Name"/>
+			<property name="description_key" value="ResCollector6Offer"/>
+			<property name="subtitle_key" value="quest_conditions"/>
+			<property name="statement_key" value="quest_conditions"/>
+			<property name="response_key" value="quest_conditions"/>
+			<property name="icon" value="Quest" />
+			<property name="repeatable" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="category_key" value="quest"/>	
+			<property name="offer_key" value="ResCollector6Offer"/>
+			<property name="reward_choices_count" value="3"/>
+			<property name="icon" value="ui_game_symbol_tool"/>
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_Contract_complite"/>
+			
+			<objective type="EntityKill" value="50" phase="1">
+				<property name="target_tags" value="UtilityWorker"/>
+				<property name="objective_name_key" value="ObjectiveBuilders_key"/>
+			</objective>
+			
+			<objective type="FetchKeep" id="resourcePreciousMetals" value="15" phase="2"/>
+			<objective type="FetchKeep" id="resourceElectricPartsImp" value="10" phase="2"/>
+			<objective type="FetchKeep" id="UniversalParts" value="50" phase="2"/>
+			
+			<objective type="Craft" id="Ingredients_ResCollector6" value="1" phase="3"/>
+			<objective type="Fetch" id="Ingredients_ResCollector6" value="1" phase="4"/>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+						
+			<reward type="Exp" value="10000"/>
+			<reward type="Item" id="UniqueToolsModsBundle" value="1"/>
+			
+			<reward type="Item" id="PortableReactorСhargingStation" ischosen="true" value="1"/>
+			<reward type="Item" id="AugerReactСhargingStation" ischosen="true" value="1"/>
+			<reward type="Item" id="ImpactDriverReactСhargingStation" ischosen="true" value="1"/>
+		</quest>
+		
+	</append>
+			
+</config>

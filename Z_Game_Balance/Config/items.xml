@@ -1,0 +1,186 @@
+<config>
+	
+	<set xpath="/items/item[@name='foodCropGraceCorn']/property[@name='EconomicValue']/@value">40</set>
+	
+	<set xpath="/items/item[@name='resourceCoal']/property[@name='EconomicValue']/@value">6</set>
+	<set xpath="/items/item[@name='resourcePotassiumNitratePowder']/property[@name='EconomicValue']/@value">6</set>
+	<set xpath="/items/item[@name='resourceScrapLead']/property[@name='EconomicValue']/@value">6</set>
+	<set xpath="/items/item[@name='resourceScrapIron']/property[@name='EconomicValue']/@value">6</set>
+	<set xpath="/items/item[@name='resourceOilShale']/property[@name='EconomicValue']/@value">9</set>
+	<set xpath="/items/item[@name='resourceScrapBrass']/property[@name='EconomicValue']/@value">20</set>
+	<set xpath="/items/item[@name='resourceClayLump']/property[@name='EconomicValue']/@value">9</set>
+	
+	<append xpath="/items">
+		
+		<item name="harvestingToolsSkillMagazineBundle">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bookToolsDigest"/>
+			<property name="CustomIconTint" value="DECEA3"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="MagazineBundleDesc"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="Group" value="Books,BooksOnly,TCReading"/>
+			<property class="Action0">
+				<property name="Create_item" value="harvestingToolsSkillMagazine"/>
+				<property name="Create_item_count" value="10"/>
+			</property>
+		</item>
+		<item name="repairToolsSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookHandyLand"/>
+			<property class="Action0">
+				<property name="Create_item" value="repairToolsSkillMagazine"/>
+			</property>
+		</item>
+		<item name="salvageToolsSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookScrapping4Fun"/>
+			<property class="Action0">
+				<property name="Create_item" value="salvageToolsSkillMagazine"/>
+			</property>
+		</item>
+		<item name="sledgehammersSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookGetHammered"/>
+			<property class="Action0">
+				<property name="Create_item" value="sledgehammersSkillMagazine"/>
+			</property>
+		</item>
+		<item name="workstationSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookForgeAhead"/>
+			<property class="Action0">
+				<property name="Create_item" value="workstationSkillMagazine"/>
+			</property>
+		</item>
+		<item name="bowsSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookBowHunters"/>
+			<property class="Action0">
+				<property name="Create_item" value="bowsSkillMagazine"/>
+			</property>
+		</item>
+		<item name="spearsSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookSharpSticks"/>
+			<property class="Action0">
+				<property name="Create_item" value="spearsSkillMagazine"/>
+			</property>
+		</item>
+		<item name="bladesSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookKnifeGuy"/>
+			<property class="Action0">
+				<property name="Create_item" value="bladesSkillMagazine"/>
+			</property>
+		</item>
+		<item name="clubsSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookBigHitters"/>
+			<property class="Action0">
+				<property name="Create_item" value="clubsSkillMagazine"/>
+			</property>
+		</item>
+		<item name="handgunsSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookHandgunMagazine"/>
+			<property class="Action0">
+				<property name="Create_item" value="handgunsSkillMagazine"/>
+			</property>
+		</item>
+		<item name="shotgunsSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookShotgunWeekly"/>
+			<property class="Action0">
+				<property name="Create_item" value="shotgunsSkillMagazine"/>
+			</property>
+		</item>
+		<item name="riflesSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookRifleWorld"/>
+			<property class="Action0">
+				<property name="Create_item" value="riflesSkillMagazine"/>
+			</property>
+		</item>
+		<item name="machineGunsSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookTacticalWarfare"/>
+			<property class="Action0">
+				<property name="Create_item" value="machineGunsSkillMagazine"/>
+			</property>
+		</item>
+		<item name="explosivesSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookExplosiveMagazine"/>
+			<property class="Action0">
+				<property name="Create_item" value="explosivesSkillMagazine"/>
+			</property>
+		</item>
+		<item name="armorSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookArmoredUp"/>
+			<property class="Action0">
+				<property name="Create_item" value="armorSkillMagazine"/>
+			</property>
+		</item>
+		<item name="medicalSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookMedicalJournal"/>
+			<property class="Action0">
+				<property name="Create_item" value="medicalSkillMagazine"/>
+			</property>
+		</item>
+		<item name="knucklesSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookFuriousFists"/>
+			<property class="Action0">
+				<property name="Create_item" value="knucklesSkillMagazine"/>
+			</property>
+		</item>
+		<item name="foodSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookHomeCookingWeekly"/>
+			<property class="Action0">
+				<property name="Create_item" value="foodSkillMagazine"/>
+			</property>
+		</item>
+		<item name="seedSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookSouthernFarming"/>
+			<property class="Action0">
+				<property name="Create_item" value="seedSkillMagazine"/>
+			</property>
+		</item>
+		<item name="roboticsSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookTechPlanet"/>
+			<property class="Action0">
+				<property name="Create_item" value="roboticsSkillMagazine"/>
+			</property>
+		</item>
+		<item name="vehiclesSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookVehicleAdventures"/>
+			<property class="Action0">
+				<property name="Create_item" value="vehiclesSkillMagazine"/>
+			</property>
+		</item>
+		<item name="electricianSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookWiring101"/>
+			<property class="Action0">
+				<property name="Create_item" value="electricianSkillMagazine"/>
+			</property>
+		</item>
+		<item name="trapsSkillMagazineBundle">
+			<property name="Extends" value="harvestingToolsSkillMagazineBundle"/>
+			<property name="CustomIcon" value="bookElectricalTraps"/>
+			<property class="Action0">
+				<property name="Create_item" value="trapsSkillMagazine"/>
+			</property>
+		</item>
+	
+	</append>
+	
+</config>

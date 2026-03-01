@@ -1,0 +1,16 @@
+<config>
+	
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	<!-- STACK -->
+	<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+	
+	<!-- Traps -->
+	<set xpath="/blocks/block[@name='bladeTrap']/property[@name='Stacknumber']/@value">25</set>
+	<set xpath="/blocks/block[@name='dartTrap']/property[@name='Stacknumber']/@value">50</set>
+	
+	<!-- Mine -->
+	<set xpath="/blocks/block[@name='mineCandyTin']/property[@name='Stacknumber']/@value">100</set>
+	<set xpath="/blocks/block[@name='mineHubcap']/property[@name='Stacknumber']/@value">100</set>
+	<set xpath="/blocks/block[@name='mineAirFilter']/property[@name='Stacknumber']/@value">100</set>
+	
+</config>

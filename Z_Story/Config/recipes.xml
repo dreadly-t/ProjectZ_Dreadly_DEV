@@ -1,0 +1,39 @@
+<config>
+	
+	<append xpath="/recipes">
+		
+		<recipe name="Ingredients_ResCollector1" count="1" craft_time="5">
+			<ingredient name="resourceScrapIron" count="250"/>
+			<ingredient name="resourceWood" count="50"/>
+			<ingredient name="resourceMetalPipe" count="5"/>
+		</recipe>
+		<recipe name="Ingredients_ResCollector2" count="1" craft_time="5">
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceWood" count="50"/>
+			<ingredient name="UniversalParts" count="15"/>
+		</recipe>
+		<recipe name="Ingredients_ResCollector3" count="1" craft_time="5">
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceMechanicalParts" count="25"/>
+			<ingredient name="UniversalParts" count="25"/>
+		</recipe>
+		<recipe name="Ingredients_ResCollector4" count="1" craft_time="5">
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceMechanicalParts" count="25"/>
+			<ingredient name="resourceElectricParts" count="25"/>
+			<ingredient name="UniversalParts" count="25"/>
+		</recipe>
+		<recipe name="Ingredients_ResCollector5" count="1" craft_time="5">
+			<ingredient name="resourceUltraStrengthAlloys" count="15"/>
+			<ingredient name="resourceElectricPartsImp" count="10"/>
+			<ingredient name="UniversalParts" count="50"/>
+		</recipe>
+		<recipe name="Ingredients_ResCollector6" count="1" craft_time="5">
+			<ingredient name="resourcePreciousMetals" count="15"/>
+			<ingredient name="resourceElectricPartsImp" count="10"/>
+			<ingredient name="UniversalParts" count="50"/>
+		</recipe>
+	
+	</append>
+	
+</config>

@@ -1,0 +1,1946 @@
+<configs>
+	
+	<append xpath="/items">
+	
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- LIGHT ARMOR -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+			
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- LUMBERJACK -->
+				
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- PREACHER -->
+			
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- ROGUE IMPROVED -->
+		
+		<item name="armorRogueHelmetImp">
+			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRogueHelmet"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			
+			<property name="DescriptionKey" value="armorRogueHelmetImpDesc"/>
+			<property name="DisplayType" value="armorRogueHelmetImp"/>
+			<property name="ArmorGroup" value="groupRogueImp"/>
+			<property name="Tags" value="head,armor,armorHead,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Head"/>
+			<property name="SoundPickup" value="headwear_sunglasses_grab"/>
+			<property name="SoundPlace" value="headwear_sunglasses_place"/>
+			<effect_group name="RogueHelmet">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="8.2,12.5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="8.2,12.5" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+				
+				<passive_effect name="HyperthermalResist" operation="base_add" value="6"/>
+				
+				<display_value name="dPlayerExpGainKill" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6" tags="Kill"/>
+				<display_value name="dLootQuantity" value=".05,.1,.15,.2,.25,.4" tier="1,2,3,4,5,6"/>
+				<passive_effect name="LootQuantity" operation="perc_add" value=".05,.1,.15,.2,.25,.4" tier="1,2,3,4,5,6" tags="dukes"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="BarteringSelling" operation="base_add" value=".03,.06,.09,.12,.15,.2" tier="1,2,3,4,5,6" />
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Stealth/HeadgearMorphMatrix/{race}{variant}/gearStealth{hair}Head.asset"/>
+				<property name="TransformName" value="head"/>
+				<property name="Excludes" value=""/>
+				<property name="CullDistFPV" value="0"/>
+				<property name="HairMaskType" value="None"/>
+				<property name="FacialHairMaskType" value="None"/>
+			</property>
+		</item>
+		
+		<item name="armorRogueOutfitImp">
+			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRogueOutfit"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			
+			<property name="DescriptionKey" value="armorRogueOutfitImpDesc"/>
+			<property name="DisplayType" value="armorRogueOutfitImp"/>
+			<property name="ArmorGroup" value="groupRogueImp"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,armorRogueCritResist"/>
+			<property name="EquipSlot" value="Chest"/>
+			<property name="SoundPickup" value="outfit_cloth_grab"/>
+			<property name="SoundPlace" value="outfit_cloth_place"/>
+			<effect_group name="RogueOutfit">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="10.9,16.7" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="10.9,16.7" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+				
+				<passive_effect name="HyperthermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="CarryCapacity" operation="base_add" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+				<display_value name="dCarryCapacity" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+				<display_value name="dNaturalCritHealing" value=".07,.14,.21,.28,.35,.7" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipUpdate" action="ModifyCVar" cvar="$commandoCritNaturalHealing" operation="set" value=".07,.14,.21,.28,.35,.7"/>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$commandoCritNaturalHealing" operation="set" value="0"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Stealth/gear{sex}StealthPrefab.prefab"/>
+				<property name="TransformName" value="body"/>
+				<property name="Excludes" value="body"/>
+				<property name="CullDistFPV" value="0.32"/>
+			</property>
+		</item>
+		
+		<item name="armorRogueGlovesImp">
+			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRogueGloves"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			
+			<property name="DescriptionKey" value="armorRogueGlovesImpDesc"/>
+			<property name="DisplayType" value="armorRogueGlovesImp"/>
+			<property name="ArmorGroup" value="groupRogueImp"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,enhancedMelee"/>
+			<property name="EquipSlot" value="Hands"/>
+			<property name="SoundPickup" value="gloves_leather_grab"/>
+			<property name="SoundPlace" value="gloves_leather_place"/>
+			<effect_group name="RogueGloves">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="4.1,6.3" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="4.1,6.3" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+				
+				<passive_effect name="HyperthermalResist" operation="base_add" value="6"/>
+				
+				<display_value name="dEnhancedAtackSpeed" value=".03,.06,.09,.12,.15,.25" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ScavengingTime" operation="perc_add" value="-.2" />
+				<display_value name="dLootTime" value="-.2"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".05,.1,.15,.2,.25,.4" tier="1,2,3,4,5,6" tags="perkArchery"/>
+				<display_value name="dReloadSpeedMultiplierArchery" value=".05,.1,.15,.2,.25,.4" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Stealth/gear{sex}StealthPrefab.prefab"/>
+				<property name="TransformName" value="hands"/>
+				<property name="Excludes" value="hands"/>
+				<property name="CullDistFPV" value="0"/>
+			</property>
+		</item>
+		
+		<item name="armorRogueBootsImp">
+			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRogueBoots"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			
+			<property name="DescriptionKey" value="armorRogueBootsImpDesc"/>
+			<property name="DisplayType" value="armorRogueBootsImp"/>
+			<property name="ArmorGroup" value="groupRogueImp"/>
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Feet"/>
+			<property name="SoundPickup" value="footwear_regular_grab"/>
+			<property name="SoundPlace" value="footwear_regular_place"/>
+			<effect_group name="RogueBoots">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="4.1,6.3" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="4.1,6.3" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+				
+				<passive_effect name="HyperthermalResist" operation="base_add" value="6"/>
+			</effect_group>
+
+			<effect_group>
+				<display_value name="dStaminaRestEnhanced" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				<display_value name="dSneakEffectiveness" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				<display_value name="dCrouchSpeed" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+					<passive_effect name="LightMultiplier" operation="perc_add" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6">
+						<requirement name="CVarCompare" cvar="_lightlevel" operation="LTE" value="65"/>
+					</passive_effect>
+					<passive_effect name="NoiseMultiplier" operation="perc_add" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+					<passive_effect name="CrouchSpeed" operation="perc_add" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
+					<passive_effect name="EnemySearchDuration" operation="perc_add" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Stealth/gear{sex}StealthPrefab.prefab"/>
+				<property name="TransformName" value="feet"/>
+				<property name="Excludes" value="feet"/>
+				<property name="CullDistFPV" value="0"/>
+			</property>
+		</item>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- ATHLETIC -->
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- ENFORCER IMPROVED -->
+		
+		<item name="armorEnforcerHelmetImp">
+			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorEnforcerHelmet"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			
+			<property name="DescriptionKey" value="armorEnforcerHelmetImpDesc"/>
+			<property name="DisplayType" value="armorEnforcerHelmetImp"/>
+			<property name="ArmorGroup" value="groupEnforcerImp"/>
+			<property name="Tags" value="head,armor,armorHead,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Head"/>
+			<property name="SoundPickup" value="headwear_sunglasses_grab"/>
+			<property name="SoundPlace" value="headwear_sunglasses_place"/>
+			<effect_group name="EnforcerHelmet">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="8.2,12.5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="8.2,12.5" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+				
+				<passive_effect name="HyperthermalResist" operation="base_add" value="6"/>
+				
+				<display_value name="dPlayerExpGainKill" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6" tags="Kill"/>
+				<display_value name="dBarteringSelling" value=".03,.06,.09,.12,.15,.2" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="BarteringSelling" operation="base_add" value=".03,.06,.09,.12,.15,.2" tier="1,2,3,4,5,6" />
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Enforcer/HeadgearMorphMatrix/{race}{variant}/gearEnforcer{hair}Head.asset"/>
+				<property name="TransformName" value="head"/>
+				<property name="Excludes" value=""/>
+				<property name="HairMaskType" value="Full"/>
+			</property>
+		</item>
+		
+		<item name="armorEnforcerOutfitImp">
+			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorEnforcerOutfit"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			
+			<property name="DescriptionKey" value="armorEnforcerOutfitImpDesc"/>
+			<property name="DisplayType" value="armorEnforcerOutfitImp"/>
+			<property name="ArmorGroup" value="groupEnforcerImp"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,armorEnforcerCritResist"/>
+			<property name="EquipSlot" value="Chest"/>
+			<property name="SoundPickup" value="outfit_cloth_grab"/>
+			<property name="SoundPlace" value="outfit_cloth_place"/>
+			<effect_group name="EnforcerOutfit">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="10.9,16.7" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="10.9,16.7" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+				
+				<passive_effect name="HyperthermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="CarryCapacity" operation="base_add" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+				<display_value name="dCarryCapacity" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+				<display_value name="dCritResist" value=".06,.12,.18,.24,.3,.5" tier="1,2,3,4,5,6"/>
+				<triggered_effect trigger="onSelfEquipUpdate" action="ModifyCVar" cvar="$enforcerBuffResistance" operation="set" value=".06,.12,.18,.24,.3,.5"/>
+			</effect_group>
+
+			<!-- Enforcer Vol 02 -->
+			<effect_group>
+				<passive_effect name="GeneralDamageResist" operation="base_add" value="0.05">
+					<requirement name="ProgressionLevel" progression_name="perkEnforcerApparel" operation="Equals" value="1"/>
+				</passive_effect>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$enforcerBuffResistance"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Enforcer/gear{sex}EnforcerPrefab.prefab"/>
+				<property name="TransformName" value="body"/>
+				<property name="Excludes" value="body"/>
+			</property>
+		</item>
+		
+		<item name="armorEnforcerGlovesImp">
+			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorEnforcerGloves"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			
+			<property name="DescriptionKey" value="armorEnforcerGlovesImpDesc"/>
+			<property name="DisplayType" value="armorEnforcerGlovesImp"/>
+			<property name="ArmorGroup" value="groupEnforcerImp"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge,enhancedMelee"/>
+			<property name="EquipSlot" value="Hands"/>
+			<property name="SoundPickup" value="gloves_leather_grab"/>
+			<property name="SoundPlace" value="gloves_leather_place"/>
+			<effect_group name="EnforcerGloves">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="4.1,6.3" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="4.1,6.3" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+				
+				<passive_effect name="HyperthermalResist" operation="base_add" value="6"/>
+				
+				<display_value name="dEnhancedAtackSpeed" value=".03,.06,.09,.12,.15,.25" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".05,.1,.15,.20,.25,.5" tier="1,2,3,4,5,6" tags="perkGunslinger"/>
+				<display_value name="dReloadSpeedMultiplierGunslinger" value=".05,.1,.15,.20,.25,.5" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Enforcer/gear{sex}EnforcerPrefab.prefab"/>
+				<property name="TransformName" value="hands"/>
+				<property name="Excludes" value="hands"/>
+			</property>
+		</item>
+		
+		<item name="armorEnforcerBootsImp">
+			<property name="Extends" value="armorLightMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorEnforcerBoots"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			
+			<property name="DescriptionKey" value="armorEnforcerBootsImpDesc"/>
+			<property name="DisplayType" value="armorEnforcerBootsImp"/>
+			<property name="ArmorGroup" value="groupEnforcerImp"/>
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,lightArmor,lightArmorDeg,armorLightSkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Feet"/>
+			<property name="SoundPickup" value="footwear_regular_grab"/>
+			<property name="SoundPlace" value="footwear_regular_place"/>
+			<effect_group name="EnforcerBoots">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="4.1,6.3" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="4.1,6.3" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="6"/>
+			</effect_group>
+
+			<effect_group>
+				<display_value name="dStaminaRestEnhanced" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="7,14,21,28,35,70" tier="1,2,3,4,5,6"/>
+				<display_value name="dStaminaMax" value="7,14,21,28,35,70" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Enforcer/gear{sex}EnforcerPrefab.prefab"/>
+				<property name="TransformName" value="feet"/>
+				<property name="Excludes" value="feet"/>
+			</property>
+		</item>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- MEDUUM ARMOR -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+			
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- FARMER -->
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- BIKER -->
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- SCAVENGER -->
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- RANGER IMPROVED -->
+
+		<item name="armorRangerHelmetImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRangerHelmet"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorRangerHelmetImpDesc"/>
+			<property name="DisplayType" value="armorRangerHelmetImp"/>
+			<property name="ArmorGroup" value="groupRangerImp"/>
+			<property name="Tags" value="head,armor,armorHead,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorRangerBonus"/>
+			<property name="EquipSlot" value="Head"/>
+			<property name="SoundPickup" value="headwear_cloth_grab"/>
+			<property name="SoundPlace" value="headwear_cloth_place"/>
+			<effect_group name="RangerHelmet">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="13.3,17.6" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="13.3,17.6" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.049"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+				
+				<display_value name="dPlayerExpGainKill" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6" tags="Kill"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="BarteringBuying" operation="base_add" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+				<passive_effect name="BarteringSelling" operation="base_add" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Ranger/HeadgearMorphMatrix/{race}{variant}/gearRanger{hair}Head.asset"/>
+				<property name="TransformName" value="head"/>
+				<property name="Excludes" value=""/>
+				<property name="HairMaskType" value="Hat"/>
+			</property>
+		</item>
+		
+		<item name="armorRangerOutfitImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRangerOutfit"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorRangerOutfitImpDesc"/>
+			<property name="DisplayType" value="armorRangerOutfitImp"/>
+			<property name="ArmorGroup" value="groupRangerImp"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorRangerBonus"/>
+			<property name="EquipSlot" value="Chest"/>
+			<property name="SoundPickup" value="outfit_cloth_grab"/>
+			<property name="SoundPlace" value="outfit_cloth_place"/>
+			<effect_group name="RangerOutfit">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="17.7,23.5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="17.7,23.5" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.05"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+				
+				<passive_effect name="CarryCapacity" operation="base_add" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+				<display_value name="dCarryCapacity" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="HealthMax" operation="base_add" value="5,10,15,20,25,40" tier="1,2,3,4,5,6"/>
+				<display_value name="dHealthMax" value="5,10,15,20,25,40" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Ranger/gear{sex}RangerPrefab.prefab"/>
+				<property name="TransformName" value="body"/>
+				<property name="Excludes" value="body"/>
+			</property>
+		</item>
+		
+		<item name="armorRangerGlovesImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRangerGloves"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorRangerGlovesImpDesc"/>
+			<property name="DisplayType" value="armorRangerGlovesImp"/>
+			<property name="ArmorGroup" value="groupRangerImp"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorRangerBonus,enhancedMelee"/>
+			<property name="EquipSlot" value="Hands"/>
+			<property name="SoundPickup" value="gloves_leather_grab"/>
+			<property name="SoundPlace" value="gloves_leather_place"/>
+			<effect_group name="RangerGloves">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.05"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+				
+				<display_value name="dEnhancedAtackSpeed" value=".03,.06,.09,.12,.15,.25" tier="1,2,3,4,5,6"/>
+				<display_value name="dReloadSpeedMultiplier" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="rangerDamage"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Ranger/gear{sex}RangerPrefab.prefab"/>
+				<property name="TransformName" value="hands"/>
+				<property name="Excludes" value="hands"/>
+			</property>
+		</item>
+		
+		<item name="armorRangerBootsImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRangerBoots"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorRangerBootsImpDesc"/>
+			<property name="DisplayType" value="armorRangerBootsImp"/>
+			<property name="ArmorGroup" value="groupRangerImp"/>
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorRangerBonus"/>
+			<property name="EquipSlot" value="Feet"/>
+			<property name="SoundPickup" value="footwear_leather_grab"/>
+			<property name="SoundPlace" value="footwear_leather_place"/>
+			<effect_group name="RangerBoots">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.05"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+			</effect_group>
+
+			<effect_group>
+				<display_value name="dStaminaRestEnhanced" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="7,14,21,28,35,70" tier="1,2,3,4,5,6"/>
+				<display_value name="dStaminaMax" value="7,14,21,28,35,70" tier="1,2,3,4,5,6"/>
+			</effect_group>
+			
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Ranger/gear{sex}RangerPrefab.prefab"/>
+				<property name="TransformName" value="feet"/>
+				<property name="Excludes" value="feet"/>
+			</property>
+		</item>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- COMMANDO IMPROVED-->
+		
+		<item name="armorCommandoHelmetImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorCommandoHelmet"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorCommandoHelmetImpDesc"/>
+			<property name="DisplayType" value="armorCommandoHelmetImp"/>
+			<property name="ArmorGroup" value="groupCommandoImp"/>
+			<property name="Tags" value="head,armor,armorHead,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorCommandoBonus"/>
+			<property name="EquipSlot" value="Head"/>
+			<property name="SoundPickup" value="headwear_cloth_grab"/>
+			<property name="SoundPlace" value="headwear_cloth_place"/>
+			<effect_group name="CommandoHelmet">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="13.3,17.6" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="13.3,17.6" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.049"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+				
+				<display_value name="dPlayerExpGainKill" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6" tags="Kill"/>
+			</effect_group>
+
+			<effect_group>
+				<display_value name="dHealingSpeed" value=".06,.12,.18,.24,.3,.6" tier="1,2,3,4,5,6"/>
+			</effect_group>
+			
+			<effect_group name='t1'>
+				<requirement name="RequirementItemTier" operation="Equals" value="1"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".06"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+			<effect_group name='t2'>
+				<requirement name="RequirementItemTier" operation="Equals" value="2"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".12"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+			<effect_group name='t3'>
+				<requirement name="RequirementItemTier" operation="Equals" value="3"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".18"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+			<effect_group name='t4'>
+				<requirement name="RequirementItemTier" operation="Equals" value="4"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".24"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+			<effect_group name='t5'>
+				<requirement name="RequirementItemTier" operation="Equals" value="5"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".3"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+			<effect_group name='t6'>
+				<requirement name="RequirementItemTier" operation="Equals" value="6"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".6"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Commando/HeadgearMorphMatrix/{race}{variant}/gearCommando{hair}Head.asset"/>
+				<property name="TransformName" value="head"/>
+				<property name="Excludes" value=""/>
+				<property name="HairMaskType" value="Hat"/>
+			</property>
+		</item>
+		
+		<item name="armorCommandoOutfitImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorCommandoOutfit"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorCommandoOutfitImpDesc"/>
+			<property name="DisplayType" value="armorCommandoOutfitImp"/>
+			<property name="ArmorGroup" value="groupCommandoImp"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorCommandoBonus"/>
+			<property name="EquipSlot" value="Chest"/>
+			<property name="SoundPickup" value="outfit_cloth_grab"/>
+			<property name="SoundPlace" value="outfit_cloth_place"/>
+			<effect_group name="CommandoOutfit">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="17.7,23.5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="17.7,23.5" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.05"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+				
+				<passive_effect name="CarryCapacity" operation="base_add" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+				<display_value name="dCarryCapacity" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+				<display_value name="dNaturalCritHealing" value=".07,.14,.21,.28,.35,.7" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipUpdate" action="ModifyCVar" cvar="$commandoCritNaturalHealing" operation="set" value=".07,.14,.21,.28,.35,.7"/>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$commandoCritNaturalHealing" operation="set" value="0"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Commando/gear{sex}CommandoPrefab.prefab"/>
+				<property name="TransformName" value="body"/>
+				<property name="Excludes" value="body"/>
+			</property>
+		</item>
+		
+		<item name="armorCommandoGlovesImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorCommandoGloves"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorCommandoGlovesImpDesc"/>
+			<property name="DisplayType" value="armorCommandoGlovesImp"/>
+			<property name="ArmorGroup" value="groupCommandoImp"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorCommandoBonus,enhancedMelee"/>
+			<property name="EquipSlot" value="Hands"/>
+			<property name="SoundPickup" value="gloves_leather_grab"/>
+			<property name="SoundPlace" value="gloves_leather_place"/>
+			<effect_group name="CommandoGloves">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.05"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+				
+				<display_value name="dEnhancedAtackSpeed" value=".03,.06,.09,.12,.15,.25" tier="1,2,3,4,5,6"/>
+				<display_value name="dReloadSpeedAutomaticWeapon" value=".04,.08,.12,.16,.2,.4" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="perkMachineGunner"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".05,.1,.15,.20,.25,.5" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Commando/gear{sex}CommandoPrefab.prefab"/>
+				<property name="TransformName" value="hands"/>
+				<property name="Excludes" value="hands"/>
+			</property>
+		</item>
+		
+		<item name="armorCommandoBootsImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorCommandoBoots"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorCommandoBootsImpDesc"/>
+			<property name="DisplayType" value="armorCommandoBootsImp"/>
+			<property name="ArmorGroup" value="groupCommandoImp"/>
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorCommandoBonus"/>
+			<property name="EquipSlot" value="Feet"/>
+			<property name="SoundPickup" value="footwear_leather_grab"/>
+			<property name="SoundPlace" value="footwear_leather_place"/>
+			<effect_group name="CommandoBoots">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.05"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+			</effect_group>
+
+			<effect_group>
+				<display_value name="dStaminaRestEnhanced" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				<display_value name="dFallDamage" value="1,2,3,4,5,6" tier="1,2,3,4,5,6"/>
+			</effect_group>
+			
+			<!-- Increase $nerdBootFallDMG with each tier to then process in buffPlayerFallingDamage -->
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".01414" >
+					<requirement name="RequirementItemTier" operation="Equals" value="1"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".02828" >
+					<requirement name="RequirementItemTier" operation="Equals" value="2"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".044" >
+					<requirement name="RequirementItemTier" operation="Equals" value="3"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".05656" >
+					<requirement name="RequirementItemTier" operation="Equals" value="4"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".0707" >
+					<requirement name="RequirementItemTier" operation="Equals" value="5"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".08484" >
+					<requirement name="RequirementItemTier" operation="Equals" value="6"/></triggered_effect>
+			</effect_group>
+	
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Commando/gear{sex}CommandoPrefab.prefab"/>
+				<property name="TransformName" value="feet"/>
+				<property name="Excludes" value="feet"/>
+			</property>
+		</item>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- ASSASSIN IMPROVED -->
+		
+		<item name="armorAssassinHelmetImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorAssassinHelmet"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorAssassinHelmetImpDesc"/>
+			<property name="DisplayType" value="armorAssassinHelmetImp"/>
+			<property name="ArmorGroup" value="groupAssassinImp"/>
+			<property name="Tags" value="head,armor,armorHead,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorAssassinBonus"/>
+			<property name="EquipSlot" value="Head"/>
+			<property name="SoundPickup" value="headwear_cloth_grab"/>
+			<property name="SoundPlace" value="headwear_cloth_place"/>
+			<effect_group name="AssassinHelmet">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="13.3,17.6" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="13.3,17.6" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.049"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				
+				<display_value name="dPlayerExpGainKill" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6" tags="Kill"/>
+			</effect_group>
+			
+			<effect_group name="sneak damage bonus">
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+					<passive_effect name="DamageBonus" operation="base_add" value=".2,.4,.6,.8,1,1.5" tier="1,2,3,4,5,6"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value=".2,.4,.6,.8,1,1.5" tier="1,2,3,4,5,6"/>
+					<display_value name="dEntityDamageSneak" value=".2,.4,.6,.8,1,1.5" tier="1,2,3,4,5,6"/>
+			</effect_group>
+			
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Assassin/gear{sex}AssassinPrefab.prefab"/>
+				<property name="TransformName" value="head"/>
+				<property name="Excludes" value="head"/>
+				<property name="CullDistFPV" value="0"/>
+				<property name="HairMaskType" value="None"/>
+				<property name="FacialHairMaskType" value="None"/>
+			</property>
+		</item>
+		
+		<item name="armorAssassinOutfitImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorAssassinOutfit"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorAssassinOutfitImpDesc"/>
+			<property name="DisplayType" value="armorAssassinOutfitImp"/>
+			<property name="ArmorGroup" value="groupAssassinImp"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorAssassinBonus"/>
+			<property name="EquipSlot" value="Chest"/>
+			<property name="SoundPickup" value="outfit_cloth_grab"/>
+			<property name="SoundPlace" value="outfit_cloth_place"/>
+			<effect_group name="AssassinOutfit">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="17.7,23.5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="17.7,23.5" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.05"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+				
+				<passive_effect name="CarryCapacity" operation="base_add" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+				<display_value name="dCarryCapacity" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+				
+				<display_value name="dSneakEffectiveness" value="-.06,-.12,-.18,-.24,-.3,-.4" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+					<passive_effect name="LightMultiplier" operation="perc_add" value="-.06,-.12,-.18,-.24,-.3,-.4" tier="1,2,3,4,5,6">
+						<requirement name="CVarCompare" cvar="_lightlevel" operation="LTE" value="65"/>
+					</passive_effect>
+					<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.04,-.07,-.09,-.11,-.15,-.24" tier="1,2,3,4,5,6"/>
+					<passive_effect name="CrouchSpeed" operation="perc_add" value=".04,.08,.12,.16,.2,.4" tier="1,2,3,4,5,6"/>
+					<passive_effect name="EnemySearchDuration" operation="perc_add" value=".06,.12,.18,.24,.3,.4" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Assassin/gear{sex}AssassinPrefab.prefab"/>
+				<property name="TransformName" value="body"/>
+				<property name="Excludes" value="body"/>
+				<property name="CullDistFPV" value="0.32"/>
+			</property>
+		</item>
+		
+		<item name="armorAssassinGlovesImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorAssassinGloves"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorAssassinGlovesImpDesc"/>
+			<property name="DisplayType" value="armorAssassinGlovesImp"/>
+			<property name="ArmorGroup" value="groupAssassinImp"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorAssassinBonus,enhancedMelee"/>
+			<property name="EquipSlot" value="Hands"/>
+			<property name="SoundPickup" value="gloves_leather_grab"/>
+			<property name="SoundPlace" value="gloves_leather_place"/>
+			<effect_group name="AssassinGloves">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.05"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".1"/>
+				<display_value name="dNoiseMultiplier" value=".1"/>
+				
+				<display_value name="dEnhancedAtackSpeed" value=".03,.06,.09,.12,.15,.25" tier="1,2,3,4,5,6"/>
+				<display_value name="dReloadSpeedMultiplierSniper" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="perkDeadEye"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Assassin/gear{sex}AssassinPrefab.prefab"/>
+				<property name="TransformName" value="hands"/>
+				<property name="Excludes" value="hands"/>
+				<property name="CullDistFPV" value="0"/>
+			</property>
+		</item>
+		
+		<item name="armorAssassinBootsImp">
+			<property name="Extends" value="armorMediumMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorAssassinBoots"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorAssassinBootsImpDesc"/>
+			<property name="DisplayType" value="armorAssassinBootsImp"/>
+			<property name="ArmorGroup" value="groupAssassinImp"/>
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,mediumArmor,mediumArmorPenalty,mediumArmorDeg,armorMediumSkill,biomeChallenge,armorAssassinBonus"/>
+			<property name="EquipSlot" value="Feet"/>
+			<property name="SoundPickup" value="footwear_leather_grab"/>
+			<property name="SoundPlace" value="footwear_leather_place"/>
+			<effect_group name="AssassinBoots">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="6.6,8.8" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="mediumArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.05"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.56"/>
+				
+				<display_value name="dStaminaRestEnhanced" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				<display_value name="dNoiseMultiplier" value="-100" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+				<requirement name="EntityHasMovementTag" tags="running"/>
+					<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.999"/>
+					<passive_effect name="SilenceBlockSteps" operation="base_set" value="1" tags="trashPile"/>
+			</effect_group>
+			
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Assassin/gear{sex}AssassinPrefab.prefab"/>
+				<property name="TransformName" value="feet"/>
+				<property name="Excludes" value="feet"/>
+				<property name="CullDistFPV" value="0"/>
+			</property>
+		</item>
+
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- HEAVY ARMOR -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->	
+		<!-- MINER -->
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- NOMAD IMPROVED -->
+		
+		<item name="armorNomadHelmetImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorNomadHelmet"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+
+			<property name="DescriptionKey" value="armorNomadHelmetImpDesc"/>
+			<property name="DisplayType" value="armorNomadHelmetImp"/>
+			<property name="ArmorGroup" value="groupNomadImp"/>
+			<property name="Tags" value="head,armor,armorHead,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Head"/>
+			<property name="SoundPickup" value="headwear_cloth_grab"/>
+			<property name="SoundPlace" value="headwear_cloth_place"/>
+			<effect_group name="NomadHelmet">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="18.4,21.4" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="18.4,21.4" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.9"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<display_value name="dPlayerExpGainKill" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6" tags="Kill"/>
+				
+				<display_value name="dFoodWaterUse" value="-.1,-.2,-.299,-.4,-.5,-.599" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+				<effect_group>
+					<passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" value="-.1,-.2,-.3,-.4,-.5,-.6" tier="1,2,3,4,5,6"/>
+					<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="-.1,-.2,-.3,-.4,-.5,-.6" tier="1,2,3,4,5,6"/>
+				</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Nomad/gear{sex}NomadPrefab.prefab"/>
+				<property name="TransformName" value="head"/>
+				<property name="Excludes" value="head"/>
+				<property name="HairMaskType" value="None"/>
+				<property name="FacialHairMaskType" value="None"/>
+			</property>
+		</item>
+		
+		<item name="armorNomadOutfitImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorNomadOutfit"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+
+			<property name="DescriptionKey" value="armorNomadOutfitImpDesc"/>
+			<property name="DisplayType" value="armorNomadOutfitImp"/>
+			<property name="ArmorGroup" value="groupNomadImp"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Chest"/>
+			<property name="SoundPickup" value="outfit_cloth_grab"/>
+			<property name="SoundPlace" value="outfit_cloth_place"/>
+			<effect_group name="NomadOutfit">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="24.5,28.6" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="24.5,28.6" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.9"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<passive_effect name="CarryCapacity" operation="base_add" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+				<display_value name="dCarryCapacity" value="1,2,3,4,5,10" tier="1,2,3,4,5,6"/>
+				<display_value name="dNaturalCritHealing" value=".07,.14,.21,.28,.35,.7" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipUpdate" action="ModifyCVar" cvar="$commandoCritNaturalHealing" operation="set" value=".07,.14,.21,.28,.35,.7"/>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$commandoCritNaturalHealing" operation="set" value="0"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Nomad/gear{sex}NomadPrefab.prefab"/>
+				<property name="TransformName" value="body"/>
+				<property name="Excludes" value="body"/>
+			</property>
+		</item>
+		
+		<item name="armorNomadGlovesImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorNomadGloves"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorNomadGlovesImpDesc"/>
+			<property name="DisplayType" value="armorNomadGlovesImp"/>
+			<property name="ArmorGroup" value="groupNomadImp"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge,enhancedMelee"/>
+			<property name="EquipSlot" value="Hands"/>
+			<property name="SoundPickup" value="gloves_leather_grab"/>
+			<property name="SoundPlace" value="gloves_leather_place"/>
+			<effect_group name="NomadGloves">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.9"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<display_value name="dEnhancedAtackSpeed" value=".03,.06,.09,.12,.15,.25" tier="1,2,3,4,5,6"/>
+				<display_value name="dReloadSpeedShotgun" value=".04,.08,.12,.16,.2,.4" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".04,.08,.12,.16,.2,.4" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Nomad/gear{sex}NomadPrefab.prefab"/>
+				<property name="TransformName" value="hands"/>
+				<property name="Excludes" value="hands"/>
+			</property>
+		</item>
+		
+		<item name="armorNomadBootsImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorNomadBoots"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorNomadBootsImpDesc"/>
+			<property name="DisplayType" value="armorNomadBootsImp"/>
+			<property name="ArmorGroup" value="groupNomadImp"/>
+			
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Feet"/>
+			<property name="SoundPickup" value="footwear_leather_grab"/>
+			<property name="SoundPlace" value="footwear_leather_place"/>
+			<effect_group name="NomadBoots">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.9"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<display_value name="dStaminaRestEnhanced" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				<display_value name="dFallDamage" value="1,2,3,4,5,6" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$minerBootFallDMG" operation="set" value=".01414" >
+					<requirement name="RequirementItemTier" operation="Equals" value="1"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$minerBootFallDMG" operation="set" value=".02828" >
+					<requirement name="RequirementItemTier" operation="Equals" value="2"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$minerBootFallDMG" operation="set" value=".044" >
+					<requirement name="RequirementItemTier" operation="Equals" value="3"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$minerBootFallDMG" operation="set" value=".05656" >
+					<requirement name="RequirementItemTier" operation="Equals" value="4"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$minerBootFallDMG" operation="set" value=".0707" >
+					<requirement name="RequirementItemTier" operation="Equals" value="5"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$minerBootFallDMG" operation="set" value=".08484" >
+					<requirement name="RequirementItemTier" operation="Equals" value="6"/></triggered_effect>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$minerBootFallDMG" operation="set" value="0"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffNomadBoots"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffNomadBoots"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Nomad/gear{sex}NomadPrefab.prefab"/>
+				<property name="TransformName" value="feet"/>
+				<property name="Excludes" value="feet"/>
+			</property>
+		</item>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- NERD -->
+		
+		<item name="armorNerdHelmetImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorNerdHelmet"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorNerdHelmetImpDesc"/>
+			<property name="DisplayType" value="armorNerdHelmetImp"/>
+			<property name="ArmorGroup" value="groupNerdImp"/>
+			<property name="Tags" value="head,armor,armorHead,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Head"/>
+			<property name="SoundPickup" value="headwear_cloth_grab"/>
+			<property name="SoundPlace" value="headwear_cloth_place"/>
+			<effect_group name="NerdHelmet">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="18.4,21.4" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="18.4,21.4" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.9"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				<display_value name="dPlayerExpGain" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				
+				<passive_effect name="ElectricalTrapXP" operation="base_add" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
+				<display_value name="dTrapsExpGain" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Nerd/HeadgearMorphMatrix/{race}{variant}/gearNerd{hair}Head.asset"/>
+				<property name="TransformName" value="head"/>
+				<property name="Excludes" value=""/>
+				<property name="HairMaskType" value="Hat"/>
+			</property>
+		</item>
+		
+		<item name="armorNerdOutfitImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorNerdOutfit"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorNerdOutfitImpDesc"/>
+			<property name="DisplayType" value="armorNerdOutfitImp"/>
+			<property name="ArmorGroup" value="groupNerdImp"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Chest"/>
+			<property name="SoundPickup" value="outfit_metal_grab"/>
+			<property name="SoundPlace" value="outfit_metal_place"/>
+			<effect_group name="NerdOutfit">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="24.5,28.6" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="24.5,28.6" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.9"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<display_value name="dAttributeLevel" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
+				<display_value name="dBookwormChance" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group name='t1'>
+				<requirement name="RequirementItemTier" operation="Equals" value="1"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorBookwormChanceBonus" operation="set" value="5"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorPointChanceBonus" operation="set" value="5"/>
+			</effect_group>
+			<effect_group name='t2'>
+				<requirement name="RequirementItemTier" operation="Equals" value="2"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorBookwormChanceBonus" operation="set" value="10"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorPointChanceBonus" operation="set" value="10"/>
+			</effect_group>
+			<effect_group name='t3'>
+				<requirement name="RequirementItemTier" operation="Equals" value="3"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorBookwormChanceBonus" operation="set" value="15"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorPointChanceBonus" operation="set" value="15"/>
+			</effect_group>
+			<effect_group name='t4'>
+				<requirement name="RequirementItemTier" operation="Equals" value="4"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorBookwormChanceBonus" operation="set" value="20"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorPointChanceBonus" operation="set" value="20"/>
+			</effect_group>
+			<effect_group name='t5'>
+				<requirement name="RequirementItemTier" operation="Equals" value="5"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorBookwormChanceBonus" operation="set" value="25"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorPointChanceBonus" operation="set" value="25"/>
+			</effect_group>
+			<effect_group name='t6'>
+				<requirement name="RequirementItemTier" operation="Equals" value="6"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorBookwormChanceBonus" operation="set" value="50"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$armorPointChanceBonus" operation="set" value="50"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$armorBookwormChanceBonus"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$armorPointChanceBonus"/>				
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffNerdOutfit"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffNerdOutfit"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Nerd/gear{sex}NerdPrefab.prefab"/>
+				<property name="TransformName" value="body"/>
+				<property name="Excludes" value="body"/>
+			</property>
+		</item>
+		
+		<item name="armorNerdGlovesImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorNerdGloves"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorNerdGlovesImpDesc"/>
+			<property name="DisplayType" value="armorNerdGlovesImp"/>
+			<property name="ArmorGroup" value="groupNerdImp"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Hands"/>
+			<property name="SoundPickup" value="gloves_leather_grab"/>
+			<property name="SoundPlace" value="gloves_leather_place"/>
+			<effect_group name="NerdGloves">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.9"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<display_value name="dNerdAtackSpeed" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
+				<display_value name="dNerdReloadSpeed" value=".1,.2,.3,.4,.5,1" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6">
+					<requirement name="HoldingItemHasTags" tags="meleeIntellect"/></passive_effect>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6">
+					<requirement name="HoldingItemHasTags" tags="perkTurrets"/></passive_effect>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Nerd/gear{sex}NerdPrefab.prefab"/>
+				<property name="TransformName" value="hands"/>
+				<property name="Excludes" value="hands"/>
+			</property>
+		</item>
+		
+		<item name="armorNerdBootsImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorNerdBoots"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorNerdBootsImpDesc"/>
+			<property name="DisplayType" value="armorNerdBootsImp"/>
+			<property name="ArmorGroup" value="groupNerdImp"/>
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Feet"/>
+			<property name="SoundPickup" value="footwear_nerd_grab"/>
+			<property name="SoundPlace" value="footwear_nerd_place"/>
+			<effect_group name="NerdBoots">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.9"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<passive_effect name="RunSpeed" operation="perc_add" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				<display_value name="dRunSpeed" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				
+				<display_value name="dFallDamage" value="1,2,3,4,5,6" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<!-- Increase $nerdBootFallDMG with each tier to then process in buffPlayerFallingDamage -->
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".01414" >
+					<requirement name="RequirementItemTier" operation="Equals" value="1"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".02828" >
+					<requirement name="RequirementItemTier" operation="Equals" value="2"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".044" >
+					<requirement name="RequirementItemTier" operation="Equals" value="3"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".05656" >
+					<requirement name="RequirementItemTier" operation="Equals" value="4"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".0707" >
+					<requirement name="RequirementItemTier" operation="Equals" value="5"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value=".08484" >
+					<requirement name="RequirementItemTier" operation="Equals" value="6"/></triggered_effect>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$nerdBootFallDMG" operation="set" value="0"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffNerdBoots"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffNerdBoots"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Nerd/gear{sex}NerdPrefab.prefab"/>
+				<property name="TransformName" value="feet"/>
+				<property name="Excludes" value="feet"/>
+			</property>
+		</item>
+				
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- RAIDER IMPROVED -->
+		
+		<item name="armorRaiderHelmetImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRaiderHelmet"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+
+			<property name="DescriptionKey" value="armorRaiderHelmetImpDesc"/>
+			<property name="DisplayType" value="armorRaiderHelmetImp"/>
+			<property name="ArmorGroup" value="groupRaiderImp"/>
+			<property name="Tags" value="head,armor,armorHead,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Head"/>
+			<property name="SoundPickup" value="headwear_metal_grab"/>
+			<property name="SoundPlace" value="headwear_metal_place"/>
+			<effect_group name="RaiderHelmet">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="18.4,21.4" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="18.4,21.4" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.9"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<display_value name="dPlayerExpGainKillMelee" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6"/>
+				<display_value name="dHealingSpeed" value=".04,.08,.12,.16,.2,.4" tier="1,2,3,4,5,6"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+					<passive_effect name="PlayerExpGain" operation="perc_add" value=".03,.06,.09,.12,.15,.3" tier="1,2,3,4,5,6" tags="Kill"/>
+			</effect_group>
+			
+			<effect_group name='t1'>
+				<requirement name="RequirementItemTier" operation="Equals" value="1"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".04"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+			<effect_group name='t2'>
+				<requirement name="RequirementItemTier" operation="Equals" value="2"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".08"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+			<effect_group name='t3'>
+				<requirement name="RequirementItemTier" operation="Equals" value="3"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".12"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+			<effect_group name='t4'>
+				<requirement name="RequirementItemTier" operation="Equals" value="4"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".16"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+			<effect_group name='t5'>
+				<requirement name="RequirementItemTier" operation="Equals" value="5"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".2"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+			<effect_group name='t6'>
+				<requirement name="RequirementItemTier" operation="Equals" value="6"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$treatedCommando" operation="set" value=".4"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$treatedCommando"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Raider/gear{sex}RaiderPrefab.prefab"/>
+				<property name="TransformName" value="head"/>
+				<property name="Excludes" value="head"/>
+				<property name="HairMaskType" value="None"/>
+				<property name="FacialHairMaskType" value="None"/>
+			</property>
+		</item>
+	
+		<item name="armorRaiderOutfitImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRaiderOutfit"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+
+			<property name="DescriptionKey" value="armorRaiderOutfitImpDesc"/>
+			<property name="DisplayType" value="armorRaiderOutfitImp"/>
+			<property name="ArmorGroup" value="groupRaiderImp"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Chest"/>
+			<property name="SoundPickup" value="outfit_metal_grab"/>
+			<property name="SoundPlace" value="outfit_metal_place"/>
+			<effect_group name="RaiderOutfit">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="24.5,28.6" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="24.5,28.6" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.9"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<passive_effect name="HealthMax" operation="base_add" value="5,10,15,20,25,40" tier="1,2,3,4,5,6"/>
+				<display_value name="dHealthMax" value="5,10,15,20,25,40" tier="1,2,3,4,5,6"/>
+				<triggered_effect trigger="onSelfEquipUpdate" action="ModifyCVar" cvar="$raiderCritNaturalHealing" operation="set" value=".05,.1,.15,.2,.25,.5"/>
+				<display_value name="dNaturalCritHealing" value=".05,.1,.15,.2,.25,.5" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$raiderCritNaturalHealing" operation="set" value="0"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Raider/gear{sex}RaiderPrefab.prefab"/>
+				<property name="TransformName" value="body"/>
+				<property name="Excludes" value="body"/>
+			</property>
+		</item>
+		
+		<item name="armorRaiderGlovesImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRaiderGloves"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorRaiderGlovesImpDesc"/>
+			<property name="DisplayType" value="armorRaiderGlovesImp"/>
+			<property name="ArmorGroup" value="groupRaiderImp"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Hands"/>
+			<property name="SoundPickup" value="gloves_leather_grab"/>
+			<property name="SoundPlace" value="gloves_leather_place"/>
+			<effect_group name="RaiderGloves">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="-.9"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<display_value name="dReloadSpeedMultiplier" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+				<display_value name="dRaiderAtackSpeed" value=".07,.14,.21,.28,.35,.7" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+					<passive_effect name="AttacksPerMinute" operation="perc_add" value=".07,.14,.21,.28,.35,.7" tier="1,2,3,4,5,6"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="rangerDamage"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Raider/gear{sex}RaiderPrefab.prefab"/>
+				<property name="TransformName" value="hands"/>
+				<property name="Excludes" value="hands"/>
+			</property>
+		</item>
+		
+		<item name="armorRaiderBootsImp">
+			<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="armorRaiderBoots"/>
+			<property name="CustomIconTint" value="8692FF"/>
+			<property name="ItemTypeIcon" value="block_upgrade"/>
+			<property name="UnlockedBy" value="MasterArmor"/>
+			<property name="EconomicValue" value="3500"/>
+			<property name="RepairTools" value="resourceRepairKitImp"/>
+			
+			<property name="DescriptionKey" value="armorRaiderBootsImpDesc"/>
+			<property name="DisplayType" value="armorRaiderBootsImp"/>
+			<property name="ArmorGroup" value="groupRaiderImp"/>
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+			<property name="EquipSlot" value="Feet"/>
+			<property name="SoundPickup" value="footwear_leather_grab"/>
+			<property name="SoundPlace" value="footwear_leather_place"/>
+			<effect_group name="RaiderBoots">
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,3,4,4,5" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="9.2,10.7" tier="1,6" tags="heat,electrical"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,640" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
+				
+				<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+				
+				<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>			
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+				
+				
+				<display_value name="dStaminaChangeOT" value="-.04,-.08,-.12,-.16,-.2,-.3" tier="1,2,3,4,5,6"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+				<display_value name="dNoiseMultiplier" value=".2"/>
+				
+				<display_value name="dFallDamage" value="1,2,3,4,5,6" tier="1,2,3,4,5,6"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".04,.08,.12,.16,.2,.4" tier="1,2,3,4,5,6">
+					<requirement name="HoldingItemHasTags" tags="melee"/></passive_effect>
+				<display_value name="dStaminaRestMelee" value="-.04,-.08,-.12,-.16,-.2,-.3" tier="1,2,3,4,5,6"/>
+			</effect_group>
+
+			<!-- Increase $raiderBootFallDMG with each tier to then process in buffPlayerFallingDamage -->
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$raiderBootFallDMG" operation="set" value=".01414" >
+					<requirement name="RequirementItemTier" operation="Equals" value="1"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$raiderBootFallDMG" operation="set" value=".02828" >
+					<requirement name="RequirementItemTier" operation="Equals" value="2"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$raiderBootFallDMG" operation="set" value=".044" >
+					<requirement name="RequirementItemTier" operation="Equals" value="3"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$raiderBootFallDMG" operation="set" value=".05656" >
+					<requirement name="RequirementItemTier" operation="Equals" value="4"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$raiderBootFallDMG" operation="set" value=".0707" >
+					<requirement name="RequirementItemTier" operation="Equals" value="5"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$raiderBootFallDMG" operation="set" value=".08484" >
+					<requirement name="RequirementItemTier" operation="Equals" value="6"/></triggered_effect>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$raiderBootFallDMG" operation="set" value="0"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRaiderBoots"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRaiderBoots"/>
+			</effect_group>
+
+			<property class="SDCS">
+				<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Raider/gear{sex}RaiderPrefab.prefab"/>
+				<property name="TransformName" value="feet"/>
+				<property name="Excludes" value="feet"/>
+			</property>
+		</item>
+	
+	</append>
+	
+</configs>

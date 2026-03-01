@@ -1,0 +1,251 @@
+<config>
+		
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupPassNGas03']">
+		<lootgroup name="groupCont_Vehicle">
+			<item name="Cont_VehicleT1" prob=".5"/>
+			<item name="Cont_VehicleT2" prob=".35"/>
+			<item name="Cont_VehicleT3" prob=".25"/>
+			<item name="Cont_VehicleT4" prob=".15"/>
+		</lootgroup>		
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupShamwayCrate04']">
+		<lootgroup name="groupCont_Food">
+			<item name="Cont_FoodT1" prob=".5"/>
+			<item name="Cont_FoodT2" prob=".35"/>
+			<item name="Cont_FoodT3" prob=".25"/>
+			<item name="Cont_FoodT4" prob=".15"/>
+		</lootgroup>		
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupPopNPillsCrate04']">
+		<lootgroup name="groupCont_Medicine">
+			<item name="Cont_MedicineT1" prob=".5"/>
+			<item name="Cont_MedicineT2" prob=".35"/>
+			<item name="Cont_MedicineT3" prob=".25"/>
+			<item name="Cont_MedicineT4" prob=".15"/>
+		</lootgroup>		
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupCrackabookCrate03']">
+		<lootgroup name="groupCont_Books">
+			<item name="Cont_BooksT1" prob=".5"/>
+			<item name="Cont_BooksT2" prob=".35"/>
+			<item name="Cont_BooksT3" prob=".25"/>
+			<item name="Cont_BooksT4" prob=".15"/>
+		</lootgroup>		
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupWorkingStiffs04']">
+		<lootgroup name="groupCont_Construction">
+			<item name="Cont_ConstructionT1" prob=".6"/>
+			<item name="Cont_ConstructionT2" prob=".45"/>
+			<item name="Cont_ConstructionT3" prob=".3"/>
+			<item name="Cont_WorkstationT1" prob=".3"/>
+			<item name="Cont_WorkstationT2" prob=".25"/>
+			<item name="Cont_WorkstationT3" prob=".2"/>
+			<item name="Cont_WorkstationT4" prob=".15"/>
+			<item name="Cont_WorkstationT5" prob=".1"/>
+		</lootgroup>
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupSavageCountryCrate03']">
+		<lootgroup name="groupCont_ArmorAndRepair">
+			<item name="Cont_ArmorT1" prob=".6"/>
+			<item name="Cont_RepairT1" prob=".6"/>
+			<item name="Cont_ArmorT2" prob=".45"/>
+			<item name="Cont_RepairT2" prob=".45"/>
+			<item name="Cont_ArmorT3" prob=".3"/>
+			<item name="Cont_RepairT3" prob=".3"/>
+		</lootgroup>
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupShotgunMessiahCrate04']">
+		<lootgroup name="groupCont_Weapon">
+			<item name="Cont_WeaponMachineGun" prob=".35"/>
+			<item name="Cont_WeaponShotgun" prob=".35"/>
+			<item name="Cont_WeaponRifle" prob=".35"/>
+			<item name="Cont_WeaponPistol" prob=".35"/>
+			<item name="Cont_WeaponSpear" prob=".5"/>
+			<item name="Cont_WeaponClub" prob=".5"/>
+			<item name="Cont_WeaponSledgehammer" prob=".5"/>
+			<item name="Cont_WeaponKnuckle" prob=".5"/>
+			<item name="Cont_WeaponKnife" prob=".5"/>
+			<item name="Cont_WeaponBaton" prob=".5"/>
+			<item name="Cont_AmmoT1" prob=".5"/>
+			<item name="Cont_AmmoT2" prob=".4"/>
+			<item name="Cont_AmmoT3" prob=".3"/>
+			<item name="Cont_AmmoT4" prob=".2"/>
+		</lootgroup>
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupInfestedT5MeleeRanged']">
+		<lootgroup name="groupRare_Contracts">
+			<item name="RareCont_HealthT1" prob=".5"/>
+			<item name="RareCont_HealthT2" prob=".35"/>
+			<item name="RareCont_HealthT3" prob=".2"/>
+			<item name="RareCont_StaminaT1" prob=".65"/>
+			<item name="RareCont_StaminaT2" prob=".45"/>
+			<item name="RareCont_StaminaT3" prob=".25"/>
+			<item name="RareCont_JumpStrength" prob=".45"/>
+			<item name="RareCont_Mobility" prob=".45"/>
+			<item name="RareCont_HiddenStrike" prob=".45"/>
+			<item name="RareCont_Damage_Forest" prob=".3"/>
+			<item name="RareCont_Damage_BurntForest" prob=".3"/>
+			<item name="RareCont_Damage_Desert" prob=".3"/>
+			<item name="RareCont_Damage_Snow" prob=".3"/>
+			<item name="RareCont_Damage_Wasteland" prob=".3"/>
+			<item name="RareCont_Damage_Rifle" prob=".25"/>
+			<item name="RareCont_Damage_MachineGun" prob=".25"/>
+			<item name="RareCont_Damage_Shotgun" prob=".25"/>
+			<item name="RareCont_Damage_Pistol" prob=".25"/>
+			<item name="RareCont_Damage_MeleeLight" prob=".3"/>
+			<item name="RareCont_Damage_MeleeHeavy" prob=".3"/>
+			<item name="RareCont_Damage_All" prob=".15"/>
+		</lootgroup>
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupReinforcedChestT3_06']">
+		<lootgroup name="groupStupitBet">
+			<item name="StupitBet1"/>
+			<item name="StupitBet2"/>
+			<item name="StupitBet3"/>
+			<item name="StupitBet4"/>
+			<item name="StupitBet5"/>
+		</lootgroup>
+	</insertAfter>
+	
+	
+	<!-- Adding contracts for transport parts -->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupPassNGas']/item[@group='groupPassNGas03']">
+		<item group="groupCont_Vehicle" prob=".12" force_prob="true"/>
+	</insertAfter>
+	<!-- Adding contracts for Food -->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupShamwayCrate']/item[@group='groupShamwayCrate04']">
+		<item group="groupCont_Food" prob=".24" force_prob="true"/>
+	</insertAfter>
+	<!-- Adding contracts for Medicine -->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupPopNPillsCrate']/item[@group='groupPopNPillsCrate04']">
+		<item group="groupCont_Medicine" prob=".16" force_prob="true"/>
+	</insertAfter>
+	<!-- Adding contracts for Construction and  Workstation -->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupWorkingStiffsCrate']/item[@group='groupWorkingStiffs04']">
+		<item group="groupCont_Construction" prob=".16" force_prob="true"/>
+	</insertAfter>
+	<!-- Adding contracts for Books -->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupCrackabookCrate']/item[@group='groupCrackabookCrate03']">
+		<item group="groupCont_Books" prob=".16" force_prob="true"/>
+	</insertAfter>
+	<!-- Adding contracts for Armor parts and Repair kit -->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupSavageCountryCrate']/item[@group='groupSavageCountryCrate03']">
+		<item group="groupCont_ArmorAndRepair" prob=".16" force_prob="true"/>
+	</insertAfter>
+	<!-- Adding contracts for Ammo and weapon parts -->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupShotgunMessiahCrate']/item[@group='groupShotgunMessiahCrate04']">
+		<item group="groupCont_Weapon" prob=".16" force_prob="true"/>
+	</insertAfter>
+	
+	<!-- Adding RARE contracts -->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupInfestedT3']/item[@group='groupAmmoLarge']">
+		<item group="groupRare_Contracts" prob=".08" force_prob="true"/>
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupInfestedT4']/item[@group='groupHardenedChestT5_08']">
+		<item group="groupRare_Contracts" prob=".16" force_prob="true"/>
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupInfestedT5']/item[@group='groupHardenedChestT5_08']">
+		<item group="groupRare_Contracts" prob=".24" force_prob="true"/>
+	</insertAfter>
+	
+	<!-- Adding Stupit Bet's -->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupReinforcedChestT3']/item[@group='groupReinforcedChestT3_06']">
+		<item group="groupStupitBet" prob=".02" force_prob="true"/>
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT4']/item[@group='groupHardenedChestT4_09']">
+		<item group="groupStupitBet" prob=".04" force_prob="true"/>
+	</insertAfter>
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT5']/item[@group='groupHardenedChestT5_08']">
+		<item group="groupStupitBet" prob=".08" force_prob="true"/>
+	</insertAfter>
+	
+	
+	<append xpath="/lootcontainers">
+		<!-- FOOD REWARD -->
+		<lootgroup name="groupContractRewardFoodT1">
+			<item name="foodBaconAndEggs" count="4"/>
+			<item name="foodVegetableStew" count="3"/>
+		</lootgroup>
+		
+		<lootgroup name="groupContractRewardFoodT2">
+			<item name="foodFishTacos" count="5"/>
+			<item name="foodChiliDog" count="5"/>
+		</lootgroup>
+		
+		<lootgroup name="groupContractRewardFoodT2Lunch">
+			<item name="LunchIntelligenceT1" count="2"/>
+			<item name="LunchStrengthT1" count="2"/>
+			<item name="LunchFortitudeT1" count="2"/>
+			<item name="LunchAgilityT1" count="2"/>
+		</lootgroup>
+		
+		<lootgroup name="groupContractRewardFoodT3">
+			<item name="foodMeatStew" count="5"/>
+			<item name="foodHoboStew" count="5"/>
+			<item name="foodSteakAndPotato" count="5"/>
+		</lootgroup>
+		
+		<lootgroup name="groupContractRewardFoodT3Lunch">
+			<item name="LunchIntelligenceT2" count="2"/>
+			<item name="LunchStrengthT2" count="2"/>
+			<item name="LunchFortitudeT2" count="2"/>
+			<item name="LunchAgilityT2" count="2"/>
+		</lootgroup>
+		
+		<lootgroup name="groupContractRewardFoodT4">
+			<item name="foodGumboStew" count="5"/>
+			<item name="foodShepardsPie" count="5"/>
+			<item name="foodSpaghetti" count="5"/>
+			<item name="foodTunaFishGravyToast" count="5"/>
+		</lootgroup>
+		
+		<lootgroup name="groupContractRewardFoodT4Lunch">
+			<item name="LunchIntelligenceT3" count="2"/>
+			<item name="LunchStrengthT3" count="2"/>
+			<item name="LunchFortitudeT3" count="2"/>
+			<item name="LunchAgilityT3" count="2"/>
+		</lootgroup>
+		
+		<!-- ARMOR REWARD -->
+		<lootgroup name="groupContractRewardArmorModsT1">
+			<item name="modArmorHelmetLight"/>
+			<!-- <item name="modArmorCoolingMesh"/> -->
+			<!-- <item name="modArmorInsulatedLiner"/> -->
+			<item name="modArmorDoubleStoragePocket"/>
+			<item name="modArmorMuffledConnectors"/>
+			<item name="modArmorImprovedFittings"/>
+			<item name="modArmorPlatingBasic"/>
+			<item name="modArmorStealthBoots"/>
+		</lootgroup>
+		<lootgroup name="groupContractRewardArmorModsT2">
+			<item name="modArmorCigar"/>
+			<item name="modArmorWaterPurifier"/>
+			<item name="modArmorBandolier"/>
+			<item name="modArmorTripleStoragePocket"/>
+			<item name="modArmorCustomizedFittings"/>
+			<item name="modArmorAdvancedMuffledConnectors"/>
+			<item name="modArmorPlatingReinforced"/>
+		</lootgroup>
+		<lootgroup name="groupContractRewardArmorModsT3">
+			<item name="modArmorNightVision"/>
+			<item name="modArmorTreasureHunter"/>
+			<item name="modArmorQuadStoragePocket"/>
+			<item name="modArmorImpactBracing"/>
+		</lootgroup>
+		<lootgroup name="groupContractRewardArmorModsAttrib">
+			<item name="modArmorPerception"/>
+			<item name="modArmorStrength"/>
+			<item name="modArmorFortitude"/>
+			<item name="modArmorAgility"/>
+			<item name="modArmorIntellect"/>
+		</lootgroup>
+		<lootgroup name="groupContractRewardArmorModsRad">
+			<item name="modArmorARResistHelmet"/>
+			<item name="modArmorAROutfit"/>
+			<item name="modArmorARGloves"/>
+			<item name="modArmorARBoots"/>
+		</lootgroup>
+	
+	</append>
+	
+</config>

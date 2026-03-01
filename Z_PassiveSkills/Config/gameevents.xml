@@ -1,0 +1,761 @@
+<config>
+		
+	<append xpath="/gameevents">
+		
+		<action_sequence name="perkGameTimer_Max">
+			<action class="ModifyProgression">				
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkGameTimer" />
+				<property name="values" value="10" />
+			</action>
+		</action_sequence>
+		<action_sequence name="perkGameTimer_Reset">
+			<action class="ModifyProgression">				
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkGameTimer" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="1" />
+				<property name="cvar" value="TimerGame_SS" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="1" />
+				<property name="cvar" value="TimerGame_MM" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="1" />
+				<property name="cvar" value="TimerGame_HH" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="perkWinterTimer_Max">
+			<action class="ModifyProgression">				
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkWinterTimer" />
+				<property name="values" value="10" />
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="perkWinterTimer_Reset">
+			<action class="ModifyProgression">				
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkWinterTimer" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="1" />
+				<property name="cvar" value="TimerWinter_SS" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="1" />
+				<property name="cvar" value="TimerWinter_MM" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="1" />
+				<property name="cvar" value="TimerWinter_HH" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="perkCounter_Max">
+			<action class="ModifyProgression">				
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkEliteHunt" />
+				<property name="values" value="25" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="1" />
+				<property name="cvar" value="CountEliteHunt" />
+				<property name="operation" value="set" />
+				<property name="value" value="5000" />
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="perkCounte_Reset">
+			<action class="ModifyProgression">				
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkEliteHunt" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="1" />
+				<property name="cvar" value="CountEliteHunt" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="RecoverPerksPassiveEffects">
+			
+			<action class="ModifyProgression">
+				<property name="phase" value="0" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkGameTimer,perkForestTimer,perkBurntTimer,perkDesertTimer,perkWinterTimer,perkWastlandTimer,perkSniperExpert,perkShotgunExpert,perkAutomaticWeaponExpert,perkPistolExpert,perkBowsExpert,perkRoboticsExpert,perkMeleeHeavyExpert,perkMeleeLightExpert,perkTotalHunt,perkNightHunt,perkBullsEye,perkRangeHunt,perkMeleeHunt,perkEliteHunt,perkBossDevourer,perkBossGargul,perkBossBearDaddy,perkBossBitch,perkBossBurningFlesh,perkBossCholera,perkBossBull,perkBossShocker,perkBossVeteran,perkBossCarrier" />
+				<property name="values" value="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" />
+			</action>
+			
+			<!-- ADAPTATION -->
+			<!-- perkGameTimer -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkGameTimer" />
+				<property name="values" value="@$PS_GameTimer_current" />
+			</action>
+			
+			<!-- perkForestTimer -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkForestTimer" />
+				<property name="values" value="@$PS_Forest_current" />
+			</action>
+			
+			<!-- perkBurntTimer -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBurntTimer" />
+				<property name="values" value="@$PS_Burnt_current" />
+			</action>
+
+			<!-- perkDesertTimer -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkDesertTimer" />
+				<property name="values" value="@$PS_Desert_current" />
+			</action>
+
+			<!-- perkWinterTimer -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkWinterTimer" />
+				<property name="values" value="@$PS_Winter_current" />
+			</action>
+						
+			<!-- perkWastlandTimer -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkWastlandTimer" />
+				<property name="values" value="@$PS_Wastland_current" />
+			</action>
+			
+			<!-- WEAPON EXPERT -->
+			<!-- perkSniperExpert -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkSniperExpert" />
+				<property name="values" value="@$PS_SniperExpert_current" />
+			</action>
+						
+			<!-- perkShotgunExpert -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkShotgunExpert" />
+				<property name="values" value="@$PS_ShotgunExpert_current" />
+			</action>
+			
+			<!-- perkAutomaticWeaponExpert -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkAutomaticWeaponExpert" />
+				<property name="values" value="@$PS_AutomaticWeaponExpert_current" />
+			</action>
+			
+			<!-- perkPistolExpert -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkPistolExpert" />
+				<property name="values" value="@$PS_PistolExpert_current" />
+			</action>
+			
+			<!-- perkBowsExpert -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBowsExpert" />
+				<property name="values" value="@$PS_BowsExpert_current" />
+			</action>
+
+			<!-- perkRoboticsExpert -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkRoboticsExpert" />
+				<property name="values" value="@$PS_RoboticsExpert_current" />
+			</action>
+
+			<!-- perkMeleeHeavyExpert -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkMeleeHeavyExpert" />
+				<property name="values" value="@$PS_MeleeHeavyExpert_current" />
+			</action>
+			
+			<!-- perkMeleeLightExpert -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkMeleeLightExpert" />
+				<property name="values" value="@$PS_MeleeLightExpert_current" />
+			</action>
+			
+			<!-- DEAD HUNT -->
+			<!-- perkTotalHunt -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkTotalHunt" />
+				<property name="values" value="@$PS_TotalHunt_current" />
+			</action>
+
+			<!-- perkNightHunt -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkNightHunt" />
+				<property name="values" value="@$PS_NightHunt_current" />
+			</action>
+						
+			<!-- perkBullsEye -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBullsEye" />
+				<property name="values" value="@$PS_BullsEye_current" />
+			</action>
+			
+			<!-- perkRangeHunt -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkRangeHunt" />
+				<property name="values" value="@$PS_RangeHunt_current" />
+			</action>
+			
+			<!-- perkMeleeHunt -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkMeleeHunt" />
+				<property name="values" value="@$PS_MeleeHunt_current" />
+			</action>			
+			
+			<!-- perkEliteHunt -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkEliteHunt" />
+				<property name="values" value="@$PS_EliteHunt_current" />
+			</action>
+			
+			<!-- BOSS EXPERT -->
+			<!-- perkBossDevourer -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossDevourer" />
+				<property name="values" value="@$PS_BossDevourer_current" />
+			</action>
+			
+			<!-- perkBossGargul -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossGargul" />
+				<property name="values" value="@$PS_BossGargul_current" />
+			</action>
+			
+			<!-- perkBossBearDaddy -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossBearDaddy" />
+				<property name="values" value="@$PS_BossBearDaddy_current" />
+			</action>
+			
+			<!-- perkBossBitch -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossBitch" />
+				<property name="values" value="@$PS_BossBitch_current" />
+			</action>
+						
+			<!-- perkBossBurningFlesh -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossBurningFlesh" />
+				<property name="values" value="@$PS_BossBurningFlesh_current" />
+			</action>
+			
+			<!-- perkBossCholera -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossCholera" />
+				<property name="values" value="@$PS_BossCholera_current" />
+			</action>
+					
+			<!-- perkBossBull -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossBull" />
+				<property name="values" value="@$PS_BossBull_current" />
+			</action>
+						
+			<!-- perkBossShocker -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossShocker" />
+				<property name="values" value="@$PS_BossShocker_current" />
+			</action>
+						
+			<!-- perkBossVeteran -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossVeteran" />
+				<property name="values" value="@$PS_BossVeteran_current" />
+			</action>
+			
+			<!-- perkBossCarrier -->
+			<action class="ModifyProgression">
+				<property name="phase" value="1" />
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossCarrier" />
+				<property name="values" value="@$PS_BossCarrier_current" />
+			</action>
+			
+		</action_sequence>
+		
+		<action_sequence name="PassiveSkills_Reset">
+			<!-- perkGameTimer -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkGameTimer" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerGame_SS" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerGame_MM" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerGame_HH" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkForestTimer -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkForestTimer" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerForest_SS" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerForest_MM" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerForest_HH" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBurntTimer -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBurntTimer" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerBurnt_SS" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerBurnt_MM" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerBurnt_HH" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkDesertTimer -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkDesertTimer" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerDesert_SS" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerDesert_MM" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerDesert_HH" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkWinterTimer -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkWinterTimer" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerWinter_SS" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerWinter_MM" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerWinter_HH" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkWastlandTimer -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkWastlandTimer" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerWastland_SS" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerWastland_MM" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="TimerWastland_HH" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			
+			<!-- perkSniperExpert -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkSniperExpert" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountSniperExpert" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkShotgunExpert -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkShotgunExpert" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountShotgunExpert" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkAutomaticWeaponExpert -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkAutomaticWeaponExpert" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountAutomaticWeaponExpert" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkPistolExpert -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkPistolExpert" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountPistolExpert" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBowsExpert -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBowsExpert" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBowsExpert" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkRoboticsExpert -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkRoboticsExpert" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountRoboticsExpert" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkMeleeHeavyExpert -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkMeleeHeavyExpert" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountMeleeHeavyExpert" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkMeleeLightExpert -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkMeleeLightExpert" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountMeleeLightExpert" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			
+			<!-- perkTotalHunt -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkTotalHunt" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountTotalHunt" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkNightHunt -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkNightHunt" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountNightHunt" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBullsEye -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBullsEye" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBullsEye" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkRangeHunt -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkRangeHunt" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountRangeHunt" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkMeleeHunt -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkMeleeHunt" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountMeleeHunt" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkEliteHunt -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkEliteHunt" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountEliteHunt" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			
+			<!-- perkBossDevourer -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossDevourer" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBossDevourer" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBossGargul -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossGargul" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBossGargul" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBossBearDaddy -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossBearDaddy" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBossBearDaddy" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBossBitch -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossBitch" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBossBitch" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBossBurningFlesh -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossBurningFlesh" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBossBurningFlesh" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBossCholera -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossCholera" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBossCholera" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBossBull -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossBull" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBossBull" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBossShocker -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossShocker" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBossShocker" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBossVeteran -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossVeteran" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBossVeteran" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			<!-- perkBossCarrier -->
+			<action class="ModifyProgression">				
+				<property name="modify_type" value="Set" />
+				<property name="progression_names" value="perkBossCarrier" />
+				<property name="values" value="0" />
+			</action>
+			<action class="ModifyCVar">
+				<property name="cvar" value="CountBossCarrier" />
+				<property name="operation" value="set" />
+				<property name="value" value="0" />
+			</action>
+			
+		</action_sequence>
+		
+	</append>
+	
+</config>
+

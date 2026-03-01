@@ -1,0 +1,38 @@
+<config>
+	
+	<!-- <InsertAfter xpath="/windows/window[@name='CharacterFrameWindow']/rect[@name='searchControls']/button[@name='coreStatButton']"> -->
+		<!-- <button depth="4" name="coreStatButton" style="icon30px, press" pos="151,-22" sprite="ui_game_symbol_block_damage" pivot="center" tooltip="Stats" sound="[paging_click]" tooltip_key="lblNegTraits" /> -->
+		<!-- <button depth="4" name="coreStatButton" style="icon30px, press" pos="194,-22" sprite="ui_game_symbol_block_repair" pivot="center" tooltip="Stats" sound="[paging_click]" tooltip_key="lblPosTraits" /> -->
+	<!-- </InsertAfter> -->
+	
+	<!-- <InsertAfter xpath="/windows/window[@name='CharacterFrameWindow']/grid[@visible='{showcore}']"> -->
+		
+		<!-- <grid visible="{showstats}" depth="0" pos="0,-86" width="327" cols="1" cell_height="30" repeat_content="false" arrangement="vertical"> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playerhealthtitle|once}" valuecontent="{playerhealth}/{playermaxhealth}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playerstaminatitle|once}" valuecontent="{playerstamina}/{playermaxstamina}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playerfoodtitle|once}" valuecontent="{playermodifiedcurrentfood}/{playerfoodmax}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playerwatertitle|once}" valuecontent="{playermodifiedcurrentwater}/{playerwatermax}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playercoretemptitle|once}" valuecontent="{playercoretemp}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playerzombiekillstitle|once}" valuecontent="{playerzombiekills}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playerpvpkillstitle|once}" valuecontent="{playerpvpkills}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playerdeathstitle|once}" valuecontent="{playerdeaths}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playertravelledtitle|once}" valuecontent="{playertravelled}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playeritemscraftedtitle|once}" valuecontent="{playeritemscrafted}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playerlongestlifetitle|once}" valuecontent="{playerlongestlife}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playercurrentlifetitle|once}" valuecontent="{playercurrentlife}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{playerxptonextleveltitle|once}" valuecontent="{playerxptonextlevel}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{playerlootstagetitle|once}" valuecontent="{playerlootstage}" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="" valuecontent="" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkGrey]"    textcontent="" valuecontent="" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="" valuecontent="" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkGrey]"    textcontent="" valuecontent="" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="" valuecontent="" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkGrey]"    textcontent="" valuecontent="" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="" valuecontent="" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkGrey]"    textcontent="" valuecontent="" /> -->
+			<!-- <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="" valuecontent="" /> -->
+		<!-- </grid> -->
+		
+	<!-- </InsertAfter> -->
+	
+</config>

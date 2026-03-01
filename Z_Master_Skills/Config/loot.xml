@@ -1,0 +1,131 @@
+<config>
+		
+	<!-- Chance to find precious metals in loot	-->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupScrapRare']">
+		<lootgroup name="groupPerkPlundererChance">
+			<item name="resourceSilverNugget" count="4,6" prob=".5"/>
+			<item name="resourceGoldNugget" count="2,4" prob=".4"/>
+			<item name="resourceRawDiamond" count="1,2" prob=".3"/>
+			<item name="resourcePreciousMetals" prob=".05"/>
+			<item name="UniqueParts" prob=".025"/>
+		</lootgroup>
+		<lootgroup name="groupPerkPlundererChanceHightLoot">
+			<item name="resourceSilverNugget" count="4,6" prob=".5" loot_stage_count_mod="0.001"/>
+			<item name="resourceGoldNugget" count="2,4" prob=".4" loot_stage_count_mod="0.001"/>
+			<item name="resourceRawDiamond" count="1,2" prob=".3" loot_stage_count_mod="0.001"/>
+			<item name="resourcePreciousMetals" count="1,2" prob=".1"/>
+			<item name="UniqueParts" prob=".02"/>
+		</lootgroup>
+	</insertAfter>
+	
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackReg']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackLab']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackUtility']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackSoldier']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackThug']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackStrong']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackPlague']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackBoss']">
+		<item group="groupPerkPlundererChance" count="2" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupSmallSafeLoot']">
+		<item group="groupPerkPlundererChance" count="2" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupGunSafeSecure']">
+		<item group="groupPerkPlundererChance" count="3" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT1']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT2']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT3']">
+		<item group="groupPerkPlundererChance" count="2" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT4']">
+		<item group="groupPerkPlundererChance" count="3" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5']">
+		<item group="groupPerkPlundererChance" count="4" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupReinforcedChestT3']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT4']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT5']">
+		<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+			<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+		</item>
+	</append>
+
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupZpackBoss']">
+		<lootgroup name="groupTreasure_LegendPart">
+			<item name="UniqueParts" count="1,3" />
+		</lootgroup>		
+	</insertAfter>
+	
+	<!-- Adding Legendary Parts to Treasures -->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupBuriedTreasure']/item[@group='groupAmmoPileLarge']">
+		<item group="groupTreasure_LegendPart" prob=".2" force_prob="true"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/lootcontainers/lootcontainer[@name='roboticDrone']">
+		<lootcontainer name="roboticDrone1" count="0" size="2,2" sound_open="UseActions/vehicle_storage_open" open_time="0" sound_close="UseActions/vehicle_storage_close" loot_quality_template="qualBaseTemplate"></lootcontainer>
+	</insertAfter>
+
+</config>

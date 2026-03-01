@@ -1,0 +1,5 @@
+<config>
+	
+	<set xpath="/recipes/recipe[@name='terrTopSoil']/ingredient/@count">30</set>
+			
+</config>

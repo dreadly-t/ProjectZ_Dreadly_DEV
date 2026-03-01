@@ -1,0 +1,7 @@
+<configs>
+	
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/property[contains(@name, 'ItemsOnEnterGame.GameModeSurvival')]/@value">note1_startQuest,noteDuke01,TraitsCharacterRefresh=10,seasonChallangeYautjaBundle</set>
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/property[contains(@name, 'ItemsOnEnterGame.GameModeSurvivalSP')]/@value">note1_startQuest,noteDuke01,TraitsCharacterRefresh=10,seasonChallangeYautjaBundle</set>
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/property[contains(@name, 'ItemsOnEnterGame.GameModeSurvivalMP')]/@value">note1_startQuest,noteDuke01,TraitsCharacterRefresh=10,seasonChallangeYautjaBundle</set>
+	
+</configs>

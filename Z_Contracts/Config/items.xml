@@ -1,0 +1,1683 @@
+<config>
+	
+	<append xpath="/items">
+	
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- CONTRACT'S -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- Contracts for vehicle parts -->
+		
+		<item name="Cont_VehicleT1">
+			<property name="Tags" value="Contract"/>
+			<property name="CustomIcon" value="challengeQuestMaster"/>
+			<property name="CustomIconTint" value="71FFE7"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="Cont_VehicleT1Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MMagazineNotes"/>
+			<property name="Group" value="questItem"/>
+			<property name="Stacknumber" value="20"/>
+			<property name="EconomicValue" value="250"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="treasure_vehicle1"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+			<property name="Weight" value="2"/>
+			<property name="ScrapTimeOverride" value="10.0"/>
+		</item>
+		<item name="Cont_VehicleT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="EconomicValue" value="500"/>
+			<property name="DescriptionKey" value="Cont_VehicleT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_vehicle2"/>
+			</property>
+		</item>
+		<item name="Cont_VehicleT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="Cont_VehicleT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_vehicle3"/>
+			</property>
+		</item>
+		<item name="Cont_VehicleT4">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="DescriptionKey" value="Cont_VehicleT4Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_vehicle4"/>
+			</property>
+		</item>
+		
+		<!-- Food contracts -->
+		<item name="Ingredients_FoodT1">
+			<property name="Tags" value="Contract"/>
+			<property name="CustomIcon" value="cntFoodPileSmall"/>
+			<property name="CustomIconTint" value="71FFE7"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="Ingredients_Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="questItem"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+		</item>
+		<item name="Ingredients_FoodT2">
+			<property name="Extends" value="Ingredients_FoodT1"/>
+			<property name="CustomIcon" value="cntFoodPileMedium"/>
+		</item>
+		<item name="Ingredients_FoodT3">
+			<property name="Extends" value="Ingredients_FoodT1"/>
+			<property name="CustomIcon" value="cntFoodPileLarge"/>
+		</item>
+		<item name="Ingredients_FoodT4">
+			<property name="Extends" value="Ingredients_FoodT1"/>
+			<property name="CustomIcon" value="cntFoodPileLarge"/>
+		</item>
+				
+		<item name="Cont_FoodT1">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_FoodT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_food1"/>
+			</property>
+		</item>
+		<item name="Cont_FoodT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="EconomicValue" value="500"/>
+			<property name="DescriptionKey" value="Cont_FoodT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_food2"/>
+			</property>
+		</item>
+		<item name="Cont_FoodT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="Cont_FoodT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_food3"/>
+			</property>
+		</item>
+		<item name="Cont_FoodT4">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="DescriptionKey" value="Cont_FoodT4Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_food4"/>
+			</property>
+		</item>
+		
+		<!-- Medical contracts -->
+		<item name="Cont_MedicineT1">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_MedicineT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_medicine1"/>
+			</property>
+		</item>
+		<item name="Cont_MedicineT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="EconomicValue" value="500"/>
+			<property name="DescriptionKey" value="Cont_MedicineT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_medicine2"/>
+			</property>
+		</item>
+		<item name="Cont_MedicineT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="Cont_MedicineT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_medicine3"/>
+			</property>
+		</item>
+		<item name="Cont_MedicineT4">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="DescriptionKey" value="Cont_MedicineT4Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_medicine4"/>
+			</property>
+		</item>
+		
+		<!-- Construction contracts -->
+		<item name="Cont_ConstructionT1">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_ConstructionT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_construction1"/>
+			</property>
+		</item>
+		<item name="Cont_ConstructionT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_ConstructionT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_construction2"/>
+			</property>
+		</item>
+		<item name="Cont_ConstructionT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_ConstructionT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_construction3"/>
+			</property>
+		</item>
+		
+		<!-- Workstation contracts -->
+		<item name="Ingredients_WorkstationT1">
+			<property name="Tags" value="Contract"/>
+			<property name="CustomIcon" value="cntDewCollector"/>
+			<property name="CustomIconTint" value="71FFE7"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="Ingredients_Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MFuelBarrelPolymer"/>
+			<property name="Group" value="questItem"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+		</item>
+		<item name="Ingredients_WorkstationT2">
+			<property name="Extends" value="Ingredients_WorkstationT1"/>
+			<property name="CustomIcon" value="workbench"/>
+			<property name="Material" value="Mmetal"/>
+		</item>
+		<item name="Ingredients_WorkstationT3">
+			<property name="Extends" value="Ingredients_WorkstationT1"/>
+			<property name="CustomIcon" value="cementMixer"/>
+			<property name="Material" value="Mmetal"/>
+		</item>
+		<item name="Ingredients_WorkstationT4">
+			<property name="Extends" value="Ingredients_WorkstationT1"/>
+			<property name="CustomIcon" value="forge"/>
+			<property name="Material" value="Mmetal"/>
+		</item>
+		<item name="Ingredients_WorkstationT5">
+			<property name="Extends" value="Ingredients_WorkstationT1"/>
+			<property name="CustomIcon" value="chemistryStation"/>
+			<property name="Material" value="Mmetal"/>
+		</item>
+		
+		<item name="Cont_WorkstationT1">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_WorkstationT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_workstation1"/>
+			</property>
+		</item>
+		<item name="Cont_WorkstationT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_WorkstationT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_workstation2"/>
+			</property>
+		</item>
+		<item name="Cont_WorkstationT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_WorkstationT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_workstation3"/>
+			</property>
+		</item>
+		<item name="Cont_WorkstationT4">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_WorkstationT4Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_workstation4"/>
+			</property>
+		</item>
+		<item name="Cont_WorkstationT5">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_WorkstationT5Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_workstation5"/>
+			</property>
+		</item>
+		
+		<!-- Books and Magazines contracts -->
+		<item name="Cont_BooksT1">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_BooksT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_books1"/>
+			</property>
+		</item>
+		<item name="Cont_BooksT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_BooksT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_books2"/>
+			</property>
+		</item>
+		<item name="Cont_BooksT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_BooksT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_books3"/>
+			</property>
+		</item>
+		<item name="Cont_BooksT4">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_BooksT4Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_books4"/>
+			</property>
+		</item>
+		
+		<!-- Armor contracts -->
+		<item name="Ingredients_ArmorT1">
+			<property name="Tags" value="Contract"/>
+			<property name="CustomIcon" value="resourceArmorCraftingKit"/>
+			<property name="CustomIconTint" value="71FFE7"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="Ingredients_Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Msteel"/>
+			<property name="Group" value="questItem"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+		</item>
+		<item name="Ingredients_ArmorT2">
+			<property name="Extends" value="Ingredients_ArmorT1"/>
+		</item>
+		<item name="Ingredients_ArmorT3">
+			<property name="Extends" value="Ingredients_ArmorT1"/>
+		</item>
+		<item name="Ingredients_RepairT1">
+			<property name="Extends" value="Ingredients_ArmorT1"/>
+		</item>
+		<item name="Ingredients_RepairT2">
+			<property name="Extends" value="Ingredients_ArmorT1"/>
+		</item>
+		<item name="Ingredients_RepairT3">
+			<property name="Extends" value="Ingredients_ArmorT1"/>
+		</item>
+		
+		<item name="Cont_ArmorT1">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_ArmorT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_armor1"/>
+			</property>
+		</item>
+		<item name="Cont_ArmorT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_ArmorT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_armor2"/>
+			</property>
+		</item>
+		<item name="Cont_ArmorT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_ArmorT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_armor3"/>
+			</property>
+		</item>
+		<item name="Cont_RepairT1">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_RepairT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_repair1"/>
+			</property>
+		</item>
+		<item name="Cont_RepairT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_RepairT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_repair2"/>
+			</property>
+		</item>
+		<item name="Cont_RepairT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_RepairT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_repair3"/>
+			</property>
+		</item>
+		
+		<!-- Weapon contracts -->
+		<item name="Cont_WeaponMachineGun">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="Tags" value="Contract,shotgunSkill"/>
+			<property name="DescriptionKey" value="Cont_WeaponMachineGunDesc"/>
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_weapon_machinegun"/>
+			</property>
+		</item>
+		<item name="Cont_WeaponShotgun">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="Tags" value="Contract,machinegunSkill"/>
+			<property name="DescriptionKey" value="Cont_WeaponShotgunDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_weapon_shotgun"/>
+			</property>
+		</item>
+		<item name="Cont_WeaponRifle">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="Tags" value="Contract,rifleSkill"/>
+			<property name="DescriptionKey" value="Cont_WeaponRifleDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_weapon_rifle"/>
+			</property>
+		</item>
+		<item name="Cont_WeaponPistol">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="Tags" value="Contract,handgunSkill"/>
+			<property name="DescriptionKey" value="Cont_WeaponPistolDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_weapon_pistol"/>
+			</property>
+		</item>
+		
+		<item name="Cont_WeaponSpear">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="Tags" value="Contract,spearSkill"/>
+			<property name="DescriptionKey" value="Cont_WeaponSpearDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_weapon_spear"/>
+			</property>
+		</item>
+		<item name="Cont_WeaponClub">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="Tags" value="Contract,clubSkill"/>
+			<property name="DescriptionKey" value="Cont_WeaponClubDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_weapon_club"/>
+			</property>
+		</item>
+		<item name="Cont_WeaponSledgehammer">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="Tags" value="Contract,sledgeSkill"/>
+			<property name="DescriptionKey" value="Cont_WeaponSledgehammerDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_weapon_Sledgehammer"/>
+			</property>
+		</item>
+		<item name="Cont_WeaponKnuckle">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="Tags" value="Contract,knuckleSkill"/>
+			<property name="DescriptionKey" value="Cont_WeaponKnuckleDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_weapon_knuckle"/>
+			</property>
+		</item>
+		<item name="Cont_WeaponKnife">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="Tags" value="Contract,bladeSkill"/>
+			<property name="DescriptionKey" value="Cont_WeaponKnifeDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_weapon_knife"/>
+			</property>
+		</item>
+		<item name="Cont_WeaponBaton">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="Tags" value="Contract,roboticsSkill"/>
+			<property name="DescriptionKey" value="Cont_WeaponBatonDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_weapon_baton"/>
+			</property>
+		</item>
+		
+		<item name="Cont_AmmoT1">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_AmmoT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_ammo1"/>
+			</property>
+		</item>
+		<item name="Cont_AmmoT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_AmmoT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_ammo2"/>
+			</property>
+		</item>
+		<item name="Cont_AmmoT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_AmmoT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_ammo3"/>
+			</property>
+		</item>
+		<item name="Cont_AmmoT4">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="DescriptionKey" value="Cont_AmmoT4Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_ammo4"/>
+			</property>
+		</item>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- STUPIt BET -->
+		
+		<item name="StupitBet1"> <!-- At grandma's in the village -->
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			<property name="DescriptionKey" value="StupitBet1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_stupitbet1"/>
+			</property>
+		</item>
+		<item name="StupitBet2"> <!-- Feathers and bones -->
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			<property name="DescriptionKey" value="StupitBet2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_stupitbet2"/>
+			</property>
+		</item>
+		<item name="StupitBet3"> <!-- Search for classmates -->
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			<property name="DescriptionKey" value="StupitBet3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_stupitbet3"/>
+			</property>
+		</item>
+		<item name="StupitBet4"> <!-- Incident in a strip club -->
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			<property name="DescriptionKey" value="StupitBet4Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_stupitbet4"/>
+			</property>
+		</item>
+		<item name="StupitBet5"> <!-- Traces around the bathhouse -->
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			<property name="DescriptionKey" value="StupitBet5Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_stupitbet5"/>
+			</property>
+		</item>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- RARE CONTRACTS -->		
+		
+		<!-- Stat elixirs -->
+		<item name="Elixir_HealthT1">
+			<property name="Tags" value="Contract"/>
+			<property name="DescriptionKey" value="Elixir_HealthT1Desc"/>
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mglass"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="questItem"/>
+			<property name="SoundPickup" value="grandpas_learnin_grab"/>
+			<property name="SoundPlace" value="grandpas_learnin_place"/>
+			<property name="CustomIcon" value="resourceTestosteroneExtract"/>
+			<property name="CustomIconTint" value="FF2B2B"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1"/>
+				<property name="Sound_start" value="player_drinking"/>
+			</property>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_Health" operation="add" value="1"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_HealthT2">
+			<property name="Extends" value="Elixir_HealthT1"/>
+			<property name="DescriptionKey" value="Elixir_HealthT2Desc"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_Health" operation="add" value="5"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_HealthT3">
+			<property name="Extends" value="Elixir_HealthT1"/>
+			<property name="DescriptionKey" value="Elixir_HealthT3Desc"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_Health" operation="add" value="10"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_StaminaT1">
+			<property name="Extends" value="Elixir_HealthT1"/>
+			<property name="DescriptionKey" value="Elixir_StaminaT1Desc"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_Stamina" operation="add" value="1"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_StaminaT2">
+			<property name="Extends" value="Elixir_HealthT1"/>
+			<property name="DescriptionKey" value="Elixir_StaminaT2Desc"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_Stamina" operation="add" value="5"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_StaminaT3">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_StaminaT3Desc"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_Stamina" operation="add" value="10"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_JumpStrength">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_JumpStrengthDesc"/>
+			<property name="CustomIconTint" value="C5FF59"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_JumpStrength" operation="add" value=".05"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Mobility">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_MobilityDesc"/>
+			<property name="CustomIconTint" value="C5FF59"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_Mobility" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_HiddenStrike">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_HiddenStrikeDesc"/>
+			<property name="CustomIconTint" value="C5FF59"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_HiddenStrike" operation="add" value=".1"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_AnimalDamageMelee">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_AnimalDamageMeleeDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_AnimalDamageMelee" operation="add" value=".1"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_Forest">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_ForestDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamageForest" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_BurntForest">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_BurntForestDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamageBurntForest" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_Desert">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_DesertDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamageDesert" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_Snow">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_SnowDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamageSnow" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_Wasteland">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_WastelandDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamageWasteland" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_Rifle">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_RifleDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamageRifle" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_MachineGun">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_MachineGunDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamageMachineGun" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_Shotgun">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_ShotgunDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamageShotgun" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_Pistol">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_PistolDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamagePistol" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_MeleeLight">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_MeleeLightDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamageMeleeLight" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_MeleeHeavy">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_MeleeHeavyDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamageMeleeHeavy" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		<item name="Elixir_Damage_All">
+			<property name="Extends" value="Elixir_HealthT3"/>
+			<property name="DescriptionKey" value="Elixir_Damage_AllDesc"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$RareBonus_DamageAll" operation="add" value=".01"/>
+			</effect_group>			
+		</item>
+		
+		<!-- Ingredients -->
+		<item name="Ingredients_HealthT1">
+			<property name="Tags" value="Contract"/>
+			<property name="CustomIcon" value="resourceTestosteroneExtract"/>
+			<property name="CustomIconTint" value="DECEA3"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="Ingredients_Desc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MFuelBarrelPolymer"/>
+			<property name="Group" value="questItem"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+		</item>
+		<item name="Ingredients_HealthT2">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_HealthT3">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_StaminaT1">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_StaminaT2">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_StaminaT3">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_JumpStrength">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Mobility">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_HiddenStrike">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_Forest">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_BurntForest">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_Desert">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_Snow">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_Wasteland">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_Rifle">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_MachineGun">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_Shotgun">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_Pistol">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_MeleeLight">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_MeleeHeavy">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		<item name="Ingredients_Damage_All">
+			<property name="Extends" value="Ingredients_HealthT1"/>
+		</item>
+		
+		<item name="RareCont_HealthT1">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_HealthT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_health1"/>
+			</property>
+		</item>
+		<item name="RareCont_HealthT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_HealthT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_health2"/>
+			</property>
+		</item>
+		<item name="RareCont_HealthT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_HealthT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_health3"/>
+			</property>
+		</item>
+		<item name="RareCont_StaminaT1">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_StaminaT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_stamina1"/>
+			</property>
+		</item>
+		<item name="RareCont_StaminaT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_StaminaT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_stamina2"/>
+			</property>
+		</item>
+		<item name="RareCont_StaminaT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_StaminaT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_stamina3"/>
+			</property>
+		</item>
+		
+		<item name="RareCont_JumpStrength">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_JumpStrengthDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_jump"/>
+			</property>
+		</item>
+		<item name="RareCont_Mobility">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_MobilityDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_mobility"/>
+			</property>
+		</item>
+		<item name="RareCont_HiddenStrike">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_HiddenStrikeDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_hiddenstrike"/>
+			</property>
+		</item>
+		
+		<!-- BIOM's Damage -->
+		<item name="RareCont_Damage_Forest">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_ForestDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_forest"/>
+			</property>
+		</item>
+		<item name="RareCont_Damage_BurntForest">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_BurntForestDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_burntforest"/>
+			</property>
+		</item>
+		<item name="RareCont_Damage_Desert">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_DesertDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_desert"/>
+			</property>
+		</item>
+		<item name="RareCont_Damage_Snow">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_SnowDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_snow"/>
+			</property>
+		</item>
+		<item name="RareCont_Damage_Wasteland">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_WastelandDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_wasteland"/>
+			</property>
+		</item>
+		
+		<!-- Weapon's Damage -->
+		<item name="RareCont_Damage_Rifle">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_RifleDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_rifle"/>
+			</property>
+		</item>
+		<item name="RareCont_Damage_MachineGun">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_MachineGunDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_machinegun"/>
+			</property>
+		</item>
+		<item name="RareCont_Damage_Shotgun">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_ShotgunDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_shotgun"/>
+			</property>
+		</item>
+		<item name="RareCont_Damage_Pistol">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_PistolDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_pistol"/>
+			</property>
+		</item>
+		<item name="RareCont_Damage_MeleeLight">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_MeleeLightDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_meleelight"/>
+			</property>
+		</item>
+		<item name="RareCont_Damage_MeleeHeavy">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_MeleeHeavyDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_meleeheavy"/>
+			</property>
+		</item>
+		<item name="RareCont_Damage_All">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="DescriptionKey" value="RareCont_Damage_AllDesc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_rare_all"/>
+			</property>
+		</item>
+		
+		<item name="RareCont_Bundle">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="challengeQuestMaster"/>
+			<property name="CustomIconTint" value="4858FF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="RareCont_BundleDesc"/>
+			<property name="Group" value="Notes"/>
+			<property name="Stacknumber" value="10"/>
+			<property class="Action0">
+				<property name="Random_item" value="RareCont_HealthT1,RareCont_HealthT2,RareCont_HealthT3,RareCont_StaminaT1,RareCont_StaminaT2,RareCont_StaminaT3,RareCont_JumpStrength,RareCont_Mobility,RareCont_HiddenStrike,RareCont_Damage_Forest,RareCont_Damage_BurntForest,RareCont_Damage_Desert,RareCont_Damage_Snow,RareCont_Damage_Wasteland,RareCont_Damage_Rifle,RareCont_Damage_MachineGun,RareCont_Damage_Shotgun,RareCont_Damage_Pistol,RareCont_Damage_MeleeLight,RareCont_Damage_MeleeHeavy,RareCont_Damage_All"/>
+				<property name="Random_item_count" value="1"/>
+			</property>
+		</item>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- LEGENDARY CONTRACTS -->
+
+		<item name="LegCont_SamplesT1">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="C27E53"/>
+			<property name="DescriptionKey" value="LegCont_SamplesT1Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_leg_samples1"/>
+			</property>
+		</item>
+		<item name="LegCont_SamplesT2">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="C27E53"/>
+			<property name="DescriptionKey" value="LegCont_SamplesT2Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_leg_samples2"/>
+			</property>
+		</item>
+		<item name="LegCont_SamplesT3">
+			<property name="Extends" value="Cont_VehicleT1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="CustomIconTint" value="C27E53"/>
+			<property name="DescriptionKey" value="LegCont_SamplesT3Desc"/>
+			<property class="Action0">
+				<property name="QuestGiven" value="treasure_leg_samples3"/>
+			</property>
+		</item>
+		
+	</append>
+	
+	<!-- Checking the weapon used -->
+	<append xpath="/items/item[@name='gunMGT0PipeMachineGun']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_MachineGun,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_MachineGun">
+				<requirement name="!HasBuff" buff="Holding_MachineGun"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_MachineGun,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunMGT1AK47']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_MachineGun,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_MachineGun">
+				<requirement name="!HasBuff" buff="Holding_MachineGun"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_MachineGun,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunMGT2TacticalAR']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_MachineGun,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_MachineGun">
+				<requirement name="!HasBuff" buff="Holding_MachineGun"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_MachineGun,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunMGT3M60']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_MachineGun,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_MachineGun">
+				<requirement name="!HasBuff" buff="Holding_MachineGun"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_MachineGun,Holding_Range"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='gunShotgunT0PipeShotgun']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Shotgun,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Shotgun">
+				<requirement name="!HasBuff" buff="Holding_Shotgun"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Shotgun,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunShotgunT1DoubleBarrel']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Shotgun,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Shotgun">
+				<requirement name="!HasBuff" buff="Holding_Shotgun"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Shotgun,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunShotgunT2PumpShotgun']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Shotgun,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Shotgun">
+				<requirement name="!HasBuff" buff="Holding_Shotgun"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Shotgun,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunShotgunT3AutoShotgun']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Shotgun,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Shotgun">
+				<requirement name="!HasBuff" buff="Holding_Shotgun"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Shotgun,Holding_Range"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='gunRifleT0PipeRifle']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Rifle,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Rifle">
+				<requirement name="!HasBuff" buff="Holding_Rifle"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Rifle,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunRifleT1HuntingRifle']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Rifle,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Rifle">
+				<requirement name="!HasBuff" buff="Holding_Rifle"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Rifle,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunRifleT2LeverActionRifle']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Rifle,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Rifle">
+				<requirement name="!HasBuff" buff="Holding_Rifle"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Rifle,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunRifleT3SniperRifle']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Rifle,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Rifle">
+				<requirement name="!HasBuff" buff="Holding_Rifle"/></triggered_effect>			
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Rifle,Holding_Range"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='gunHandgunT0PipePistol']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Pistol,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Pistol">
+				<requirement name="!HasBuff" buff="Holding_Pistol"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Pistol,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunHandgunT1Pistol']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Pistol,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Pistol">
+				<requirement name="!HasBuff" buff="Holding_Pistol"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Pistol,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunHandgunT3SMG5']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Pistol,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Pistol">
+				<requirement name="!HasBuff" buff="Holding_Pistol"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Pistol,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunHandgunT2Magnum44']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Pistol,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Pistol">
+				<requirement name="!HasBuff" buff="Holding_Pistol"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Pistol,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunHandgunT3DesertVulture']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Pistol,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Pistol">
+				<requirement name="!HasBuff" buff="Holding_Pistol"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Pistol,Holding_Range"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='gunBowT0PrimitiveBow']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Archery,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Archery">
+				<requirement name="!HasBuff" buff="Holding_Archery"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Archery,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunBowT1WoodenBow']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Archery,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Archery">
+				<requirement name="!HasBuff" buff="Holding_Archery"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Archery,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunBowT3CompoundBow']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Archery,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Archery">
+				<requirement name="!HasBuff" buff="Holding_Archery"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Archery,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunBowT1IronCrossbow']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Archery,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Archery">
+				<requirement name="!HasBuff" buff="Holding_Archery"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Archery,Holding_Range"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='gunBowT3CompoundCrossbow']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Archery,Holding_Range"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Archery">
+				<requirement name="!HasBuff" buff="Holding_Archery"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Range">
+				<requirement name="!HasBuff" buff="Holding_Range"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Archery,Holding_Range"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='meleeWpnSpearT0StoneSpear']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Spear,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Spear">
+				<requirement name="!HasBuff" buff="Holding_Spear"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Spear">
+				<requirement name="!HasBuff" buff="Holding_Spear"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Spear,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnSpearT1IronSpear']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Spear,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Spear">
+				<requirement name="!HasBuff" buff="Holding_Spear"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Spear">
+				<requirement name="!HasBuff" buff="Holding_Spear"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Spear,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnSpearT3SteelSpear']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Spear,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Spear">
+				<requirement name="!HasBuff" buff="Holding_Spear"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Spear">
+				<requirement name="!HasBuff" buff="Holding_Spear"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Spear,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='meleeWpnClubT0WoodenClub']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Club,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Club">
+				<requirement name="!HasBuff" buff="Holding_Club"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Club">
+				<requirement name="!HasBuff" buff="Holding_Club"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Club,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnClubT1BaseballBat']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Club,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Club">
+				<requirement name="!HasBuff" buff="Holding_Club"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Club">
+				<requirement name="!HasBuff" buff="Holding_Club"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Club,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnClubT1CandyClub']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Club,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Club">
+				<requirement name="!HasBuff" buff="Holding_Club"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Club">
+				<requirement name="!HasBuff" buff="Holding_Club"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Club,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnClubT3SteelClub']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Club,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Club">
+				<requirement name="!HasBuff" buff="Holding_Club"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Club">
+				<requirement name="!HasBuff" buff="Holding_Club"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Club,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='meleeWpnSledgeT0StoneSledgehammer']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Sledgehammer,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Sledgehammer">
+				<requirement name="!HasBuff" buff="Holding_Sledgehammer"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Sledgehammer">
+				<requirement name="!HasBuff" buff="Holding_Sledgehammer"/></triggered_effect>		
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>		
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Sledgehammer,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnSledgeT1IronSledgehammer']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Sledgehammer,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Sledgehammer">
+				<requirement name="!HasBuff" buff="Holding_Sledgehammer"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Sledgehammer">
+				<requirement name="!HasBuff" buff="Holding_Sledgehammer"/></triggered_effect>		
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>		
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Sledgehammer,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnSledgeT3SteelSledgehammer']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Sledgehammer,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Sledgehammer">
+				<requirement name="!HasBuff" buff="Holding_Sledgehammer"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Sledgehammer">
+				<requirement name="!HasBuff" buff="Holding_Sledgehammer"/></triggered_effect>		
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>		
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Sledgehammer,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='meleeWpnKnucklesT0LeatherKnuckles']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Knuckles,Holding_Melee,Holding_Melee_Light"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Knuckles">
+				<requirement name="!HasBuff" buff="Holding_Knuckles"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Knuckles">
+				<requirement name="!HasBuff" buff="Holding_Knuckles"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Knuckles,Holding_Melee,Holding_Melee_Light"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnKnucklesT1IronKnuckles']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Knuckles,Holding_Melee,Holding_Melee_Light"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Knuckles">
+				<requirement name="!HasBuff" buff="Holding_Knuckles"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Knuckles">
+				<requirement name="!HasBuff" buff="Holding_Knuckles"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Knuckles,Holding_Melee,Holding_Melee_Light"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnKnucklesT3SteelKnuckles']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Knuckles,Holding_Melee,Holding_Melee_Light"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Knuckles">
+				<requirement name="!HasBuff" buff="Holding_Knuckles"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Knuckles">
+				<requirement name="!HasBuff" buff="Holding_Knuckles"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Knuckles,Holding_Melee,Holding_Melee_Light"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='meleeWpnBladeT0BoneKnife']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Knife,Holding_Melee,Holding_Melee_Light"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Knife">
+				<requirement name="!HasBuff" buff="Holding_Knife"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Knife">
+				<requirement name="!HasBuff" buff="Holding_Knife"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Knife,Holding_Melee,Holding_Melee_Light"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT1HuntingKnife']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Knife,Holding_Melee,Holding_Melee_Light"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Knife">
+				<requirement name="!HasBuff" buff="Holding_Knife"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Knife">
+				<requirement name="!HasBuff" buff="Holding_Knife"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Knife,Holding_Melee,Holding_Melee_Light"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT1CandyKnife']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Knife,Holding_Melee,Holding_Melee_Light"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Knife">
+				<requirement name="!HasBuff" buff="Holding_Knife"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Knife">
+				<requirement name="!HasBuff" buff="Holding_Knife"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Knife,Holding_Melee,Holding_Melee_Light"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT3Machete']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Knife,Holding_Melee,Holding_Melee_Light"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Knife">
+				<requirement name="!HasBuff" buff="Holding_Knife"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Knife">
+				<requirement name="!HasBuff" buff="Holding_Knife"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Knife,Holding_Melee,Holding_Melee_Light"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='meleeWpnBatonT0PipeBaton']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_StunBaton,Holding_Melee,Holding_Melee_Light"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_StunBaton">
+				<requirement name="!HasBuff" buff="Holding_StunBaton"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_StunBaton">
+				<requirement name="!HasBuff" buff="Holding_StunBaton"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Light">
+				<requirement name="!HasBuff" buff="Holding_Melee_Light"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_StunBaton,Holding_Melee,Holding_Melee_Light"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='meleeToolAxeT1IronFireaxe']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Axe,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Axe">
+				<requirement name="!HasBuff" buff="Holding_Axe"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Axe">
+				<requirement name="!HasBuff" buff="Holding_Axe"/></triggered_effect>		
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>		
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Axe,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='meleeToolAxeT2SteelAxe']">
+		<effect_group name="Contract check">
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Axe,Holding_Melee,Holding_Melee_Heavy"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Axe">
+				<requirement name="!HasBuff" buff="Holding_Axe"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Axe">
+				<requirement name="!HasBuff" buff="Holding_Axe"/></triggered_effect>		
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee">
+				<requirement name="!HasBuff" buff="Holding_Melee"/></triggered_effect>		
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="Holding_Melee_Heavy">
+				<requirement name="!HasBuff" buff="Holding_Melee_Heavy"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="Holding_Axe,Holding_Melee,Holding_Melee_Heavy"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/items">
+	
+		<item name="TrinketStupitBet">
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="hubCaps"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mbrass_scrap"/>
+			<property name="Weight" value="100"/>
+			<property name="Stacknumber" value="25"/>
+			<property name="Group" value="Resources"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="SellableToTrader" value="false"/>
+		</item>
+		
+		<item name="Bonus_StupitBet">
+			<property name="CustomIcon" value="hubcapNoMine"/>
+			<property name="CustomIconTint" value="FF8000"/>
+			<property name="DescriptionKey" value="Bonus_StupitBetDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="EconomicValue" value="7500"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="read_skillbook"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$Bonus_StupitBet" operation="add" value=".1"/>
+			</effect_group>
+		</item>
+		
+	</append>
+	
+	
+	
+</config>

@@ -1,0 +1,78 @@
+<config>
+	
+	<append xpath="/lootcontainers">
+	
+		<!-- Pile -->
+		<lootcontainer name="StoragePileSmall" count="0" size="8,2" sound_open="UseActions/ammo_pile_sm_open" sound_close="ammo_pile_sm_close" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="StoragePileMedium" count="0" size="8,4" sound_open="UseActions/ammo_pile_sm_open" sound_close="ammo_pile_sm_close" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="StoragePileLarge" count="0" size="8,8" sound_open="UseActions/ammo_pile_sm_open" sound_close="ammo_pile_sm_close" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="StoragePileBookSmall" count="0" size="8,2" sound_open="UseActions/open_garbage" sound_close="silencefiller" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="StoragePileBookMedium" count="0" size="8,4" sound_open="UseActions/open_garbage" sound_close="silencefiller" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="StoragePileBookLarge" count="0" size="8,8" sound_open="UseActions/open_garbage" sound_close="silencefiller" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<!-- Universal -->
+		<lootcontainer name="StorageMunitionsBox" count="0" size="8,10" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="StorageWeaponsBagSmall" count="0" size="8,6" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="StorageWeaponsBagLarge" count="0" size="8,9" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="StoragePillCase" count="0" size="8,8" sound_open="UseActions/open_pill_case" sound_close="UseActions/close_pill_case" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="StorageGunRackSmall" count="0" size="8,5" sound_open="UseActions/open_garbage" sound_close="silencefiller" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="StorageGunRackLarge" count="0" size="8,10" sound_open="UseActions/open_garbage" sound_close="silencefiller" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="StorageMannequin" count="0" size="6,8" sound_open="UseActions/open_garbage" sound_close="silencefiller" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<!-- Box -->
+		<lootcontainer name="StorageBox" count="0" size="8,9" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+				
+		<lootcontainer name="BigStorageSmall" count="0" size="8,10" sound_open="UseActions/chest_tier3_open" sound_close="UseActions/chest_tier3_close" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="BigStorageMedium" count="0" size="9,10" sound_open="UseActions/chest_tier4_open" sound_close="UseActions/chest_tier4_close" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+		<lootcontainer name="BigStorageLarge" count="0" size="10,10" sound_open="UseActions/chest_tier5_open" sound_close="UseActions/chest_tier5_close" loot_quality_template="qualBaseTemplate">
+			<item name="cobweb" count="0"/>
+		</lootcontainer>
+		
+	</append>
+	
+</config>

@@ -1,0 +1,916 @@
+<config>
+	
+	 <append xpath="/lootcontainers">
+		
+		<lootqualitytemplates>
+			<lootqualitytemplate name="QLTemplateLegend">
+				<qualitytemplate level="121,132" default_quality="1">
+					<loot quality="1" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="133,134" default_quality="1">
+					<loot quality="1" prob="0.612"/>
+					<loot quality="2" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="135,136" default_quality="1">
+					<loot quality="1" prob="0.604"/>
+					<loot quality="2" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="137,139" default_quality="1">
+					<loot quality="1" prob="0.597"/>
+					<loot quality="2" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="140,141" default_quality="1">
+					<loot quality="1" prob="0.59"/>
+					<loot quality="2" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="142,144" default_quality="1">
+					<loot quality="1" prob="0.585"/>
+					<loot quality="2" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="145,146" default_quality="1">
+					<loot quality="1" prob="0.58"/>
+					<loot quality="2" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="147,148" default_quality="1">
+					<loot quality="1" prob="0.452"/>
+					<loot quality="2" prob="0.608"/>
+					<loot quality="3" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="149,151" default_quality="1">
+					<loot quality="1" prob="0.445"/>
+					<loot quality="2" prob="0.6"/>
+					<loot quality="3" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="152,153" default_quality="1">
+					<loot quality="1" prob="0.438"/>
+					<loot quality="2" prob="0.594"/>
+					<loot quality="3" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="154,156" default_quality="1">
+					<loot quality="1" prob="0.433"/>
+					<loot quality="2" prob="0.588"/>
+					<loot quality="3" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="157,158" default_quality="1">
+					<loot quality="1" prob="0.428"/>
+					<loot quality="2" prob="0.583"/>
+					<loot quality="3" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="159,160" default_quality="1">
+					<loot quality="1" prob="0.367"/>
+					<loot quality="2" prob="0.456"/>
+					<loot quality="3" prob="0.613"/>
+					<loot quality="4" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="161,163" default_quality="1">
+					<loot quality="1" prob="0.361"/>
+					<loot quality="2" prob="0.449"/>
+					<loot quality="3" prob="0.605"/>
+					<loot quality="4" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="164,165" default_quality="1">
+					<loot quality="1" prob="0.355"/>
+					<loot quality="2" prob="0.442"/>
+					<loot quality="3" prob="0.597"/>
+					<loot quality="4" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="166,168" default_quality="1">
+					<loot quality="1" prob="0.35"/>
+					<loot quality="2" prob="0.436"/>
+					<loot quality="3" prob="0.591"/>
+					<loot quality="4" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="169,170" default_quality="1">
+					<loot quality="1" prob="0.345"/>
+					<loot quality="2" prob="0.431"/>
+					<loot quality="3" prob="0.585"/>
+					<loot quality="4" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="171,172" default_quality="1">
+					<loot quality="1" prob="0.341"/>
+					<loot quality="2" prob="0.426"/>
+					<loot quality="3" prob="0.58"/>
+					<loot quality="4" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="173,175" default_quality="1">
+					<loot quality="1" prob="0.306"/>
+					<loot quality="2" prob="0.364"/>
+					<loot quality="3" prob="0.453"/>
+					<loot quality="4" prob="0.609"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="176,177" default_quality="1">
+					<loot quality="1" prob="0.301"/>
+					<loot quality="2" prob="0.358"/>
+					<loot quality="3" prob="0.446"/>
+					<loot quality="4" prob="0.601"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="178,180" default_quality="1">
+					<loot quality="1" prob="0.296"/>
+					<loot quality="2" prob="0.353"/>
+					<loot quality="3" prob="0.439"/>
+					<loot quality="4" prob="0.594"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="181,182" default_quality="1">
+					<loot quality="1" prob="0.292"/>
+					<loot quality="2" prob="0.348"/>
+					<loot quality="3" prob="0.433"/>
+					<loot quality="4" prob="0.588"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="183,184" default_quality="1">
+					<loot quality="1" prob="0.289"/>
+					<loot quality="2" prob="0.344"/>
+					<loot quality="3" prob="0.428"/>
+					<loot quality="4" prob="0.583"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="185,187" default_quality="1">
+					<loot quality="1" prob="0.266"/>
+					<loot quality="2" prob="0.308"/>
+					<loot quality="3" prob="0.368"/>
+					<loot quality="4" prob="0.457"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="188,189" default_quality="1">
+					<loot quality="1" prob="0.262"/>
+					<loot quality="2" prob="0.303"/>
+					<loot quality="3" prob="0.361"/>
+					<loot quality="4" prob="0.449"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="190,192" default_quality="1">
+					<loot quality="1" prob="0.258"/>
+					<loot quality="2" prob="0.299"/>
+					<loot quality="3" prob="0.356"/>
+					<loot quality="4" prob="0.443"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="193,194" default_quality="1">
+					<loot quality="1" prob="0.255"/>
+					<loot quality="2" prob="0.295"/>
+					<loot quality="3" prob="0.351"/>
+					<loot quality="4" prob="0.437"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="195,196" default_quality="1">
+					<loot quality="1" prob="0.252"/>
+					<loot quality="2" prob="0.291"/>
+					<loot quality="3" prob="0.346"/>
+					<loot quality="4" prob="0.431"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="197,199" default_quality="1">
+					<loot quality="1" prob="0.249"/>
+					<loot quality="2" prob="0.287"/>
+					<loot quality="3" prob="0.342"/>
+					<loot quality="4" prob="0.426"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="200,201" default_quality="1">
+					<loot quality="1" prob="0.246"/>
+					<loot quality="2" prob="0.284"/>
+					<loot quality="3" prob="0.338"/>
+					<loot quality="4" prob="0.422"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="202,204" default_quality="1">
+					<loot quality="1" prob="0.243"/>
+					<loot quality="2" prob="0.281"/>
+					<loot quality="3" prob="0.334"/>
+					<loot quality="4" prob="0.418"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="205,206" default_quality="1">
+					<loot quality="1" prob="0.241"/>
+					<loot quality="2" prob="0.278"/>
+					<loot quality="3" prob="0.331"/>
+					<loot quality="4" prob="0.414"/>
+					<loot quality="5" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="207,208" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="209,211" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="212,213" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="214,216" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="217,218" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="219,220" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="221,223" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="224,225" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="226,228" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="229,230" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="231,232" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="233,235" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="236,237" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="238,240" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="241,242" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="243,244" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="245,247" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="248,249" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="250,252" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+				<qualitytemplate level="253,999999" default_quality="1">
+					<loot quality="2" prob="0.245"/>
+					<loot quality="3" prob="0.285"/>
+					<loot quality="4" prob="0.365"/>
+					<loot quality="5" prob="0.420"/>
+					<loot quality="6" prob="1"/>
+				</qualitytemplate>
+			</lootqualitytemplate>
+		</lootqualitytemplates>
+		
+		<!-- *** Imp Ammo_Groups -->
+		<!-- 9mm -->
+		<lootgroup name="group9mmHPLarge">
+			<item name="ammo9mmBulletHP" count="9,13" loot_stage_count_mod="0.006"/>
+		</lootgroup>
+		<lootgroup name="group9mmAPLarge">
+			<item name="ammo9mmBulletAP" count="9,13" loot_stage_count_mod="0.006"/>
+		</lootgroup>
+		<lootgroup name="group9mmDULarge">
+			<item name="ammo9mmBulletDU" count="5,7" loot_stage_count_mod="0.006"/>
+		</lootgroup>
+		<!-- .44 -->
+		<lootgroup name="group44MagnumHPLarge">
+			<item name="ammo44MagnumBulletHP" count="8,11" loot_stage_count_mod="0.006"/>
+		</lootgroup>	
+		<lootgroup name="group44MagnumAPLarge">
+			<item name="ammo44MagnumBulletAP" count="8,11" loot_stage_count_mod="0.006"/>
+		</lootgroup>
+		<lootgroup name="group44MagnumDULarge">
+			<item name="ammo44MagnumBulletDU" count="4,6" loot_stage_count_mod="0.006"/>
+		</lootgroup>
+		<!-- 7.62 -->
+		<lootgroup name="group762mmHPLarge">
+			<item name="ammo762mmBulletHP" count="7,11" loot_stage_count_mod="0.006"/>
+		</lootgroup>
+		<lootgroup name="group762mmAPLarge">
+			<item name="ammo762mmBulletAP" count="7,11" loot_stage_count_mod="0.006"/>
+		</lootgroup>
+		<lootgroup name="group762mmDULarge">
+			<item name="ammo762mmBulletDU" count="4,6" loot_stage_count_mod="0.006"/>
+		</lootgroup>
+		<!-- Shotgun -->
+		<lootgroup name="groupShotgunSlugLarge">
+			<item name="ammoShotgunSlug" count="7,11" loot_stage_count_mod="0.006"/>
+		</lootgroup>
+		<lootgroup name="groupShotgunBreachingSlugLarge">
+			<item name="ammoShotgunBreachingSlug" count="7,11" loot_stage_count_mod="0.006"/>
+		</lootgroup>
+		<lootgroup name="groupShotgunSlugDULarge">
+			<item name="ammoShotgunSlugDU" count="3,5" loot_stage_count_mod="0.006"/>
+		</lootgroup>
+		
+		<!-- Rare Resources -->
+		<lootgroup name="groupUltraLightAlloysBoss">
+			<item name="resourceUltraLightAlloys" count="2,4" loot_stage_count_mod="0.002"/>
+		</lootgroup>
+		<lootgroup name="groupUltraLightAlloysFix">
+			<item name="resourceUltraLightAlloys" count="1,8"/>
+		</lootgroup>
+		<lootgroup name="groupStrengthAlloysBoss">
+			<item name="resourceUltraStrengthAlloys" count="2,4" loot_stage_count_mod="0.002"/>
+		</lootgroup>
+		<lootgroup name="groupStrengthAlloysFix">
+			<item name="resourceUltraStrengthAlloys" count="1,8"/>
+		</lootgroup>
+		<lootgroup name="groupExperimentalAlloysBoss">
+			<item name="resourceExperimentalAlloys" count="1,2" loot_stage_count_mod="0.001"/>
+		</lootgroup>
+		<lootgroup name="groupExperimentalAlloysFix">
+			<item name="resourceExperimentalAlloys" count="1,4"/>
+		</lootgroup>
+		<lootgroup name="groupPreciousMetalsBoss">
+			<item name="resourcePreciousMetals" count="1"/>
+		</lootgroup>
+		<lootgroup name="groupPreciousMetalsFix">
+			<item name="resourcePreciousMetals" count="1,2"/>
+		</lootgroup>
+		<lootgroup name="groupUniqueParts">
+			<item name="UniqueParts" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="groupMechanicalPartsImp">
+			<item name="resourceMechanicalPartsImp" count="1,2" loot_stage_count_mod="0.0015"/>
+		</lootgroup>
+		<lootgroup name="groupElectricPartsImp">
+			<item name="resourceElectricPartsImp" count="1,2" loot_stage_count_mod="0.0015"/>
+		</lootgroup>
+		
+		<lootgroup name="groupAmmoImpLarge">
+			<item group="group9mmHPLarge"/>
+			<item group="group9mmAPLarge"/>
+			<item group="group44MagnumHPLarge"/>
+			<item group="group44MagnumAPLarge"/>
+			<item group="group762mmHPLarge"/>
+			<item group="group762mmAPLarge"/>
+			<item group="groupShotgunSlugLarge"/>
+			<item group="groupShotgunBreachingSlugLarge"/>
+		</lootgroup>
+		
+		<lootgroup name="groupAmmoDU">
+			<item group="group9mmDULarge" prob=".5" force_prob="true"/>
+			<item group="group44MagnumDULarge" prob=".5" force_prob="true"/>
+			<item group="group762mmDULarge" prob=".5" force_prob="true"/>
+			<item group="groupShotgunSlugDULarge" prob=".5" force_prob="true"/>
+		</lootgroup>
+		
+		<lootgroup name="groupMiniBoss01">
+			<item name="resourceDuctTape" count="1,4" loot_prob_template="high"/>
+			<item group="groupFoodUncommon" loot_prob_template="high"/>
+			<item group="groupDrinksUncommon" loot_prob_template="high"/>
+			<item group="groupMedicalUncommon" loot_prob_template="med"/>
+			<item name="resourceAcid" count="2" loot_prob_template="low"/>
+		</lootgroup>
+		
+		<lootgroup name="groupMiniBoss04">
+			<item group="groupRareToolsTiered" loot_prob_template="high"/>
+			<item group="booksRareOnlyScaled" loot_prob_template="med"/>
+			<item group="groupWeaponsAllScaledNoStone" loot_prob_template="high"/>
+			<item name="casinoCoin" count="2000,4000" loot_prob_template="med"/>
+			<item name="oldCash" count="1000,2000" loot_prob_template="med"/>
+			<item group="groupMedicalRare" loot_prob_template="medHigh"/>
+			<item group="groupTreasureMaps" loot_prob_template="low"/>
+			<item name="modArmorNightVision" loot_prob_template="veryLow"/>
+			<item group="groupModAllScaled" loot_prob_template="med"/>
+			<item group="vehiclePartsTiered" loot_prob_template="med"/>
+			<item name="modArmorHelmetLight" loot_prob_template="veryLow"/>
+		</lootgroup>
+		
+		<lootgroup name="groupAlloysBonus">
+			<item group="groupUltraLightAlloysFix" loot_prob_template="medHigh"/>
+			<item group="groupStrengthAlloysFix" loot_prob_template="medHigh"/>
+			<item group="groupExperimentalAlloysFix" loot_prob_template="low"/>
+			<item group="groupPreciousMetalsFix" loot_prob_template="veryLow"/>
+			<item group="groupUniqueParts" prob=".02"/>
+		</lootgroup>
+		
+		<lootgroup name="groupMiniBossAlloys">
+			<item group="groupUltraLightAlloysBoss" loot_prob_template="medHigh"/>
+			<item group="groupStrengthAlloysBoss" loot_prob_template="medHigh"/>
+			<item group="groupExperimentalAlloysBoss" loot_prob_template="low"/>
+			<item group="groupPreciousMetalsBoss" loot_prob_template="veryLow"/>
+			<!-- <item group="groupMechanicalPartsImp" loot_prob_template="veryLow"/> -->
+			<!-- <item group="groupElectricPartsImp" loot_prob_template="veryLow"/> -->
+		</lootgroup>
+		
+		<lootgroup name="groupBossAlloys">
+			<item group="groupPreciousMetalsBoss" loot_prob_template="veryLow"/>
+			<item group="groupExperimentalAlloysBoss" loot_prob_template="low"/>
+			<item group="groupUniqueParts" prob=".02"/>
+		</lootgroup>
+		
+		<lootgroup name="groupSkillBook">
+			<item name="Magazine_AddSkillPoint"/>
+			<item name="LegCont_SamplesT1"/>
+			<item name="LegCont_SamplesT2"/>
+			<item name="LegCont_SamplesT3"/>
+		</lootgroup>
+		
+		<lootgroup name="groupLegend_Weapon" loot_quality_template="QLTemplateLegend">
+			<item name="BulldogLegArsonist"/>
+			<item name="BulldogLegURANUS"/>
+			<item name="BulldogLegBreeze"/>
+			<item name="BulldogLegUnkillable"/>
+			<item name="BulldogLegAvenger"/>
+			<item name="BulldogLegBerserk"/>
+			
+			<item name="EraserLegArsonist"/>
+			<item name="EraserLegURANUS"/>
+			<item name="EraserLegUnkillable"/>
+			<item name="EraserLegAvenger"/>
+			<item name="EraserLegBerserk"/>
+			
+			<item name="GausLegArsonist"/>
+			<item name="GausLegTesla"/>
+			<item name="GausLegURANUS"/>
+			<item name="GausLegUnkillable"/>
+			
+			<item name="ZingerLegArsonist"/>
+			<item name="ZingerLegURANUS"/>
+			<item name="ZingerLegBreeze"/>
+			<item name="ZingerLegUnkillable"/>
+			<item name="ZingerLegAvenger"/>
+			<item name="ZingerLegBerserk"/>
+		</lootgroup>
+		
+		<lootgroup name="groupRareMods">
+			<item name="modMotorBooster" prob=".25"/>
+			<item name="modReactorBooster" prob=".08"/>
+			<item name="modIncreasedBattery" prob=".25"/>
+			<item name="modReactorElectric" prob=".25"/>
+			<item name="modElongatedCore" loot_prob_template="med"/>
+			<item name="modReinforcedParts" loot_prob_template="med"/>
+			<item name="modEnhancedMechanisms" loot_prob_template="med"/>
+			<item name="modFastMechanisms" loot_prob_template="med"/>
+			<item name="modSpareBox" loot_prob_template="med"/>
+			<item name="modBandolierImp" loot_prob_template="med"/>
+			<item name="modSmartGlass" loot_prob_template="med"/>			
+			
+			<item name="modArmorPerceptionImp" loot_prob_template="med"/>			
+			<item name="modArmorStrengthImp" loot_prob_template="med"/>			
+			<item name="modArmorFortitudeImp" loot_prob_template="med"/>			
+			<item name="modArmorAgilityImp" loot_prob_template="med"/>			
+			<item name="modArmorIntellectImp" loot_prob_template="med"/>			
+						
+			<item name="modGunDrumMagazineExtenderImp" prob=".15"/>
+			<item name="modGunMagazineExtenderImp" prob=".15"/>
+			<item name="modGunMeleeRadRemoverImp" prob=".15"/>
+			<item name="modGunCrippleEmImp" prob=".15"/>
+			<item name="modGunRiflePartsImp" prob=".15"/>
+			<item name="modGunPistolPartsImp" prob=".15"/>
+			<item name="modGunM60PartsImp" prob=".15"/>
+			<item name="modGunShotgunPartsImp" prob=".15"/>
+			<item name="modGunForegripImp" prob=".15"/>
+			<item name="modGunBipodImp" prob=".15"/>
+			<item name="modTurretPartsImp" prob=".15"/>
+			<item name="modReactorAmplifierImp" prob=".15"/>
+			<item name="modHeavyTipImp" prob=".15"/>
+			<item name="modHugeSupplyImp" prob=".15"/>
+			<item name="modGunBoosterExp" prob=".05"/>
+			<item name="modGunDamageAccumulatorExp" prob=".05"/>
+		</lootgroup>
+		
+		<lootgroup name="groupUniqModsShoker">
+			<item name="NerdNotes" prob=".075"/>
+			<item name="modOkGoogle" prob=".1"/>
+			<item name="modRadar" prob=".1"/>
+			<item name="modAttributeBoostUnique" prob=".1"/>
+			<item name="modLuckyMiningUnique" prob=".15"/>
+			<item name="modTerrainResistUnique" prob=".1"/>
+			<item name="modSurgicalBladeUnique" prob=".1"/>
+			
+			<item name="modIncreasedBatteryUnique" prob=".15"/>
+			<item name="modReactorElectricUnique" prob=".15"/>
+			<item name="modElongatedCoreUnique" prob=".15"/>
+			<item name="modReinforcedPartsUnique" prob=".15"/>
+			<item name="modFastMechanismsUnique" prob=".15"/>
+			<item name="modEnhancedMechanismsUnique" prob=".15"/>
+			<item name="modSpareBoxUnique" prob=".15"/>
+			
+			<item name="modVehicleSuperChargerUnique" prob=".15"/>
+			<item name="modVehicleFuelSystemUnique" prob=".15"/>
+			<item name="modVehiclePlowUnique" prob=".15"/>
+			<item name="modVehicleArmorUnique" prob=".15"/>			
+			<item name="modTurretPartsUnique" prob=".15"/>			
+		</lootgroup>
+		
+		<lootgroup name="groupUniqModsBull">
+			<item name="modOkGoogle" prob=".1"/>
+			<item name="modRadar" prob=".1"/>
+			<item name="modAttributeBoostUnique" prob=".1"/>
+			<item name="modLuckyMiningUnique" prob=".15"/>
+			<item name="modStabilityBooster" prob=".15"/>
+			<item name="modTerrainResistUnique" prob=".1"/>
+			<item name="modSurgicalBladeUnique" prob=".1"/>
+			
+			<item name="modVehicleSuperChargerUnique" prob=".15"/>
+			<item name="modVehicleFuelSystemUnique" prob=".15"/>
+			<item name="modVehiclePlowUnique" prob=".15"/>
+			<item name="modVehicleArmorUnique" prob=".15"/>
+			
+			<item name="modMeleeDimondPartsHeavyUnique" prob=".15"/>			
+			<item name="modMeleeDimondPartsLightUnique" prob=".15"/>			
+			<item name="modMeleeErgonomicGripUnique" prob=".15"/>			
+			<item name="modMeleeTheHunterUnique" prob=".15"/>			
+			<item name="modMeleeTerribleSpikesUnique" prob=".15"/>			
+			<item name="modMeleeClubBurningUnique" prob=".15"/>			
+			<item name="modMeleeElectroUnique" prob=".15"/>					
+			<item name="modHeavyTipUnique" prob=".15"/>					
+			<item name="modReactorAmplifierUnique" prob=".15"/>					
+		</lootgroup>
+		
+		<lootgroup name="groupUniqModsVeteran">
+			<item name="modOkGoogle" prob=".1"/>
+			<item name="modRadar" prob=".1"/>
+			<item name="modAttributeBoostUnique" prob=".1"/>
+			<item name="modLuckyMiningUnique" prob=".15"/>
+			<item name="modReliableWinding" prob=".15"/>
+			<item name="modLightningRod" prob=".15"/>
+			<item name="modTerrainResistUnique" prob=".1"/>
+			<item name="modSurgicalBladeUnique" prob=".1"/>
+						
+			<item name="modVehicleSuperChargerUnique" prob=".15"/>
+			<item name="modVehicleFuelSystemUnique" prob=".15"/>
+			<item name="modVehiclePlowUnique" prob=".15"/>
+			<item name="modVehicleArmorUnique" prob=".15"/>
+			
+			<item name="modGunDrumMagazineExtenderUnique" prob=".15"/>			
+			<item name="modGunMagazineExtenderUnique" prob=".15"/>			
+			<item name="modGunMeleeRadRemoverUnique" prob=".15"/>			
+			<item name="modGunCrippleEmUnique" prob=".15"/>			
+			<item name="modGunRiflePartsUnique" prob=".15"/>			
+			<item name="modGunPistolPartsUnique" prob=".15"/>			
+			<item name="modGunM60PartsUnique" prob=".15"/>			
+			<item name="modGunShotgunPartsUnique" prob=".15"/>			
+			<item name="modGunForegripUnique" prob=".15"/>			
+			<item name="modGunBipodUnique" prob=".15"/>			
+			<item name="modGunSoundSuppressorSilencerUnique" prob=".15"/>			
+			<item name="modGunBoosterUnique" prob=".15"/>			
+			<item name="modGunDamageAccumulatorUnique" prob=".15"/>						
+			<item name="modHugeSupplyUnique" prob=".15"/>						
+		</lootgroup>
+		
+		<lootgroup name="groupUniqModsAncientYeti">
+			<item name="modOkGoogle" prob=".1"/>
+			<item name="modRadar" prob=".1"/>
+			<item name="modAttributeBoostUnique" prob=".1"/>
+			<item name="modLuckyMiningUnique" prob=".15"/>
+			<item name="modReliableWinding" prob=".15"/>
+			<item name="modLightningRod" prob=".15"/>
+			<item name="modTerrainResistUnique" prob=".1"/>
+			<item name="modSurgicalBladeUnique" prob=".1"/>
+						
+			<item name="modVehicleSuperChargerUnique" prob=".15"/>
+			<item name="modVehicleFuelSystemUnique" prob=".15"/>
+			<item name="modVehiclePlowUnique" prob=".15"/>
+			<item name="modVehicleArmorUnique" prob=".15"/>
+			
+			<item name="modGunDrumMagazineExtenderUnique" prob=".15"/>			
+			<item name="modGunMagazineExtenderUnique" prob=".15"/>			
+			<item name="modGunMeleeRadRemoverUnique" prob=".15"/>			
+			<item name="modGunCrippleEmUnique" prob=".15"/>			
+			<item name="modGunRiflePartsUnique" prob=".15"/>			
+			<item name="modGunPistolPartsUnique" prob=".15"/>			
+			<item name="modGunM60PartsUnique" prob=".15"/>			
+			<item name="modGunShotgunPartsUnique" prob=".15"/>			
+			<item name="modGunForegripUnique" prob=".15"/>			
+			<item name="modGunBipodUnique" prob=".15"/>			
+			<item name="modGunSoundSuppressorSilencerUnique" prob=".15"/>			
+			<item name="modGunBoosterUnique" prob=".15"/>			
+			<item name="modGunDamageAccumulatorUnique" prob=".15"/>						
+			<item name="modHugeSupplyUnique" prob=".15"/>
+			
+			<item name="modMeleeDimondPartsHeavyUnique" prob=".15"/>			
+			<item name="modMeleeDimondPartsLightUnique" prob=".15"/>			
+			<item name="modMeleeErgonomicGripUnique" prob=".15"/>			
+			<item name="modMeleeTheHunterUnique" prob=".15"/>			
+			<item name="modMeleeTerribleSpikesUnique" prob=".15"/>			
+			<item name="modMeleeClubBurningUnique" prob=".15"/>			
+			<item name="modMeleeElectroUnique" prob=".15"/>					
+			<item name="modHeavyTipUnique" prob=".15"/>					
+			<item name="modReactorAmplifierUnique" prob=".15"/>			
+		</lootgroup>
+		
+		<lootgroup name="groupUniqModsAll">
+			<item name="NerdNotes" prob=".075"/>
+			<item name="modOkGoogle" prob=".15"/>
+			<item name="modAttributeBoostUnique" prob=".15"/>
+			<item name="modRadar" prob=".15"/>
+			<item name="modLuckyMiningUnique" prob=".15"/>
+			<item name="modStabilityBooster" prob=".15"/>
+			<item name="modReliableWinding" prob=".15"/>
+			<item name="modLightningRod" prob=".15"/>
+			<item name="modTerrainResistUnique" prob=".1"/>
+			<item name="modSurgicalBladeUnique" prob=".15"/>
+			
+			<item name="modIncreasedBatteryUnique" prob=".15"/>
+			<item name="modReactorElectricUnique" prob=".15"/>
+			<item name="modElongatedCoreUnique" prob=".15"/>
+			<item name="modReinforcedPartsUnique" prob=".15"/>
+			<item name="modFastMechanismsUnique" prob=".15"/>
+			<item name="modEnhancedMechanismsUnique" prob=".15"/>
+			<item name="modSpareBoxUnique" prob=".15"/>
+			<item name="modMeleeDimondPartsHeavyUnique" prob=".15"/>			
+			<item name="modMeleeDimondPartsLightUnique" prob=".15"/>			
+			<item name="modMeleeErgonomicGripUnique" prob=".15"/>			
+			<item name="modMeleeTheHunterUnique" prob=".15"/>			
+			<item name="modMeleeTerribleSpikesUnique" prob=".15"/>			
+			<item name="modMeleeClubBurningUnique" prob=".15"/>			
+			<item name="modMeleeElectroUnique" prob=".15"/>
+			<item name="modGunDrumMagazineExtenderUnique" prob=".15"/>			
+			<item name="modGunMagazineExtenderUnique" prob=".15"/>			
+			<item name="modGunMeleeRadRemoverUnique" prob=".15"/>			
+			<item name="modGunCrippleEmUnique" prob=".15"/>			
+			<item name="modGunRiflePartsUnique" prob=".15"/>			
+			<item name="modGunPistolPartsUnique" prob=".15"/>			
+			<item name="modGunM60PartsUnique" prob=".15"/>			
+			<item name="modGunShotgunPartsUnique" prob=".15"/>			
+			<item name="modGunForegripUnique" prob=".15"/>			
+			<item name="modGunBipodUnique" prob=".15"/>			
+			<item name="modGunSoundSuppressorSilencerUnique" prob=".15"/>			
+			<item name="modGunBoosterUnique" prob=".15"/>			
+			<item name="modGunDamageAccumulatorUnique" prob=".15"/>		
+			<item name="modTurretPartsUnique" prob=".15"/>		
+			<item name="modReactorAmplifierUnique" prob=".15"/>		
+			<item name="modHeavyTipUnique" prob=".15"/>		
+			<item name="modHugeSupplyUnique" prob=".15"/>		
+			
+			<item name="modVehicleSuperChargerUnique" prob=".15"/>
+			<item name="modVehicleFuelSystemUnique" prob=".15"/>
+			<item name="modVehiclePlowUnique" prob=".15"/>
+			<item name="modVehicleArmorUnique" prob=".15"/>			
+		</lootgroup>
+		
+		<lootgroup name="groupRareLootMiniboss">
+			<item group="groupMiniBossAlloys" prob=".5"/>
+			<item group="groupRareMods" prob=".5"/>
+		</lootgroup>
+		
+		<!-- lootgroups -->
+		<lootgroup name="groupChargedElite" count="all">
+			<item group="groupAmmoLarge" count="2"/>
+			<item group="groupZpackBoss01" count="2"/>
+			<item group="groupZpackBoss02" count="2"/>
+			<item group="groupZpackBoss03" count="1"/>
+			<item group="groupZpackBoss04" loot_prob_template="medLow" force_prob="true"/>
+			<item group="groupAlloysBonus" loot_prob_template="medLow" force_prob="true"/>
+			<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+			</item>
+		</lootgroup>
+		
+		<lootgroup name="groupInfernalElite" count="all">
+			<item group="groupAmmoLarge" count="2"/>
+			<item group="groupZpackBoss01" count="2"/>
+			<item group="groupZpackBoss02" count="2"/>
+			<item group="groupZpackBoss03" count="1"/>
+			<item group="groupZpackBoss04" loot_prob_template="med" force_prob="true"/>
+			<item group="groupAlloysBonus" loot_prob_template="med" force_prob="true"/>
+			<item group="groupPerkPlundererChanceHightLoot" count="2" buffs="buffPerkPlundererSuccess">
+				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+			</item>
+		</lootgroup>
+		
+		<lootgroup name="groupSmallMiniBoss" count="all">
+			<item group="groupAmmoLarge" count="2"/>
+			<item group="groupZpackBoss01" count="2"/>
+			<item group="groupZpackBoss02" count="2"/>
+			<item group="groupZpackBoss03" count="1"/>
+			<item group="groupZpackBoss04" loot_prob_template="med" force_prob="true"/>
+			<item group="groupRareLootMiniboss" prob=".2" force_prob="true"/>
+			<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+			</item>
+		</lootgroup>
+		
+		<lootgroup name="groupMiniBoss" count="all">
+			<item group="groupAmmoImpLarge" count="3" prob=".4" force_prob="true"/>
+			<item group="groupMiniBoss01" count="2"/>
+			<item group="groupZpackBoss02" count="2"/>
+			<item group="groupZpackBoss03" count="1"/>
+			<item group="groupMiniBossAlloys" count="1"/>
+			<item group="groupZpackBoss04" prob=".7" force_prob="true"/>
+			<item group="groupRareMods" prob=".15" force_prob="true"/>
+			<item group="groupPerkPlundererChanceHightLoot" count="2" buffs="buffPerkPlundererSuccess">
+				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+			</item>
+		</lootgroup>
+		
+		<!-- lootgroups -->
+		<lootgroup name="groupBossMutantHog" count="all">
+			<item group="groupAmmoImpLarge" count="3" prob=".4" force_prob="true"/>
+			<item group="groupMiniBoss01" count="2"/>
+			<item group="groupZpackBoss02" count="2"/>
+			<item group="groupZpackBoss03" count="1"/>
+			<item group="groupMiniBossAlloys" count="1"/>
+			<item group="groupZpackBoss04" prob=".7" force_prob="true"/>
+			<item group="groupRareMods" prob=".15" force_prob="true"/>
+			<item group="groupUniqModsBull" prob=".05" force_prob="true"/>
+			<item group="groupPerkPlundererChance" count="1" buffs="buffPerkPlundererSuccess">
+				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+			</item>
+		</lootgroup>
+				
+		<lootgroup name="groupBossShocker" count="all">
+			<item group="groupAmmoImpLarge" count="3" prob=".6" force_prob="true"/>
+			<item group="groupAmmoDU" count="3" prob=".3" force_prob="true"/>
+			<item group="groupMiniBoss01" count="3"/>
+			<item group="groupZpackBoss02" count="3"/>
+			<item group="groupZpackBoss03" count="1"/>
+			<item group="groupBossAlloys" count="2"/>
+			<item group="groupZpackBoss04" prob=".8" force_prob="true"/>
+			<item group="groupRareMods" prob=".3" force_prob="true"/>
+			<item group="groupUniqModsShoker" prob=".35" force_prob="true"/>
+			<item group="groupSkillBook" prob=".18" force_prob="true"/>
+			<item group="groupLegend_Weapon" prob=".08" force_prob="true"/>
+			<item group="groupPerkPlundererChanceHightLoot" count="3" buffs="buffPerkPlundererSuccess">
+				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+			</item>
+		</lootgroup>
+		
+		<lootgroup name="groupBossBull" count="all">
+			<item group="groupAmmoImpLarge" count="3" prob=".6" force_prob="true"/>
+			<item group="groupAmmoDU" count="3" prob=".3" force_prob="true"/>
+			<item group="groupMiniBoss01" count="3"/>
+			<item group="groupZpackBoss02" count="3"/>
+			<item group="groupZpackBoss03" count="1"/>
+			<item group="groupBossAlloys" count="2"/>
+			<item group="groupZpackBoss04" prob=".8" force_prob="true"/>
+			<item group="groupRareMods" prob=".3" force_prob="true"/>
+			<item group="groupUniqModsBull" prob=".35" force_prob="true"/>
+			<item group="groupSkillBook" prob=".18" force_prob="true"/>
+			<item group="groupLegend_Weapon" prob=".08" force_prob="true"/>
+			<item group="groupPerkPlundererChanceHightLoot" count="3" buffs="buffPerkPlundererSuccess">
+				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+			</item>
+		</lootgroup>
+		
+		<lootgroup name="groupBossVeteran" count="all">
+			<item group="groupAmmoImpLarge" count="3" prob=".6" force_prob="true"/>
+			<item group="groupAmmoDU" count="3" prob=".3" force_prob="true"/>
+			<item group="groupMiniBoss01" count="3"/>
+			<item group="groupZpackBoss02" count="3"/>
+			<item group="groupZpackBoss03" count="1"/>
+			<item group="groupBossAlloys" count="2"/>
+			<item group="groupZpackBoss04" prob=".8" force_prob="true"/>
+			<item group="groupRareMods" prob=".3" force_prob="true"/>
+			<item group="groupUniqModsVeteran" prob=".35" force_prob="true"/>
+			<item group="groupSkillBook" prob=".18" force_prob="true"/>
+			<item group="groupLegend_Weapon" prob=".08" force_prob="true"/>
+			<item group="groupPerkPlundererChanceHightLoot" count="3" buffs="buffPerkPlundererSuccess">
+				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+			</item>
+		</lootgroup>
+		
+		<lootgroup name="groupAncientYeti" count="all">
+			<item group="groupAmmoImpLarge" count="3" prob=".6" force_prob="true"/>
+			<item group="groupAmmoDU" count="3" prob=".3" force_prob="true"/>
+			<item group="groupMiniBoss01" count="3"/>
+			<item group="groupZpackBoss02" count="3"/>
+			<item group="groupZpackBoss03" count="1"/>
+			<item group="groupBossAlloys" count="2"/>
+			<item group="groupZpackBoss04" prob=".8" force_prob="true"/>
+			<item group="groupRareMods" prob=".3" force_prob="true"/>
+			<item group="groupUniqModsAncientYeti" prob=".35" force_prob="true"/>
+			<item group="groupSkillBook" prob=".18" force_prob="true"/>
+			<item group="groupLegend_Weapon" prob=".08" force_prob="true"/>
+			<item group="groupPerkPlundererChanceHightLoot" count="3" buffs="buffPerkPlundererSuccess">
+				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+			</item>
+		</lootgroup>
+		
+		<lootgroup name="groupBossCarrier" count="all">
+			<item group="groupAmmoImpLarge" count="6" prob=".7" force_prob="true"/>
+			<item group="groupAmmoDU" count="9" prob=".4" force_prob="true"/>
+			<item group="groupMiniBoss01" count="5"/>
+			<item group="groupZpackBoss02" count="6"/>
+			<item group="groupZpackBoss03" count="3"/>
+			<item group="groupBossAlloys" count="5"/>
+			<item group="groupZpackBoss04" prob=".8" force_prob="true"/>
+			<item group="groupUniqModsAll" count="1"/>
+			<item group="groupSkillBook" prob=".35" force_prob="true"/>
+			<item group="groupLegend_Weapon" prob=".15" force_prob="true"/>
+			<item group="groupPerkPlundererChanceHightLoot" count="5" buffs="buffPerkPlundererSuccess">
+				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
+			</item>
+		</lootgroup>
+		
+		<!-- EntityLootContainerBoss, rare random drop off bosses -->
+		<lootcontainer name="rewardChargedElite" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="5" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
+			<item group="groupChargedElite"/>
+		</lootcontainer>
+		<lootcontainer name="rewardInfernalElite" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="5" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
+			<item group="groupInfernalElite"/>
+		</lootcontainer>
+		
+		<lootcontainer name="rewardSmallMiniBoss" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="5" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
+			<item group="groupSmallMiniBoss"/>
+		</lootcontainer>
+		
+		<lootcontainer name="rewardMiniBoss" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="5" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
+			<item group="groupMiniBoss"/>
+		</lootcontainer>
+		
+		<lootcontainer name="rewardBossMutantHog" count="1" size="6,5" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="5" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
+			<item group="groupBossMutantHog"/>
+		</lootcontainer>
+		
+		<lootcontainer name="rewardBossShocker" count="1" size="6,5" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="5" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
+			<item group="groupBossShocker"/>
+		</lootcontainer>
+		
+		<lootcontainer name="rewardBossBull" count="1" size="6,5" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="5" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
+			<item group="groupBossBull"/>
+		</lootcontainer>
+		
+		<lootcontainer name="rewardBossVeteran" count="1" size="6,5" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="5" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
+			<item group="groupBossVeteran"/>
+		</lootcontainer>
+		
+		<lootcontainer name="rewardBossAncientYeti" count="1" size="6,5" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="5" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
+			<item group="groupAncientYeti"/>
+		</lootcontainer>
+		
+		<lootcontainer name="rewardBossCarrier" count="1" size="6,8" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="10" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
+			<item group="groupBossCarrier"/>
+		</lootcontainer>
+
+		
+	</append>
+	
+</config>

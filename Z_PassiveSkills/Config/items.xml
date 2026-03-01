@@ -1,0 +1,303 @@
+<config>
+	
+	<append xpath="/items">
+	
+		<item name="PassiveCountsRefresh">
+			<property name="CustomIcon" value="drinkJarPureMineralWater"/>
+			<property name="CustomIconTint" value="FFB800"/>
+			<property name="DescriptionKey" value="PassiveCountsRefreshDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="EconomicValue" value="7500"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="read_skillbook"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountTotalHunt" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountNightHunt" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountBullsEye" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountRangeHunt" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountMeleeHunt" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountEliteHunt" operation="set" value="0"/>
+				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountBossDevourer" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountBossGargul" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountBossBearDaddy" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountBossBitch" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountBossBurningFlesh" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountBossCholera" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountBossBull" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountBossShocker" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountBossVeteran" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="CountBossCarrier" operation="set" value="0"/>
+			</effect_group>
+		</item>
+		
+		<!-- PASSIVE TEST -->
+		
+		<!-- TEST ITEM: Used to test the bonuses from maxing out biome skills -->
+		<item name="perkGameTimer_MAX">
+			<property name="CustomIcon" value="drinkJarPureMineralWater"/>
+			<property name="CustomIconTint" value="00FF2A"/>
+			<property name="DescriptionKey" value="PassiveCountsRefreshDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="EconomicValue" value="7500"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="read_skillbook"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="perkGameTimer_Max"/>
+			</effect_group>
+		</item>
+		<item name="perkGameTimer_Reset">
+			<property name="Extends" value="perkGameTimer_MAX"/>
+			<property name="CustomIconTint" value="FF4D00"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="perkGameTimer_Reset"/>
+			</effect_group>
+		</item>
+		
+		<item name="perkTimer_MAX">
+			<property name="CustomIcon" value="drinkJarPureMineralWater"/>
+			<property name="CustomIconTint" value="00FF2A"/>
+			<property name="DescriptionKey" value="PassiveCountsRefreshDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="EconomicValue" value="7500"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="read_skillbook"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="perkWinterTimer_Max"/>
+			</effect_group>
+		</item>
+		<item name="perkTimer_Reset">
+			<property name="Extends" value="perkTimer_MAX"/>
+			<property name="CustomIconTint" value="FF4D00"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="perkWinterTimer_Reset"/>
+			</effect_group>
+		</item>
+		
+		<item name="perkCounter_MAX">
+			<property name="CustomIcon" value="drinkJarPureMineralWater"/>
+			<property name="CustomIconTint" value="00FF2A"/>
+			<property name="DescriptionKey" value="PassiveCountsRefreshDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="EconomicValue" value="7500"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="read_skillbook"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="perkCounter_Max"/>
+			</effect_group>
+		</item>
+		<item name="perkCounter_Reset">
+			<property name="Extends" value="perkTimer_MAX"/>
+			<property name="CustomIconTint" value="FF4D00"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="perkCounte_Reset"/>
+			</effect_group>
+		</item>
+		
+		<item name="PassiveSniperExpert">
+			<property name="CustomIcon" value="drinkJarPureMineralWater"/>
+			<property name="CustomIconTint" value="FFB890"/>
+			<property name="DescriptionKey" value="PassiveCountsRefreshDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="EconomicValue" value="7500"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="read_skillbook"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="perkDesertTimer" level="10"/>
+			</effect_group>
+		</item>
+		
+		<item name="PassiveTestMAX">
+			<property name="CustomIcon" value="drinkJarPureMineralWater"/>
+			<property name="CustomIconTint" value="FFB890"/>
+			<property name="DescriptionKey" value="PassiveCountsRefreshDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="EconomicValue" value="7500"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="read_skillbook"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="perkWinterTimer" level="10"/>
+			</effect_group>
+		</item>
+		
+		<item name="PassiveAutomaticWeaponExpert">
+			<property name="CustomIcon" value="drinkJarPureMineralWater"/>
+			<property name="CustomIconTint" value="FFB890"/>
+			<property name="DescriptionKey" value="PassiveCountsRefreshDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="EconomicValue" value="7500"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="read_skillbook"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="perkAutomaticWeaponExpert" level="1"/>
+			</effect_group>
+		</item>
+		
+		<item name="PassivePistolExpert">
+			<property name="CustomIcon" value="drinkJarPureMineralWater"/>
+			<property name="CustomIconTint" value="FFB890"/>
+			<property name="DescriptionKey" value="PassiveCountsRefreshDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="EconomicValue" value="7500"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="read_skillbook"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="perkPistolExpert" level="1"/>
+			</effect_group>
+		</item>
+		
+		<item name="PassiveDesertTimer">
+			<property name="CustomIcon" value="drinkJarPureMineralWater"/>
+			<property name="CustomIconTint" value="FFB890"/>
+			<property name="DescriptionKey" value="PassiveCountsRefreshDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="EconomicValue" value="7500"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="read_skillbook"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="perkDesertTimer" level="1"/>
+			</effect_group>
+		</item>
+		
+		<item name="PassiveDesertTimer2">
+			<property name="CustomIcon" value="drinkJarPureMineralWater"/>
+			<property name="CustomIconTint" value="FFB890"/>
+			<property name="DescriptionKey" value="PassiveCountsRefreshDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Group" value="Books"/>
+			<property name="EconomicValue" value="7500"/>
+			<property name="Stacknumber" value="25"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="read_skillbook"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="perkNightHunt" level="25"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="perkBullsEye" level="25"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="perkRangeHunt" level="25"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="perkMeleeHunt" level="25"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="perkBossDevourer" level="10"/>
+			</effect_group>
+		</item>
+		
+		<!-- Not used if new wipe. Will be removed later. -->
+		<item name="drinkJarGrandpasForgettingElixir2"> <!-- respec potion, player version -->
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="@:Other/Items/Food/masonJarAtomicSmoothiePrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mglass"/>
+			<!-- <property name="Weight" value="10"/> -->
+			<property name="Stacknumber" value="10"/> <!-- STK resource -->
+			<property name="EconomicValue" value="2000"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+			<property name="SoundPickup" value="grandpas_fergitn_grab"/>
+			<property name="SoundPlace" value="grandpas_fergitn_place"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1"/>
+				<property name="Sound_start" value="player_drinking"/>
+				<!-- <property name="Create_item" value="drinkJarEmpty"/> -->
+				<property name="PromptTitle" value="drinkJarGrandpasForgettingElixirPromptTitle"/>
+				<property name="PromptDescription" value="drinkJarGrandpasForgettingElixirPromptDesc"/>
+			</property>
+			<effect_group tiered="false" name="Drink Tier Trader">
+				<requirement name="!HasBuff" buff="buffIsOnFire"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ResetProgression" reset_skills="true"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRecoverSelfTraits,buffResetPS"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="RefreshPerks"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="twitch_reverse" play_in_head="true"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkJarGrandpasForgettingElixirTooltip"/>
+			</effect_group>
+		</item>
+		
+	</append>
+	
+</config>

@@ -1,0 +1,125 @@
+<config>
+	
+	<remove xpath="/recipes/recipe[@name='flagThick44BlockVariantHelper']"/>
+	
+	<append xpath="/recipes">
+	
+		<recipe name="zdecoFlagsVariantHelper" count="1">
+			<ingredient name="resourceCloth" count="44"/>
+		</recipe>
+		
+		<!-- ============================================== -->
+		<!-- CONSTRUCTIONS -->
+		<!-- ============================================== -->
+		
+		<recipe name="zdecoSmallWoodenStructuresVariantHelper" count="1" craft_time="10" tags="learnable">
+			<ingredient name="resourceWood" count="100"/>
+		</recipe>
+		<recipe name="zdecoIronStructuresVariantHelper" count="1" craft_time="15" tags="learnable">
+			<ingredient name="resourceScrapIron" count="85"/>
+			<ingredient name="resourceCloth" count="15"/>
+		</recipe>
+		<recipe name="zdecoTarpFencesVariantHelper" count="1" craft_time="15" tags="learnable">
+			<ingredient name="resourceScrapPolymers" count="25"/>
+			<ingredient name="resourceScrapIron" count="75"/>
+		</recipe>
+		<recipe name="zdecoLargeWoodenStructuresVariantHelper" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceWood" count="500"/>
+		</recipe>
+		<recipe name="zdecoBioHazardTentVariantHelper" count="1" craft_time="15" tags="learnable">
+			<ingredient name="resourceCloth" count="35"/>
+			<ingredient name="resourceScrapPolymers" count="15"/>
+			<ingredient name="resourceMetalPipe" count="3"/>
+		</recipe>
+		
+		
+		<recipe name="zdecoCCarsVariantHelper" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceScrapIron" count="500"/>
+		</recipe>
+		
+		<recipe name="zdecoGarageVariantHelper" count="1" craft_time="15" craft_area="workbench" tags="learnable">
+			<ingredient name="resourceScrapIron" count="350"/>
+			<ingredient name="resourceScrapPolymers" count="25"/>
+			<ingredient name="resourceMechanicalParts" count="10"/>
+		</recipe>
+		
+		<recipe name="zdecoSmallVehicleVariantHelper" count="1" craft_time="60" craft_area="workbench" tags="learnable">
+			<ingredient name="casinoCoin" count="15000"/>
+		</recipe>
+		<recipe name="zdecoBigVehicleVariantHelper" count="1" craft_time="300" craft_area="workbench" tags="learnable">
+			<ingredient name="casinoCoin" count="30000"/>
+		</recipe>
+		
+		<recipe name="zdecoSignRoadVariantHelper" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceScrapIron" count="250"/>
+			<ingredient name="resourcePaint" count="15"/>
+		</recipe>
+		
+		<recipe name="zdecoSignBannersVariantHelper" count="1" craft_time="15" tags="learnable">
+			<ingredient name="resourcePaper" count="50"/>
+			<ingredient name="resourcePaint" count="25"/>
+			<ingredient name="resourceScrapPolymers" count="5"/>
+		</recipe>
+		
+		<recipe name="zdecoSignShopVariantHelper" count="1" craft_time="30" craft_area="workbench" tags="learnable">
+			<ingredient name="resourceScrapIron" count="150"/>
+			<ingredient name="resourceElectricParts" count="15"/>
+			<ingredient name="glassBlockVariantHelper" count="5"/>
+		</recipe>
+		
+		<recipe name="zdecoElectConstVariantHelper" count="1" craft_time="30" craft_area="workbench" tags="learnable">
+			<ingredient name="resourceForgedIron" count="25"/>
+			<ingredient name="resourceElectricParts" count="20"/>
+			<ingredient name="resourceMechanicalParts" count="5"/>
+		</recipe>
+		
+		<recipe name="zdecoCampingVariantHelper" count="1" craft_time="10">
+			<ingredient name="resourceCloth" count="25"/>
+			<ingredient name="resourceMetalPipe" count="1"/>
+		</recipe>
+		
+		
+		<!-- CUSTOM STORAGE -->
+		<recipe name="zStoragePileVariantHelper" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceScrapPolymers" count="100"/>
+			<ingredient name="resourceCloth" count="35"/>
+			<ingredient name="resourceMechanicalParts" count="3"/>
+		</recipe>
+		
+		<recipe name="zStorageBoxVariantHelper" count="1" craft_time="15" tags="learnable">
+			<ingredient name="resourceWood" count="100"/>
+			<ingredient name="resourceNail" count="25"/>
+		</recipe>
+		
+		<recipe name="zStorageUniversalVariantHelper" count="1" craft_time="15" tags="learnable">
+			<ingredient name="resourceScrapPolymers" count="200"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceMechanicalParts" count="10"/>
+		</recipe>
+		
+		<!-- *** BIG STORAGE -->
+		<recipe name="cntLootChestHeroStorage" count="1" craft_time="20" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceForgedSteel" count="25"/>
+			<ingredient name="resourceUltraLightAlloys" count="5"/>
+		</recipe>
+		<recipe name="cntHardenedChestSecureStorage" count="1" craft_time="40" craft_area="workbenchImp" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceElectricParts" count="5"/>
+			<ingredient name="resourceUltraLightAlloys" count="15"/>
+		</recipe>
+		<recipe name="cntHardenedChestSecureT5Storage" count="1" craft_time="60" craft_area="workbenchImp" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceElectricParts" count="25"/>
+			<ingredient name="resourceUltraLightAlloys" count="15"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="5"/>
+		</recipe>
+		
+		<!-- OUTDOOR PLANTS -->
+		<recipe name="zdecoOutdoorPlantsVariantHelper" count="1" craft_time="30">
+			<ingredient name="resourceClayLump" count="15"/>
+			<ingredient name="resourceYuccaFibers" count="5"/>
+		</recipe>
+		
+	</append>
+	
+</config>

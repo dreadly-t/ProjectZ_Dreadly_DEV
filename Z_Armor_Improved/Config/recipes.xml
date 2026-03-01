@@ -1,0 +1,489 @@
+ <config>
+		
+	<append xpath="/recipes">
+		
+		<!-- Enhanced equipment -->
+		<recipe name="modEnhancedSpear" count="1" craft_time="300" tags="learnable,workbenchCrafting">
+			<ingredient name="meleeWpnSpearT3SteelSpearParts" count="50"/>
+			<ingredient name="resourcePreciousMetals" count="10"/>
+		</recipe>
+		<recipe name="modEnhancedClub" count="1" craft_time="300" tags="learnable,workbenchCrafting">
+			<ingredient name="meleeWpnClubT3SteelClubParts" count="50"/>
+			<ingredient name="resourcePreciousMetals" count="10"/>
+		</recipe>
+		<recipe name="modEnhancedSledgehammer" count="1" craft_time="300" tags="learnable,workbenchCrafting">
+			<ingredient name="meleeWpnSledgeT3SteelSledgehammerParts" count="50"/>
+			<ingredient name="resourcePreciousMetals" count="10"/>
+		</recipe>
+		<recipe name="modEnhancedKnuckles" count="1" craft_time="300" tags="learnable,workbenchCrafting">
+			<ingredient name="meleeWpnKnucklesT3SteelKnucklesParts" count="50"/>
+			<ingredient name="resourcePreciousMetals" count="10"/>
+		</recipe>
+		<recipe name="modEnhancedKnife" count="1" craft_time="300" tags="learnable,workbenchCrafting">
+			<ingredient name="meleeWpnBladeT3MacheteParts" count="50"/>
+			<ingredient name="resourcePreciousMetals" count="10"/>
+		</recipe>
+		<recipe name="modEnhancedStunBaton" count="1" craft_time="300" tags="learnable,workbenchCrafting">
+			<ingredient name="meleeWpnBatonT2StunBatonParts" count="50"/>
+			<ingredient name="resourcePreciousMetals" count="10"/>
+		</recipe>
+		
+		<!-- ROGUE IMP -->
+		<recipe name="armorRogueHelmetImp" craft_time="600" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRogueHelmet" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceCloth" count="75"/>
+			<ingredient name="resourceUltraLightAlloys" count="4"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="75,325" tags="resourceCloth"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="4,20" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorRogueOutfitImp" craft_time="750" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRogueOutfit" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceCloth" count="100"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="100,500" tags="resourceCloth"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorRogueGlovesImp" craft_time="450" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRogueGloves" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorRogueBootsImp" craft_time="500" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRogueBoots" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<!-- ENFORCER IMP -->
+		<recipe name="armorEnforcerHelmetImp" craft_time="600" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorEnforcerHelmet" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceCloth" count="75"/>
+			<ingredient name="resourceUltraLightAlloys" count="4"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="75,325" tags="resourceCloth"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="4,20" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorEnforcerOutfitImp" craft_time="750" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorEnforcerOutfit" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceCloth" count="100"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="100,500" tags="resourceCloth"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorEnforcerGlovesImp" craft_time="450" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorEnforcerGloves" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorEnforcerBootsImp" craft_time="500" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorEnforcerBoots" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<!-- RANGER IMP -->
+		<recipe name="armorRangerHelmetImp" craft_time="600" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRangerHelmet" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceLeather" count="25"/>
+			<ingredient name="resourceUltraLightAlloys" count="4"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="25,125" tags="resourceLeather"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="4,20" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorRangerOutfitImp" craft_time="750" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRangerOutfit" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceLeather" count="30"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="30,150" tags="resourceLeather"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorRangerGlovesImp" craft_time="450" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRangerGloves" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorRangerBootsImp" craft_time="500" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRangerBoots" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<!-- COMMANDO IMP -->
+		<recipe name="armorCommandoHelmetImp" craft_time="600" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorCommandoHelmet" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceLeather" count="25"/>
+			<ingredient name="resourceUltraLightAlloys" count="4"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="25,125" tags="resourceLeather"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="4,20" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorCommandoOutfitImp" craft_time="750" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorCommandoOutfit" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceLeather" count="30"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="30,150" tags="resourceLeather"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorCommandoGlovesImp" craft_time="450" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorCommandoGloves" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorCommandoBootsImp" craft_time="500" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorCommandoBoots" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<!-- ASSASSIN IMP -->
+		<recipe name="armorAssassinHelmetImp" craft_time="600" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorAssassinHelmet" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceLeather" count="25"/>
+			<ingredient name="resourceUltraLightAlloys" count="4"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="25,125" tags="resourceLeather"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="4,20" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorAssassinOutfitImp" craft_time="750" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorAssassinOutfit" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceLeather" count="30"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="30,150" tags="resourceLeather"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorAssassinGlovesImp" craft_time="450" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorAssassinGloves" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorAssassinBootsImp" craft_time="500" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorAssassinBoots" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<!-- Nomad IMP -->
+		<recipe name="armorNomadHelmetImp" craft_time="600" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorNomadHelmet" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceForgedSteel" count="30"/>
+			<ingredient name="resourceUltraLightAlloys" count="4"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="30,150" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="4,20" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorNomadOutfitImp" craft_time="750" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorNomadOutfit" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="50,250" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorNomadGlovesImp" craft_time="450" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorNomadGloves" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorNomadBootsImp" craft_time="500" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorNomadBoots" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<!-- Nerd IMP -->
+		<recipe name="armorNerdHelmetImp" craft_time="600" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorNerdHelmet" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceForgedSteel" count="30"/>
+			<ingredient name="resourceUltraLightAlloys" count="4"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="30,150" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="4,20" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorNerdOutfitImp" craft_time="750" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorNerdOutfit" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="50,250" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorNerdGlovesImp" craft_time="450" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorNerdGloves" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorNerdBootsImp" craft_time="500" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorNerdBoots" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<!-- Raider IMP -->
+		<recipe name="armorRaiderHelmetImp" craft_time="600" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRaiderHelmet" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceForgedSteel" count="30"/>
+			<ingredient name="resourceUltraLightAlloys" count="4"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="30,150" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="4,20" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorRaiderOutfitImp" craft_time="750" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRaiderOutfit" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="50,250" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorRaiderGlovesImp" craft_time="450" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRaiderGloves" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorRaiderBootsImp" craft_time="500" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorRaiderBoots" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+
+	</append>
+	
+</config>

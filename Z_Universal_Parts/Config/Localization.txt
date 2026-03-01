@@ -1,0 +1,7 @@
+Key,Source,Context,Changes,English,Russian,Spanish
+
+HarvestingToolsT5-1,progression,Attribute,,Steel Tool Parts,Части стального инструмента,Piezas de herramientas de acero
+HarvestingToolsT5-2,progression,Attribute,,Motor Tool Parts,Части бензоинструмента,Piezas de herramientas de gasolina
+
+UniversalParts,items,Resources,,Universal parts,Универсальные части,Piezas universales
+UniversalPartsDesc,items,Resources,,"A bunch of different spare parts.\nWith the proper skill, you can assemble parts for a tool, weapon or armor from this.","Куча различных запчастей.\nПри должном умении из это можно собрать части для инструмента, оружия или брони.","Un montón de piezas de repuesto diferentes.\nCon la habilidad adecuada, puedes ensamblar piezas para una herramienta, arma o armadura a partir de esto."

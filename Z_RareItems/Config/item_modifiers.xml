@@ -1,0 +1,1750 @@
+<config>
+		
+	<!-- Sound Suppressor Silencer -->
+	<insertAfter xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']/item_property_overrides[@name='gunMGT0PipeMachineGun']">
+		
+		<item_property_overrides name="gunRifleT1HuntingRifleRareExperienced">
+			<property name="Sound_start" value="hunting_rifle_s_fire"/>
+			<property name="BarrelOffset" value="0,-.009,.551"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareApple">
+			<property name="Sound_start" value="hunting_rifle_s_fire"/>
+			<property name="BarrelOffset" value="0,-.009,.551"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareStable">
+			<property name="Sound_start" value="hunting_rifle_s_fire"/>
+			<property name="BarrelOffset" value="0,-.009,.551"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUniversal">
+			<property name="Sound_start" value="sniperrifle_s_fire"/>
+			<property name="Sound_loop" value="sniperrifle_s_fire"/>
+			<property name="BarrelOffset" value="0,-.02,.2182"/>
+			<property name="BarrelScale" value=".88,.88,.88"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareVampire">
+			<property name="Sound_start" value="sniperrifle_s_fire"/>
+			<property name="Sound_loop" value="sniperrifle_s_fire"/>
+			<property name="BarrelOffset" value="0,-.02,.2182"/>
+			<property name="BarrelScale" value=".88,.88,.88"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUnkillable">
+			<property name="Sound_start" value="sniperrifle_s_fire"/>
+			<property name="Sound_loop" value="sniperrifle_s_fire"/>
+			<property name="BarrelOffset" value="0,-.02,.2182"/>
+			<property name="BarrelScale" value=".88,.88,.88"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT3SniperRifleRareCrusher">
+			<property name="Sound_start" value="sniperrifle_s_fire"/>
+			<property name="Sound_loop" value="sniperrifle_s_fire"/>
+			<property name="BarrelOffset" value="0,-.02,.2182"/>
+			<property name="BarrelScale" value=".88,.88,.88"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT3SniperRifleRareUnkillable">
+			<property name="Sound_start" value="sniperrifle_s_fire"/>
+			<property name="Sound_loop" value="sniperrifle_s_fire"/>
+			<property name="BarrelOffset" value="0,-.02,.2182"/>
+			<property name="BarrelScale" value=".88,.88,.88"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT3SniperRifleRareKnockdown">
+			<property name="Sound_start" value="sniperrifle_s_fire"/>
+			<property name="Sound_loop" value="sniperrifle_s_fire"/>
+			<property name="BarrelOffset" value="0,-.02,.2182"/>
+			<property name="BarrelScale" value=".88,.88,.88"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT3SniperRifleRareStable">
+			<property name="Sound_start" value="sniperrifle_s_fire"/>
+			<property name="Sound_loop" value="sniperrifle_s_fire"/>
+			<property name="BarrelOffset" value="0,-.02,.2182"/>
+			<property name="BarrelScale" value=".88,.88,.88"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareSweeper">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareUnkillable">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareFasthands">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareCrusher">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			<property name="BarrelOffset" value="0,-.0322,.4516"/>
+			<property name="BarrelScale" value="1.1,1.1,1.5"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareExperienced">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			<property name="BarrelOffset" value="0,-.0322,.4516"/>
+			<property name="BarrelScale" value="1.1,1.1,1.5"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareUniversal">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			<property name="BarrelOffset" value="0,-.0322,.4516"/>
+			<property name="BarrelScale" value="1.1,1.1,1.5"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT3AutoShotgunRareCrusher">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			<property name="Sound_loop" value="pump_shotgun_s_fire"/>
+			<property name="BarrelOffset" value="0,-.0322,.4516"/>
+			<property name="BarrelScale" value="1.1,1.1,1.5"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT3AutoShotgunRareUnkillable">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			<property name="Sound_loop" value="pump_shotgun_s_fire"/>
+			<property name="BarrelOffset" value="0,-.0322,.4516"/>
+			<property name="BarrelScale" value="1.1,1.1,1.5"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT3AutoShotgunRareSnowstorm">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			<property name="Sound_loop" value="pump_shotgun_s_fire"/>
+			<property name="BarrelOffset" value="0,-.0322,.4516"/>
+			<property name="BarrelScale" value="1.1,1.1,1.5"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT3AutoShotgunRareUniversal">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			<property name="Sound_loop" value="pump_shotgun_s_fire"/>
+			<property name="BarrelOffset" value="0,-.0322,.4516"/>
+			<property name="BarrelScale" value="1.1,1.1,1.5"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT0PipeMachineGunRareCrusher">
+			<property name="Sound_start" value="smg_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="smg_s_fire"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT0PipeMachineGunRareUniversal">
+			<property name="Sound_start" value="smg_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="smg_s_fire"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT0PipeMachineGunRareUnkillable">
+			<property name="Sound_start" value="smg_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="smg_s_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT1AK47RareCrusher">
+			<property name="Sound_start" value="ak47_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="ak47_s_fire"/>
+			<property name="BarrelOffset" value="-.001,-.0197,.3197"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareExperienced">
+			<property name="Sound_start" value="ak47_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="ak47_s_fire"/>
+			<property name="BarrelOffset" value="-.001,-.0197,.3197"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareUnkillable">
+			<property name="Sound_start" value="ak47_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="ak47_s_fire"/>
+			<property name="BarrelOffset" value="-.001,-.0197,.3197"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT2TacticalARRareRapidfire">
+			<property name="Sound_start" value="ak47_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="ak47_s_fire"/>
+			<property name="BarrelOffset" value="0,.005,.275"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareApple">
+			<property name="Sound_start" value="ak47_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="ak47_s_fire"/>
+			<property name="BarrelOffset" value="0,.005,.275"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareExperienced">
+			<property name="Sound_start" value="ak47_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="ak47_s_fire"/>
+			<property name="BarrelOffset" value="0,.005,.275"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT3M60RareSnowstorm">
+			<property name="Sound_start" value="m60_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="m60_s_fire"/>
+			<property name="BarrelOffset" value="0,-.005,.31"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareUniversal">
+			<property name="Sound_start" value="m60_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="m60_s_fire"/>
+			<property name="BarrelOffset" value="0,-.005,.31"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareUnkillable">
+			<property name="Sound_start" value="m60_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="m60_s_fire"/>
+			<property name="BarrelOffset" value="0,-.005,.31"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareStable">
+			<property name="Sound_start" value="m60_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="m60_s_fire"/>
+			<property name="BarrelOffset" value="0,-.005,.31"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT0PipePistolRareExperienced">
+			<property name="Sound_start" value="pistol_s_fire"/>
+			<property name="Sound_loop" value="pistol_s_fire"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT0PipePistolRareApple">
+			<property name="Sound_start" value="pistol_s_fire"/>
+			<property name="Sound_loop" value="pistol_s_fire"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT0PipePistolRareFasthands">
+			<property name="Sound_start" value="pistol_s_fire"/>
+			<property name="Sound_loop" value="pistol_s_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="Sound_start" value="pistol_s_fire"/>
+			<property name="BarrelOffset" value="0,-.006,.127"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="Sound_start" value="pistol_s_fire"/>
+			<property name="BarrelOffset" value="0,-.006,.127"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="Sound_start" value="pistol_s_fire"/>
+			<property name="BarrelOffset" value="0,-.006,.127"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT2Magnum44RareFasthands">
+			<property name="Sound_start" value="44magnum_s_fire"/>
+			<property name="BarrelOffset" value="0,.028,.165"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT2Magnum44RareSweeper">
+			<property name="Sound_start" value="44magnum_s_fire"/>
+			<property name="BarrelOffset" value="0,.028,.165"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT2Magnum44RareRespect">
+			<property name="Sound_start" value="44magnum_s_fire"/>
+			<property name="BarrelOffset" value="0,.028,.165"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5RareSnowstorm">
+			<property name="Sound_start" value="smg_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="smg_s_fire"/>
+			<property name="BarrelOffset" value="0,0,0"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUnkillable">
+			<property name="Sound_start" value="smg_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="smg_s_fire"/>
+			<property name="BarrelOffset" value="0,0,0"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareStable">
+			<property name="Sound_start" value="smg_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="smg_s_fire"/>
+			<property name="BarrelOffset" value="0,0,0"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUniversal">
+			<property name="Sound_start" value="smg_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="smg_s_fire"/>
+			<property name="BarrelOffset" value="0,0,0"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3DesertVultureRareExperienced">
+			<property name="Sound_start" value="desertvulture_s_fire"/>
+			<property name="Sound_loop" value="desertvulture_s_fire"/>
+			<property name="BarrelOffset" value="0,0,0"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareUniversal">
+			<property name="Sound_start" value="desertvulture_s_fire"/>
+			<property name="Sound_loop" value="desertvulture_s_fire"/>
+			<property name="BarrelOffset" value="0,0,0"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareKnockdown">
+			<property name="Sound_start" value="desertvulture_s_fire"/>
+			<property name="Sound_loop" value="desertvulture_s_fire"/>
+			<property name="BarrelOffset" value="0,0,0"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareVampire">
+			<property name="Sound_start" value="desertvulture_s_fire"/>
+			<property name="Sound_loop" value="desertvulture_s_fire"/>
+			<property name="BarrelOffset" value="0,0,0"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+	</insertAfter>
+	
+	<!-- Reflex Sight -->
+	<insertAfter xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']/item_property_overrides[@name='gunRifleT3SniperRifle']">
+		
+		<item_property_overrides name="gunRifleT1HuntingRifleRareExperienced">
+			<property name="ScopeOffset" value="-.0006,.06,.08"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,0.0085,.15"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareApple">
+			<property name="ScopeOffset" value="-.0006,.06,.08"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,0.0085,.15"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareFasthands">
+			<property name="ScopeOffset" value="-.0006,.06,.08"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,0.0085,.15"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUniversal">
+			<property name="ScopeOffset" value="0,.073,-.13"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="-0.0007,.00265,-.02"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareVampire">
+			<property name="ScopeOffset" value="0,.073,-.13"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="-0.0007,.00265,-.02"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUnkillable">
+			<property name="ScopeOffset" value="0,.073,-.13"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="-0.0007,.00265,-.02"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT3SniperRifleRareCrusher">
+			<property name="ScopeCameraOffset" value="0,-0.0137,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT3SniperRifleRareUnkillable">
+			<property name="ScopeCameraOffset" value="0,-0.0137,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT3SniperRifleRareKnockdown">
+			<property name="ScopeCameraOffset" value="0,-0.0137,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT3SniperRifleRareStable">
+			<property name="ScopeCameraOffset" value="0,-0.0137,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT0PipeShotgunRareCrusher">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value=".0002,-.0025,-0.15"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT0PipeShotgunRareExperienced">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value=".0002,-.0025,-0.15"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT0PipeShotgunRareFasthands">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value=".0002,-.0025,-0.15"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareSweeper">
+			<property name="ScopeOffset" value="0,.0816,.2104"/>
+			<property name="ScopeScale" value=".25,.3,.3"/>
+			<property name="ScopeCameraOffset" value="-.0004,-.034,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareUnkillable">
+			<property name="ScopeOffset" value="0,.0816,.2104"/>
+			<property name="ScopeScale" value=".25,.3,.3"/>
+			<property name="ScopeCameraOffset" value="-.0004,-.034,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareFasthands">
+			<property name="ScopeOffset" value="0,.0816,.2104"/>
+			<property name="ScopeScale" value=".25,.3,.3"/>
+			<property name="ScopeCameraOffset" value="-.0004,-.034,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareCrusher">
+			<property name="ScopeOffset" value="0,.056,.05"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,-.0255,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareExperienced">
+			<property name="ScopeOffset" value="0,.056,.05"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,-.0255,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareUniversal">
+			<property name="ScopeOffset" value="0,.056,.05"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,-.0255,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT3AutoShotgunRareCrusher">
+			<property name="ScopeCameraOffset" value=".00095,-.019,.10"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT3AutoShotgunRareUnkillable">
+			<property name="ScopeCameraOffset" value=".00095,-.019,.10"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT3AutoShotgunRareSnowstorm">
+			<property name="ScopeCameraOffset" value=".00095,-.019,.10"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT3AutoShotgunRareUniversal">
+			<property name="ScopeCameraOffset" value=".00095,-.019,.10"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT0PipeRifleRareCrusher">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0.0105,-0.1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT0PipeRifleRareKnockdown">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0.0105,-0.1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT0PipeRifleRareFasthands">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0.0105,-0.1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT0PipeMachineGunRareCrusher">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-.018,-.075"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT0PipeMachineGunRareUniversal">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-.018,-.075"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT0PipeMachineGunRareUnkillable">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-.018,-.075"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT1AK47RareCrusher">
+			<property name="ScopeOffset" value="0,.08,-.2035"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0.0005,-.01925,.175"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareExperienced">
+			<property name="ScopeOffset" value="0,.08,-.2035"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0.0005,-.01925,.175"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareUnkillable">
+			<property name="ScopeOffset" value="0,.08,-.2035"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0.0005,-.01925,.175"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT2TacticalARRareRapidfire">
+			<property name="ScopeOffset" value="-.00099,0.0972,-0.098"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,.0025,0.0016"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareApple">
+			<property name="ScopeOffset" value="-.00099,0.0972,-0.098"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,.0025,0.0016"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareExperienced">
+			<property name="ScopeOffset" value="-.00099,0.0972,-0.098"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,.0025,0.0016"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT3M60RareSnowstorm">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-0.01,.1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareUniversal">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-0.01,.1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareUnkillable">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-0.01,.1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareStable">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-0.01,.1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunBowT1IronCrossbowRareRobinhood">
+			<property name="ScopeOffset" value="0,.052,-.05"/>
+			<property name="ScopeScale" value=".6,.6,.6"/>
+			<property name="ScopeCameraOffset" value=".00008,0.0025,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareNinja">
+			<property name="ScopeOffset" value="0,.052,-.05"/>
+			<property name="ScopeScale" value=".6,.6,.6"/>
+			<property name="ScopeCameraOffset" value=".00008,0.0025,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareVampire">
+			<property name="ScopeOffset" value="0,.052,-.05"/>
+			<property name="ScopeScale" value=".6,.6,.6"/>
+			<property name="ScopeCameraOffset" value=".00008,0.0025,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareRobinhood">
+			<property name="ScopeOffset" value="0,0,-.2"/>
+			<property name="ScopeScale" value=".6,.6,.6"/>
+			<property name="ScopeCameraOffset" value="0,-.007,-.025"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareNinja">
+			<property name="ScopeOffset" value="0,0,-.2"/>
+			<property name="ScopeScale" value=".6,.6,.6"/>
+			<property name="ScopeCameraOffset" value="0,-.007,-.025"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareVampire">
+			<property name="ScopeOffset" value="0,0,-.2"/>
+			<property name="ScopeScale" value=".6,.6,.6"/>
+			<property name="ScopeCameraOffset" value="0,-.007,-.025"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT0PipePistolRareExperienced">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-.003,.15"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT0PipePistolRareApple">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-.003,.15"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT0PipePistolRareFasthands">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-.003,.15"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="ScopeOffset" value="0,.072,.11"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,-.013,-.2"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="ScopeOffset" value="0,.072,.11"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,-.013,-.2"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="ScopeOffset" value="0,.072,.11"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,-.013,-.2"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT2Magnum44RareFasthands">
+			<property name="ScopeOffset" value="0,.11,.12"/>
+			<property name="ScopeScale" value=".5,.5,.5"/>
+			<property name="ScopeCameraOffset" value="0,-.015,-.03"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT2Magnum44RareSweeper">
+			<property name="ScopeOffset" value="0,.11,.12"/>
+			<property name="ScopeScale" value=".5,.5,.5"/>
+			<property name="ScopeCameraOffset" value="0,-.015,-.03"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT2Magnum44RareRespect">
+			<property name="ScopeOffset" value="0,.11,.12"/>
+			<property name="ScopeScale" value=".5,.5,.5"/>
+			<property name="ScopeCameraOffset" value="0,-.015,-.03"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5RareSnowstorm">
+			<property name="ScopeOffset" value=".0001,.1,-.15"/>
+			<property name="ScopeScale" value=".55,.55,.55"/>
+			<property name="ScopeCameraOffset" value="0,-.0377,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUnkillable">
+			<property name="ScopeOffset" value=".0001,.1,-.15"/>
+			<property name="ScopeScale" value=".55,.55,.55"/>
+			<property name="ScopeCameraOffset" value="0,-.0377,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareStable">
+			<property name="ScopeOffset" value=".0001,.1,-.15"/>
+			<property name="ScopeScale" value=".55,.55,.55"/>
+			<property name="ScopeCameraOffset" value="0,-.0377,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUniversal">
+			<property name="ScopeOffset" value=".0001,.1,-.15"/>
+			<property name="ScopeScale" value=".55,.55,.55"/>
+			<property name="ScopeCameraOffset" value="0,-.0377,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3DesertVultureRareExperienced">
+			<property name="ScopeCameraOffset" value="0,-.01,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareUniversal">
+			<property name="ScopeCameraOffset" value="0,-.01,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareKnockdown">
+			<property name="ScopeCameraOffset" value="0,-.01,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareVampire">
+			<property name="ScopeCameraOffset" value="0,-.01,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+	</insertAfter>
+	
+	<!-- Laser Sight -->
+	<insertAfter xpath="/item_modifiers/item_modifier[@name='modGunLaserSight']/property[@name='TraderStageTemplate']">
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUniversal">
+			<property name="SideOffset" value="0,.003,.1674"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareVampire">
+			<property name="SideOffset" value="0,.003,.1674"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUnkillable">
+			<property name="SideOffset" value="0,.003,.1674"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT0PipeRifleRareCrusher">
+			<property name="SideOffset" value="0,.0148,.0479"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT0PipeRifleRareKnockdown">
+			<property name="SideOffset" value="0,.0148,.0479"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT0PipeRifleRareFasthands">
+			<property name="SideOffset" value="0,.0148,.0479"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareSweeper">
+			<property name="SideOffset" value="0,-.055,.07"/>
+			<property name="SideScale" value=".4,.4,.4"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareUnkillable">
+			<property name="SideOffset" value="0,-.055,.07"/>
+			<property name="SideScale" value=".4,.4,.4"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareFasthands">
+			<property name="SideOffset" value="0,-.055,.07"/>
+			<property name="SideScale" value=".4,.4,.4"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareCrusher">
+			<property name="SideOffset" value="0,0,.41"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareExperienced">
+			<property name="SideOffset" value="0,0,.41"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareUniversal">
+			<property name="SideOffset" value="0,0,.41"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT1AK47RareCrusher">
+			<property name="SideOffset" value="0,0,.31"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareExperienced">
+			<property name="SideOffset" value="0,0,.31"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareUnkillable">
+			<property name="SideOffset" value="0,0,.31"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT2TacticalARRareRapidfire">
+			<property name="SideOffset" value="0,0.021,0.258"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareApple">
+			<property name="SideOffset" value="0,0.021,0.258"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareExperienced">
+			<property name="SideOffset" value="0,0.021,0.258"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT3M60RareSnowstorm">
+			<property name="SideOffset" value="-.0386,.0382,.3735"/>
+			<property name="SideRotation" value="0,0,-90"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareUniversal">
+			<property name="SideOffset" value="-.0386,.0382,.3735"/>
+			<property name="SideRotation" value="0,0,-90"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareUnkillable">
+			<property name="SideOffset" value="-.0386,.0382,.3735"/>
+			<property name="SideRotation" value="0,0,-90"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareStable">
+			<property name="SideOffset" value="-.0386,.0382,.3735"/>
+			<property name="SideRotation" value="0,0,-90"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunBowT1IronCrossbowRareRobinhood">
+			<property name="SideOffset" value="0,-.038,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+			<property name="SideRotation" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareNinja">
+			<property name="SideOffset" value="0,-.038,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+			<property name="SideRotation" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareVampire">
+			<property name="SideOffset" value="0,-.038,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+			<property name="SideRotation" value="0,0,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="SideOffset" value="0,.0148,.0479"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="SideOffset" value="0,.0148,.0479"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="SideOffset" value="0,.0148,.0479"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT2Magnum44RareFasthands">
+			<property name="SideOffset" value="0,.065,.14"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT2Magnum44RareSweeper">
+			<property name="SideOffset" value="0,.065,.14"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT2Magnum44RareRespect">
+			<property name="SideOffset" value="0,.065,.14"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5RareSnowstorm">
+			<property name="SideOffset" value="0,.0108,.0148"/>
+			<property name="SideScale" value="1.25,1.25,1.25"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUnkillable">
+			<property name="SideOffset" value="0,.0108,.0148"/>
+			<property name="SideScale" value="1.25,1.25,1.25"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareStable">
+			<property name="SideOffset" value="0,.0108,.0148"/>
+			<property name="SideScale" value="1.25,1.25,1.25"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUniversal">
+			<property name="SideOffset" value="0,.0108,.0148"/>
+			<property name="SideScale" value="1.25,1.25,1.25"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3DesertVultureRareExperienced">
+			<property name="SideOffset" value="0,0,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareUniversal">
+			<property name="SideOffset" value="0,0,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareKnockdown">
+			<property name="SideOffset" value="0,0,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareVampire">
+			<property name="SideOffset" value="0,0,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+	</insertAfter>
+	
+	<!-- Scope Small -->
+	<insertAfter xpath="/item_modifiers/item_modifier[@name='modGunScopeSmall']/item_property_overrides[@name='gunHandgunT3DesertVulture']">
+		
+		<item_property_overrides name="gunRifleT1HuntingRifleRareExperienced">
+			<property name="ScopeOffset" value="-.0006,.081,.005"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.01,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareApple">
+			<property name="ScopeOffset" value="-.0006,.081,.005"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.01,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareFasthands">
+			<property name="ScopeOffset" value="-.0006,.081,.005"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.01,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUniversal">
+			<property name="ScopeOffset" value="0,.0736,-.1497"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareVampire">
+			<property name="ScopeOffset" value="0,.0736,-.1497"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUnkillable">
+			<property name="ScopeOffset" value="0,.0736,-.1497"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareCrusher">
+			<property name="ScopeOffset" value="0,.056,.013"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareExperienced">
+			<property name="ScopeOffset" value="0,.056,.013"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareUniversal">
+			<property name="ScopeOffset" value="0,.056,.013"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT0PipeMachineGunRareCrusher">
+			<property name="ScopeOffset" value="0,12,15"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.04,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT0PipeMachineGunRareUniversal">
+			<property name="ScopeOffset" value="0,12,15"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.04,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT0PipeMachineGunRareUnkillable">
+			<property name="ScopeOffset" value="0,12,15"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.04,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT1AK47RareCrusher">
+			<property name="ScopeOffset" value="0,.088,-.2"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.04,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareExperienced">
+			<property name="ScopeOffset" value="0,.088,-.2"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.04,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareUnkillable">
+			<property name="ScopeOffset" value="0,.088,-.2"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.04,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT2TacticalARRareRapidfire">
+			<property name="ScopeOffset" value="0,0.1047,-0.2"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.05,.01"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareApple">
+			<property name="ScopeOffset" value="0,0.1047,-0.2"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.05,.01"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareExperienced">
+			<property name="ScopeOffset" value="0,0.1047,-0.2"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.05,.01"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunBowT1IronCrossbowRareRobinhood">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareNinja">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareVampire">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareRobinhood">
+			<property name="ScopeOffset" value="0,.092,-.06"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareNinja">
+			<property name="ScopeOffset" value="0,.092,-.06"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareVampire">
+			<property name="ScopeOffset" value="0,.092,-.06"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="ScopeOffset" value="0,.074,.078"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.0225,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="ScopeOffset" value="0,.074,.078"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.0225,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="ScopeOffset" value="0,.074,.078"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.0225,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT2Magnum44RareFasthands">
+			<property name="ScopeOffset" value="0,.1037,.0689"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT2Magnum44RareSweeper">
+			<property name="ScopeOffset" value="0,.1037,.0689"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT2Magnum44RareRespect">
+			<property name="ScopeOffset" value="0,.1037,.0689"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5RareSnowstorm">
+			<property name="ScopeOffset" value="0,.0999,-.2534"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUnkillable">
+			<property name="ScopeOffset" value="0,.0999,-.2534"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareStable">
+			<property name="ScopeOffset" value="0,.0999,-.2534"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUniversal">
+			<property name="ScopeOffset" value="0,.0999,-.2534"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3DesertVultureRareExperienced">
+			<property name="ScopeCameraOffset" value="0,-.03,-.2"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareUniversal">
+			<property name="ScopeCameraOffset" value="0,-.03,-.2"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareKnockdown">
+			<property name="ScopeCameraOffset" value="0,-.03,-.2"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVultureRareVampire">
+			<property name="ScopeCameraOffset" value="0,-.03,-.2"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+	</insertAfter>
+	
+	<!-- Scope Medium -->
+	<insertAfter xpath="/item_modifiers/item_modifier[@name='modGunScopeMedium']/item_property_overrides[@name='gunBowT3CompoundCrossbow']">
+		
+		<item_property_overrides name="gunRifleT1HuntingRifleRareExperienced">
+			<property name="ScopeOffset" value="-.0018,.075,.015"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.0238,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareApple">
+			<property name="ScopeOffset" value="-.0018,.075,.015"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.0238,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareFasthands">
+			<property name="ScopeOffset" value="-.0018,.075,.015"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.0238,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUniversal">
+			<property name="ScopeOffset" value="-.0018,.07,-.10"/>
+			<property name="ScopeScale" value="1.6,1.6,1.6"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareVampire">
+			<property name="ScopeOffset" value="-.0018,.07,-.10"/>
+			<property name="ScopeScale" value="1.6,1.6,1.6"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUnkillable">
+			<property name="ScopeOffset" value="-.0018,.07,-.10"/>
+			<property name="ScopeScale" value="1.6,1.6,1.6"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT1AK47RareCrusher">
+			<property name="ScopeOffset" value="0,.085,-.14"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareExperienced">
+			<property name="ScopeOffset" value="0,.085,-.14"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareUnkillable">
+			<property name="ScopeOffset" value="0,.085,-.14"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT2TacticalARRareRapidfire">
+			<property name="ScopeOffset" value="0,0.1,-0.117"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareApple">
+			<property name="ScopeOffset" value="0,0.1,-0.117"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareExperienced">
+			<property name="ScopeOffset" value="0,0.1,-0.117"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunBowT1IronCrossbowRareRobinhood">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareNinja">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareVampire">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareRobinhood">
+			<property name="ScopeOffset" value="0,.092,-.06"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareNinja">
+			<property name="ScopeOffset" value="0,.092,-.06"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareVampire">
+			<property name="ScopeOffset" value="0,.092,-.06"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5RareSnowstorm">
+			<property name="ScopeOffset" value="-.0012,.098,-.2405"/>
+			<property name="ScopeScale" value=".8,.8,.8"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUnkillable">
+			<property name="ScopeOffset" value="-.0012,.098,-.2405"/>
+			<property name="ScopeScale" value=".8,.8,.8"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareStable">
+			<property name="ScopeOffset" value="-.0012,.098,-.2405"/>
+			<property name="ScopeScale" value=".8,.8,.8"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUniversal">
+			<property name="ScopeOffset" value="-.0012,.098,-.2405"/>
+			<property name="ScopeScale" value=".8,.8,.8"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		
+	</insertAfter>
+	
+	<!-- Scope Large -->
+	<insertAfter xpath="/item_modifiers/item_modifier[@name='modGunScopeLarge']/item_property_overrides[@name='gunBowT3CompoundCrossbow']">
+		
+		<item_property_overrides name="gunRifleT1HuntingRifleRareExperienced">
+			<property name="ScopeOffset" value="-.0006,0,.14"/>
+			<property name="ScopeScale" value="1.2,1.2,1.2"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareApple">
+			<property name="ScopeOffset" value="-.0006,0,.14"/>
+			<property name="ScopeScale" value="1.2,1.2,1.2"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareFasthands">
+			<property name="ScopeOffset" value="-.0006,0,.14"/>
+			<property name="ScopeScale" value="1.2,1.2,1.2"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUniversal">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareVampire">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUnkillable">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT1AK47RareCrusher">
+			<property name="ScopeOffset" value="0,-.0523,.1686"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareExperienced">
+			<property name="ScopeOffset" value="0,-.0523,.1686"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareUnkillable">
+			<property name="ScopeOffset" value="0,-.0523,.1686"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunBowT1IronCrossbowRareRobinhood">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareNinja">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareVampire">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareRobinhood">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareNinja">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareVampire">
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5RareSnowstorm">
+			<property name="ScopeOffset" value="0,-.1029,-.1373"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUnkillable">
+			<property name="ScopeOffset" value="0,-.1029,-.1373"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareStable">
+			<property name="ScopeOffset" value="0,-.1029,-.1373"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUniversal">
+			<property name="ScopeOffset" value="0,-.1029,-.1373"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,0"/>
+		</item_property_overrides>
+		
+	</insertAfter>
+	
+	<!-- Gun Flashlight -->
+	<insertAfter xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']/item_property_overrides[@name='gunBowT3CompoundCrossbow']">
+		
+		<item_property_overrides name="gunRifleT1HuntingRifleRareExperienced">
+			<property name="SideOffset" value="0,.0061,.2455"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareApple">
+			<property name="SideOffset" value="0,.0061,.2455"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT1HuntingRifleRareFasthands">
+			<property name="SideOffset" value="0,.0061,.2455"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUniversal">
+			<property name="SideOffset" value="0,-.0025,.175"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareVampire">
+			<property name="SideOffset" value="0,-.0025,.175"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunRifleT2LeverActionRifleRareUnkillable">
+			<property name="SideOffset" value="0,-.0025,.175"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareSweeper">
+			<property name="SideOffset" value="0,-.03,.066"/>
+			<property name="SideScale" value=".4,.4,.4"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareUnkillable">
+			<property name="SideOffset" value="0,-.03,.066"/>
+			<property name="SideScale" value=".4,.4,.4"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT1DoubleBarrelRareFasthands">
+			<property name="SideOffset" value="0,-.03,.066"/>
+			<property name="SideScale" value=".4,.4,.4"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareCrusher">
+			<property name="SideOffset" value="0,0,.41"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareExperienced">
+			<property name="SideOffset" value="0,0,.41"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunShotgunT2PumpShotgunRareUniversal">
+			<property name="SideOffset" value="0,0,.41"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT1AK47RareCrusher">
+			<property name="SideOffset" value="0,0,.28"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareExperienced">
+			<property name="SideOffset" value="0,0,.28"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT1AK47RareUnkillable">
+			<property name="SideOffset" value="0,0,.28"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT2TacticalARRareRapidfire">
+			<property name="SideOffset" value="0,0.0,0.23"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareApple">
+			<property name="SideOffset" value="0,0.0,0.23"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT2TacticalARRareExperienced">
+			<property name="SideOffset" value="0,0.0,0.23"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT3M60RareSnowstorm">
+			<property name="SideOffset" value="-.0386,.0382,.3519"/>
+			<property name="SideRotation" value="0,0,-90"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareUniversal">
+			<property name="SideOffset" value="-.0386,.0382,.3519"/>
+			<property name="SideRotation" value="0,0,-90"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareUnkillable">
+			<property name="SideOffset" value="-.0386,.0382,.3519"/>
+			<property name="SideRotation" value="0,0,-90"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunMGT3M60RareStable">
+			<property name="SideOffset" value="-.0386,.0382,.3519"/>
+			<property name="SideRotation" value="0,0,-90"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunBowT1IronCrossbowRareRobinhood">
+			<property name="SideOffset" value="0,-.038,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+			<property name="SideRotation" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareNinja">
+			<property name="SideOffset" value="0,-.038,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+			<property name="SideRotation" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT1IronCrossbowRareVampire">
+			<property name="SideOffset" value="0,-.038,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+			<property name="SideRotation" value="0,0,0"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareRobinhood">
+			<property name="SideOffset" value="0,0,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareNinja">
+			<property name="SideOffset" value="0,0,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunBowT3CompoundCrossbowRareVampire">
+			<property name="SideOffset" value="0,0,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="SideOffset" value="0,.0198,.0475"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="SideOffset" value="0,.0198,.0475"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT1PistolRareCrusher">
+			<property name="SideOffset" value="0,.0198,.0475"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT2Magnum44RareFasthands">
+			<property name="SideOffset" value="0,.0621,.095"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT2Magnum44RareSweeper">
+			<property name="SideOffset" value="0,.0621,.095"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT2Magnum44RareRespect">
+			<property name="SideOffset" value="0,.0621,.095"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5RareSnowstorm">
+			<property name="SideOffset" value="0,.0065,0"/>
+			<property name="SideScale" value="1.5,1.5,1.5"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUnkillable">
+			<property name="SideOffset" value="0,.0065,0"/>
+			<property name="SideScale" value="1.5,1.5,1.5"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareStable">
+			<property name="SideOffset" value="0,.0065,0"/>
+			<property name="SideScale" value="1.5,1.5,1.5"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3SMG5RareUniversal">
+			<property name="SideOffset" value="0,.0065,0"/>
+			<property name="SideScale" value="1.5,1.5,1.5"/>
+		</item_property_overrides>
+		
+	</insertAfter>
+	
+	<!-- Burning Shaft -->
+	<insertAfter xpath="/item_modifiers/item_modifier[@name='modMeleeClubBurningShaft']/item_property_overrides[@name='meleeWpnSpearT0StoneSpear']">
+	
+		<item_property_overrides name="meleeWpnSpearT0StoneSpearRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSpearT0StoneSpearRareExperienced">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSpearT0StoneSpearRareVampire">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnSpearT1IronSpearRareExperienced">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_iron_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSpearT1IronSpearRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_iron_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSpearT1IronSpearRareCrusher">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_iron_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnSpearT3SteelSpearRareAwl">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_steel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSpearT3SteelSpearRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_steel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSpearT3SteelSpearRareUniversal">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_steel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnClubT0WoodenClubRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_woodenClub_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnClubT0WoodenClubRareCrusher">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_woodenClub_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnClubT0WoodenClubRareKnockdown">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_woodenClub_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnClubT1BaseballBatRareExperienced">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_bat_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnClubT1BaseballBatRareChampion">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_bat_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnClubT1BaseballBatRareVampire">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_bat_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnClubT3SteelClubRareExperienced">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_club_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnClubT3SteelClubRareUniversal">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_club_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnClubT3SteelClubRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_club_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnSledgeT0StoneSledgehammerRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stone_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSledgeT0StoneSledgehammerRareCrusher">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stone_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSledgeT0StoneSledgehammerRareKnockdown">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stone_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnSledgeT1IronSledgehammerRareExperienced">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSledgeT1IronSledgehammerRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSledgeT1IronSledgehammerRareUniversal">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnSledgeT3SteelSledgehammerRareChampion">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelSledgehammer_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSledgeT3SteelSledgehammerRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelSledgehammer_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSledgeT3SteelSledgehammerRareVampire">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelSledgehammer_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnBladeT3MacheteRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnBladeT3MacheteRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnBladeT3MacheteRareUniversal">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolRepairT0StoneAxeRareLumberjack">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stone_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolRepairT0StoneAxeRareMiner">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stone_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolRepairT0StoneAxeRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stone_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolRepairT0StoneAxeRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stone_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+	
+		<item_property_overrides name="meleeToolAxeT1IronFireaxeRareLumberjack">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_fireaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolAxeT1IronFireaxeRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_fireaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolAxeT1IronFireaxeRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_fireaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolAxeT2SteelAxeRareLumberjack">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolAxeT2SteelAxeRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolAxeT2SteelAxeRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolAxeT2SteelAxeRareChampion">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolPickT1IronPickaxeRareMetalist">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_IronPickaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolPickT1IronPickaxeRareMason">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_IronPickaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolPickT1IronPickaxeRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_IronPickaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolPickT2SteelPickaxeRareMetalist">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_SteelPickaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolPickT2SteelPickaxeRareMason">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_SteelPickaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolPickT2SteelPickaxeRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_SteelPickaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolPickT2SteelPickaxeRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_SteelPickaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolShovelT0StoneShovelRareDigger">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stoneShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolShovelT0StoneShovelRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stoneShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolShovelT0StoneShovelRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stoneShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolShovelT1IronShovelRareDigger">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_ironShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolShovelT1IronShovelRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_ironShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolShovelT1IronShovelRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_ironShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolShovelT2SteelShovelRareDigger">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolShovelT2SteelShovelRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolShovelT2SteelShovelRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolSalvageT1WrenchRareScavenger">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_wrench_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolSalvageT1WrenchRareUnkillable">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_wrench_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolSalvageT1WrenchRareConvenient">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_wrench_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+	</insertAfter>
+
+</config>

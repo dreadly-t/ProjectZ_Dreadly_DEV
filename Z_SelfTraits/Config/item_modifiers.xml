@@ -1,0 +1,39 @@
+<config>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']">
+		
+		<effect_group tiered="false" name="perkFearDark">
+			<triggered_effect trigger="onSelfItemActivate" action="ModifyCVar" cvar="$GunFlashlightOn" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfItemDeactivate" action="ModifyCVar" cvar="$GunFlashlightOn" operation="set" value="0"/>
+		</effect_group>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modArmorNightVision']">
+		
+		<effect_group tiered="false" name="perkFearDark">
+			<triggered_effect trigger="onSelfItemActivate" action="ModifyCVar" cvar="$NightVisionOn" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfItemDeactivate" action="ModifyCVar" cvar="$NightVisionOn" operation="set" value="0"/>
+		</effect_group>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modArmorHelmetLight']">
+		
+		<effect_group tiered="false" name="perkFearDark">
+			<triggered_effect trigger="onSelfItemActivate" action="ModifyCVar" cvar="$HelmetLightOn" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfItemDeactivate" action="ModifyCVar" cvar="$HelmetLightOn" operation="set" value="0"/>
+		</effect_group>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeClubBurningShaft']">
+		
+		<effect_group tiered="false" name="Self Traits">
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$BurningShaftOn" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$BurningShaftOn" operation="set" value="0"/>
+		</effect_group>
+		
+	</append>
+	
+</config>

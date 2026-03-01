@@ -1,0 +1,660 @@
+<configs>
+	
+	<append xpath="/items">  
+			
+		<item name="meleeHandSmallMiniBoss">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Range" value="2.6"/>
+				<property name="DamageEntity" value="96"/>
+				<property name="DamageBlock" value="320"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalsolidhitorganic"/></property>
+			</property>
+			<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="400"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="SmallMiniBossHitRad"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryBleedingTwo"
+					weights=".3,.3,.07,.05,.29,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="15"><!--InfectionFeral-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandDevourer">
+			<property name="Extends" value="meleeHandAnimalWolf"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Delay" value=".8"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="2.6"/>
+				<property name="DamageEntity" value="112"/>
+				<property name="DamageBlock" value="320"/>
+			</property>
+			<effect_group name="meleeHandAnimalWolf" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffArmBroken,buffLegBroken,buffLaceration"
+					weights=".5,.25,.2"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="MiniBossHitRad"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="300"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				
+				<!-- Elite hit -->
+				<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="BuffAcRadEliteZombie">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="LTE" value="7"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="Equals" value="8"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="Equals" value="9"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossDevourer" operation="Equals" value="10"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="20"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01"/>
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandDevourerMinion">
+			<property name="Extends" value="meleeHandAnimalWolf"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Delay" value=".8"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="2"/>
+				<property name="DamageEntity" value="69"/>
+				<property name="DamageBlock" value="104"/>
+			</property>
+			<effect_group name="meleeHandAnimalWolf" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffArmBroken,buffLegBroken,buffLaceration,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".2,.1,.25,.4,.2"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$IRradiationStatus" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$buffstimIrradiatedShellStatus" target="other" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="150"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandBearDaddy">
+			<property name="Extends" value="meleeHandAnimalBear"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Range" value="4"/>
+				<property name="DamageEntity" value="180"/>
+				<property name="DamageBlock" value="500"/>
+			</property>
+			<effect_group name="meleeHandAnimalZombieBear" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffArmBroken,buffLegBroken,buffLaceration"
+					weights=".5,.5,.25"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="MiniBossHitRad"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="BuffAcRadEliteZombie">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="LTE" value="7"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="Equals" value="8"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="Equals" value="9"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossBearDaddy" operation="Equals" value="10"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01"/>
+			</effect_group>
+			
+		</item>
+		
+		<item name="meleeHandBearMinion">
+			<property name="Extends" value="meleeHandAnimalBear"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Range" value="3.2"/>
+				<property name="DamageEntity" value="120"/>
+				<property name="DamageBlock" value="270"/>
+			</property>
+			<effect_group name="meleeHandAnimalZombieBear" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="60"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffArmBroken,buffLegBroken,buffLaceration,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".2,.3,.25,.5,.25"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandGargul">
+			<property name="Extends" value="meleeHandAnimalZombieVulture"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Delay" value=".1"/>
+				<property name="DamageEntity" value="160"/>
+				<property name="DamageBlock" value="360"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Vomit"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value=".3"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="ammoProjectileGargulVomit"/>
+				<property name="Particles_muzzle_fire" value="vomitMouth"/>
+				<property name="Sound_warning" value="vulturevomitwarning"/>
+				<property name="Sound_start" value="vulturevomitattack"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+			</property>
+			<effect_group name="meleeHandAnimalZombieVulture" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="3"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="4"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="6"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="20"/>
+				<passive_effect name="MaxRange" operation="base_set" value="180"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLaceration,buffAbrasionCatch"
+					weights=".11,.07,.05,.29"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="MiniBossHitRad"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="20"><!--InfectionRadiated-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="3200"/><!--AbrasionRadiated-->
+				
+				<!-- Elite hit -->				
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds"/>
+				<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="BuffAcRadEliteZombie">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="LTE" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="Equals" value="8"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="90"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="Equals" value="9"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="80"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds">
+					<requirement name="ProgressionLevel" progression_name="perkBossGargul" operation="Equals" value="10"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="70"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="35"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01"/>
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandGargulMinion">
+			<property name="Extends" value="meleeHandAnimalZombieVulture"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Delay" value=".1"/>
+				<property name="DamageEntity" value="80"/>
+				<property name="DamageBlock" value="100"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Vomit"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value=".3"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="ammoProjectileMinionVomit"/>
+				<property name="Particles_muzzle_fire" value="vomitMouth"/>
+				<property name="Sound_warning" value="vulturevomitwarning"/>
+				<property name="Sound_start" value="vulturevomitattack"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+			</property>
+			<effect_group name="meleeHandAnimalZombieVulture" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="6"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="15"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="40"/>
+				<passive_effect name="MaxRange" operation="base_set" value="120"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.05,.29,.36,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="20"><!--InfectionRadiated-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="3200"/><!--AbrasionRadiated-->
+			</effect_group>
+		</item>
+		
+		<item name="ammoProjectileGargulVomit">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="missingIcon"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="120"/>
+				<property name="DamageBlock" value="180"/>
+				<property name="Explosion.ParticleIndex" value="7"/>
+				<property name="Velocity" value="12"/>
+				<property name="FlyTime" value="2"/>
+				<property name="LifeTime" value="4"/>
+				<property name="CollisionRadius" value="4"/>
+				<property name="Buff" value="buffInfectionCatch"/>
+			</property>
+			<effect_group name="ammoProjectileVultureVomit" tiered="false">
+				<passive_effect name="DamageModifier" operation="perc_set" value=".1" tags="earth"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInfectionCatch"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="20"><!--InfectionRadiated-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="3200"/><!--AbrasionRadiated-->
+			</effect_group>
+		</item>
+			
+		<item name="ammoProjectileMinionVomit">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="missingIcon"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="60"/>
+				<property name="DamageBlock" value="90"/>
+				<property name="Explosion.ParticleIndex" value="7"/>
+				<property name="Velocity" value="12"/>
+				<property name="FlyTime" value="2"/>
+				<property name="LifeTime" value="4"/>
+				<property name="CollisionRadius" value="4"/>
+				<property name="Buff" value="buffInfectionCatch"/>
+			</property>
+			<effect_group name="ammoProjectileVultureVomit" tiered="false">
+				<passive_effect name="DamageModifier" operation="perc_set" value=".1" tags="earth"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInfectionCatch"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="20"><!--InfectionRadiated-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="3200"/><!--AbrasionRadiated-->
+			</effect_group>
+			
+		</item>
+		
+		<item name="meleeHandBullBoss">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Range" value="2.6"/>
+				<property name="DamageEntity" value="340"/>
+				<property name="DamageBlock" value="960"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalsolidhitorganic"/></property>
+			</property>
+			<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="150"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunnedBoss"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BossHitRad"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryBleedingTwo"
+					weights=".3,.3,.07,.05,.29,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="15"><!--InfectionFeral-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandBitchBoss">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Range" value="2.6"/>
+				<property name="DamageEntity" value="112"/>
+				<property name="DamageBlock" value="250"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalsolidhitorganic"/></property>
+			</property>
+			<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="280"/>
+				
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BuffTerribleWounds"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="MiniBossHitRad"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryBleedingTwo"
+					weights=".3,.3,.07,.05,.29,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="15"><!--InfectionFeral-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandBurningFleshBoss">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Range" value="2.6"/>
+				<property name="DamageEntity" value="140"/>
+				<property name="DamageBlock" value="250"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalsolidhitorganic"/></property>
+			</property>
+			<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="160"/>
+				
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningMolotov"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="MiniBossHitRad"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryBleedingTwo"
+					weights=".3,.3,.07,.05,.29,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="15"><!--InfectionFeral-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandCholeraBoss">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Range" value="2.6"/>
+				<property name="DamageEntity" value="128"/>
+				<property name="DamageBlock" value="250"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalsolidhitorganic"/></property>
+			</property>
+			<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="400"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BossHitRad"/>
+				
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryBleedingTwo"
+					weights=".3,.3,.07,.05,.29,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="15"><!--InfectionFeral-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandShockerBoss">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Range" value="2.6"/>
+				<property name="DamageEntity" value="204"/>
+				<property name="DamageBlock" value="320"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalsolidhitorganic"/></property>
+			</property>
+			<effect_group name="meleeHandShockerBoss" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="160"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffShocked">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BossHitRad"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryBleedingTwo"
+					weights=".3,.3,.07,.05,.29,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="15"><!--InfectionFeral-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandVeteranBoss">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Range" value="2.6"/>
+				<property name="DamageEntity" value="120"/>
+				<property name="DamageBlock" value="500"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalsolidhitorganic"/></property>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Vomit"/>
+				<property name="Delay" value=".3"/>
+				<property name="Range" value="250"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="ammoProjectileZombieVeteran"/>
+				<property name="Sound_warning" value="demolitionzexplodewarning"/>
+				<property name="Sound_start" value="m136_fire"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/></property>
+			<effect_group name="meleeHandZombieRocketPLUS" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="250"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInjuryBleedingZombie"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInfectionCatch"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".25" tags="buffInjuryStunned01"/>
+				<passive_effect name="TargetArmor" operation="base_set" value="-.4"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="30"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$IRradiationStatus" operation="add" value="7.5">
+					<requirement name="CVarCompare" cvar="$buffstimIrradiatedShellStatus" target="other" operation="LT" value="1"/></triggered_effect>
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandAncientYeti">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Range" value="2.6"/>
+				<property name="DamageEntity" value="250"/>
+				<property name="DamageBlock" value="720"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalsolidhitorganic"/></property>
+			</property>
+			<property class="Action1"> <!-- UseAction -->
+				<property name="Class" value="Vomit"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="AnimType" value="3"/>
+				<property name="WarningMax" value="0"/>
+				<property name="Delay" value=".27"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="100"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="ammoProjectileZombieBoulder"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="70"/>
+				<passive_effect name="MaxRange" operation="base_set" value="140"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunnedBoss">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BossHitRad"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".1,.1,.1,.35,.35,.1,.55"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10">					
+					<requirement name="CVarCompare" cvar="$buffstimIrradiatedShellStatus" target="other" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$FrostbiteStatus" operation="add" value="5"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$IRradiationStatus" operation="add" value="5"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandProjectZ2Boss">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Range" value="1.75"/>
+				<property name="DamageEntity" value="20"/>
+				<property name="DamageBlock" value="7500"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->
+				<property name="Class" value="SpawnEntity"/>
+				<property name="AnimType" value="4"/>
+				<property name="AnimWait" value="1.87"/>
+				<property name="SoundWarn" value="plaguevomitwarning"/>
+				<property name="SoundAttack" value="plaguevomitattack"/>
+				<property name="Entity" value="zombieProjectZspawn"/>
+				<property name="EntityOffset" value="0, -.1, .45"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+		
+		<item name="meleeHandProjectZBoss">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Range" value="3.5"/>
+				<property name="DamageEntity" value="580"/>
+				<property name="DamageBlock" value="7500"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalsolidhitorganic"/></property>
+			</property>
+			<effect_group name="meleeHandZombieStrongFeral" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="300"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunnedBoss"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="BossHitRad"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryBleedingTwo"
+					weights=".3,.3,.07,.05,.29,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="15"><!--InfectionFeral-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
+			</effect_group>
+		</item>
+		
+		<item name="ammoProjectileZombieVeteran">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="40"/>
+				<property name="DamageBlock" value="150"/>
+				<!--property name="Explosion.ParticleIndex" value="4"/-->
+				<property name="Explosion.ParticleIndex" value="5"/>
+				<!-- which Prefab/particle is used -->
+				<property name="Explosion.RadiusBlocks" value="4"/>
+				<!-- damage radius for blocks -->
+				<property name="Explosion.RadiusEntities" value="3"/>
+				<!-- damage radius for entities -->
+				<property name="Explosion.DamageBonus.water" value="0"/>
+				<property name="Explosion.DamageBonus.earth" value="0"/>
+				<property name="Velocity" value="18"/>
+				<property name="FlyTime" value=".7"/>
+				<property name="LifeTime" value="7"/>
+				<property name="CollisionRadius" value="0.75"/>
+				<property name="DamageBonus.earth" value="0"/></property>
+			<effect_group name="ammoProjectileZombieRocketPLUS" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="0.5" tags="metal"/>
+			</effect_group>
+		</item>
+		
+		<item name="ammoProjectileZombieAncientYeti">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Boulder/BoulderThrownPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="missingIcon"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="260"/>
+				<property name="DamageBlock" value="1200"/>
+				<property name="Explosion.ParticleIndex" value="36"/>
+				<property name="Explosion.RadiusBlocks" value="2.5"/>
+				<property name="Explosion.RadiusEntities" value="3.9"/>
+				<property name="Explosion.EntityDamage" value="180"/>
+				<property name="Explosion.BlockDamage" value="1500"/>
+				<property name="Explosion.DamageBonus.earth" value="0"/>
+				<property name="Explosion.DamageBonus.water" value="0"/>
+				<property name="FlyTime" value="-5"/><!-- -value calculates ballistic velocity to target over this +duration -->
+				<property name="Velocity" value="50"/><!-- ballistic max distance for duration -->
+				<property name="Gravity" value="-6"/>
+				<property name="LifeTime" value="5"/>
+				<property name="CollisionRadius" value=".22"/>
+				<property name="Buff" value="buffInjuryStunned03"/>
+			</property>
+			<effect_group name="ammoProjectileZombieBoulder" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$FrostbiteStatus" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$IRradiationStatus" operation="add" value="7.5">
+					<requirement name="CVarCompare" cvar="$buffstimIrradiatedShellStatus" target="other" operation="LT" value="1"/></triggered_effect>
+			</effect_group>
+		</item>
+		
+	</append>
+	
+</configs>

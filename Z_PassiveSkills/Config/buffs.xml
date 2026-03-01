@@ -1,0 +1,1133 @@
+<config>
+	
+	<remove xpath="/buffs/buff[@name='buffPerkCharismaticNature']"/>
+	<insertAfter xpath="/buffs/buff[@name='buffDeadEye']">
+		<buff name="buffPerkCharismaticNature" name_key="perkCharismaticNatureName" description_key="buffPerkCharismaticNatureDesc" icon="ui_game_symbol_talk" icon_color="0,255,0" icon_blink="false" hidden="false">
+		<stack_type value="replace"/>
+		<duration value="10"/>
+
+		<!-- Allies regenerate lost health 50% faster. -->
+		<effect_group>
+			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="GTE" value="1"/>
+			<requirement name="NotHasBuff" buff="buffStatusHungry03"/>
+			<requirement name="NotHasBuff" buff="buffStatusThirsty03"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" level="1,2,3,4,5" value=".5,.5,.5,.5,.5"/>
+		</effect_group>
+		<!-- Block and Melee Damage are increased by 20% for allies. -->
+		<effect_group>
+			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="GTE" value="2"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".2" tags="melee"/>
+		</effect_group>
+		<!-- Allies take 10% less damage from all sources, take half damage from bleeding and stop bleeding twice as fast. -->
+		<!-- Bleeding handled in buffInjuryBleeding -->
+		<effect_group>
+			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="GTE" value="3"/>
+				<passive_effect name="GeneralDamageResist" operation="base_add" value="0.1"/>
+		</effect_group>
+		<!-- Partied allies find 10% better loot. -->
+		<effect_group>
+			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="GTE" value="4"/>
+				<passive_effect name="LootStage" operation="perc_add" value=".1"/>
+		</effect_group>
+		<!-- Allies gain +1 to all attributes and find 20% better loot. -->
+		<effect_group>
+			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="GTE" value="5"/>
+				<passive_effect name="AttributeLevel" tags="attPerception" operation="base_add" value="1"/>
+				<passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
+				<passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="1"/>
+				<passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="1"/>
+				<passive_effect name="AttributeLevel" tags="attIntellect" operation="base_add" value="1"/>
+				<passive_effect name="LootStage" operation="perc_add" value=".2"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPerkCharismaticNature"/>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="RefreshPerks"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="RefreshPerks"/>
+			
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="CharismaticNatureLevel"/>
+			
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffPerkCharismaticNature"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffPerkCharismaticNature"/>
+		</effect_group>
+	</buff>
+	</insertAfter>
+	
+	<append xpath="/buffs/buff[@name='buffStatusCheck02']">
+		
+		<effect_group name="Passive timers">
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffTimer_Master">
+				<requirement name="InBiome" biome="1"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGameTimer"/>
+			
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffForestTimer">
+				<requirement name="InBiome" biome="3"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurntTimer">
+				<requirement name="InBiome" biome="9"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDesertTimer">
+				<requirement name="InBiome" biome="5"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWinterTimer">
+				<requirement name="InBiome" biome="1"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWastlandTimer">
+				<requirement name="InBiome" biome="8"/>
+			</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Second Wind BONUS">
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSecondWindBonusActive">
+				<requirement name="ProgressionLevel" progression_name="perkDesertTimer" operation="Equals" value="10"/>
+				<requirement name="!HasBuff" buff="buffSecondWindBonusReload"/>
+				<requirement name="StatCompareCurrent" target="self" stat="stamina" operation="LT" value="30"/>
+			</triggered_effect>
+			
+			<!-- Irradiated BONUS -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffIrradiatedBonusActive">
+				<requirement name="ProgressionLevel" progression_name="perkWastlandTimer" operation="Equals" value="10"/>
+				<requirement name="!HasBuff" buff="buffIrradiatedBonusReload"/>
+				<requirement name="CVarCompare" cvar="$IRradiationStatus" operation="GTE" value="80"/>
+			</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Pure Adrenaline BONUS">
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffPureAdrenalineActive">
+				<requirement name="ProgressionLevel" progression_name="perkTotalHunt" operation="Equals" value="25"/>
+				<requirement name="!HasBuff" buff="buffPureAdrenalineReload"/>
+				<requirement name="StatCompareCurrent" target="self" stat="health" operation="LT" value="30"/>
+			</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Melee Bersrk">
+			<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" buff="buffMeleeBerserk">
+				<requirement name="ProgressionLevel" progression_name="perkMeleeHunt" operation="GTE" value="1"/>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+				<requirement name="!HasBuff" buff="buffMeleeBerserk"/>
+			</triggered_effect>
+		</effect_group>
+		
+	</append>
+	
+	<append xpath="/buffs">
+	
+		<buff name="buffTurretKill" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="CountRoboticsExpert" operation="add" value="1" />
+			</effect_group>
+		</buff>
+		
+		<buff name="buffResetPS" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_GameTimer_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_Forest_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_Burnt_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_Desert_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_Winter_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_Wastland_current" operation="set" value="0"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_SniperExpert_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_ShotgunExpert_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_AutomaticWeaponExpert_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_PistolExpert_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BowsExpert_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_RoboticsExpert_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_MeleeHeavyExpert_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_MeleeLightExpert_current" operation="set" value="0"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_TotalHunt_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_NightHunt_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BullsEye_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_RangeHunt_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_MeleeHunt_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_EliteHunt_current" operation="set" value="0"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossDevourer_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossGargul_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossBearDaddy_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossBitch_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossBurningFlesh_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossCholera_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossBull_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossShocker_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossVeteran_current" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossCarrier_current" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+		
+		<!-- GAME TIMER -->
+		<!-- <buff name="buffGameTimer" name_key="buffGameTimerName" description_key="buffGameTimerDesc" tooltip_key="buffGameTimerTooltip" icon="ui_game_symbol_clock" icon_color="255,255,255"> -->
+		<buff name="buffGameTimer" hidden="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			
+			<effect_group name="Timer">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerGame_SS" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TimerGame_SS" operation="set" value="@TimerGame_SS"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerGame_MM" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerGame_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerGame_SS" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerGame_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerGame_HH" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerGame_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerGame_MM" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerGame_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+				
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="TimerGame_SS"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="TimerGame_MM"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="TimerGame_HH"/> -->
+			</effect_group>
+			
+			<effect_group name="Level Up">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGameTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerGame_HH" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkGameTimer" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGameTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerGame_HH" operation="GTE" value="4"/>
+					<requirement name="ProgressionLevel" progression_name="perkGameTimer" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGameTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerGame_HH" operation="GTE" value="8"/>
+					<requirement name="ProgressionLevel" progression_name="perkGameTimer" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGameTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerGame_HH" operation="GTE" value="12"/>
+					<requirement name="ProgressionLevel" progression_name="perkGameTimer" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGameTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerGame_HH" operation="GTE" value="18"/>
+					<requirement name="ProgressionLevel" progression_name="perkGameTimer" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGameTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerGame_HH" operation="GTE" value="24"/>
+					<requirement name="ProgressionLevel" progression_name="perkGameTimer" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGameTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerGame_HH" operation="GTE" value="32"/>
+					<requirement name="ProgressionLevel" progression_name="perkGameTimer" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGameTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerGame_HH" operation="GTE" value="40"/>
+					<requirement name="ProgressionLevel" progression_name="perkGameTimer" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGameTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerGame_HH" operation="GTE" value="50"/>
+					<requirement name="ProgressionLevel" progression_name="perkGameTimer" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGameTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerGame_HH" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="perkGameTimer" operation="LT" value="10"/>
+				</triggered_effect>
+			</effect_group>
+			
+		</buff>
+		
+		<buff name="buffGameTimer_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_GameTimer_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Game_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkGameTimer" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffGameTimer_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<!-- FOREST TIMER -->
+		
+		<!-- <buff name="buffForestTimer" name_key="buffForestTimerName" description_key="buffForestTimerDesc" tooltip_key="buffForestTimerTooltip" icon="ui_game_symbol_clock" icon_color="147,255,164"> -->
+		<buff name="buffForestTimer" hidden="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			
+			<effect_group name="Timer">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerForest_SS" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TimerForest_SS" operation="set" value="@TimerForest_SS"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerForest_MM" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerForest_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerForest_SS" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerForest_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerForest_HH" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerForest_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerForest_MM" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerForest_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group name="Level Up">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffForestTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerForest_HH" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkForestTimer" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffForestTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerForest_HH" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkForestTimer" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffForestTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerForest_HH" operation="GTE" value="4"/>
+					<requirement name="ProgressionLevel" progression_name="perkForestTimer" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffForestTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerForest_HH" operation="GTE" value="6"/>
+					<requirement name="ProgressionLevel" progression_name="perkForestTimer" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffForestTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerForest_HH" operation="GTE" value="8"/>
+					<requirement name="ProgressionLevel" progression_name="perkForestTimer" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffForestTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerForest_HH" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkForestTimer" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffForestTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerForest_HH" operation="GTE" value="12"/>
+					<requirement name="ProgressionLevel" progression_name="perkForestTimer" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffForestTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerForest_HH" operation="GTE" value="16"/>
+					<requirement name="ProgressionLevel" progression_name="perkForestTimer" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffForestTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerForest_HH" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="perkForestTimer" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffForestTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerForest_HH" operation="GTE" value="25"/>
+					<requirement name="ProgressionLevel" progression_name="perkForestTimer" operation="LT" value="10"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffForestTimer">
+					<requirement name="!InBiome" biome="3"/>
+				</triggered_effect>
+			</effect_group>
+			
+		</buff>
+		
+		<buff name="buffForestTimer_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_Forest_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Forest_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkForestTimer" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffForestTimer_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<!-- BURNT TIMER -->
+		<!-- <buff name="buffBurntTimer" name_key="buffBurntTimerName" description_key="buffBurntTimerDesc" tooltip_key="buffBurntTimerTooltip" icon="ui_game_symbol_clock" icon_color="255,147,157"> -->
+		<buff name="buffBurntTimer" hidden="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			
+			<effect_group name="Timer">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerBurnt_SS" operation="add" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerBurnt_MM" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerBurnt_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerBurnt_SS" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerBurnt_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerBurnt_HH" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerBurnt_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerBurnt_MM" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerBurnt_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group name="Level Up">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurntTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerBurnt_HH" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkBurntTimer" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurntTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerBurnt_HH" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkBurntTimer" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurntTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerBurnt_HH" operation="GTE" value="4"/>
+					<requirement name="ProgressionLevel" progression_name="perkBurntTimer" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurntTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerBurnt_HH" operation="GTE" value="6"/>
+					<requirement name="ProgressionLevel" progression_name="perkBurntTimer" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurntTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerBurnt_HH" operation="GTE" value="8"/>
+					<requirement name="ProgressionLevel" progression_name="perkBurntTimer" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurntTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerBurnt_HH" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkBurntTimer" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurntTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerBurnt_HH" operation="GTE" value="12"/>
+					<requirement name="ProgressionLevel" progression_name="perkBurntTimer" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurntTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerBurnt_HH" operation="GTE" value="16"/>
+					<requirement name="ProgressionLevel" progression_name="perkBurntTimer" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurntTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerBurnt_HH" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="perkBurntTimer" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurntTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerBurnt_HH" operation="GTE" value="25"/>
+					<requirement name="ProgressionLevel" progression_name="perkBurntTimer" operation="LT" value="10"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBurntTimer">
+					<requirement name="!InBiome" biome="9"/>
+				</triggered_effect>
+			</effect_group>
+			
+		</buff>
+		
+		<buff name="buffBurntTimer_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_Burnt_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Burnt_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBurntTimer" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBurntTimer_LevelUP"/>
+			</effect_group>
+		</buff>
+				
+		<!-- DESERT TIMER -->
+		<!-- <buff name="buffDesertTimer" name_key="buffDesertTimerName" description_key="buffDesertTimerDesc" tooltip_key="buffDesertTimerTooltip" icon="ui_game_symbol_clock" icon_color="255,255,147"> -->
+		<buff name="buffDesertTimer" hidden="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			
+			<effect_group name="Timer">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerDesert_SS" operation="add" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerDesert_MM" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerDesert_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerDesert_SS" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerDesert_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerDesert_HH" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerDesert_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerDesert_MM" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerDesert_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group name="Level Up">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDesertTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerDesert_HH" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkDesertTimer" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDesertTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerDesert_HH" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkDesertTimer" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDesertTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerDesert_HH" operation="GTE" value="4"/>
+					<requirement name="ProgressionLevel" progression_name="perkDesertTimer" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDesertTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerDesert_HH" operation="GTE" value="6"/>
+					<requirement name="ProgressionLevel" progression_name="perkDesertTimer" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDesertTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerDesert_HH" operation="GTE" value="8"/>
+					<requirement name="ProgressionLevel" progression_name="perkDesertTimer" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDesertTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerDesert_HH" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkDesertTimer" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDesertTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerDesert_HH" operation="GTE" value="12"/>
+					<requirement name="ProgressionLevel" progression_name="perkDesertTimer" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDesertTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerDesert_HH" operation="GTE" value="16"/>
+					<requirement name="ProgressionLevel" progression_name="perkDesertTimer" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDesertTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerDesert_HH" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="perkDesertTimer" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDesertTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerDesert_HH" operation="GTE" value="25"/>
+					<requirement name="ProgressionLevel" progression_name="perkDesertTimer" operation="LT" value="10"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDesertTimer">
+					<requirement name="!InBiome" biome="5"/>
+				</triggered_effect>
+			</effect_group>
+			
+		</buff>
+		
+		<buff name="buffDesertTimer_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_Desert_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Desert_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkDesertTimer" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDesertTimer_LevelUP"/>
+			</effect_group>
+		</buff>
+				
+		<!-- Buff Second Wind BONUS - Triggered when the player's stamina drops below 30. -->
+		<buff name="buffSecondWindBonusActive" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="stamina" operation="add" value="500"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSecondWindBonusReload"/>
+			</effect_group>
+		</buff>
+		<buff name="buffSecondWindBonusReload" name_key="buffSecondWindBonusReloadName" description_key="buffSecondWindBonusReloadDesc" tooltip_key="buffSecondWindBonusReloadTooltip" icon="ui_game_symbol_clock" icon_color="200,200,200">
+			<stack_type value="ignore"/>
+			<duration value="180"/>
+			<display_value value="duration"/>
+			<display_value_format value="time"/>
+		</buff>
+		
+		<!-- WINTER TIMER -->
+		
+		<!-- <buff name="buffWinterTimer" name_key="buffWinterTimerName" description_key="buffWinterTimerDesc" tooltip_key="buffWinterTimerTooltip" icon="ui_game_symbol_clock" icon_color="147,232,255"> -->
+		<buff name="buffWinterTimer" hidden="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			
+			<effect_group name="Timer">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerWinter_SS" operation="add" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerWinter_MM" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerWinter_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerWinter_SS" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerWinter_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerWinter_HH" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerWinter_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerWinter_MM" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerWinter_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group name="Level Up">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWinterTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWinter_HH" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkWinterTimer" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWinterTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWinter_HH" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkWinterTimer" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWinterTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWinter_HH" operation="GTE" value="4"/>
+					<requirement name="ProgressionLevel" progression_name="perkWinterTimer" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWinterTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWinter_HH" operation="GTE" value="6"/>
+					<requirement name="ProgressionLevel" progression_name="perkWinterTimer" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWinterTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWinter_HH" operation="GTE" value="8"/>
+					<requirement name="ProgressionLevel" progression_name="perkWinterTimer" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWinterTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWinter_HH" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkWinterTimer" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWinterTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWinter_HH" operation="GTE" value="12"/>
+					<requirement name="ProgressionLevel" progression_name="perkWinterTimer" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWinterTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWinter_HH" operation="GTE" value="16"/>
+					<requirement name="ProgressionLevel" progression_name="perkWinterTimer" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWinterTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWinter_HH" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="perkWinterTimer" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWinterTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWinter_HH" operation="GTE" value="25"/>
+					<requirement name="ProgressionLevel" progression_name="perkWinterTimer" operation="LT" value="10"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffWinterTimer">
+					<requirement name="!InBiome" biome="1"/>
+				</triggered_effect>
+			</effect_group>
+			
+		</buff>
+		
+		<buff name="buffWinterTimer_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_Winter_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Winter_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkWinterTimer" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffWinterTimer_LevelUP"/>
+			</effect_group>
+		</buff>
+			
+		<!-- WASTELAND TIMER -->
+		<!-- <buff name="buffWastlandTimer" name_key="buffWastlandTimerName" description_key="buffWastlandTimerDesc" tooltip_key="buffWastlandTimerTooltip" icon="ui_game_symbol_clock" icon_color="255,210,147"> -->
+		<buff name="buffWastlandTimer" hidden="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			
+			<effect_group name="Timer">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerWastland_SS" operation="add" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerWastland_MM" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerWastland_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerWastland_SS" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerWastland_SS" operation="Equals" value="60"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerWastland_HH" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="TimerWastland_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="TimerWastland_MM" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="TimerWastland_MM" operation="Equals" value="60"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group name="Level Up">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWastlandTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWastland_HH" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkWastlandTimer" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWastlandTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWastland_HH" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkWastlandTimer" operation="LT" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWastlandTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWastland_HH" operation="GTE" value="4"/>
+					<requirement name="ProgressionLevel" progression_name="perkWastlandTimer" operation="LT" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWastlandTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWastland_HH" operation="GTE" value="6"/>
+					<requirement name="ProgressionLevel" progression_name="perkWastlandTimer" operation="LT" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWastlandTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWastland_HH" operation="GTE" value="8"/>
+					<requirement name="ProgressionLevel" progression_name="perkWastlandTimer" operation="LT" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWastlandTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWastland_HH" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="perkWastlandTimer" operation="LT" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWastlandTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWastland_HH" operation="GTE" value="12"/>
+					<requirement name="ProgressionLevel" progression_name="perkWastlandTimer" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWastlandTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWastland_HH" operation="GTE" value="16"/>
+					<requirement name="ProgressionLevel" progression_name="perkWastlandTimer" operation="LT" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWastlandTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWastland_HH" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="perkWastlandTimer" operation="LT" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWastlandTimer_LevelUP">
+					<requirement name="CVarCompare" cvar="TimerWastland_HH" operation="GTE" value="25"/>
+					<requirement name="ProgressionLevel" progression_name="perkWastlandTimer" operation="LT" value="10"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffWastlandTimer">
+					<requirement name="!InBiome" biome="8"/>
+				</triggered_effect>
+			</effect_group>
+			
+		</buff>
+		
+		<buff name="buffWastlandTimer_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_Wastland_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Wastland_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkWastlandTimer" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffWastlandTimer_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<!-- WEAPON EXPERT -->
+		<buff name="buffSniperExpert_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_SniperExpert_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="SniperExpert_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkSniperExpert" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffSniperExpert_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffShotgunExpert_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_ShotgunExpert_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="ShotgunExpert_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkShotgunExpert" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffShotgunExpert_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffAutomaticWeaponExpert_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_AutomaticWeaponExpert_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="AutomaticWeaponExpert_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkAutomaticWeaponExpert" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffAutomaticWeaponExpert_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffPistolExpert_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_PistolExpert_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="PistolExpert_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkPistolExpert" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPistolExpert_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffBowsExpert_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BowsExpert_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="BowsExpert_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBowsExpert" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBowsExpert_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffRoboticsExpert_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_RoboticsExpert_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="RoboticsExpert_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkRoboticsExpert" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffRoboticsExpert_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffMeleeHeavyExpert_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_MeleeHeavyExpert_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="MeleeHeavyExpert_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkMeleeHeavyExpert" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffMeleeHeavyExpert_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffMeleeLightExpert_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_MeleeLightExpert_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="MeleeLightExpert_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkMeleeLightExpert" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffMeleeLightExpert_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<!-- Buff Irradiated BONUS - triggers when the radiation effect accumulates above 80% -->
+		<buff name="buffIrradiatedBonusActive" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="1"/>
+			
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$IRradiationStatus" operation="subtract" value="25"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffIrradiatedBonusReload"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIrradiatedBonusReload" name_key="buffIrradiatedBonusReloadName" description_key="buffIrradiatedBonusReloadDesc" tooltip_key="buffIrradiatedBonusReloadTooltip"  icon="ui_game_symbol_clock" icon_color="200,200,200">
+			<stack_type value="ignore"/>
+			<duration value="300"/>
+			<display_value value="duration"/>
+			<display_value_format value="time"/>
+		</buff>
+		
+		<!-- DEAD HUNT -->
+		<buff name="buffTotalHunt_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_TotalHunt_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="TotalHunt_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkTotalHunt" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffTotalHunt_LevelUP"/>
+			</effect_group>
+		</buff>
+		<!-- Buff Pure Adrenaline BONUS - Triggered when the player's health drops below 30. -->
+		<buff name="buffPureAdrenalineActive" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="health" operation="add" value="150"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPureAdrenalineReload"/>
+			</effect_group>
+		</buff>
+		<buff name="buffPureAdrenalineReload" name_key="buffPureAdrenalineReloadName" description_key="buffPureAdrenalineReloadDesc" tooltip_key="buffPureAdrenalineReloadTooltip" icon="ui_game_symbol_clock" icon_color="200,200,200">
+			<stack_type value="ignore"/>
+			<duration value="180"/>
+			<display_value value="duration"/>
+			<display_value_format value="time"/>
+		</buff>
+		
+		<!-- MELEE BERSERK -->
+		<buff name="buffMeleeBerserk" name_key="buffMeleeBerserkName" description_key="buffMeleeBerserkDesc" tooltip_key="buffMeleeBerserkTooltip" icon="ui_game_symbol_bull" icon_color="255,184,0">
+			<stack_type value="replace"/>
+			<display_value value=".MeleeBerserk_Effect"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$MeleeBerserkDuration" operation="set" value="3"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$MeleeBerserk_Effect" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".MeleeBerserk_Effect" operation="set" value="@$MeleeBerserk_Effect"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffMeleeBerserk">
+					<requirement name="CVarCompare" cvar="$MeleeBerserkDuration" operation="LTE" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffMeleeBerserk">
+					<requirement name="!HoldingItemHasTags" tags="melee"/></triggered_effect>
+					
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$MeleeBerserkDuration" operation="subtract" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="$MeleeBerserk_Effect" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="$MeleeBerserk_Effect" operation="LTE" value="4"/></triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="$MeleeBerserkDuration" operation="set" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".MeleeBerserk_Effect" operation="set" value="@$MeleeBerserk_Effect"/>
+		
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$MeleeBerserk_Effect,$MeleeBerserkDuration,.MeleeBerserk_Effect"/>
+				
+			</effect_group>
+			
+			<effect_group>
+				<passive_effect name="EntityDamage" operation="perc_add" value="@$MeleeBerserkBonus_1"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="@$MeleeBerserkBonus_2">
+					<requirement name="CVarCompare" cvar="$MeleeBerserk_Effect" operation="EQ" value="2"/></passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value="@$MeleeBerserkBonus_3">
+					<requirement name="CVarCompare" cvar="$MeleeBerserk_Effect" operation="EQ" value="3"/></passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value="@$MeleeBerserkBonus_4">
+					<requirement name="CVarCompare" cvar="$MeleeBerserk_Effect" operation="EQ" value="4"/></passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value="@$MeleeBerserkBonus_5">
+					<requirement name="CVarCompare" cvar="$MeleeBerserk_Effect" operation="EQ" value="5"/></passive_effect>
+			</effect_group>
+			
+		</buff>
+		
+		<buff name="BuffImmortalReload" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<effect_group>
+				<passive_effect name="NegateDamageSelf" operation="base_set" value="1"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffBerserk" name_key="buffBerserkName" description_key="buffBerserkDesc" tooltip_key="buffBerserkTooltip" icon="ui_game_symbol_bull" icon_color="90,240,40">
+			<stack_type value="ignore"/>
+			<duration value="2"/>
+			<effect_group>
+				<passive_effect name="GeneralDamageResist" operation="base_add" value=".2"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffNightHunt_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_NightHunt_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="NightHunt_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkNightHunt" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNightHunt_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffBullsEye_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BullsEye_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="BullsEye_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBullsEye" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBullsEye_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffRangeHunt_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_RangeHunt_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="RangeHunt_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkRangeHunt" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffRangeHunt_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffMeleeHunt_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_MeleeHunt_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="MeleeHunt_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkMeleeHunt" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffMeleeHunt_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEliteHunt_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_EliteHunt_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="EliteHunt_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkEliteHunt" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffEliteHunt_LevelUP"/>
+			</effect_group>
+		</buff>
+		
+		<!-- BOSS EXPERT -->
+		<buff name="buffBossDevourer_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossDevourer_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Devourer_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBossDevourer" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBossDevourer_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffBossGargul_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossGargul_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Gargul_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBossGargul" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBossGargul_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffBossBearDaddy_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossBearDaddy_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="BearDaddy_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBossBearDaddy" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBossBearDaddy_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffBossBitch_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossBitch_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Bitch_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBossBitch" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBossBitch_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffBossBurningFlesh_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossBurningFlesh_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="BurningFlesh_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBossBurningFlesh" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBossBurningFlesh_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffBossCholera_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossCholera_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Cholera_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBossCholera" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBossCholera_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffBossBull_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossBull_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Bull_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBossBull" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBossBull_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffBossShocker_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossShocker_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Shocker_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBossShocker" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBossShocker_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffBossVeteran_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossVeteran_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Veteran_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBossVeteran" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBossVeteran_LevelUP"/>
+			</effect_group>
+		</buff>
+		<buff name="buffBossCarrier_LevelUP" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PS_BossCarrier_current" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ShowToolbeltMessage" message_key="Carrier_LevelUP" />
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="read_skillbook" play_in_head="true"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddProgressionLevel" progression_name="perkBossCarrier" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBossCarrier_LevelUP"/>
+			</effect_group>
+		</buff>
+	
+    </append>
+	
+</config>

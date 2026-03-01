@@ -1,0 +1,48 @@
+<config>
+	
+	 <set xpath="/materials/material[@id='MoreMetal']/property[@name='MaxDamage']/@value">6000</set>
+	 <set xpath="/materials/material[@id='MoreStone']/property[@name='MaxDamage']/@value">6000</set>
+	 
+	 <set xpath="/materials/material[@id='MresourceScrapIron']/property[@name='Experience']/@value">.5</set>
+	 <set xpath="/materials/material[@id='MresourceScrapLeadSmall']/property[@name='Experience']/@value">.5</set>
+	 <set xpath="/materials/material[@id='MresourceCoal']/property[@name='Experience']/@value">.4</set>
+	 
+	 <insertAfter xpath="/materials/material[@id='MresourceCoal']">
+		<material id="MresourcePotassiumNitrate">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="Experience" value=".7"/>
+		</material>
+	 </insertAfter>
+	
+	 <set xpath="/materials/material[@id='MresourceOilShale']/property[@name='Experience']/@value">1.1</set>
+	 <set xpath="/materials/material[@id='MresourceSilverNugget']/property[@name='Experience']/@value">80</set>
+	 
+	 <append xpath="/materials">
+	 	 
+		<material id="MoreMetalBoudler">
+			<property name="damage_category" value="metal"/>
+			<property name="surface_category" value="metal"/>
+			<property name="forge_category" value="lead"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="metal"/>
+			<property name="stability_glue" value="300"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="MaxDamage" value="18000"/>
+			<property name="Experience" value="2"/>
+		</material>
+		
+		<material id="MoreStoneBoudler">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="120"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="18000"/>
+			<property name="Experience" value="2"/>
+		</material>
+		
+	</append>
+	
+</config>

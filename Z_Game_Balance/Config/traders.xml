@@ -1,0 +1,31 @@
+<config>
+			
+	<append xpath="/traders/trader_item_groups/trader_item_group[@name='skillMagazines']">
+		<item name="harvestingToolsSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="repairToolsSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="salvageToolsSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="sledgehammersSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="workstationSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="bowsSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="spearsSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="bladesSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="clubsSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="handgunsSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="shotgunsSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="riflesSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="machineGunsSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="explosivesSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="armorSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="medicalSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="knucklesSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="foodSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="seedSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="roboticsSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="vehiclesSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="electricianSkillMagazineBundle" count="1,2" prob="0.1"/>
+		<item name="trapsSkillMagazineBundle" count="1,2" prob="0.1"/>		
+	</append>
+
+	<set xpath="/traders/trader_info/trader_items/item[@group='skillMagazines']/@count">8</set>		
+	
+</config>

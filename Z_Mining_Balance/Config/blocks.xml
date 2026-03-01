@@ -1,0 +1,94 @@
+<config>
+
+	<set xpath="/blocks/block[@name='oreIronBoulder']/property[@name='Material']/@value">MoreMetalBoudler</set>
+	<insertAfter xpath="/blocks/block[@name='oreIronBoulder']/property[@name='Map.Color']">
+		<drop event="Harvest" name="resourceRockSmall" count="360" tag="oreWoodHarvest"/>
+		<drop event="Harvest" name="resourceRawDiamond" prob=".02" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".05" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".1" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceRawDiamond" prob=".032" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".1" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".2" count="5" tag="modPreciousMetalsUnique"/>
+	</insertAfter>
+	
+	<set xpath="/blocks/block[@name='oreLeadBoulder']/property[@name='Material']/@value">MoreMetalBoudler</set>
+	<insertAfter xpath="/blocks/block[@name='oreLeadBoulder']/property[@name='Map.Color']">
+		<drop event="Harvest" name="resourceRockSmall" count="360" tag="oreWoodHarvest"/>
+		<drop event="Harvest" name="resourceRawDiamond" prob=".02" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".05" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".1" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceRawDiamond" prob=".032" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".1" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".2" count="5" tag="modPreciousMetalsUnique"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/blocks/block[@name='oreCoalBoulder']/property[@name='Map.Color']">
+		<property name="Material" value="MoreStone"/>
+		<drop event="Harvest" name="resourceRockSmall" count="360" tag="oreWoodHarvest"/>
+		<drop event="Harvest" name="resourceRawDiamond" prob=".02" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".05" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".1" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceRawDiamond" prob=".032" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".1" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".2" count="5" tag="modPreciousMetalsUnique"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/blocks/block[@name='orePotassiumNitrateBoulder']/property[@name='Map.Color']">
+		<property name="Material" value="MoreStone"/>
+		<drop event="Harvest" name="resourceRockSmall" count="360" tag="oreWoodHarvest"/>
+		<drop event="Harvest" name="resourceRawDiamond" prob=".02" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".05" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".1" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceRawDiamond" prob=".032" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".1" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".2" count="5" tag="modPreciousMetalsUnique"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/blocks/block[@name='oreShaleBoulder']/property[@name='Map.Color']">
+		<property name="Material" value="MoreStone"/>
+		<drop event="Harvest" name="resourceRockSmall" count="360" tag="oreWoodHarvest"/>
+		<drop event="Harvest" name="resourceRawDiamond" prob=".02" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".05" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".1" count="5" tag="modPreciousMetals"/>
+		<drop event="Harvest" name="resourceRawDiamond" prob=".032" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceGoldNugget" prob=".1" count="5" tag="modPreciousMetalsUnique"/>
+		<drop event="Harvest" name="resourceSilverNugget" prob=".2" count="5" tag="modPreciousMetalsUnique"/>
+	</insertAfter>
+	
+	<set xpath="/blocks/block[@name='terrForestGround']/drop[@name='resourceClayLump']/@tag">oreWoodHarvest,ClayBonus</set>
+	
+	<set xpath="/blocks/block[@name='terrOreIron']/drop[@name='resourceScrapIron']/@count">800</set>
+	<set xpath="/blocks/block[@name='terrOreIron']/drop[@name='resourceScrapBrass']/@count">600,1000</set>
+	<set xpath="/blocks/block[@name='terrOreIron']/drop[@name='resourceScrapIron']/@tag">oreWoodHarvest,oreIronBonus</set>
+	<set xpath="/blocks/block[@name='oreIronBoulder']/drop[@name='resourceScrapIron']/@count">2400</set>
+	<set xpath="/blocks/block[@name='oreIronBoulder']/drop[@name='resourceScrapIron']/@tag">oreWoodHarvest,oreIronBonus</set>
+	
+	<set xpath="/blocks/block[@name='terrOreLead']/drop[@name='resourceScrapLead']/@count">600</set>
+	<set xpath="/blocks/block[@name='terrOreLead']/drop[@name='resourceScrapBrass']/@count">450,750</set>
+	<set xpath="/blocks/block[@name='terrOreLead']/drop[@name='resourceScrapLead']/@tag">oreWoodHarvest,oreLeadBonus</set>
+	<set xpath="/blocks/block[@name='oreLeadBoulder']/drop[@name='resourceScrapLead']/@count">1650</set>
+	<set xpath="/blocks/block[@name='oreLeadBoulder']/drop[@name='resourceScrapLead']/@tag">oreWoodHarvest,oreLeadBonus</set>
+	
+	<!-- <set xpath="/blocks/block[@name='terrOreCoal']/drop[@name='resourceCoal']/@tag">CoalHarvest</set> -->
+	
+	<set xpath="/blocks/block[@name='terrOreCoal']/drop[@name='resourceCoal']/@count">400</set>
+	<set xpath="/blocks/block[@name='terrOreCoal']/drop[@name='resourceScrapBrass']/@count">300,500</set>
+	<set xpath="/blocks/block[@name='terrOreCoal']/drop[@name='resourceCoal']/@tag">oreWoodHarvest,oreCoalBonus</set>
+	<set xpath="/blocks/block[@name='oreCoalBoulder']/drop[@name='resourceCoal']/@count">1200</set>
+	<set xpath="/blocks/block[@name='oreCoalBoulder']/drop[@tag='oreWoodHarvest']/@tag">oreWoodHarvest,oreCoalBonus</set>
+	
+	<set xpath="/blocks/block[@name='terrOrePotassiumNitrate']/drop[@name='resourcePotassiumNitratePowder']/@count">400</set>
+	<set xpath="/blocks/block[@name='terrOrePotassiumNitrate']/drop[@name='resourceScrapBrass']/@count">300,500</set>
+	<set xpath="/blocks/block[@name='terrOrePotassiumNitrate']/drop[@name='resourcePotassiumNitratePowder']/@tag">oreWoodHarvest,orePotassiumNitrateBonus</set>
+	<set xpath="/blocks/block[@name='orePotassiumNitrateBoulder']/drop[@name='resourcePotassiumNitratePowder']/@count">1200</set>
+	<set xpath="/blocks/block[@name='orePotassiumNitrateBoulder']/drop[@name='resourcePotassiumNitratePowder']/@tag">oreWoodHarvest,orePotassiumNitrateBonus</set>
+	
+	<set xpath="/blocks/block[@name='terrOreOilDeposit']/drop[@name='resourceOilShale']/@count">300</set>
+	<set xpath="/blocks/block[@name='terrOreOilDeposit']/drop[@name='resourceScrapBrass']/@count">250,350</set>
+	<set xpath="/blocks/block[@name='terrOreOilDeposit']/drop[@name='resourceOilShale']/@tag">oreWoodHarvest,oreOilDepositBonus</set>
+	<set xpath="/blocks/block[@name='oreShaleBoulder']/drop[@name='resourceOilShale']/@count">900</set>
+	<set xpath="/blocks/block[@name='oreShaleBoulder']/drop[@name='resourceOilShale']/@tag">oreWoodHarvest,oreOilDepositBonus</set>
+	
+	<set xpath="/blocks/block[(starts-with(@name, 'terr')) and contains(@name, 'Ore')]/drop[@name='resourceRockSmall']/@count">120</set>
+	
+</config>

@@ -1,0 +1,178 @@
+<configs>
+	
+	<insertAfter xpath="/entity_classes/entity_class[contains(@name, 'Radiated')]/property[@name='ExperienceGain']">
+		<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="1"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entity_classes/entity_class[contains(@name, 'Charged') and not(contains(@name, 'Elite'))]/property[@name='ExperienceGain']">
+		<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="2"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entity_classes/entity_class[contains(@name, 'Infernal') and not(contains(@name, 'Elite'))]/property[@name='ExperienceGain']">
+		<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="3"/>
+	</insertAfter>
+	
+	<append xpath="/entity_classes">  
+		
+		<!-- SmallCase -->
+		<entity_class name="dropSmallLightAlloys" extends="sc_General">		
+			<property name="LootListAlive" value="rewardSmallLightAlloys"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="dropSmallStrengthAlloys" extends="sc_General">
+			<property name="LootListAlive" value="rewardSmallStrengthAlloys"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="dropSmallExperimentalAlloys" extends="sc_General">
+			<property name="LootListAlive" value="rewardSmallExperimentalAlloys"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- MediumCase -->
+		<entity_class name="dropMediumLightAlloys" extends="sc_General">
+			<property name="LootListAlive" value="rewardMediumLightAlloys"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="dropMediumStrengthAlloys" extends="sc_General">
+			<property name="LootListAlive" value="rewardMediumStrengthAlloys"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="dropMediumExperimentalAlloys" extends="sc_General">
+			<property name="LootListAlive" value="rewardMediumExperimentalAlloys"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- BigCase -->
+		<entity_class name="dropBigLightAlloys" extends="sc_General">
+			<property name="LootListAlive" value="rewardBigLightAlloys"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="dropBigStrengthAlloys" extends="sc_General">
+			<property name="LootListAlive" value="rewardBigStrengthAlloys"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="dropBigExperimentalAlloys" extends="sc_General">
+			<property name="LootListAlive" value="rewardBigExperimentalAlloys"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- Rare Ammo -->
+		<entity_class name="drop762DU_100" extends="sc_General">
+			<property name="LootListAlive" value="reward762DU_100"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="drop762DU_1000" extends="sc_General">
+			<property name="LootListAlive" value="reward762DU_1000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="drop762DU_5000" extends="sc_General">
+			<property name="LootListAlive" value="reward762DU_5000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="drop44MagnumDU_100" extends="sc_General">
+			<property name="LootListAlive" value="reward44MagnumDU_100"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="drop44MagnumDU_1000" extends="sc_General">
+			<property name="LootListAlive" value="reward44MagnumDU_1000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="drop44MagnumDU_5000" extends="sc_General">
+			<property name="LootListAlive" value="reward44MagnumDU_5000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="drop9mmDU_100" extends="sc_General">
+			<property name="LootListAlive" value="reward9mmDU_100"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>		
+		<entity_class name="drop9mmDU_1000" extends="sc_General">
+			<property name="LootListAlive" value="reward9mmDU_1000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="drop9mmDU_5000" extends="sc_General">
+			<property name="LootListAlive" value="reward9mmDU_5000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="dropShotgunDU_100" extends="sc_General">
+			<property name="LootListAlive" value="rewardShotgunDU_100"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="dropShotgunDU_1000" extends="sc_General">
+			<property name="LootListAlive" value="rewardShotgunDU_1000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="dropShotgunDU_5000" extends="sc_General">
+			<property name="LootListAlive" value="rewardShotgunDU_5000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="dropTurretDU_1500" extends="sc_General">
+			<property name="LootListAlive" value="rewardTurretDU_1500"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="dropTurretDU_9000" extends="sc_General">
+			<property name="LootListAlive" value="rewardTurretDU_9000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- Rare Medicine -->
+		<entity_class name="drop_RareMed_Small" extends="sc_General">
+			<property name="LootListAlive" value="rewardRareMedicines_Small"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		<entity_class name="drop_RareMed_Big" extends="sc_General">
+			<property name="LootListAlive" value="rewardRareMedicines_Big"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			</effect_group>
+		</entity_class>
+		
+	</append>
+</configs>

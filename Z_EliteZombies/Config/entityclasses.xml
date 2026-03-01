@@ -1,0 +1,2390 @@
+<configs>
+	
+	<!-- Fix loot from dogs and bears -->
+	<set xpath="/entity_classes/entity_class[@name='animalDireWolf']/property[@name='LootDropProb']/@value">.3</set>
+	<set xpath="/entity_classes/entity_class[@name='animalZombieBear']/property[@name='LootDropProb']/@value">.3</set>
+	
+	<insertAfter xpath="/entity_classes/entity_class[@name='animalBear']/property[@name='SoundGiveUp']">
+		<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+		<property name="LootDropProb" value=".3"/>
+	</insertAfter>
+	
+	<!-- TimeStayAfterDeath for Radiation Zombie -->
+	<insertAfter xpath="/entity_classes/entity_class[(starts-with(@name, 'zombie')) and not(contains(@name, 'Radiated')) and not(contains(@name, 'Charged')) and not(contains(@name, 'Infernal'))]/property[@name='ExperienceGain']">
+		<property name="TimeStayAfterDeath" value="5"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entity_classes/entity_class[(contains(@name, 'Radiated'))]/property[@name='ExperienceGain']">
+		<property name="TimeStayAfterDeath" value="15"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entity_classes/entity_class[(contains(@name, 'Charged'))]/property[@name='ExperienceGain']">
+		<property name="TimeStayAfterDeath" value="30"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entity_classes/entity_class[(contains(@name, 'Infernal'))]/property[@name='ExperienceGain']">
+		<property name="TimeStayAfterDeath" value="45"/>
+	</insertAfter>
+	
+	<!-- Elite Zombie Loot Containers -->
+	<set xpath="/entity_classes/entity_class[@name='EntityLootContainerRegular']/property[@name='TimeStayAfterDeath']/@value">2400</set>
+    <set xpath="/entity_classes/entity_class[@name='EntityLootContainerStrong']/property[@name='TimeStayAfterDeath']/@value">2400</set>
+	<set xpath="/entity_classes/entity_class[@name='EntityLootContainerBoss']/property[@name='TimeStayAfterDeath']/@value">2400</set>
+
+	<append xpath="/entity_classes">  
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- HEAVY ELITE ZOMBIES -->
+		<!-- HP: BASE(B) 7000-9000 CHARGED(C) 14000-18000 INFERNAL(I) 21000-27000 -->
+		<!-- XP: B - 2800; C - 3400; I - 4000 -->
+		<!-- Mutation: B - 9; C - 12; I - 15 -->
+		<!-- Damage Resistance: B - none; C - range 50; I - melee 50 -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- DEMOLITION ELITE Heavy -->
+		<entity_class name="zombieDemolitionElite" extends="zombieDemolition">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteHeavy,bossMajor,Demolition"/>
+			<property name="Mesh" value="@:Entities/Zombies/Demolition/ZDemolition.prefab"/>
+			<property name="Mass" value="400"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="900"/>
+			
+			<property name="PainResistPerHit" value=".35"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="4.8, 5"/>
+			<property name="HandItem" value="meleeHandZombieEliteHeavy1"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			
+			<property name="Explosion.RadiusBlocks" value="7"/>
+			<property name="Explosion.RadiusEntities" value="9"/>
+			<property name="Explosion.BlockDamage" value="6250"/>
+			<property name="Explosion.EntityDamage" value="1000"/>
+			
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.2"/> <!-- 1.18 -->
+			<property name="ExperienceGain" value="2800"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".6, 1.3"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="7500"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+			
+		</entity_class>
+		
+		<entity_class name="zombieDemolitionInfernalElite" extends="zombieDemolitionElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteHeavy,bossMajor,Demolition"/>
+			<property name="HandItem" value="meleeHandZombieEliteHeavyInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="20" tool_category="Butcher"/>
+			<property name="Explosion.RadiusBlocks" value="9"/>
+			<property name="Explosion.RadiusEntities" value="11"/>
+			<property name="Explosion.BlockDamage" value="7500"/>
+			<property name="Explosion.EntityDamage" value="1200"/>		
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="4000"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="20000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".5" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+			
+		</entity_class>
+		
+		<!-- FAT FEMALE ELITE Heavy -->
+		<entity_class name="zombieFemaleFatElite" extends="zombieFemaleFatRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteHeavy"/>
+			<property name="Mesh" value="@:Entities/Zombies/BigMama/ZBigMamaRadiated.prefab"/>
+			<property name="AltMats" value="@:Entities/Zombies/BigMama/Materials/HD_BigMomma_Radiated2.mat,@:Entities/Zombies/BigMama/Materials/HD_BigMomma_Radiated3.mat"/>
+			<property name="MatColor" value="radiated"/>
+			<!-- <property name="ParticleOnSpawn" value="@:Entities/Zombies/Prefabs/ZBigMamaRadiated.prefab" param1="SetShapeToMesh0"/> -->
+			<property name="Mass" value="350"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="900"/>
+			
+			<property name="PainResistPerHit" value=".4"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="4.8, 5"/>
+			<property name="HandItem" value="meleeHandZombieEliteHeavy2"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2800"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".07"/>
+			<property name="MoveSpeedAggro" value=".6, 1.2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="7000"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+			
+		</entity_class>
+		
+		<entity_class name="zombieFemaleFatChargedElite" extends="zombieFemaleFatElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteHeavy"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteHeavyCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="12" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.2"/>
+			<property name="ExperienceGain" value="3400"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.2, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="14000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".5" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieFemaleFatInfernalElite" extends="zombieFemaleFatElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteHeavy"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteHeavyInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="15" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="4000"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value=".9, 1.5"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="21000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".5" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- HAWAI ELITE Heavy -->
+		<entity_class name="zombieFatHawaiianElite" extends="zombieFatHawaiianRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteHeavy,FatHawaiian"/>
+			<property name="Mesh" value="@:Entities/Zombies/Hawaiian/ZHawaiianRadiated.prefab"/>
+			<property name="AltMats" value="@:Entities/Zombies/Hawaiian/Materials/HD_Hawaiian_Zombie_Radiated2.mat,@:Entities/Zombies/Hawaiian/Materials/HD_Hawaiian_Zombie_Radiated4.mat"/>
+			<property name="MatColor" value="radiated"/>
+			<!-- <property name="ParticleOnSpawn" value="@:Entities/Zombies/Prefabs/ZHawaiianRadiated.prefab" param1="SetShapeToMesh0"/> -->
+			<property name="Mass" value="350"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="900"/>
+			
+			<property name="PainResistPerHit" value=".4"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="4.8, 5"/>
+			<property name="HandItem" value="meleeHandZombieEliteHeavy1"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2800"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".07"/>
+			<property name="MoveSpeedAggro" value=".6, 1.1"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9000"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+			
+		</entity_class>
+		
+		<entity_class name="zombieFatHawaiianChargedElite" extends="zombieFatHawaiianElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteHeavy,FatHawaiian"/>
+			<property name="MatColor" value="charged"/>
+			<property name="Mass" value="380"/>
+			<property name="HandItem" value="meleeHandZombieEliteHeavyCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="12" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.25"/>
+			<property name="ExperienceGain" value="3400"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1, 1.6"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="18000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".5" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieFatHawaiianInfernalElite" extends="zombieFatHawaiianElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteHeavy,FatHawaiian"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="Mass" value="410"/>
+			<property name="HandItem" value="meleeHandZombieEliteHeavyInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="15" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="4000"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value=".8, 1.3"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="27000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".5" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- COP ELITE Heavy -->
+		<entity_class name="zombieCopElite" extends="zombieFatCopRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,zombieCop,eliteHeavy,Cop"/>
+			<property name="Mesh" value="@:Entities/Zombies/Cop/ZCopRadiated.prefab"/>
+			<property name="MatColor" value="radiated"/>
+			<property name="Mass" value="350"/>
+			<property name="PainResistPerHit" value=".4"/><!-- Elite -->
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="JumpMaxDistance" value="4.8, 5"/>
+			<property name="HandItem" value="meleeHandZombieCopElite"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="900"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+
+			<property name="ExperienceGain" value="2800"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".07"/>
+			<property name="MoveSpeedAggro" value=".6, 1.1"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="7000"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+			
+		</entity_class>
+		
+		<entity_class name="zombieCopChargedElite" extends="zombieCopElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,zombieCop,eliteHeavy,Cop"/>
+			<property name="MatColor" value="charged"/>
+			<property name="Mass" value="380"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="HandItem" value="meleeHandZombieCopChargedElite"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="12" tool_category="Butcher"/>
+			<property name="ExperienceGain" value="3400"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="14000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".5" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieCopInfernalElite" extends="zombieCopElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,zombieCop,eliteHeavy,Cop"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="Mass" value="430"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="HandItem" value="meleeHandZombieCopInfernalElite"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="15" tool_category="Butcher"/>
+			<property name="ExperienceGain" value="4000"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="21000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".5" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- MEDIUM ELITE ZOMBIES -->
+		<!-- HP: BASE(B) 5000-6000 CHARGED(C) 10000-12000 INFERNAL(I) 15000-18000 -->
+		<!-- XP: B - 2400; C - 3000; I - 3600 -->
+		<!-- Mutation: B - 7; C - 9; I - 11 -->
+		<!-- Damage Resistance: B - none; C - range 30; I - melee 30 -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- WIGHT ELITE Medium -->
+		<entity_class name="zombieWightElite" extends="zombieWightRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteMedium"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".6"/>
+			<property name="JumpMaxDistance" value="7.6, 8"/>
+			<property name="HandItem" value="meleeHandZombieEliteMedium"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="650"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2400"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".06"/>
+			<property name="MoveSpeedAggro" value=".8, 1.6"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="5200"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+			
+		</entity_class>
+		
+		<entity_class name="zombieWightChargedElite" extends="zombieWightElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteMedium"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="3000"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.4, 2.2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="10400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieWightInfernalElite" extends="zombieWightElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteMedium"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="11" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3600"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.1, 1.9"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="15600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+				
+		<!-- SOLDIER ELITE Medium -->
+		<entity_class name="zombieSoldierElite" extends="zombieSoldierRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteMedium,bossMajor,Soldier"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".5"/>
+			<property name="JumpMaxDistance" value="4.8, 5"/>
+			<property name="HandItem" value="meleeHandZombieEliteMedium"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="650"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2400"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".06"/>
+			<property name="MoveSpeedAggro" value=".6, 1.3"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="4600"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSoldierChargedElite" extends="zombieSoldierElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteMedium,bossMajor,Soldier"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="3000"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.1, 1.9"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9200"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSoldierInfernalElite" extends="zombieSoldierElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteMedium,bossMajor,Soldier"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="11" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3600"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value=".85, 1.6"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="13800"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- SKATER ELITE Medium -->
+		<entity_class name="zombieSkaterElite" extends="zombieSkateboarderRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteMedium"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".6"/>
+			<property name="JumpMaxDistance" value="4.8, 5"/>
+			<property name="HandItem" value="meleeHandZombieEliteMedium"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="650"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2400"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".06"/>
+			<property name="MoveSpeedAggro" value=".7, 1.4"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="4800"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSkaterChargedElite" extends="zombieSkaterElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteMedium"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>		
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="3000"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.2, 2.2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSkaterInfernalElite" extends="zombieSkaterElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteMedium"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="11" tool_category="Butcher"/>		
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3600"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value=".95, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="14400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- BIKER ELITE Medium -->
+		<entity_class name="zombieBikerElite" extends="zombieBikerRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteMedium,biker"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".6"/>
+			<property name="JumpMaxDistance" value="4.8, 5"/>
+			<property name="HandItem" value="meleeHandZombieEliteMedium"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="650"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2400"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".06"/>
+			<property name="MoveSpeedAggro" value=".5, 1.5"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="5500"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+				
+		<entity_class name="zombieBikerChargedElite" extends="zombieBikerElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteMedium,biker"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>		
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="3000"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="11000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBikerInfernalElite" extends="zombieBikerElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteMedium,biker"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>			
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="11" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3600"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value=".75, 1.4"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="16500"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- HAZMAT ELITE Medium -->
+		<entity_class name="zombieHazmatElite" extends="zombieMaleHazmatRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteMedium,Hazmat"/>
+			<property name="MatColor" value="radiated"/>			
+			
+			<property name="PainResistPerHit" value=".6"/>
+			<property name="JumpMaxDistance" value="4.8, 5"/>
+			<property name="HandItem" value="meleeHandZombieEliteMedium"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="650"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2400"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".06"/>
+			<property name="MoveSpeedAggro" value=".7, 1.4"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="4500"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieHazmatChargedElite" extends="zombieHazmatElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteMedium,Hazmat"/>
+			<property name="MatColor" value="charged"/>			
+			<property name="HandItem" value="meleeHandZombieEliteMediumCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>		
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="300"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.1, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieHazmatInfernalElite" extends="zombieHazmatElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteMedium,Hazmat"/>
+			<property name="MatColor" value="infernal"/>			
+			<property name="HandItem" value="meleeHandZombieEliteMediumInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="11" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3600"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value=".9, 1.5"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="13500"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- LUMBERJACK ELITE Medium -->
+		<entity_class name="zombieLumberjackElite" extends="zombieLumberjackRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteMedium,Lumberjack"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".6"/>
+			<property name="JumpMaxDistance" value="4.8, 5"/>
+			<property name="HandItem" value="meleeHandZombieEliteMedium"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="650"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2400"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".7, 1.3"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="5500"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieLumberjackChargedElite" extends="zombieLumberjackElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteMedium,Lumberjack"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="3000"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.3, 1.9"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="11000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieLumberjackInfernalElite" extends="zombieLumberjackElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteMedium,Lumberjack"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="11" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3600"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1, 1.6"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="16500"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- MOE ELITE Medium -->
+		<entity_class name="zombieMoeElite" extends="zombieMoeRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteMedium,Moe"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".6"/>
+			<property name="JumpMaxDistance" value="4.8, 5"/>
+			<property name="HandItem" value="meleeHandZombieEliteMedium"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="650"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2400"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".06"/>
+			<property name="MoveSpeedAggro" value=".7, 1.5"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="4900"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieMoeChargedElite" extends="zombieMoeElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteMedium,Moe"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="3000"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.2, 1.9"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9800"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieMoeInfernalElite" extends="zombieMoeElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteMedium,Moe"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="11" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3600"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1, 1.7"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="14700"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- UTILITY WORKER ELITE Medium -->
+		<entity_class name="zombieUtilityWorkerElite" extends="zombieUtilityWorkerRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteMedium,bossBrigadier,UtilityWorker"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".6"/>
+			<property name="JumpMaxDistance" value="4.8, 5"/>
+			<property name="HandItem" value="meleeHandZombieEliteMedium"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="650"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2400"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".06"/>
+			<property name="MoveSpeedAggro" value=".8, 1.6"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="4700"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieUtilityWorkerChargedElite" extends="zombieUtilityWorkerElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteMedium,bossBrigadier,UtilityWorker"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="3000"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.3, 2.1"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieUtilityWorkerInfernalElite" extends="zombieUtilityWorkerElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteMedium,bossBrigadier,UtilityWorker"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteMediumInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="11" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3600"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.1, 2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="14100"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".3" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- LIGHT ELITE ZOMBIES -->
+		<!-- HP: BASE(B) 3000-5000 CHARGED(C) 6000-10000 INFERNAL(I) 9000-15000 -->
+		<!-- XP: B - 2000; C - 2600; I - 3200 -->
+		<!-- Mutation: B - 5; C - 7; I - 9 -->
+		<!-- Damage Resistance: B - none; C - range 15; I - melee 15 -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- MARLENE ELITE Light -->
+		<entity_class name="zombieMarleneElite" extends="zombieMarleneRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight,Marlene"/>
+			<property name="MatColor" value="radiated"/>			
+			
+			<property name="PainResistPerHit" value=".8"/>
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".8, 1.7"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3600"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieMarleneChargedElite" extends="zombieMarleneElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight,Marlene"/>
+			<property name="MatColor" value="charged"/>			
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.4, 2.2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="7200"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieMarleneInfernalElite" extends="zombieMarleneElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight,Marlene"/>
+			<property name="MatColor" value="infernal"/>			
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1, 2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="10800"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- SPIDER ELITE Light -->
+		<entity_class name="zombieSpiderElite" extends="zombieSpiderRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,feral,elite,spider,eliteLight"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".8"/>
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".8, 1.7"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="4100"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSpiderChargedElite" extends="zombieSpiderElite">
+			<property name="Tags" value="entity,zombie,allbiome,feral,charged,eliteCharged,elite,spider,eliteLight"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.4, 2.1"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="8200"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSpiderInfernalElite" extends="zombieSpiderElite">
+			<property name="Tags" value="entity,zombie,allbiome,feral,elite,infernal,eliteInfernal,spider,eliteLight"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.2, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="12300"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- BOE ELITE Light -->
+		<entity_class name="zombieBoeElite" extends="zombieBoeRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".8"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".7, 1.6"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="4500"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBoeChargedElite" extends="zombieBoeElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.3, 2.2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBoeInfernalElite" extends="zombieBoeElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.1, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="13500"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- DARLENE ELITE Light -->
+		<entity_class name="zombieDarleneElite" extends="zombieDarleneRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight,Darlene"/>
+			<property name="MatColor" value="radiated"/>
+						
+			<property name="PainResistPerHit" value=".8"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".9, 1.7"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3200"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieDarleneChargedElite" extends="zombieDarleneElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight,Darlene"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.4, 2.4"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="6400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieDarleneInfernalElite" extends="zombieDarleneElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight,Darlene"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.3, 2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- JOE ELITE Light -->
+		<entity_class name="zombieJoeElite" extends="zombieJoeRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight,Joe"/>
+			<property name="MatColor" value="radiated"/>			
+			
+			<property name="PainResistPerHit" value=".8"/>
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".9, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2800"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieJoeChargedElite" extends="zombieJoeElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight,Joe"/>
+			<property name="MatColor" value="charged"/>			
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.4, 2.2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="5600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieJoeInfernalElite" extends="zombieJoeElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight,Joe"/>
+			<property name="MatColor" value="infernal"/>			
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.3, 2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="7400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- STEVE ELITE Light -->
+		<entity_class name="zombieSteveElite" extends="zombieSteveRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight,Steve"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".8"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".9, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2800"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSteveChargedElite" extends="zombieSteveElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight,Steve"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.4, 2.2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="5600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSteveInfernalElite" extends="zombieSteveElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight,Steve"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.3, 2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="8400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- YO ELITE Light -->
+		<entity_class name="zombieYoElite" extends="zombieYoRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight,Yo"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".8"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".8, 1.7"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3200"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieYoChargedElite" extends="zombieYoElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight,Yo"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.2, 2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="6400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieYoInfernalElite" extends="zombieYoElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight,Yo"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- NURSE ELITE Light -->
+		<entity_class name="zombieNurseElite" extends="zombieNurseRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight,Nurse"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".8"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".8, 1.7"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3200"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieNurseChargedElite" extends="zombieNurseElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight,Nurse"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.3, 2.1"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="6400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieNurseInfernalElite" extends="zombieNurseElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight,Nurse"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.1, 1.9"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- PARTY GIRL ELITE Light -->
+		<entity_class name="zombiePartyGirlElite" extends="zombiePartyGirlRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight,PartyGirl"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".8"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".9, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="2800"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombiePartyGirlChargedElite" extends="zombiePartyGirlElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight,PartyGirl"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.4, 2.4"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="5600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombiePartyGirlInfernalElite" extends="zombiePartyGirlElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight,PartyGirl"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.2, 2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="8400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- LAB ELITE Light -->
+		<entity_class name="zombieLabElite" extends="zombieLabRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight"/>
+			<property name="MatColor" value="radiated"/>			
+			
+			<property name="PainResistPerHit" value=".8"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".6, 1.6"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3800"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieLabChargedElite" extends="zombieLabElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight"/>
+			<property name="MatColor" value="charged"/>			
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.4, 2.2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="7600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieLabInfernalElite" extends="zombieLabElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight"/>
+			<property name="MatColor" value="infernal"/>			
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.1, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="11400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+				
+		<!-- TOM CLARK ELITE Light -->
+		<entity_class name="zombieTomClarkElite" extends="zombieTomClarkRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".8"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".6, 1.6"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="4500"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieTomClarkChargedElite" extends="zombieTomClarkElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.2, 2.2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9000"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieTomClarkInfernalElite" extends="zombieTomClarkElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value=".9, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="13500"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- JANITOR ELITE Light -->
+		<entity_class name="zombieJanitorElite" extends="zombieJanitorRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight,janitor"/>
+			<property name="MatColor" value="radiated"/>		
+			
+			<property name="PainResistPerHit" value=".8"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".6, 1.7"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3400"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieJanitorChargedElite" extends="zombieJanitorElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight,janitor"/>
+			<property name="MatColor" value="charged"/>		
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1, 2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="6800"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieJanitorInfernalElite" extends="zombieJanitorElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight,janitor"/>
+			<property name="MatColor" value="infernal"/>		
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value=".9, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="10200"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- BURNT ELITE Light -->
+		<entity_class name="zombieBurntElite" extends="zombieBurntRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight,BurntZombie"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".8"/>
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".6, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3800"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBurntChargedElite" extends="zombieBurntElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight,BurntZombie"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.2, 2.4"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="7600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBurntInfernalElite" extends="zombieBurntElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight,BurntZombie"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1, 2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="11400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- BUSINESS MAN ELITE Light -->
+		<entity_class name="zombieBusinessManElite" extends="zombieBusinessManRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight,businessman"/>
+			<property name="MatColor" value="radiated"/>		
+			
+			<property name="PainResistPerHit" value=".8"/>
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/>
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".6, 1.7"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3200"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBusinessManChargedElite" extends="zombieBusinessManElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight,businessman"/>
+			<property name="MatColor" value="charged"/>		
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.2, 2.2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="6400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBusinessManInfernalElite" extends="zombieBusinessManElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight,businessman"/>
+			<property name="MatColor" value="infernal"/>		
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value=".9, 1.8"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="9600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- INMATE ELITE Light -->
+		<entity_class name="zombieInmateElite" extends="zombieInmateRadiated">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,elite,eliteLight"/>
+			<property name="MatColor" value="radiated"/>
+			
+			<property name="PainResistPerHit" value=".8"/><!-- Elite -->
+			<property name="JumpMaxDistance" value="8.8, 10"/>
+			<property name="HandItem" value="meleeHandZombieEliteLight"/>
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="450"/>
+			
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.3"/>
+			<property name="KnockdownProneStunDuration" value="0.3,1.2"/>
+			<property name="KnockdownProneRefillRate" value="0.015,0.015"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.25"/>
+			<property name="KnockdownKneelStunDuration" value="0.3,1.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.015,0.015"/>
+			<property name="LegsExplosionDamageMultiplier" value=".55"/>
+			<property name="ArmsExplosionDamageMultiplier" value=".55"/>
+			<property name="HeadExplosionDamageMultiplier" value=".55"/>
+			<property name="ChestExplosionDamageMultiplier" value=".55"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="5" tool_category="Butcher"/>
+			
+			<!-- Gameplay -->
+			<property name="DismemberMultiplierHead" value=".2"/><property name="DismemberMultiplierArms" value=".2"/><property name="DismemberMultiplierLegs" value=".2"/>
+			
+			<property name="SizeScale" value="1.15"/> <!-- 1.18 -->
+			<property name="ExperienceGain" value="2000"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+			<property name="LootDropProb" value=".05"/>
+			<property name="MoveSpeedAggro" value=".7, 1.6"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="3800"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value=".8" tags="buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieInmateChargedElite" extends="zombieInmateElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,charged,eliteCharged,elite,eliteLight"/>
+			<property name="MatColor" value="charged"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightCharged"/>
+			<property name="TimeStayAfterDeath" value="75"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="7" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.3"/>
+			<property name="ExperienceGain" value="2600"/>
+			<property name="LootDropEntityClass" value="ChargedEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1.2, 2"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="7600"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="ranged"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="24"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsChargedDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieInmateInfernalElite" extends="zombieInmateElite">
+			<property name="Tags" value="entity,zombie,allbiome,walker,feral,infernal,eliteInfernal,elite,eliteLight"/>
+			<property name="MatColor" value="infernal"/>
+			<property name="HandItem" value="meleeHandZombieEliteLightInfernal"/>
+			<property name="TimeStayAfterDeath" value="90"/>
+			<drop event="Harvest" name="resourceMutationSamples" tag="butcherHarvestMutation" count="9" tool_category="Butcher"/>
+			<property name="SizeScale" value="1.4"/>
+			<property name="ExperienceGain" value="3200"/>
+			<property name="LootDropEntityClass" value="InfernalEliteLootContainer"/>
+			<property name="MoveSpeedAggro" value="1, 1.7"/>	
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="11400"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value=".15" tags="melee"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="48"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="BuffEliteHandsInfernalDECO,BuffAcRadEliteZombieAOEself"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffInjuryKnockdown01,buffShocked,buffDeepSnowBase,buffSandBase,buffDesertGroundBase,buffRoughGroundBase,buffDestroyedStoneBase"/>
+			</effect_group>
+		</entity_class>
+				
+		<!-- ALL Zombie -->
+		
+		<!-- HEAVY -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- zombieDemolitionElite -->
+		<!-- zombieDemolitionInfernalElite -->
+		<!-- zombieFemaleFatElite -->
+		<!-- zombieFemaleFatChargedElite -->
+		<!-- zombieFemaleFatInfernaElite -->
+		<!-- zombieFatHawaiianElite -->
+		<!-- zombieFatHawaiianChargedElite -->
+		<!-- zombieFatHawaiianInfernaElite -->
+		<!-- zombieCopElite -->
+		<!-- zombieCopChargedElite -->
+		<!-- zombieCopInfernaElite -->
+		
+		<!-- MEDIUM -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- zombieWightElite -->
+		<!-- zombieWightChargedElite -->
+		<!-- zombieWightInfernaElite -->
+		<!-- zombieSoldierElite -->
+		<!-- zombieSoldierChargedElite -->
+		<!-- zombieSoldierInfernaElite -->
+		<!-- zombieSkaterElite -->
+		<!-- zombieSkaterChargedElite -->
+		<!-- zombieSkaterInfernaElite -->
+		<!-- zombieBikerElite -->
+		<!-- zombieBikerChargedElite -->
+		<!-- zombieBikerInfernaElite -->
+		<!-- zombieHazmatElite -->
+		<!-- zombieHazmatChargedElite -->
+		<!-- zombieHazmatInfernaElite -->
+		<!-- zombieLumberjackElite -->
+		<!-- zombieLumberjackChargedElite -->
+		<!-- zombieLumberjackInfernaElite -->
+		<!-- zombieMoeElite -->
+		<!-- zombieMoeChargedElite -->
+		<!-- zombieMoeInfernaElite -->
+		<!-- zombieUtilityWorkerElite -->
+		<!-- zombieUtilityWorkerChargedElite -->
+		<!-- zombieUtilityWorkerInfernaElite -->
+		
+		<!-- LIGHT -->
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		
+		<!-- zombieMarleneElite -->
+		<!-- zombieMarleneChargedElite -->
+		<!-- zombieMarleneInfernaElite -->
+		<!-- zombieSpiderElite -->
+		<!-- zombieSpiderChargedElite -->
+		<!-- zombieSpiderInfernaElite -->
+		<!-- zombieBoeElite -->
+		<!-- zombieBoeChargedElite -->
+		<!-- zombieBoeInfernaElite -->
+		<!-- zombieDarleneElite -->
+		<!-- zombieDarleneChargedElite -->
+		<!-- zombieDarleneInfernaElite -->
+		<!-- zombieJoeElite -->
+		<!-- zombieJoeChargedElite -->
+		<!-- zombieJoeInfernaElite -->
+		<!-- zombieSteveElite -->
+		<!-- zombieSteveChargedElite -->
+		<!-- zombieSteveInfernaElite -->
+		<!-- zombieYoElite -->
+		<!-- zombieYoChargedElite -->
+		<!-- zombieYoInfernaElite -->
+		<!-- zombieNurseElite -->
+		<!-- zombieNurseChargedElite -->
+		<!-- zombieNurseInfernaElite -->
+		<!-- zombiePartyGirlElite -->
+		<!-- zombiePartyGirlChargedElite -->
+		<!-- zombiePartyGirlInfernaElite -->
+		<!-- zombieLabElite -->
+		<!-- zombieLabChargedElite -->
+		<!-- zombieLabInfernaElite -->
+		<!-- zombieTomClarkElite -->
+		<!-- zombieTomClarkChargedElite -->
+		<!-- zombieTomClarkInfernaElite -->
+		<!-- zombieJanitorElite -->
+		<!-- zombieJanitorChargedElite -->
+		<!-- zombieJanitorInfernaElite -->
+		<!-- zombieBurntElite -->
+		<!-- zombieBurntChargedElite -->
+		<!-- zombieBurntInfernaElite -->
+		<!-- zombieBusinessManElite -->
+		<!-- zombieBusinessManChargedElite -->
+		<!-- zombieBusinessInfernaManElite -->
+		<!-- zombieInmateElite -->
+		<!-- zombieInmateChargedElite -->
+		<!-- zombieInmateInfernaElite -->
+
+	</append>
+</configs>

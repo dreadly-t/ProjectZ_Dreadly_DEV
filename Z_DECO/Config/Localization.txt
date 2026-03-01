@@ -1,0 +1,113 @@
+Key,Source,Context,Changes,English,Russian,Spanish
+
+zdecoSmallWoodenStructuresVariantHelper,blocks,Variant,,[DECEA3]Design:[-] Wooden platforms,[DECEA3]Конструкция:[-] Деревянные платформы,[DECEA3]Diseño[-] Plataformas de madera
+zdecoSmallWoodenStructuresVariantHelperDesc,blocks,Variant,,Wooden platform parts kit,Набор частей деревянной платформы.,Kit de piezas para plataforma de madera.
+
+zdecoIronStructuresVariantHelper,blocks,Variant,,[DECEA3]Design:[-] Iron sheets,[DECEA3]Конструкция:[-] Железные листы,[DECEA3]Diseño[-] Láminas de hierro
+zdecoMetalStructuresVariantHelperDesc,blocks,Variant,,Set of Iron sheets parts,Набор частей железных листов.,Juego de piezas de láminas de hierro.
+
+zdecoTarpFencesVariantHelper,blocks,Variant,,[DECEA3]Design:[-] Tarp fence,[DECEA3]Конструкция:[-] Забор из брезента,[DECEA3]Diseño[-] Valla de lona
+zdecoTarpFencesVariantHelperDesc,blocks,Variant,,Set of fence parts with tarp,Набор частей забора из брезента.,Juego de piezas de valla con lona.
+
+zdecoOutdoorPlantsVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Outdoor plants,[FFCEF0]Деко:[-] Уличные растения,[FFCEF0]Decoración[-] Plantas de exterior
+zdecoWildPlantsVariantHelperDesc,blocks,Variant,,A variety of outdoor plants for the exterior decoration of your base.,Набор разнообразных уличных растений для внешнего декора вашей базы.,Una variedad de plantas de exterior para la decoración exterior de su base.
+
+zdecoLargeWoodenStructuresVariantHelper,blocks,Variant,,[DECEA3]Design:[-] Wooden fence,[DECEA3]Конструкция:[-] Деревянный забор,[DECEA3]Diseño[-] Estacas de madera
+zdecoLargeWoodenStructuresVariantHelperDesc,blocks,Variant,,Set of wooden fence parts,Набор частей деревянного забора.,Juego de piezas de valla de madera.
+doorWoodLargeGateConst,blocks,block,,Large Wood Gate,Большие деревянные ворота,Gran Puerta de Madera
+logWallLeftConst,blocks,block,,Log Wall Left 01,Левая бревенчатая стена 01,Muro de Troncos Izquierdo 01
+logWallLeft2Const,blocks,block,,Log Wall Left 02,Левая бревенчатая стена 02,Muro de Troncos Izquierdo 02
+logWallRightConst,blocks,block,,Log Wall Right 01,Правая бревенчатая стена 01,Muro de Troncos Derecho 01
+logWallRight2Const,blocks,block,,Log Wall Right 02,Правая бревенчатая стена 02,Muro de Troncos Derecho 02
+logWallLeftSpikesConst,blocks,block,,Log Wall Left Spikes 01,Левая бревенчатая стена с шипами 01,Muro de Troncos Izquierdo con Pinchos 01
+logWallLeftSpikes2Const,blocks,block,,Log Wall Left Spikes 02,Левая бревенчатая стена с шипами 02,Muro de Troncos Izquierdo con Pinchos 02
+logWallRightSpikesConst,blocks,block,,Log Wall Right Spikes 01,Правая бревенчатая стена с шипами 01,Muro de Troncos Derecho con Pinchos 01
+logWallRightSpikes2Const,blocks,block,,Log Wall Right Spikes 02,Правая бревенчатая стена с шипами 02,Muro de Troncos Derecho con Pinchos 02
+logWallRightSpikesTraderConst,blocks,block,,Log Wall Right Spikes Trader,"Правая бревенчатая стена с шипами: торговец",Muro de Troncos Derecho con Pinchos Comerciante
+logWallPillarConst,blocks,block,,Log Wall Pillar,Столб бревенчатой стены,Pilar de Muro de Troncos
+logWallPillarCapConst,blocks,block,,Log Wall Pillar Cap 01,Верх столба бревенчатой стены 01,Capitel de Pilar de Muro de Troncos 01
+logWallPillarCap2Const,blocks,block,,Log Wall Pillar Cap 02,Верх столба бревенчатой стены 02,Capitel de Pilar de Muro de Troncos 02
+
+zdecoBioHazardTentVariantHelper,blocks,Variant,,[DECEA3]Design:[-] Big tent,[DECEA3]Конструкция:[-] Большая палатка,[DECEA3]Diseño[-] Tienda grande
+zdecoBioHazardTentVariantHelperDesc,blocks,Variant,,Set of parts for a large tent,Набор частей для большой палатки.,Juego de piezas para una tienda grande.
+
+zdecoFlagsVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Flags,[FFCEF0]Деко:[-] Флаги,[FFCEF0]Decoración[-] Banderas
+zdecoFlagsVariantHelperDesc,blocks,Variant,,Set of various flags for decoration,Набор разнообразных флагов для декора.,Juego de varias banderas para decoración.
+
+zdecoGarageVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Garage,[FFCEF0]Деко:[-] Гараж,[FFCEF0]Decoración[-] Garaje
+zdecoGarageVariantHelperDesc,blocks,Variant,,Garage Decor Set,Набор декора для гаража.,Juego de decoración de garaje.
+
+zdecoElectConstVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Electronics,[FFCEF0]Деко:[-] Электроника,[FFCEF0]Decoración[-] Electrónica
+zdecoElectConstVariantHelperDesc,blocks,Variant,,Industrial Electronics Decor Set,Набор декора промышленной электроники.,Juego de decoración de electrónica industrial.
+
+zdecoSmallVehicleVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Small vehicle,[FFCEF0]Деко:[-] Малый транспорт,[FFCEF0]Decoración[-] Vehículo pequeño
+zdecoSmallVehicleVariantHelperDesc,blocks,Variant,,Set of small vehicle,Набор малого транспорта.,Juego de vehículos pequeños.
+zdecoBigVehicleVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Large vehicle,[FFCEF0]Деко:[-] Крупный транспорт,[FFCEF0]Decoración[-] Vehículo grande
+zdecoBigVehicleVariantHelperDesc,blocks,Variant,,Set of large vehicle,Набор крупного транспорта.,Juego de vehículos grandes.
+
+zdecoCCarsVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Fortification from cars,[FFCEF0]Деко:[-] Укрепление из автомобилей,[FFCEF0]Decoración[-] Fortificación de coches
+zdecoCCarsVariantHelperDesc,blocks,Variant,,Set of car enhancements,Набор укреплений из автомобилей.,Juego de mejoras para coches.
+
+zdecoSignRoadVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Road signs,[FFCEF0]Деко:[-] Дорожные знаки,[FFCEF0]Decoración[-] Señales de tráfico
+zdecoSignRoadVariantHelperDesc,blocks,Variant,,Set of road signs,Набор дорожных знаков.,Juego de señales de tráfico.
+zdecoSignShopVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Shop signs,[FFCEF0]Деко:[-] Вывески магазина,[FFCEF0]Decoración[-] Letreros de tienda
+zdecoSignShopVariantHelperDesc,blocks,Variant,,Set of shop signs,Набор вывесок магазина.,Juego de letreros de tienda.
+zdecoSignBannersVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Banners,[FFCEF0]Деко:[-] Баннеры,[FFCEF0]Decoración[-] Pancartas
+zdecoSignBannersVariantHelperDesc,blocks,Variant,,Set of Banners,Набор баннеров.,Juego de pancartas.
+
+zdecoCampingVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Tents,[FFCEF0]Деко:[-] Палатки,[FFCEF0]Decoración[-] Tiendas de campaña
+zdecoCampingVariantHelperDesc,blocks,Variant,,Set of tents enhancements,Набор палаток.,Juego de mejoras para tiendas de campaña.
+
+cntLootChestHeroStorage,blocks,Container,,[DECEA3]Storage[-] Reinforced Chest,[DECEA3]Хранилище:[-] Укрепленный сундук,[DECEA3]Almacenamiento[-] Cofre Reforzado
+cntLootChestHeroStorageDesc,blocks,Container,,A reliable chest for storing 80 items,Надежный сундук для хранения 80 предметов.,Un cofre fiable para almacenar 80 objetos.
+cntHardenedChestSecureStorage,blocks,Container,,[DECEA3]Storage[-] Hardened Chest,[DECEA3]Хранилище:[-] Прочный сундук,[DECEA3]Almacenamiento[-] Cofre Endurecido
+cntHardenedChestSecureStorageDesc,blocks,Container,,Hardened chest for storing 90 items,Прочный сундук для хранения 90 предметов.,Un cofre endurecido para almacenar 90 objetos.
+cntHardenedChestSecureT5Storage,blocks,Container,,[DECEA3]Storage[-] Large Hardened Chest,[DECEA3]Хранилище:[-] Огромный прочный сундук,[DECEA3]Almacenamiento[-] Cofre Endurecido Grande
+cntHardenedChestSecureT5StorageDesc,blocks,Container,,Large hardened chest for storing 100 items,Большой прочный сундук для хранения 100 предметов.,Un cofre endurecido grande para almacenar 100 objetos.
+
+zStoragePileVariantHelper,blocks,Variant,,[DECEA3]Storage[-] Pile of resources,[DECEA3]Хранилище:[-] Куча ресурсов,[DECEA3]Almacenamiento[-] Pila de recursos
+zStoragePileVariantHelperDesc,blocks,Variant,,Set of storages from resources,Набор хранилищ из ресурсов.,Conjunto de almacenes de recursos.
+
+cntAmmoPileSmallStorage,blocks,Container,,[DECEA3]Storage[-] Ammo Pile Small,[DECEA3]Хранилище:[-] Небольшая куча боеприпасов,[DECEA3]Almacenamiento[-] Pila de Munición Pequeña
+cntAmmoPileMediumStorage,blocks,Container,,[DECEA3]Storage[-] Ammo Pile Medium,[DECEA3]Хранилище:[-] Средняя куча боеприпасов,[DECEA3]Almacenamiento[-] Pila de Munición Mediana
+cntAmmoPileLargeStorage,blocks,Container,,[DECEA3]Storage[-] Ammo Pile Large,[DECEA3]Хранилище:[-] Большая куча боеприпасов,[DECEA3]Almacenamiento[-] Pila de Munición Grande
+cntChemPileSmallStorage,blocks,Container,,[DECEA3]Storage[-] Chemistry Pile Small,[DECEA3]Хранилище:[-] Небольшая куча химии,[DECEA3]Almacenamiento[-] Pila de Química Pequeña
+cntChemPileMediumStorage,blocks,Container,,[DECEA3]Storage[-] Chemistry Pile Medium,[DECEA3]Хранилище:[-] Средняя куча химии,[DECEA3]Almacenamiento[-] Pila de Química Mediana
+cntChemPileLargeStorage,blocks,Container,,[DECEA3]Storage[-] Chemistry Pile Large,[DECEA3]Хранилище:[-] Большая куча химии,[DECEA3]Almacenamiento[-] Pila de Química Grande
+cntMedicPileSmallStorage,blocks,Container,,[DECEA3]Storage[-] Medical Pile Small,[DECEA3]Хранилище:[-] Небольшая куча медикаментов,[DECEA3]Almacenamiento[-] Pila Médica Pequeña
+cntMedicPileLargeStorage,blocks,Container,,[DECEA3]Storage[-] Medical Pile Large,[DECEA3]Хранилище:[-] Большая куча медикаментов,[DECEA3]Almacenamiento[-] Pila Médica Grande
+cntFoodPileSmallStorage,blocks,Container,,[DECEA3]Storage[-] Food Pile Small,[DECEA3]Хранилище:[-] Небольшая куча еды,[DECEA3]Almacenamiento[-] Pila de Comida Pequeña
+cntFoodPileMediumStorage,blocks,Container,,[DECEA3]Storage[-] Food Pile Medium,[DECEA3]Хранилище:[-] Средняя куча еды,[DECEA3]Almacenamiento[-] Pila de Comida Mediana
+cntFoodPileLargeStorage,blocks,Container,,[DECEA3]Storage[-] Food Pile Large,[DECEA3]Хранилище:[-] Большая куча еды,[DECEA3]Almacenamiento[-] Pila de Comida Grande
+cntBookPileSmallStorage,blocks,Container,,[DECEA3]Storage[-] Books Pile Small,[DECEA3]Хранилище:[-] Небольшая куча книг,[DECEA3]Almacenamiento[-] Pila de Libros Pequeña
+cntBookPileMediumStorage,blocks,Container,,[DECEA3]Storage[-] Books Pile Medium,[DECEA3]Хранилище:[-] Средняя куча книг,[DECEA3]Almacenamiento[-] Pila de Libros Mediana
+cntBookPileLargeStorage,blocks,Container,,[DECEA3]Storage[-] Books Pile Large,[DECEA3]Хранилище:[-] Большая куча книг,[DECEA3]Almacenamiento[-] Pila de Libros Grande
+
+zStorageUniversalVariantHelper,blocks,Variant,,[DECEA3]Storage[-] Universal,[DECEA3]Хранилище:[-] Универсальное,[DECEA3]Almacenamiento[-] Universal
+zStorageUniversalVariantHelperDesc,blocks,Variant,,Universal Storage Set,Набор универсальных хранилищ.,Conjunto de almacenamiento universal.
+
+MunitionsBoxArmyStorage,blocks,Container,,[DECEA3]Storage[-] Equipment box,[DECEA3]Хранилище:[-] Коробка для снаряжения,[DECEA3]Almacenamiento[-] Caja de equipo
+MunitionsBoxArmyRedStorage,blocks,Container,,[DECEA3]Storage[-] Equipment box,[DECEA3]Хранилище:[-] Коробка для снаряжения,[DECEA3]Almacenamiento[-] Caja de equipo
+MunitionsBoxArmyOrangeStorage,blocks,Container,,[DECEA3]Storage[-] Equipment box,[DECEA3]Хранилище:[-] Коробка для снаряжения,[DECEA3]Almacenamiento[-] Caja de equipo
+MunitionsBoxArmyGreenStorage,blocks,Container,,[DECEA3]Storage[-] Equipment box,[DECEA3]Хранилище:[-] Коробка для снаряжения,[DECEA3]Almacenamiento[-] Caja de equipo
+MunitionsBoxArmyBlueStorage,blocks,Container,,[DECEA3]Storage[-] Equipment box,[DECEA3]Хранилище:[-] Коробка для снаряжения,[DECEA3]Almacenamiento[-] Caja de equipo
+
+WeaponsBagSmallStorage,blocks,Container,,[DECEA3]Storage[-] Weapon Bag Small,[DECEA3]Хранилище:[-] Небольшая сумка для оружия,[DECEA3]Almacenamiento[-] Bolsa de Armas Pequeña
+WeaponsBagBigStorage,blocks,Container,,[DECEA3]Storage[-] Weapon Bag Large,[DECEA3]Хранилище:[-] Большая сумка для оружия,[DECEA3]Almacenamiento[-] Bolsa de Armas Grande
+
+PillCaseStorage,blocks,Container,,[DECEA3]Storage[-] Medical Cabinet,[DECEA3]Хранилище:[-] Медицинский шкафчик,[DECEA3]Almacenamiento[-] Gabinete Médico
+GunRackSmallStorage,blocks,Container,,[DECEA3]Storage[-] Armor Rack Small,[DECEA3]Хранилище:[-] Малый стеллаж для брони,[DECEA3]Almacenamiento[-] Estante de Armadura Pequeño
+GunRackLargeStorage,blocks,Container,,[DECEA3]Storage[-] Gun Rack Large,[DECEA3]Хранилище:[-] Большая стойка для оружия,[DECEA3]Almacenamiento[-] Estante de Armas Grande
+MannequinMilitaryCommandoStorage,blocks,Container,,[DECEA3]Storage[-] Mannequin,[DECEA3]Хранилище:[-] Манекен,[DECEA3]Almacenamiento[-] Maniquí
+
+zStorageBoxVariantHelper,blocks,Variant,,[DECEA3]Storage[-] Boxes,[DECEA3]Хранилище:[-] Ящики,[DECEA3]Almacenamiento[-] Cajas
+zStorageBoxVariantHelperDesc,blocks,Variant,,Set of drawers,Набор ящиков.,Juego de cajones.
+
+ShippingCrateShamwayStorage,blocks,Container,,[DECEA3]Storage[-] Shamway Box,[DECEA3]Хранилище:[-] Ящик «Срамвэй»,[DECEA3]Almacenamiento[-] Caja Shamway
+ShippingCrateLabEquipmentStorage,blocks,Container,,[DECEA3]Storage[-] Pop-N-Pills Box,[DECEA3]Хранилище:[-] Ящик «Шприцы и таблетки»,[DECEA3]Almacenamiento[-] Caja Pop-N-Pills
+ShippingCrateBookStorage,blocks,Container,,[DECEA3]Storage[-] Crack-A-Book Box,[DECEA3]Хранилище:[-] Ящик «Книжный червь»,[DECEA3]Almacenamiento[-] Caja Crack-A-Book
+ShippingCrateCarPartsStorage,blocks,Container,,[DECEA3]Storage[-] Pass-N-Gas Box,[DECEA3]Хранилище:[-] Ящик «Притормози»,[DECEA3]Almacenamiento[-] Caja Pass-N-Gas
+ShippingCrateShotgunMessiahStorage,blocks,Container,,[DECEA3]Storage[-] Shotgun Messiah Box,[DECEA3]Хранилище:[-] Ящик «Shotgun Messiah»,[DECEA3]Almacenamiento[-] Caja Shotgun Messiah
+ShippingCrateWorkingStiffsStorage,blocks,Container,,[DECEA3]Storage[-] Working Stiff Box,[DECEA3]Хранилище:[-] Ящик «Пролетарий»,[DECEA3]Almacenamiento[-] Caja Working Stiff
+ShippingCrateSavageCountryStorage,blocks,Container,,[DECEA3]Storage[-] Savage Country Box,[DECEA3]Хранилище:[-] Ящик «Savage Country»,[DECEA3]Almacenamiento[-] Caja Savage Country
+ShippingCrateMoPowerElectronicsStorage,blocks,Container,,[DECEA3]Storage[-] Mo Power Electronics Box,[DECEA3]Хранилище:[-] Ящик «Mo Power Electronics»,[DECEA3]Almacenamiento[-] Caja Mo Power Electronics

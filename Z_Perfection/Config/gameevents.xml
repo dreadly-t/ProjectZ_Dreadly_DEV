@@ -1,0 +1,45 @@
+<config>
+		
+	<append xpath="/gameevents">
+		
+		<action_sequence name="actionAggressorMiniboss">
+			<property name="action_type" value="Game"/>
+			<action class="Delay">
+				<property name="phase" value="1" />
+				<property name="time" value="3" />
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="2" />
+				<property name="entity_names" value="bossDevourer,bossBearDaddy,bossGargul,bossBitch,bossBurningFlesh,bossCholera"/>
+				<property name="spawn_count" value="1" param1="spawncount" />
+				<property name="max_distance" value="30" param1="maxdist" />
+				<property name="min_distance" value="45" param1="mindist" />
+				<property name="air_spawn" value="true" param1="airspawn" />
+			</action>	
+		</action_sequence>
+		
+		<action_sequence name="actionAggressorBoss">
+			<property name="action_type" value="Game"/>
+			<action class="Delay">
+				<property name="phase" value="1" />
+				<property name="time" value="3" />
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="2" />
+				<property name="entity_names" value="bossBull,bossShocker,bossVeteran,bossAncientYeti"/>
+				<property name="spawn_count" value="1" param1="spawncount" />
+				<property name="max_distance" value="30" param1="maxdist" />
+				<property name="min_distance" value="45" param1="mindist" />
+				<property name="air_spawn" value="true" param1="airspawn" />
+			</action>	
+		</action_sequence>
+		
+		<action_sequence name="action_1Skillpont">
+			<action class="AddSkillPoints">
+				<property name="skill_points" value="1" />
+			</action>
+		</action_sequence>
+	
+	</append>
+	
+</config>

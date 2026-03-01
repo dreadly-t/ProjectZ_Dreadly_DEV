@@ -1,0 +1,5 @@
+<config>
+	
+	<set xpath="/progression/perks/perk[@name='perkMotherLode']/effect_group/passive_effect[@name='PlayerExpGain']/@value">-.05,-.2</set>
+	
+</config>

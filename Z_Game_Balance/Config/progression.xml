@@ -1,0 +1,48 @@
+<config>
+		
+	<!-- Adding additional levels to the Lockpicking skill -->
+	<set xpath="/progression/perks/perk[@name='perkLockPicking']/@max_level">5</set>
+	<set xpath="/progression/perks/perk[@name='perkLockPicking']/@override_cost">1,1,2,2,3</set>
+	
+	<append xpath="/progression/perks/perk[@name='perkLockPicking']/effect_group">
+		<passive_effect name="DamageModifier" operation="perc_add" level="1,5" value=".1,.5" tags="lockedSafe"/>
+	</append>
+		
+	<set xpath="/progression/perks/perk[@name='perkLockPicking']/effect_group/passive_effect[@name='LockPickTime']/@level">1,5</set>
+	<set xpath="/progression/perks/perk[@name='perkLockPicking']/effect_group/passive_effect[@name='LockPickTime']/@value">.15,.45</set>
+	<set xpath="/progression/perks/perk[@name='perkLockPicking']/effect_group/passive_effect[@name='LockPickBreakChance']/@level">1,5</set>
+	<set xpath="/progression/perks/perk[@name='perkLockPicking']/effect_group/passive_effect[@name='LockPickBreakChance']/@value">.1,.5</set>
+	<set xpath="/progression/perks/perk[@name='perkLockPicking']/effect_group/passive_effect[@name='LootQuantity']/@level">2,3,4,5</set>
+	<set xpath="/progression/perks/perk[@name='perkLockPicking']/effect_group/passive_effect[@name='LootQuantity']/@value">1,2,3,3</set>
+	<set xpath="/progression/perks/perk[@name='perkLockPicking']/effect_group/passive_effect[@name='LootProb']/@level">1,5</set>
+	<InsertAfter xpath="/progression/perks/perk[@name='perkLockPicking']/effect_group/effect_description[@desc_key='perkLockPickingRank3Desc']">
+		<effect_description level="4" desc_key="perkLockPickingRank4Desc" long_desc_key="perkLockPickingRank4LongDesc"/>
+		<effect_description level="5" desc_key="perkLockPickingRank5Desc" long_desc_key="perkLockPickingRank5LongDesc"/>
+	</InsertAfter>
+	
+	
+	<!-- Balance of instant kill chance with stun button -->
+	<set xpath="/progression/perks/perk[@name='perkPhysician']/effect_group/requirement[@name='RandomRoll']/@value">15</set>
+	<set xpath="/progression/perks/perk[@name='perkPhysician']/effect_group/passive_effect[@name='EntityDamage']/@value">15000</set>
+	<InsertAfter xpath="/progression/perks/perk[@name='perkPhysician']/effect_group/requirement[@name='EntityTagCompare']">
+		<requirement name="!EntityTagCompare" target="other" tags="smallboss,miniboss,boss"/>
+	</InsertAfter>
+	
+	<!-- Changes to the bonus from the book Myths of the Hammer, Volume 2 -->
+	
+	<InsertAfter xpath="/progression/perks/book[@name='perkSledgeSagaSavageReaper']/effect_group/passive_effect[@name='PlayerExpGain']">
+		<triggered_effect trigger="onSelfKilledOther" action="AddBuff" target="self" buff="buffBonusMissChance">
+			<requirement name="ItemHasTags" tags="perkSkullCrusher"/>
+			<requirement name="IsSecondaryAttack"/>
+		</triggered_effect>
+	</InsertAfter>
+	<remove xpath="/progression/perks/book[@name='perkSledgeSagaSavageReaper']/effect_group/passive_effect[@name='PlayerExpGain']"/>
+		
+	<!-- Reduced bonus from book sets for heavy melee weapons -->
+	<set xpath="/progression/perks/book[@name='perkSledgeSagaComplete']/effect_group/triggered_effect[@trigger='onSelfKilledOther']/@value">40</set>
+	<remove xpath="/progression/perks/book[@name='perkSledgeSagaComplete']/effect_group/triggered_effect/requirement[@name='IsSecondaryAttack']"/>
+	<set xpath="/progression/perks/book[@name='perkSpearHunter8Complete']/effect_group/triggered_effect[@trigger='onSelfKilledOther']/@value">60</set>
+	<set xpath="/progression/perks/book[@name='perkBatterUpComplete']/effect_group/triggered_effect[@trigger='onSelfKilledOther']/@value">50</set>
+	<remove xpath="/progression/perks/book[@name='perkBatterUpComplete']/effect_group/triggered_effect/requirement[@name='IsSecondaryAttack']"/>
+
+</config>

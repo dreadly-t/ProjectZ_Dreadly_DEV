@@ -1,0 +1,77 @@
+<config>
+		
+	<!-- Alco -->
+	<append xpath="/items/item[@name='drinkJarGrandpasMoonshine']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd15"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drinkJarBeer']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd10"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drinkJarGrandpasAwesomeSauce']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd10"/>
+		</effect_group>
+	</append>
+	
+	<!-- Candy -->
+	<append xpath="/items/item[@name='drugAtomJunkies']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd5"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drugCovertCats']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd5"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drugEyeKandy']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd5"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drugHackers']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd5"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drugHealthBar']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd5"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drugJailBreakers']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd5"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drugNerdTats']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd5"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drugOhShitzDrops']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd5"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drugRockBusters']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd5"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drugSkullCrushers']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd5"/>
+		</effect_group>
+	</append>
+	<append xpath="/items/item[@name='drugSugarButts']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$StressStatus" operation="add" value="@$StressAdd5"/>
+		</effect_group>
+	</append>
+	
+</config>

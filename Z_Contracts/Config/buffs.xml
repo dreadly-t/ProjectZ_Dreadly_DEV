@@ -1,0 +1,241 @@
+<config>
+	
+	<append xpath="/buffs/buff[@name='buffStatusCheck01']">
+		
+		<effect_group>
+			<passive_effect name="HealthMax" operation="base_add" value="@$RareBonus_Health"/>
+			<passive_effect name="StaminaMax" operation="base_add" value="@$RareBonus_Stamina"/>
+			<passive_effect name="JumpStrength" operation="perc_add" value="@$RareBonus_JumpStrength"/>
+			<passive_effect name="Mobility" operation="perc_add" value="@$RareBonus_Mobility"/>
+				
+			<passive_effect name="EntityDamage" operation="perc_add" value="@RareBonus_AnimalDamageMelee">
+				<requirement name="EntityTagCompare" target="other" tags="animal"/></passive_effect>
+					
+			<passive_effect name="HarvestCount" operation="perc_add" value="@LegBonus_MinibossSamples" tags="butcherHarvestMutation">
+				<requirement name="EntityTagCompare" target="other" tags="miniboss"/></passive_effect>
+			<passive_effect name="HarvestCount" operation="perc_add" value="@LegBonus_BossSamples" tags="butcherHarvestMutation">
+				<requirement name="EntityTagCompare" target="other" tags="boss"/></passive_effect>
+			<passive_effect name="HarvestCount" operation="perc_add" value="@LegBonus_AllSamples" tags="butcherHarvestMutation"/>
+				
+			<!-- BIOME's damage bonus -->
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamageForest">
+				<requirement name="InBiome" biome="3"/></passive_effect>
+			
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamageBurntForest">
+				<requirement name="InBiome" biome="9"/></passive_effect>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamageDesert">
+				<requirement name="InBiome" biome="5"/></passive_effect>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamageSnow">
+				<requirement name="InBiome" biome="1"/></passive_effect>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamageWasteland">
+				<requirement name="InBiome" biome="8"/></passive_effect>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamageRifle">
+				<requirement name="HasBuff" buff="Holding_Rifle"/></passive_effect>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamageMachineGun">
+				<requirement name="HasBuff" buff="Holding_MachineGun"/></passive_effect>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamageShotgun">
+				<requirement name="HasBuff" buff="Holding_Shotgun"/></passive_effect>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamagePistol">
+				<requirement name="HasBuff" buff="Holding_Pistol"/></passive_effect>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamageMeleeLight">
+				<requirement name="HasBuff" buff="Holding_Melee_Light"/></passive_effect>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamageMeleeHeavy">
+				<requirement name="HasBuff" buff="Holding_Melee_Heavy"/></passive_effect>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_DamageAll"/>
+				
+		</effect_group>
+			
+		<effect_group name="sneak damage bonus">
+			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+			<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+				<passive_effect name="DamageBonus" operation="base_add" value="@$RareBonus_HiddenStrike"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="@$RareBonus_HiddenStrike" tags="perkDeadEye"/>
+		</effect_group>
+		
+		<effect_group>
+			<!-- Biome Quest Requirements -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="Wasteland_Night">
+				<requirement name="InBiome" biome="8"/>
+				<requirement name="IsNight"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="Winter_Night">
+				<requirement name="InBiome" biome="1"/>
+				<requirement name="IsNight"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="Only_Night">
+				<requirement name="IsNight"/>
+			</triggered_effect>
+			
+			<!-- AllTime -->
+			
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="Forest_AllTime">
+				<requirement name="InBiome" biome="3"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="BurntForest_AllTime">
+				<requirement name="InBiome" biome="9"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="Desert_AllTime">
+				<requirement name="InBiome" biome="5"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="Snow_AllTime">
+				<requirement name="InBiome" biome="1"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="Wasteland_AllTime">
+				<requirement name="InBiome" biome="8"/>
+			</triggered_effect>
+		</effect_group>
+		
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$NoWearStat" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$NoWearStat" operation="set" value="1">
+				<requirement name="WornItems" operation="GTE" value="1" tags="armor"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="NoWear">
+				<requirement name="CVarCompare" cvar="$NoWearStat" operation="Equals" value="1"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="NoWear">
+				<requirement name="CVarCompare" cvar="$NoWearStat" operation="Equals" value="0"/>
+			</triggered_effect>
+        </effect_group>
+		
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$NoBootsStat" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$NoBootsStat" operation="set" value="1">
+				<requirement name="WornItems" operation="GTE" value="1" tags="feet"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="NoBoots">
+				<requirement name="CVarCompare" cvar="$NoBootsStat" operation="Equals" value="1"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="NoBoots">
+				<requirement name="CVarCompare" cvar="$NoBootsStat" operation="Equals" value="0"/>
+			</triggered_effect>
+		</effect_group>
+		
+		<!-- <triggered_effect trigger="onSelfJump" action="CVarLogValue" cvar="$NoBootsStat"/> -->
+		<!-- <triggered_effect trigger="onSelfJump" action="CVarLogValue" cvar="LegBonus_BossSamples"/> -->
+		<!-- <triggered_effect trigger="onSelfJump" action="CVarLogValue" cvar="LegBonus_AllSamples"/> -->
+		
+	</append>
+	
+	<append xpath="/buffs">
+		<!-- Check's general conditions -->
+		<buff name="Winter_Night" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+		<buff name="Wasteland_Night" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+		
+		<buff name="Only_Night" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+		
+		<buff name="Forest_AllTime" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+		<buff name="BurntForest_AllTime" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+		<buff name="Desert_AllTime" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+		<buff name="Snow_AllTime" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+		<buff name="Wasteland_AllTime" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+		
+		<buff name="NoWear" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+		<buff name="NoBoots" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+		</buff>
+	   
+		<!-- Range weapon check's -->
+		<buff name="Holding_Range" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_MachineGun" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Shotgun" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Rifle" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Pistol" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Archery" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Mantis" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		
+		<!-- Melee weapon check's -->
+		<buff name="Holding_Melee" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Melee_Light" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Melee_Heavy" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Axe" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Spear" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Club" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Sledgehammer" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Knuckles" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_Knife" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+		<buff name="Holding_StunBaton" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		</buff>
+	   
+    </append>
+	
+</config>

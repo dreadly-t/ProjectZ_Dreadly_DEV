@@ -1,0 +1,249 @@
+<config>
+	
+	<append xpath="/lootcontainers">
+		<!-- START QUEST -->
+		<lootgroup name="note2_startQuest">
+			<item name="note2_startQuest" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="note3_startQuest">
+			<item name="note3_startQuest" count="1"/>
+		</lootgroup>
+		<lootgroup name="meleeWpnBladeT0BoneKnife">
+			<item name="meleeWpnBladeT0BoneKnife" count="1" value="1"/>
+		</lootgroup>
+		<lootgroup name="medicalFirstAidBandage">
+			<item name="medicalFirstAidBandage" count="6"/>
+		</lootgroup>
+		
+		<lootgroup name="note4_startQuest">
+			<item name="note4_startQuest" count="1"/>
+		</lootgroup>
+		<lootgroup name="startBundle">
+			<item name="startBundle" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="casinoCoin5000">
+			<item name="casinoCoin" count="5000"/>
+		</lootgroup>
+		<lootgroup name="casinoCoin15000">
+			<item name="casinoCoin" count="15000"/>
+		</lootgroup>
+		<lootgroup name="casinoCoin25000">
+			<item name="casinoCoin" count="25000"/>
+		</lootgroup>
+		<lootgroup name="UniqueParts5">
+			<item name="UniqueParts" count="5"/>
+		</lootgroup>
+		<lootgroup name="UniqueParts20">
+			<item name="UniqueParts" count="20"/>
+		</lootgroup>
+		
+		<!-- BETTER WEAPON  -->
+		<lootgroup name="BetterWeapon_MeleeT1">
+			<item name="BetterWeapon_MeleeT1" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="Reward_MeleeT1_Spear">
+			<item name="Reward_MeleeT1_Spear" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_MeleeT1_Club">
+			<item name="Reward_MeleeT1_Club" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_MeleeT1_Sledgehammer">
+			<item name="Reward_MeleeT1_Sledgehammer" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_MeleeT1_Knuckles">
+			<item name="Reward_MeleeT1_Knuckles" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_MeleeT1_Knife">
+			<item name="Reward_MeleeT1_Knife" count="1"/>
+		</lootgroup>
+
+		<lootgroup name="BetterWeapon_RangeT1">
+			<item name="BetterWeapon_RangeT1" count="1"/>
+		</lootgroup>
+		<lootgroup name="BetterWeapon_MeleeT2">
+			<item name="BetterWeapon_MeleeT2" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="Reward_MeleeT2_Spear">
+			<item name="Reward_MeleeT2_Spear" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_MeleeT2_Club">
+			<item name="Reward_MeleeT2_Club" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_MeleeT2_Sledgehammer">
+			<item name="Reward_MeleeT2_Sledgehammer" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_MeleeT2_Knuckles">
+			<item name="Reward_MeleeT2_Knuckles" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_MeleeT2_Knife">
+			<item name="Reward_MeleeT2_Knife" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="BetterWeapon_RangeT2">
+			<item name="BetterWeapon_RangeT2" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_RangeT2_Rifle">
+			<item name="Reward_RangeT2_Rifle" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_RangeT2_Shotgun">
+			<item name="Reward_RangeT2_Shotgun" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_RangeT2_MachineGun">
+			<item name="Reward_RangeT2_MachineGun" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_RangeT2_Archery">
+			<item name="Reward_RangeT2_Archery" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="handgunsSkillMagazine">
+			<item name="handgunsSkillMagazine" count="15"/>
+		</lootgroup>
+		
+		<lootgroup name="BetterWeapon_RangeT3">
+			<item name="BetterWeapon_RangeT3" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_RangeT3_Rifle">
+			<item name="Reward_RangeT3_Rifle" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_RangeT3_Shotgun">
+			<item name="Reward_RangeT3_Shotgun" count="1"/>
+		</lootgroup>
+		<lootgroup name="Reward_RangeT3_MachineGun">
+			<item name="Reward_RangeT3_MachineGun" count="1"/>
+		</lootgroup>
+		<lootgroup name="bowsSkillMagazine10">
+			<item name="bowsSkillMagazine" count="10"/>
+		</lootgroup>
+		
+		<lootgroup name="BetterWeapon_ImpMods">
+			<item name="BetterWeapon_ImpMods" count="1"/>
+		</lootgroup>
+		<lootgroup name="BetterWeapon_UniqueMods">
+			<item name="BetterWeapon_UniqueMods" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="BetterWeapon_LastHunt1">
+			<item name="BetterWeapon_LastHunt1" count="1"/>
+		</lootgroup>
+		<lootgroup name="BetterWeapon_LastHunt2">
+			<item name="BetterWeapon_LastHunt2" count="1"/>
+		</lootgroup>
+		
+		<!-- RARE SAMPLES -->
+		<lootgroup name="bookRareSamples2">
+			<item name="bookRareSamples2" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="bookRareSamples3">
+			<item name="bookRareSamples3" count="1"/>
+		</lootgroup>
+		<lootgroup name="modSurgicalBladeSchematic">
+			<item name="modSurgicalBladeSchematic" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="bookRareSamples4">
+			<item name="bookRareSamples4" count="1"/>
+		</lootgroup>
+		<lootgroup name="bookRareSamples5">
+			<item name="bookRareSamples5" count="1"/>
+		</lootgroup>
+		<lootgroup name="bookRareSamples6">
+			<item name="bookRareSamples6" count="1"/>
+		</lootgroup>
+		<lootgroup name="bookRareSamples7">
+			<item name="bookRareSamples7" count="1"/>
+		</lootgroup>
+		<lootgroup name="bookRareSamples8">
+			<item name="bookRareSamples8" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="bookRareSamples9">
+			<item name="bookRareSamples9" count="1"/>
+		</lootgroup>
+		<lootgroup name="ImpModsBundle">
+			<item name="ImpModsBundle" count="1"/>
+		</lootgroup>
+		<lootgroup name="ImpModsMeleeBundle">
+			<item name="ImpModsMeleeBundle" count="1"/>
+		</lootgroup>
+		<lootgroup name="ImpModsRangeBundle">
+			<item name="ImpModsRangeBundle" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="bookRareSamples10">
+			<item name="bookRareSamples10" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="UniqueModsBundle">
+			<item name="UniqueModsBundle" count="1"/>
+		</lootgroup>
+		<lootgroup name="UniqueModsMeleeBundle">
+			<item name="UniqueModsMeleeBundle" count="1"/>
+		</lootgroup>
+		<lootgroup name="UniqueModsRangeBundle">
+			<item name="UniqueModsRangeBundle" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="SkillPointBundle5">
+			<item name="SkillPointBundle5" count="1"/>
+		</lootgroup>
+		<lootgroup name="SkillPointBundle25">
+			<item name="SkillPointBundle25" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="ImpModsMeleeReward">
+			<item name="modSurgicalBlade"/>
+			<item name="modMeleeDimondPartsHeavy"/>
+			<item name="modMeleeDimondPartsLight"/>
+			<item name="modMeleeErgonomicGripImp"/>
+			<item name="modMeleeTheHunterImp"/>
+			<item name="modMeleeTerribleSpikesImp"/>
+		</lootgroup>
+		<lootgroup name="ImpModsRangeReward">
+			<item name="modGunDrumMagazineExtenderImp"/>
+			<item name="modGunMagazineExtenderImp"/>
+			<item name="modGunMeleeRadRemoverImp"/>
+			<item name="modGunCrippleEmImp"/>
+			<item name="modGunForegripImp"/>
+			<item name="modGunBipodImp"/>
+			<item name="modGunSoundSuppressorSilencerImp"/>
+			<item name="modGunBoosterExp"/>
+			<item name="modGunDamageAccumulatorExp"/>
+			<item name="modGunRiflePartsImp"/>
+			<item name="modGunPistolPartsImp"/>
+			<item name="modGunM60PartsImp"/>
+			<item name="modGunShotgunPartsImp"/>
+		</lootgroup>
+		<lootgroup name="UniqueModsMeleeReward">
+			<item name="modSurgicalBladeUnique"/>
+			<item name="modMeleeDimondPartsHeavyUnique"/>
+			<item name="modMeleeDimondPartsLightUnique"/>
+			<item name="modMeleeErgonomicGripUnique"/>
+			<item name="modMeleeTheHunterUnique"/>
+			<item name="modMeleeTerribleSpikesUnique"/>
+			<item name="modMeleeClubBurningUnique"/>
+			<item name="modMeleeElectroUnique"/>
+		</lootgroup>
+		<lootgroup name="UniqueModsRangeReward">
+			<item name="modGunDrumMagazineExtenderUnique"/>
+			<item name="modGunMagazineExtenderUnique"/>
+			<item name="modGunMeleeRadRemoverUnique"/>
+			<item name="modGunCrippleEmUnique"/>
+			<item name="modGunForegripUnique"/>
+			<item name="modGunBipodUnique"/>
+			<item name="modGunSoundSuppressorSilencerUnique"/>
+			<item name="modGunBoosterUnique"/>
+			<item name="modGunDamageAccumulatorUnique"/>
+			<item name="modGunRiflePartsUnique"/>
+			<item name="modGunPistolPartsUnique"/>
+			<item name="modGunM60PartsUnique"/>
+			<item name="modGunShotgunPartsUnique"/>
+		</lootgroup>		
+		
+	</append>
+	
+</config>

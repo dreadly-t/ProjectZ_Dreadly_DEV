@@ -1,0 +1,8 @@
+<config>
+
+	<!-- Forester BONUS -->
+	<insertAfter xpath="/blocks/block[@name='treeMaster']/drop[@name='foodHoney']">
+		<drop event="Harvest" name="foodHoney" prob=".05" count="1" tag="perkForestTimerBonus"/>
+	</insertAfter>
+	
+</config>

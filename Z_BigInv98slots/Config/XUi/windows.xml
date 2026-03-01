@@ -1,0 +1,54 @@
+<config>
+	
+	<remove xpath="windows/window[@name='windowBackpack']"/>
+	
+	<!-- adjust windowlooting to match the size of the new player dropped backpack container -->
+    <set xpath="/windows/window[@name='windowLooting']/rect[@name='content']/grid[@name='queue']/@rows">11</set>
+    <set xpath="/windows/window[@name='windowLooting']/rect[@name='content']/grid[@name='queue']/@cols">10</set>
+	
+	<insertAfter xpath="windows/popupMenu[@name='popupMenu']">
+	
+		<window name="windowBackpack" width="816" height="340" panel="Center" controller="BackpackWindow" cursor_area="true" >
+			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+				<sprite depth="3" name="windowIcon" style="icon32px" pivot="center" pos="21,-21" sprite="ui_game_symbol_backpack" />
+				<label depth="3" name="windowName" pos="42,-6" width="180" height="32" text="INVENTORY" text_key="xuiInventory" font_size="32" />
+
+
+				<rect pos="480,0" width="400" controller="ContainerStandardControls" move_start_bottom_left="true" is_backpack="true">
+					<button depth="3" name="btnClearInventory" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="-45, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}" defaultcolor="[iconColor]" hovercolor="[hoverColor]" selectedcolor="[selectedColor]" />
+
+					<button depth="3" name="btnToggleLockMode" sprite="ui_game_symbol_lock" tooltip_key="xuiStashLockModeToggle" pos="0, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" selected="{userlockmode}" />
+
+					<button depth="3" name="btnSort" sprite="ui_game_symbol_sort" tooltip_key="lblSortContainer" pos="50, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+					
+					<rect pos="0, 0" visible="{lootingorvehiclestorage}">
+						<button depth="3" name="btnMoveFillAndSmart" sprite="ui_game_symbol_store_similar_down" tooltip_key="lblStashFillAndSmart" pos="100, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+						<button depth="3" name="btnMoveAll" sprite="ui_game_symbol_store_all_down" tooltip_key="lblStashAll"  pos="150, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+
+	<!--
+						<rect pos="0,30">
+							<button   depth="3" name="btnMoveFillStacks"   sprite="ui_game_symbol_drop"          tooltip_key="lblStashFillStacks"   pos="6, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+							<button   depth="3" name="btnMoveSmart"        sprite="ui_game_symbol_drop"          tooltip_key="lblStashSmart"        pos="46, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+						</rect>
+	-->
+					</rect>
+				</rect>
+				
+				<label depth="2" pos="690,-8" width="80" height="28" text="{currencyamount}" justify="right" />
+				<sprite depth="4" name="costIcon" sprite="ui_game_symbol_coin" size="24,24" pos="776,-10" color="[white]" foregroundlayer="true" />
+			</panel>
+
+			<panel name="content" width="100%" height="368" depth="0" pos="0,-46" disableautobackground="true">
+					<sprite name="background" color="[black]" type="sliced" globalopacity="true"/>
+					
+					<sprite depth="10" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="816" height="368" color="[black]" type="sliced" fillcenter="false" on_press="true"  gamepad_selectable="false"/>
+					
+					<grid depth="10" name="inventory" rows="7" cols="14" pos="3,-3" cell_width="58" cell_height="52" controller="Backpack" repeat_content="true" >
+						<backpack_item_stack name="0"/>
+					</grid>
+			</panel>
+		</window>
+		
+	</insertAfter>
+	
+</config>

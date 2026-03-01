@@ -1,0 +1,44 @@
+<config>
+
+	<append xpath="/recipes">
+		
+		<recipe name="ammoBundle9mmBulletBall" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammo9mmBulletBall" count="100"/>
+		</recipe>
+		<recipe name="ammoBundle9mmBulletHP" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammo9mmBulletHP" count="100"/>
+		</recipe>
+		<recipe name="ammoBundle9mmBulletAP" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammo9mmBulletAP" count="100"/>
+		</recipe>
+		<recipe name="ammoBundle44MagnumBulletBall" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammo44MagnumBulletBall" count="100"/>
+		</recipe>
+		<recipe name="ammoBundle44MagnumBulletHP" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammo44MagnumBulletHP" count="100"/>
+		</recipe>
+		<recipe name="ammoBundle44MagnumBulletAP" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammo44MagnumBulletAP" count="100"/>
+		</recipe>
+		<recipe name="ammoBundle762mmBulletBall" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammo762mmBulletBall" count="100"/>
+		</recipe>
+		<recipe name="ammoBundle762mmBulletHP" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammo762mmBulletHP" count="100"/>
+		</recipe>
+		<recipe name="ammoBundle762mmBulletAP" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammo762mmBulletAP" count="100"/>
+		</recipe>
+		<recipe name="ammoBundleShotgunShell" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammoShotgunShell" count="100"/>
+		</recipe>
+		<recipe name="ammoBundleShotgunSlug" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammoShotgunSlug" count="100"/>
+		</recipe>
+		<recipe name="ammoBundleShotgunBreachingSlug" craft_time="15" count="1" craft_area="workbench" tags="learnable">
+			<ingredient name="ammoShotgunBreachingSlug" count="100"/>
+		</recipe>
+		
+	</append>
+	
+</config>
