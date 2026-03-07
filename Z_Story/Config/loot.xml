@@ -98,6 +98,9 @@
 		<lootgroup name="Reward_RangeT2_Archery">
 			<item name="Reward_RangeT2_Archery" count="1"/>
 		</lootgroup>
+		<lootgroup name="Reward_RangeT2_Pistol">
+			<item name="Reward_RangeT2_Pistol" count="1"/>
+		</lootgroup>
 		
 		<lootgroup name="handgunsSkillMagazine">
 			<item name="handgunsSkillMagazine" count="15"/>

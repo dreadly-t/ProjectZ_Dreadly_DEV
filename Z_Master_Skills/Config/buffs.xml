@@ -1226,7 +1226,7 @@
 					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorPredatorFSBDisplay" operation="set" value="4"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armorPredatorFSBDisplay" operation="set" value="4"/>
 					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armorPredatorFSBDisplay"/>
-					<passive_effect name="EntityDamage" operation="perc_add" value=".04" tags="ranged">
+					<passive_effect name="EntityDamage" operation="perc_add" value=".04">
 						<requirement name="HoldingItemHasTags" tags="ranged"/></passive_effect>
 			</effect_group>
 			
@@ -1235,7 +1235,7 @@
 					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorPredatorFSBDisplay" operation="set" value="8"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armorPredatorFSBDisplay" operation="set" value="8"/>
 					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armorPredatorFSBDisplay"/>
-					<passive_effect name="EntityDamage" operation="perc_add" value=".08" tags="ranged">
+					<passive_effect name="EntityDamage" operation="perc_add" value=".08">
 						<requirement name="HoldingItemHasTags" tags="ranged"/></passive_effect>
 			</effect_group>
 			
@@ -1244,7 +1244,7 @@
 					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorPredatorFSBDisplay" operation="set" value="12"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armorPredatorFSBDisplay" operation="set" value="12"/>
 					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armorPredatorFSBDisplay"/>
-					<passive_effect name="EntityDamage" operation="perc_add" value=".12" tags="ranged">
+					<passive_effect name="EntityDamage" operation="perc_add" value=".12">
 						<requirement name="HoldingItemHasTags" tags="ranged"/></passive_effect>
 			</effect_group>
 			
@@ -1253,7 +1253,7 @@
 					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorPredatorFSBDisplay" operation="set" value="16"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armorPredatorFSBDisplay" operation="set" value="16"/>
 					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armorPredatorFSBDisplay"/>
-					<passive_effect name="EntityDamage" operation="perc_add" value=".16" tags="ranged">
+					<passive_effect name="EntityDamage" operation="perc_add" value=".16">
 						<requirement name="HoldingItemHasTags" tags="ranged"/></passive_effect>
 			</effect_group>
 			
@@ -1262,7 +1262,7 @@
 					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorPredatorFSBDisplay" operation="set" value="20"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armorPredatorFSBDisplay" operation="set" value="20"/>
 					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armorPredatorFSBDisplay"/>
-					<passive_effect name="EntityDamage" operation="perc_add" value=".2" tags="ranged">
+					<passive_effect name="EntityDamage" operation="perc_add" value=".2">
 						<requirement name="HoldingItemHasTags" tags="ranged"/></passive_effect>
 			</effect_group>
 			

@@ -1,5 +1,9 @@
 <config>
 	
+	<!-- The water filter does not remove the health drain effect. -->
+	<remove xpath="/item_modifiers/item_modifier[@name='modArmorWaterPurifier']/effect_group/triggered_effect[@trigger='onSelfEquipStart']"/>
+	<remove xpath="/item_modifiers/item_modifier[@name='modArmorWaterPurifier']/effect_group/triggered_effect[@trigger='onSelfEquipStop']"/>
+	
 	<!-- The repulsor effect is switchable. -->
 	<remove xpath="/item_modifiers/item_modifier[@name='modMeleeStunBatonRepulsor']/effect_group"/>
 	<append xpath="/item_modifiers/item_modifier[@name='modMeleeStunBatonRepulsor']">

@@ -1077,7 +1077,7 @@
 			
 			<objective type="EntityKill" value="50" phase="1">
 				<property name="target_tags" value="miniboss"/>
-				<property name="objective_name_key" value="ObjectiveMiniboss_key"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
 			</objective>
 
 			<objective type="ReturnToNPC">
@@ -1114,7 +1114,7 @@
 			
 			<objective type="EntityKill" value="25" phase="1">
 				<property name="target_tags" value="boss"/>
-				<property name="objective_name_key" value="ObjectiveBoss_key"/>
+				<property name="objective_name_key" value="ObjectiveAnyZombie_key"/>
 			</objective>
 
 			<objective type="ReturnToNPC">

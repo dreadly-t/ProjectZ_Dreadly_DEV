@@ -98,12 +98,12 @@
 		</lootgroup>
 	</insertAfter>
 	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupReinforcedChestT3_06']">
-		<lootgroup name="groupStupidBet">
-			<item name="StupidBet1"/>
-			<item name="StupidBet2"/>
-			<item name="StupidBet3"/>
-			<item name="StupidBet4"/>
-			<item name="StupidBet5"/>
+		<lootgroup name="groupStupitBet">
+			<item name="StupitBet1"/>
+			<item name="StupitBet2"/>
+			<item name="StupitBet3"/>
+			<item name="StupitBet4"/>
+			<item name="StupitBet5"/>
 		</lootgroup>
 	</insertAfter>
 	
@@ -148,15 +148,15 @@
 		<item group="groupRare_Contracts" prob=".24" force_prob="true"/>
 	</insertAfter>
 	
-	<!-- Adding Stupid Bet's -->
+	<!-- Adding Stupit Bet's -->
 	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupReinforcedChestT3']/item[@group='groupReinforcedChestT3_06']">
-		<item group="groupStupidBet" prob=".02" force_prob="true"/>
+		<item group="groupStupitBet" prob=".02" force_prob="true"/>
 	</insertAfter>
 	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT4']/item[@group='groupHardenedChestT4_09']">
-		<item group="groupStupidBet" prob=".04" force_prob="true"/>
+		<item group="groupStupitBet" prob=".04" force_prob="true"/>
 	</insertAfter>
 	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT5']/item[@group='groupHardenedChestT5_08']">
-		<item group="groupStupidBet" prob=".08" force_prob="true"/>
+		<item group="groupStupitBet" prob=".08" force_prob="true"/>
 	</insertAfter>
 	
 	

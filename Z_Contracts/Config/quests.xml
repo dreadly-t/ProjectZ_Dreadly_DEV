@@ -2084,10 +2084,10 @@
 			<reward type="Item" id="ammo44MagnumBulletDU" ischosen="true" value="750"/>
 		</quest>
 		
-		<!-- Stupid Bet -->
-		<quest id="treasure_stupidbet1">
-			<property name="name_key" value="Quest_StupidBet1Name"/>
-			<property name="description_key" value="Quest_StupidBet1Offer"/>
+		<!-- Stupit Bet -->
+		<quest id="treasure_stupitbet1">
+			<property name="name_key" value="Quest_StupitBet1Name"/>
+			<property name="description_key" value="Quest_StupitBet1Offer"/>
 			<property name="subtitle_key" value="quest_Contract"/>
 			<property name="statement_key" value="quest_Contract"/>
 			<property name="response_key" value="quest_Contract"/>
@@ -2096,7 +2096,7 @@
 			<property name="shareable" value="false"/>
 			<property name="add_to_tier_complete" value="false"/>
 			<property name="category_key" value="quest"/>
-			<property name="offer_key" value="Quest_StupidBet1Offer"/>
+			<property name="offer_key" value="Quest_StupitBet1Offer"/>
 			<property name="icon" value="ui_game_symbol_quest"/>
 			<property name="reward_choices_count" value="2"/>
 			
@@ -2126,15 +2126,15 @@
 						
 			<reward type="Exp" value="7500"/>
 			<reward type="Item" id="Magazine_AddSkillPoint" value="1"/>
-			<reward type="Item" id="TrinketStupidBet" value="1"/>
+			<reward type="Item" id="TrinketStupitBet" value="1"/>
 			
 			<reward type="Item" id="meleeToolShovelT2SteelShovel" ischosen="true" value="6"/>
 			<reward type="Item" id="harvestingToolsSkillMagazine" ischosen="true" value="10"/>
 		</quest>
 		
-		<quest id="treasure_stupidbet2">
-			<property name="name_key" value="Quest_StupidBet2Name"/>
-			<property name="description_key" value="Quest_StupidBet2Offer"/>
+		<quest id="treasure_stupitbet2">
+			<property name="name_key" value="Quest_StupitBet2Name"/>
+			<property name="description_key" value="Quest_StupitBet2Offer"/>
 			<property name="subtitle_key" value="quest_Contract"/>
 			<property name="statement_key" value="quest_Contract"/>
 			<property name="response_key" value="quest_Contract"/>
@@ -2143,7 +2143,7 @@
 			<property name="shareable" value="false"/>
 			<property name="add_to_tier_complete" value="false"/>
 			<property name="category_key" value="quest"/>
-			<property name="offer_key" value="Quest_StupidBet2Offer"/>
+			<property name="offer_key" value="Quest_StupitBet2Offer"/>
 			<property name="icon" value="ui_game_symbol_quest"/>
 			<property name="reward_choices_count" value="3"/>
 			
@@ -2173,16 +2173,16 @@
 						
 			<reward type="Exp" value="7500"/>
 			<reward type="Item" id="Magazine_AddSkillPoint" value="1"/>
-			<reward type="Item" id="TrinketStupidBet" value="1"/>
+			<reward type="Item" id="TrinketStupitBet" value="1"/>
 			
 			<reward type="Item" id="gunBowT3CompoundBow" ischosen="true" value="6"/>
 			<reward type="Item" id="gunBowT3CompoundCrossbow" ischosen="true" value="6"/>
 			<reward type="Item" id="bowsSkillMagazine" ischosen="true" value="10"/>
 		</quest>
 		
-		<quest id="treasure_stupidbet3">
-			<property name="name_key" value="Quest_StupidBet3Name"/>
-			<property name="description_key" value="Quest_StupidBet3Offer"/>
+		<quest id="treasure_stupitbet3">
+			<property name="name_key" value="Quest_StupitBet3Name"/>
+			<property name="description_key" value="Quest_StupitBet3Offer"/>
 			<property name="subtitle_key" value="quest_Contract"/>
 			<property name="statement_key" value="quest_Contract"/>
 			<property name="response_key" value="quest_Contract"/>
@@ -2191,7 +2191,7 @@
 			<property name="shareable" value="false"/>
 			<property name="add_to_tier_complete" value="false"/>
 			<property name="category_key" value="quest"/>
-			<property name="offer_key" value="Quest_StupidBet3Offer"/>
+			<property name="offer_key" value="Quest_StupitBet3Offer"/>
 			<property name="icon" value="ui_game_symbol_quest"/>
 			<property name="reward_choices_count" value="4"/>
 			
@@ -2237,7 +2237,7 @@
 						
 			<reward type="Exp" value="7500"/>
 			<reward type="Item" id="Magazine_AddSkillPoint" value="1"/>
-			<reward type="Item" id="TrinketStupidBet" value="1"/>
+			<reward type="Item" id="TrinketStupitBet" value="1"/>
 			
 			<reward type="Item" id="meleeWpnClubT5SteelAxeBarbarian" ischosen="true" value="1"/>
 			<reward type="Item" id="spearsSkillMagazine" ischosen="true" value="8"/>
@@ -2245,9 +2245,9 @@
 			<reward type="Item" id="sledgehammersSkillMagazine" ischosen="true" value="8"/>
 		</quest>
 		
-		<quest id="treasure_stupidbet4">
-			<property name="name_key" value="Quest_StupidBet4Name"/>
-			<property name="description_key" value="Quest_StupidBet4Offer"/>
+		<quest id="treasure_stupitbet4">
+			<property name="name_key" value="Quest_StupitBet4Name"/>
+			<property name="description_key" value="Quest_StupitBet4Offer"/>
 			<property name="subtitle_key" value="quest_Contract"/>
 			<property name="statement_key" value="quest_Contract"/>
 			<property name="response_key" value="quest_Contract"/>
@@ -2256,7 +2256,7 @@
 			<property name="shareable" value="false"/>
 			<property name="add_to_tier_complete" value="false"/>
 			<property name="category_key" value="quest"/>
-			<property name="offer_key" value="Quest_StupidBet4Offer"/>
+			<property name="offer_key" value="Quest_StupitBet4Offer"/>
 			<property name="icon" value="ui_game_symbol_quest"/>
 			<property name="reward_choices_count" value="4"/>
 			
@@ -2290,7 +2290,7 @@
 						
 			<reward type="Exp" value="7500"/>
 			<reward type="Item" id="Magazine_AddSkillPoint" value="1"/>
-			<reward type="Item" id="TrinketStupidBet" value="1"/>
+			<reward type="Item" id="TrinketStupitBet" value="1"/>
 			
 			<reward type="Item" id="meleeWpnBladeT5MacheteIndiana" ischosen="true" value="1"/>
 			<reward type="Item" id="knucklesSkillMagazine" ischosen="true" value="8"/>
@@ -2298,9 +2298,9 @@
 			<reward type="Item" id="roboticsSkillMagazine" ischosen="true" value="8"/>
 		</quest>
 		
-		<quest id="treasure_stupidbet5">
-			<property name="name_key" value="Quest_StupidBet5Name"/>
-			<property name="description_key" value="Quest_StupidBet5Offer"/>
+		<quest id="treasure_stupitbet5">
+			<property name="name_key" value="Quest_StupitBet5Name"/>
+			<property name="description_key" value="Quest_StupitBet5Offer"/>
 			<property name="subtitle_key" value="quest_Contract"/>
 			<property name="statement_key" value="quest_Contract"/>
 			<property name="response_key" value="quest_Contract"/>
@@ -2309,7 +2309,7 @@
 			<property name="shareable" value="false"/>
 			<property name="add_to_tier_complete" value="false"/>
 			<property name="category_key" value="quest"/>
-			<property name="offer_key" value="Quest_StupidBet5Offer"/>
+			<property name="offer_key" value="Quest_StupitBet5Offer"/>
 			<property name="icon" value="ui_game_symbol_quest"/>
 			<property name="reward_choices_count" value="1"/>
 			
@@ -2340,7 +2340,7 @@
 						
 			<reward type="Exp" value="7500"/>
 			<reward type="Item" id="Magazine_AddSkillPoint" value="1"/>
-			<reward type="Item" id="TrinketStupidBet" value="1"/>
+			<reward type="Item" id="TrinketStupitBet" value="1"/>
 			
 			<reward type="Item" id="Elixir_AnimalDamageMelee" ischosen="true" value="1"/>
 		</quest>

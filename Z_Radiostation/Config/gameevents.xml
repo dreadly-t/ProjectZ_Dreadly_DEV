@@ -787,6 +787,7 @@
 		<action_sequence name="Exp_Reconnaissance_status">			
 			<property name="action_type" value="Game" />
 			<action class="AddBuff">
+				<property name="phase" value="1" />
 				<property name="buff_name" value="Buff_Exp_Reconnaissance_Status" />
 			</action>	
 		</action_sequence>
@@ -825,20 +826,7 @@
 				<property name="quest" value="treasure_exp_reconnaissance_complete"/>
 			</action>
 		</action_sequence>
-		
-		<action_sequence name="Exp_Reconnaissance_Fail">
-			<action class="FailQuest">
-				<property name="phase" value="1" />
-				<property name="quest" value="treasure_exp_Reconnaissance_start"/>
-				<property name="remove_quest" value="true"/>
-			</action>
-			
-			<action class="AddQuest">
-				<property name="phase" value="2" />
-				<property name="quest" value="treasure_exp_Reconnaissance_fail"/>
-			</action>	
-		</action_sequence>
-		
+				
 		<!-- Increased activity -->
 		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 		<!-- <action_sequence name="Exp_Activity_statusCheck">			 -->

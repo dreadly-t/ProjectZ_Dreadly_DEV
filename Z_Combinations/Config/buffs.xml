@@ -1,0 +1,1045 @@
+<config>
+		
+	<append xpath="/buffs">
+				
+		<buff name="buffCombinationsMain" hidden="true">
+			<stack_type value="ignore"/>
+			<display_value value=".strickCount"/>
+			<display_value_format value="based"/>
+				
+			<effect_group>		
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_started" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$CombinationsBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboTypeCounter" operation="set" value="randomint(1,2)"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboType" operation="set" value="1">
+					<requirement name="CVarCompare" cvar="$ComboTypeCounter" operation="EQ" value="1"/></triggered_effect>	
+					
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboTypeCounter2" operation="set" value="randomint(1,2)">
+					<requirement name="CVarCompare" cvar="$ComboTypeCounter" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboType" operation="set" value="2">
+					<requirement name="CVarCompare" cvar="$ComboTypeCounter2" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboType" operation="set" value="3">
+					<requirement name="CVarCompare" cvar="$ComboTypeCounter2" operation="EQ" value="2"/></triggered_effect>
+					
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffNextStepCombo1">
+					<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffNextStepCombo2">
+					<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffNextStepCombo3">
+					<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="3"/></triggered_effect>
+					
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$CombinationsBlockComplete" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboStatus" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$strickCount" operation="set" value="0"/>
+					
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".strickCount" operation="set" value="@$strickCount"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".strickCount" operation="set" value="@$strickCount"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CombinationsBlock">
+					<requirement name="CVarCompare" cvar="$CombinationsBlockComplete" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$strickCount"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CombinationsBlockComplete,$ComboStatus,$ComboType,$ComboTypeCounter,$ComboTypeCounter2,$ComboReward"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement_group op="and">
+					<requirement name="!HasBuff" buff="buffComboPrimaryHit1"/>
+					<requirement name="!HasBuff" buff="buffComboSecondaryHit1"/>
+				</requirement_group>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffNextStepCombo1">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="1"/>
+						<requirement name="CVarCompare" cvar="$strickCount" operation="LT" value="10"/>
+					</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<requirement_group op="and">
+					<requirement name="!HasBuff" buff="buffComboPrimaryHit2"/>
+					<requirement name="!HasBuff" buff="buffComboSecondaryHit2"/>
+					<requirement name="!HasBuff" buff="buffComboJump1"/>
+					<requirement name="!HasBuff" buff="buffComboCrouch1"/>
+				</requirement_group>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffNextStepCombo2">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="2"/>
+						<requirement name="CVarCompare" cvar="$strickCount" operation="LT" value="10"/>
+					</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<requirement_group op="and">
+					<requirement name="!HasBuff" buff="buffComboPrimaryHit3"/>
+					<requirement name="!HasBuff" buff="buffComboSecondaryHit3"/>
+					<requirement name="!HasBuff" buff="buffComboJump2"/>
+					<requirement name="!HasBuff" buff="buffComboCrouch2"/>
+					<requirement name="!HasBuff" buff="buffComboHitHead"/>
+					<requirement name="!HasBuff" buff="buffComboHitBody"/>
+					<requirement name="!HasBuff" buff="buffComboHitArms"/>
+					<requirement name="!HasBuff" buff="buffComboHitLegs"/>
+				</requirement_group>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffNextStepCombo3">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="3"/>
+						<requirement name="CVarCompare" cvar="$strickCount" operation="LT" value="10"/>
+					</triggered_effect>
+			</effect_group>
+			
+			<effect_group name='Bonus'>
+				<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboReward" operation="set" value="randomint(1,3)"/>
+					
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffComboBonusDamage1">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="1"/>
+						<requirement name="CVarCompare" cvar="$ComboReward" operation="EQ" value="1"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffComboBonusSpeed1">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="1"/>
+						<requirement name="CVarCompare" cvar="$ComboReward" operation="EQ" value="2"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffComboBonusXP1">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="1"/>
+						<requirement name="CVarCompare" cvar="$ComboReward" operation="EQ" value="3"/>
+					</triggered_effect>
+					
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffComboBonusDamage2">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="2"/>
+						<requirement name="CVarCompare" cvar="$ComboReward" operation="EQ" value="1"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffComboBonusSpeed2">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="2"/>
+						<requirement name="CVarCompare" cvar="$ComboReward" operation="EQ" value="2"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffComboBonusXP2">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="2"/>
+						<requirement name="CVarCompare" cvar="$ComboReward" operation="EQ" value="3"/>
+					</triggered_effect>
+					
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffComboBonusDamage3">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="3"/>
+						<requirement name="CVarCompare" cvar="$ComboReward" operation="EQ" value="1"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffComboBonusSpeed3">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="3"/>
+						<requirement name="CVarCompare" cvar="$ComboReward" operation="EQ" value="2"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffComboBonusXP3">
+						<requirement name="CVarCompare" cvar="$ComboType" operation="EQ" value="3"/>
+						<requirement name="CVarCompare" cvar="$ComboReward" operation="EQ" value="3"/>
+					</triggered_effect>					
+					
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$CombinationsBlockComplete" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffCombinationsMain"/>
+			</effect_group>
+		
+		</buff>
+				
+		<!-- =============================== -->
+		<!-- Combination bonuses -->
+		
+		<buff name="buffComboBonusDamage1" name_key="buffComboBonusDamage1Name" tooltip_key="buffComboBonus1Tooltip" description_key="buffComboBonusDamage1Desc" icon="ui_game_symbol_check" icon_color="200,200,200" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffComboBonusDisplay"/>
+			<display_value_format value="time"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_master_complete" play_in_head="true"/>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="90">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="120">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="150">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="180">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="210">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="5"/></triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffComboBonusDisplay" operation="set" value="@$buffComboBonusDisplay"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusDamage1">
+					<requirement name="CVarCompare" cvar="$buffComboBonusDisplay" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusDamage1">
+					<requirement name="HasBuff" buff="god"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CombinationsBlock,$buffComboBonusDisplay,.buffComboBonusDisplay"/>
+			</effect_group>
+			<effect_group name='Bonus'>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboBonusDamage2" name_key="buffComboBonusDamage2Name" tooltip_key="buffComboBonus2Tooltip" description_key="buffComboBonusDamage2Desc" icon="ui_game_symbol_check" icon_color="190,190,255" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffComboBonusDisplay"/>
+			<display_value_format value="time"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_master_complete" play_in_head="true"/>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="90">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="120">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="150">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="180">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="210">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="5"/></triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffComboBonusDisplay" operation="set" value="@$buffComboBonusDisplay"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusDamage2">
+					<requirement name="CVarCompare" cvar="$buffComboBonusDisplay" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusDamage2">
+					<requirement name="HasBuff" buff="god"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CombinationsBlock,$buffComboBonusDisplay,.buffComboBonusDisplay"/>
+			</effect_group>
+			<effect_group name='Bonus'>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboBonusDamage3" name_key="buffComboBonusDamage3Name" tooltip_key="buffComboBonus3Tooltip" description_key="buffComboBonusDamage3Desc" icon="ui_game_symbol_check" icon_color="255,185,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffComboBonusDisplay"/>
+			<display_value_format value="time"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_master_complete" play_in_head="true"/>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="90">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="120">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="150">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="180">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="210">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="5"/></triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffComboBonusDisplay" operation="set" value="@$buffComboBonusDisplay"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusDamage3">
+					<requirement name="CVarCompare" cvar="$buffComboBonusDisplay" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusDamage3">
+					<requirement name="HasBuff" buff="god"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CombinationsBlock,$buffComboBonusDisplay,.buffComboBonusDisplay"/>
+			</effect_group>
+			<effect_group name='Bonus'>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboBonusSpeed1" name_key="buffComboBonusSpeed1Name" tooltip_key="buffComboBonus1Tooltip" description_key="buffComboBonusSpeed1Desc" icon="ui_game_symbol_arrow_compass" icon_color="200,200,200" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffComboBonusDisplay"/>
+			<display_value_format value="time"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_master_complete" play_in_head="true"/>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="90">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="120">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="150">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="180">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="210">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="5"/></triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffComboBonusDisplay" operation="set" value="@$buffComboBonusDisplay"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusSpeed1">
+					<requirement name="CVarCompare" cvar="$buffComboBonusDisplay" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusSpeed1">
+					<requirement name="HasBuff" buff="god"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CombinationsBlock,$buffComboBonusDisplay,.buffComboBonusDisplay"/>
+			</effect_group>
+			<effect_group name='Bonus'>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+					<passive_effect name="AttacksPerMinute" operation="perc_add" value=".1"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboBonusSpeed2" name_key="buffComboBonusSpeed2Name" tooltip_key="buffComboBonus2Tooltip" description_key="buffComboBonusSpeed2Desc" icon="ui_game_symbol_arrow_compass" icon_color="190,190,255" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffComboBonusDisplay"/>
+			<display_value_format value="time"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_master_complete" play_in_head="true"/>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="90">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="120">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="150">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="180">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="210">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="5"/></triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffComboBonusDisplay" operation="set" value="@$buffComboBonusDisplay"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusSpeed2">
+					<requirement name="CVarCompare" cvar="$buffComboBonusDisplay" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusSpeed2">
+					<requirement name="HasBuff" buff="god"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CombinationsBlock,$buffComboBonusDisplay,.buffComboBonusDisplay"/>
+			</effect_group>
+			<effect_group name='Bonus'>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+					<passive_effect name="AttacksPerMinute" operation="perc_add" value=".2"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboBonusSpeed3" name_key="buffComboBonusSpeed3Name" tooltip_key="buffComboBonus3Tooltip" description_key="buffComboBonusSpeed3Desc" icon="ui_game_symbol_arrow_compass" icon_color="255,185,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffComboBonusDisplay"/>
+			<display_value_format value="time"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_master_complete" play_in_head="true"/>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="90">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="120">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="150">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="180">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="210">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="5"/></triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffComboBonusDisplay" operation="set" value="@$buffComboBonusDisplay"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusSpeed3">
+					<requirement name="CVarCompare" cvar="$buffComboBonusDisplay" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusSpeed3">
+					<requirement name="HasBuff" buff="god"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CombinationsBlock,$buffComboBonusDisplay,.buffComboBonusDisplay"/>
+			</effect_group>
+			<effect_group name='Bonus'>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+					<passive_effect name="AttacksPerMinute" operation="perc_add" value=".3"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboBonusXP1" name_key="buffComboBonusXP1Name" tooltip_key="buffComboBonus1Tooltip" description_key="buffComboBonusXP1Desc" icon="ui_game_symbol_xp" icon_color="200,200,200" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffComboBonusDisplay"/>
+			<display_value_format value="time"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_master_complete" play_in_head="true"/>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="90">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="120">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="150">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="180">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="210">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="5"/></triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffComboBonusDisplay" operation="set" value="@$buffComboBonusDisplay"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusXP1">
+					<requirement name="CVarCompare" cvar="$buffComboBonusDisplay" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusXP1">
+					<requirement name="HasBuff" buff="god"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CombinationsBlock,$buffComboBonusDisplay,.buffComboBonusDisplay"/>
+			</effect_group>
+			<effect_group name='Bonus'>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".05"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboBonusXP2" name_key="buffComboBonusXP2Name" tooltip_key="buffComboBonus2Tooltip" description_key="buffComboBonusXP2Desc" icon="ui_game_symbol_xp" icon_color="190,190,255" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffComboBonusDisplay"/>
+			<display_value_format value="time"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_master_complete" play_in_head="true"/>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="90">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="120">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="150">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="180">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="210">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="5"/></triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffComboBonusDisplay" operation="set" value="@$buffComboBonusDisplay"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusXP2">
+					<requirement name="CVarCompare" cvar="$buffComboBonusDisplay" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusXP2">
+					<requirement name="HasBuff" buff="god"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CombinationsBlock,$buffComboBonusDisplay,.buffComboBonusDisplay"/>
+			</effect_group>
+			<effect_group name='Bonus'>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".1"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboBonusXP3" name_key="buffComboBonusXP3Name" tooltip_key="buffComboBonus3Tooltip" description_key="buffComboBonusXP3Desc" icon="ui_game_symbol_xp" icon_color="255,185,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value value=".buffComboBonusDisplay"/>
+			<display_value_format value="time"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_master_complete" play_in_head="true"/>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="90">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="120">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="150">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="180">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="set" value="210">
+					<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="5"/></triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffComboBonusDisplay" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffComboBonusDisplay" operation="set" value="@$buffComboBonusDisplay"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusXP3">
+					<requirement name="CVarCompare" cvar="$buffComboBonusDisplay" operation="LT" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboBonusXP3">
+					<requirement name="HasBuff" buff="god"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CombinationsBlock,$buffComboBonusDisplay,.buffComboBonusDisplay"/>
+			</effect_group>
+			<effect_group name='Bonus'>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".15"/>
+			</effect_group>
+		</buff>
+		
+		<!-- =============================== -->
+		<!-- STEPS -->
+		
+		<buff name="buffNextStepCombo1" hidden="true">
+			<stack_type value="replace"/>
+			<duration value=".1"/>
+
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$strickCount" operation="LTE" value="9"/>
+					<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_objective_complete" play_in_head="true"/>
+					
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$CustomStep" operation="set" value="randomint(1,2)"/>
+											
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboPrimaryHit1">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="1"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboSecondaryHit1">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="2"/></triggered_effect>
+						
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CustomStep"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffNextStepCombo2" hidden="true">
+			<stack_type value="replace"/>
+			<duration value=".1"/>
+
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$strickCount" operation="LTE" value="9"/>
+					<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_objective_complete" play_in_head="true"/>
+					
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$CustomStep" operation="set" value="randomint(1,4)"/>
+						
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboPrimaryHit2">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="1"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboSecondaryHit2">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="2"/></triggered_effect>
+						
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboJump1">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="3"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboCrouch1">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="4"/></triggered_effect>
+						
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CustomStep"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffNextStepCombo3" hidden="true">
+			<stack_type value="replace"/>
+			<duration value=".1"/>
+
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$strickCount" operation="LTE" value="9"/>
+					<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="quest_objective_complete" play_in_head="true"/>
+					
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$CustomStep" operation="set" value="randomint(1,8)"/>
+					
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboHitHead">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="1"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboHitBody">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="2"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboHitArms">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="3"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboHitLegs">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="4"/></triggered_effect>
+						
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboPrimaryHit3">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="5"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboSecondaryHit3">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="6"/></triggered_effect>
+						
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboJump2">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="7"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffComboCrouch2">
+						<requirement name="CVarCompare" cvar="$CustomStep" operation="EQ" value="8"/></triggered_effect>
+						
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CustomStep"/>
+			</effect_group>
+		</buff>
+		
+		<!-- =============================== -->
+		<!-- Combination step options -->
+		
+		<!-- Hit Location -->
+		
+		<buff name="buffComboHitHead" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboHitHeadBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboHitHeadHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboHitHeadBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboHitHeadBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboHitHeadBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboHitHeadHUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<requirement name="HitLocation" body_parts="Head"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$ComboHitHeadBlock" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffNextStepCombo3"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffComboHitHead"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboHitHead"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboHitBody" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboHitBodyBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboHitBodyHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboHitBodyBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboHitBodyBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboHitBodyBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboHitBodyHUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<requirement name="HitLocation" body_parts="Torso"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$ComboHitBodyBlock" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffNextStepCombo3"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffComboHitBody"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboHitBody"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboHitArms" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboHitArmsBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboHitArmsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboHitArmsBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboHitArmsBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboHitArmsBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboHitArmsHUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<requirement name="HitLocation" body_parts="LeftUpperArm,RightUpperArm,LeftLowerArm,RightLowerArm"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$ComboHitArmsBlock" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffNextStepCombo3"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffComboHitArms"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboHitArms"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>			
+		
+		<buff name="buffComboHitLegs" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboHitLegsBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboHitLegsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboHitLegsBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboHitLegsBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboHitLegsBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboHitLegsHUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<requirement name="HitLocation" body_parts="LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$ComboHitLegsBlock" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffNextStepCombo3"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffComboHitLegs"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboHitLegs"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		
+		<!-- Hit Type -->
+		
+		<buff name="buffComboPrimaryHit1" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboPrimaryHitBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboPrimaryHit1HUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboPrimaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboPrimaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboPrimaryHitBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboPrimaryHit1HUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<requirement name="IsPrimaryAttack"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$ComboPrimaryHitBlock" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffNextStepCombo1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffComboPrimaryHit1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboPrimaryHit1"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		<buff name="buffComboPrimaryHit2" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboPrimaryHitBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboPrimaryHit2HUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboPrimaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboPrimaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboPrimaryHitBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboPrimaryHit2HUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<requirement name="IsPrimaryAttack"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$ComboPrimaryHitBlock" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffNextStepCombo2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffComboPrimaryHit2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboPrimaryHit2"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		<buff name="buffComboPrimaryHit3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboPrimaryHitBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboPrimaryHit3HUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboPrimaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboPrimaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboPrimaryHitBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboPrimaryHit3HUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<requirement name="IsPrimaryAttack"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$ComboPrimaryHitBlock" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffNextStepCombo3"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffComboPrimaryHit3"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboPrimaryHit3"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboSecondaryHit1" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboSecondaryHitBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboSecondaryHit1HUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboSecondaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboSecondaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboSecondaryHitBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboSecondaryHit1HUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<requirement name="IsSecondaryAttack"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$ComboSecondaryHitBlock" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffNextStepCombo1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffComboSecondaryHit1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboSecondaryHit1"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		<buff name="buffComboSecondaryHit2" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboSecondaryHitBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboSecondaryHit2HUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboSecondaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboSecondaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboSecondaryHitBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboSecondaryHit2HUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<requirement name="IsSecondaryAttack"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$ComboSecondaryHitBlock" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffNextStepCombo2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffComboSecondaryHit2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboSecondaryHit2"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		<buff name="buffComboSecondaryHit3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboSecondaryHitBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboSecondaryHit3HUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboSecondaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboSecondaryHitBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboSecondaryHitBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboSecondaryHit3HUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<requirement name="IsSecondaryAttack"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$ComboSecondaryHitBlock" operation="set" value="2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffNextStepCombo3"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffComboSecondaryHit3"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboSecondaryHit3"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		
+		<!-- Action Type -->
+		
+		<buff name="buffComboJump1" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboJumpBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboJump1HUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboJumpBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboJumpBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboJumpBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboJump1HUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<triggered_effect trigger="onSelfJump" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfJump" action="ModifyCVar" cvar="$ComboJumpBlock" operation="set" value="2"/>
+				<triggered_effect trigger="onSelfJump" action="AddBuff" buff="buffNextStepCombo2"/>
+				<triggered_effect trigger="onSelfJump" action="RemoveBuff" buff="buffComboJump1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboJump1"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		<buff name="buffComboJump2" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboJumpBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboJump2HUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboJumpBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboJumpBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboJumpBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboJump2HUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<triggered_effect trigger="onSelfJump" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfJump" action="ModifyCVar" cvar="$ComboJumpBlock" operation="set" value="2"/>
+				<triggered_effect trigger="onSelfJump" action="AddBuff" buff="buffNextStepCombo3"/>
+				<triggered_effect trigger="onSelfJump" action="RemoveBuff" buff="buffComboJump2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboJump2"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffComboCrouch1" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboCrouchBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboCrouch1HUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboCrouchBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboCrouchBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboCrouchBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboCrouch1HUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<triggered_effect trigger="onSelfCrouch" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfCrouch" action="ModifyCVar" cvar="$ComboCrouchBlock" operation="set" value="2"/>
+				<triggered_effect trigger="onSelfCrouch" action="AddBuff" buff="buffNextStepCombo2"/>
+				<triggered_effect trigger="onSelfCrouch" action="RemoveBuff" buff="buffComboCrouch1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboCrouch1"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		<buff name="buffComboCrouch2" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".05"/>
+				
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboCrouchBlock" operation="set" value="1"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboCrouch2HUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="set" value="@$ComboDurationsHUD"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ComboDurationsHUDTick" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboDurationsHUD" operation="subtract" value="@$ComboDurationsHUDTick"/>
+				
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCombinationsMain">
+					<requirement name="CVarCompare" cvar="$ComboCrouchBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true">
+					<requirement name="CVarCompare" cvar="$ComboCrouchBlock" operation="EQ" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboCrouchBlock,$ComboDurationsHUD,$ComboDurationsHUDTick,$ComboCrouch2HUD"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$ComboStatus">
+					<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/></triggered_effect>
+			</effect_group>
+			<effect_group name='Action'>
+				<triggered_effect trigger="onSelfCrouch" action="ModifyCVar" cvar="$strickCount" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfCrouch" action="ModifyCVar" cvar="$ComboCrouchBlock" operation="set" value="2"/>
+				<triggered_effect trigger="onSelfCrouch" action="AddBuff" buff="buffNextStepCombo3"/>
+				<triggered_effect trigger="onSelfCrouch" action="RemoveBuff" buff="buffComboCrouch2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffComboCrouch2"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$ComboStatus"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="quest_failed" play_in_head="true"/>
+			</effect_group>
+		</buff>
+			
+	</append>
+
+</config>

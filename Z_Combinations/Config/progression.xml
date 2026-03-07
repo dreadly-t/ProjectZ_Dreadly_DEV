@@ -1,0 +1,45 @@
+<config>
+		
+	<insertAfter xpath="/progression/perks/perk[@name='perkLuckyLooter']">
+		
+		<!-- COMBOS MELEE -->
+		<perk name="perkCombosMelee" parent="skillGeneralPerks" name_key="perkCombosMeleeName" desc_key="perkCombosMeleeDesc" icon="ui_game_symbol_boxer" override_cost="1,2,2,2,3">
+		
+			<effect_group>
+				<effect_description level="1" desc_key="perkCombosMeleeRank1Desc" long_desc_key="perkCombosMeleeRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkCombosMeleeRank2Desc" long_desc_key="perkCombosMeleeRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkCombosMeleeRank3Desc" long_desc_key="perkCombosMeleeRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkCombosMeleeRank4Desc" long_desc_key="perkCombosMeleeRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkCombosMeleeRank5Desc" long_desc_key="perkCombosMeleeRank5LongDesc"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$CombinationsBlock" operation="LT" value="1"/>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffCombinationsMain">
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="6"/>
+						<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="1"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffCombinationsMain">
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="7"/>
+						<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="2"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffCombinationsMain">
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="8"/>
+						<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="3"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffCombinationsMain">
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="9"/>
+						<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="4"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffCombinationsMain">
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+						<requirement name="ProgressionLevel" progression_name="perkCombosMelee" operation="EQ" value="5"/>
+					</triggered_effect>
+			</effect_group>
+		
+		</perk>
+		
+	</insertAfter>
+	
+</config>

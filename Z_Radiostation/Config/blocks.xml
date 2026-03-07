@@ -10,7 +10,7 @@
 				<property name="CraftingAreaRecipes" value="radioStation"/>
 			</property>
 			<property name="UnlockedBy" value="craftingWorkstations"/>
-			<property name="EconomicValue" value="5000"/>
+			<property name="EconomicValue" value="2500"/>
 			<!-- UI_Info -->
 			<property name="CreativeMode" value="Player"/>
 			<property name="DescriptionKey" value="radioStationDesc"/>
@@ -71,6 +71,7 @@
 			<property name="ImposterExchange" value="imposterDontBlockCTRPole" param1="87"/>
 			<property name="WaterFlow" value="permitted"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="25"/>
 			<property class="RepairItems">
 				<property name="UniversalParts" value="10"/>
 			</property>
@@ -145,6 +146,7 @@
 			<property name="WaterFlow" value="permitted"/>
 			<property name="Collide" value="sight,movement,melee,bullet,arrow,rocket"/>
 			<property name="MaxDamage" value="200"/>
+			<property name="EconomicValue" value="10"/>
 			<!-- triggers bonus damage and harvest animation -->
 			<drop event="Harvest" name="foodRottingFlesh" count="1,3" tag="butcherHarvest" tool_category="Butcher"/>
 			<drop event="Harvest" name="resourceAnimalFat" count="1,2" prob="0.33" tag="butcherHarvest"/>
@@ -171,6 +173,7 @@
 			<property name="WaterFlow" value="permitted"/>
 			<property name="Collide" value="sight,movement,melee,bullet,arrow,rocket"/>
 			<property name="MaxDamage" value="200"/>
+			<property name="EconomicValue" value="10"/>
 			<!-- triggers bonus damage and harvest animation -->
 			<drop event="Harvest" name="foodRottingFlesh" count="1,3" tag="butcherHarvest" tool_category="Butcher"/>
 			<drop event="Harvest" name="resourceAnimalFat" count="1,2" prob="0.33" tag="butcherHarvest"/>

@@ -4852,9 +4852,6 @@
 			<passive_effect name="BlockDamage" operation="perc_add" value="2" tags="secondary"/>
 			<passive_effect name="StaminaLoss" operation="base_set" value="92" tags="secondary"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".6" tags="secondary"/>
-			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffMeleeWeaponBleeding">
-				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
-			</triggered_effect>
 		</effect_group>
 		
 		<effect_group name="crippled morale"><!-- SLEDGE_SAGA_VOLUME_03_CRIPPLED_MORALE -->
@@ -4997,11 +4994,11 @@
 		<effect_group>
 			<requirement name="!HasBuff" buff="buffDestructorReload"/>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="4" force="500">
-					<requirement name="!EntityTagCompare" target="other" tags="trader"/></triggered_effect>
+					<requirement name="!EntityTagCompare" target="other" tags="trader,player"/></triggered_effect>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffDestructionOfProtection">
-					<requirement name="!EntityTagCompare" target="other" tags="trader"/></triggered_effect>
+					<requirement name="!EntityTagCompare" target="other" tags="trader,player"/></triggered_effect>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.5" duration="2.6" force="500" target_tags="entity">
-					<requirement name="!EntityTagCompare" target="other" tags="trader"/></triggered_effect>
+					<requirement name="!EntityTagCompare" target="other" tags="trader,player"/></triggered_effect>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" buff="buffDestructorReload"/>
 		</effect_group>
 		
@@ -12068,7 +12065,7 @@
 		
 		<!-- Rescuer's First Aid Kit -->
 		<item name="medicalRescuerFirstAidKit">
-			<property name="Extends" value="medicalBandage" param1="DescriptionKey"/>
+			<property name="Extends" value="medicalFirstAidKit"/>
 			<property name="CustomIcon" value="medicalFirstAidKit"/>
 			<property name="ItemTypeIcon" value="add"/>
 			<property name="CustomIconTint" value="FFB800"/>

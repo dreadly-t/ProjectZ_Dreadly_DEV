@@ -772,7 +772,7 @@
 		
 		<!-- *** buffGunDAc1 -->
 		<!-- TRIGGERED_BY: item_modifiers = modGunDamageAccumulatorExp -->
-		<buff name="buffGunDAc1" name_key="buffGunDAc1Name" tooltip_key="buffGunDAc1Tooltip" description_key="buffGunDAc1Desc" icon="ui_game_symbol_marksmanship" icon_color="255,102,102">
+		<buff name="buffGunDAc1" name_key="buffGunDAc1Name" tooltip_key="buffGunDAc1Tooltip" description_key="buffGunDAc1Desc" icon="ui_game_symbol_marksmanship" icon_color="255,200,200">
 			<stack_type value="ignore"/>
 			<display_value value=".modDAcDisplay"/>
 			<display_value_format value="based"/>
@@ -796,28 +796,21 @@
 		
 		<!-- *** buffGunDAcShot1 -->
 		<!-- TRIGGERED_BY: buff = buffGunDAc1 -->
-		<buff name="buffGunDAcShot1" name_key="buffGunDAcShot1Name" tooltip_key="buffGunDAcShot1Tooltip" description_key="buffGunDAcShot1Desc" icon="ui_game_symbol_marksmanship" icon_color="255,102,102" icon_blink="true">
+		<buff name="buffGunDAcShot1" name_key="buffGunDAcShot1Name" tooltip_key="buffGunDAcShot1Tooltip" description_key="buffGunDAcShot1Desc" icon="ui_game_symbol_marksmanship" icon_color="255,100,100" icon_blink="true">
 			<stack_type value="ignore"/>
-			<update_rate value=".2"/>
 			
-			<effect_group>
-				<passive_effect name="EntityDamage" operation="perc_add" value="1.5"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$modDAcStatusShot" operation="set" value="1"/>
-				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="$modDAcStatusShot" operation="subtract" value="1"/>
-				
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGunDAc1">
-					<requirement name="CVarCompare" cvar="$modDAcStatusShot" operation="LTE" value="0"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffGunDAcShot1">
-					<requirement name="CVarCompare" cvar="$modDAcStatusShot" operation="LTE" value="0"/>
-				</triggered_effect>	
+			<effect_group name="critical chance">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value="2"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" buff="buffGunDAcShot1"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" buff="buffGunDAc1"/>
 			</effect_group>
 
 		</buff>
 		
 		<!-- *** buffGunDAc2 -->
 		<!-- TRIGGERED_BY: item_modifiers = modGunDamageAccumulatorUnique -->
-		<buff name="buffGunDAc2" name_key="buffGunDAc2Name" tooltip_key="buffGunDAc2Tooltip" description_key="buffGunDAc2Desc" icon="ui_game_symbol_marksmanship" icon_color="255,184,0">
+		<buff name="buffGunDAc2" name_key="buffGunDAc2Name" tooltip_key="buffGunDAc2Tooltip" description_key="buffGunDAc2Desc" icon="ui_game_symbol_marksmanship" icon_color="255,200,200">
 			<stack_type value="ignore"/>
 			<display_value value=".modDAcDisplay2"/>
 			<display_value_format value="based"/>
@@ -841,21 +834,14 @@
 		
 		<!-- *** buffGunDAcShot2 -->
 		<!-- TRIGGERED_BY: buff = buffGunDAc2 -->
-		<buff name="buffGunDAcShot2" name_key="buffGunDAcShot2Name" tooltip_key="buffGunDAcShot2Tooltip" description_key="buffGunDAcShot2Desc" icon="ui_game_symbol_marksmanship" icon_color="255,184,0" icon_blink="true">
+		<buff name="buffGunDAcShot2" name_key="buffGunDAcShot2Name" tooltip_key="buffGunDAcShot2Tooltip" description_key="buffGunDAcShot2Desc" icon="ui_game_symbol_marksmanship" icon_color="255,100,100" icon_blink="true">
 			<stack_type value="ignore"/>
-			<update_rate value=".2"/>
-			
-			<effect_group>
-				<passive_effect name="EntityDamage" operation="perc_add" value="3"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$modDAcStatusShot2" operation="set" value="1"/>
-				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="$modDAcStatusShot2" operation="subtract" value="1"/>
-				
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGunDAc2">
-					<requirement name="CVarCompare" cvar="$modDAcStatusShot2" operation="LTE" value="0"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffGunDAcShot2">
-					<requirement name="CVarCompare" cvar="$modDAcStatusShot2" operation="LTE" value="0"/>
-				</triggered_effect>	
+						
+			<effect_group name="critical chance">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value="2"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" buff="buffGunDAcShot2"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" buff="buffGunDAc2"/>
 			</effect_group>
 
 		</buff>

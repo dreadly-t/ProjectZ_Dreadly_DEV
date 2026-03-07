@@ -31,7 +31,7 @@
 			<effect_group>
 				<passive_effect name="DisableItem" operation="base_set" value="1" tags="Reconnaissance" />
 				
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpReconDuration" operation="set" value="2700"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpReconDuration" operation="set" value="2700"/> <!-- 2700 -->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpReconDuration" operation="multiply" value=".9">
 					<requirement name="ProgressionLevel" progression_name="perkOrganizer" operation="EQ" value="1"/></triggered_effect>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffExpReconDuration" operation="multiply" value=".8">
@@ -114,14 +114,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="Exp_ActivityRewardChance" operation="set" value="100">
 					<requirement name="CVarCompare" cvar="Exp_InfectionRewardChance" operation="GTE" value="100"/></triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".Exp_ActivityRewardChance" operation="set" value="@Exp_ActivityRewardChance"/>
-
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="Exp_Activity_Complite">
-					<requirement name="CVarCompare" cvar="Exp_ActivityRewardCVAR" operation="LTE" value="@Exp_ActivityRewardChance"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="Exp_Activity_Fail">
-					<requirement name="CVarCompare" cvar="Exp_ActivityRewardCVAR" operation="GT" value="@Exp_ActivityRewardChance"/>
-				</triggered_effect>
-				
+			
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="Exp_ActivityRewardCVAR,Exp_ActivityRewardChance,.Exp_ActivityRewardChance,Exp_ActivityRewardBonus,$buffExpActivityDuration,.buffExpActivityDisplay"/>
 			</effect_group>
 			

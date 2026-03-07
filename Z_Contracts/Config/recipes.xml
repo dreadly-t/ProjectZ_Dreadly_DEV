@@ -6,8 +6,8 @@
 			<ingredient name="QuestNotes" count="18"/>
 		</recipe>
 		
-		<recipe name="Bonus_StupidBet" count="1" craft_time="5">
-			<ingredient name="TrinketStupidBet" count="10"/>
+		<recipe name="Bonus_StupitBet" count="1" craft_time="5">
+			<ingredient name="TrinketStupitBet" count="10"/>
 		</recipe>
 	
 		<recipe name="Ingredients_FoodT1" count="1" craft_time="5">
