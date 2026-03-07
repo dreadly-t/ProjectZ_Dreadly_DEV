@@ -723,7 +723,7 @@
 			<duration value="5"/>
 			<effect_group>
 				<requirement name="!HasBuff" buff="buffReducedDamageResistance2"/>
-					<passive_effect name="PhysicalDamageResist" operation="perc_add" value="-.5" />
+					<passive_effect name="PhysicalDamageResist" operation="perc_add" value="-.05" />
 					<passive_effect name="EntityDamage" operation="perc_add" value="-.1"/>
 			</effect_group>
 		</buff>
