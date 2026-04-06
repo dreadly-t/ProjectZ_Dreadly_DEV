@@ -58,6 +58,30 @@
 			<ingredient name="gunHandgunT5SMG5Zinger" count="1"/>
 			<ingredient name="UniqueParts" count="20"/>
 		</recipe>
+		<recipe name="UniqueCombistickBundle" count="1" craft_time="30" craft_area="workbench" tags="learnable" craft_tool="toolImprovedTools">
+			<ingredient name="meleeWpnSpearT5SteelSpearCombistick" count="1"/>
+			<ingredient name="UniqueParts" count="20"/>
+		</recipe>
+		<recipe name="UniqueBarbarianBundle" count="1" craft_time="30" craft_area="workbench" tags="learnable" craft_tool="toolImprovedTools">
+			<ingredient name="meleeWpnClubT5SteelAxeBarbarian" count="1"/>
+			<ingredient name="UniqueParts" count="20"/>
+		</recipe>
+		<recipe name="UniqueDestructorBundle" count="1" craft_time="30" craft_area="workbench" tags="learnable" craft_tool="toolImprovedTools">
+			<ingredient name="meleeWpnSledgeT5SteelSledgehammerDestructor" count="1"/>
+			<ingredient name="UniqueParts" count="20"/>
+		</recipe>
+		<recipe name="UniqueMausClawsBundle" count="1" craft_time="30" craft_area="workbench" tags="learnable" craft_tool="toolImprovedTools">
+			<ingredient name="meleeWpnMausClaws" count="1"/>
+			<ingredient name="UniqueParts" count="20"/>
+		</recipe>
+		<recipe name="UniqueIndianaBundle" count="1" craft_time="30" craft_area="workbench" tags="learnable" craft_tool="toolImprovedTools">
+			<ingredient name="meleeWpnBladeT5MacheteIndiana" count="1"/>
+			<ingredient name="UniqueParts" count="20"/>
+		</recipe>
+		<recipe name="UniqueFlugenBundle" count="1" craft_time="30" craft_area="workbench" tags="learnable" craft_tool="toolImprovedTools">
+			<ingredient name="meleeWpnBatonT5PlasmaBatonFlugen" count="1"/>
+			<ingredient name="UniqueParts" count="20"/>
+		</recipe>
 		
 		<!-- Durable alloys -->
 		<recipe name="resourceDurablAlloys" count="1" craft_time="15" craft_area="workbenchImp" tags="learnable,workbenchCrafting">

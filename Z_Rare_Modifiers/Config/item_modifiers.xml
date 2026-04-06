@@ -1848,7 +1848,12 @@
 			
 			<effect_group tiered="false">
 				<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="butcherHarvest"/>
-				<passive_effect name="HarvestCount" operation="base_add" value="1" tags="butcherHarvestMutation"/>
+				<passive_effect name="HarvestCount" operation="base_add" value=".5" tags="butcherHarvestMutation">
+					<requirement name="HoldingItemHasTags" tags="shovel,perkBrawler,perkJavelinMaster"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value=".75" tags="butcherHarvestMutation">
+					<requirement name="HoldingItemHasTags" tags="axe,machete"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" tags="butcherHarvestMutation">
+					<requirement name="HoldingItemHasTags" tags="knife"/></passive_effect>
 			</effect_group>
 		</item_modifier>
 		
@@ -1866,7 +1871,12 @@
 			
 			<effect_group tiered="false">
 				<passive_effect name="HarvestCount" operation="perc_add" value=".4" tags="butcherHarvest"/>
-				<passive_effect name="HarvestCount" operation="base_add" value="1.5" tags="butcherHarvestMutation"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" tags="butcherHarvestMutation">
+					<requirement name="HoldingItemHasTags" tags="shovel,perkBrawler,perkJavelinMaster"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1.25" tags="butcherHarvestMutation">
+					<requirement name="HoldingItemHasTags" tags="axe,machete"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1.5" tags="butcherHarvestMutation">
+					<requirement name="HoldingItemHasTags" tags="knife"/></passive_effect>
 			</effect_group>
 		</item_modifier>
 		

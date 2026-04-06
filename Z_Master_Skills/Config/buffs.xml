@@ -10,10 +10,12 @@
 		
 		<!-- Masterful Weapon Handling -->
 		<effect_group>
-			<!-- <triggered_effect trigger="onSelfJump" action="RemoveCVar" cvar="$IndianaMasterCounter"/> -->
-			<!-- <triggered_effect trigger="onSelfJump" action="RemoveCVar" cvar="$IndianaMasterBonus"/> -->
-		
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".CombistickMasterBonus" operation="set" value="@$CombistickMasterBonus"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".BarbarianMasterBonus" operation="set" value="@$BarbarianMasterBonus"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DestructorMasterBonus" operation="set" value="@$DestructorMasterBonus"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".MausClawsMasterBonus" operation="set" value="@$MausClawsMasterBonus"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".IndianaMasterBonus" operation="set" value="@$IndianaMasterBonus"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".FlugenMasterBonus" operation="set" value="@$FlugenMasterBonus"/>
 		</effect_group>
 		
 		<!-- *** RESCUER_FULL_SET_BONUS -->
@@ -2119,6 +2121,7 @@
 				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_bleeding"/>
 			</effect_group>
 		</buff>
+		
 		<buff name="buffEnemyPredatorBonus_self" hidden="true">
 			<stack_type value="replace"/>
 			<duration value="6"/>
@@ -2142,11 +2145,11 @@
 			
 		</buff>
 		
-		<buff name="buffIndianaGuardianReload" name_key="buffIndianaGuardianReloadName" description_key="buffIndianaGuardianReloadDesc" icon="ui_game_symbol_deep_cuts" icon_color="255,184,0">
+		<buff name="buffGuardianReload" name_key="buffGuardianReloadName" description_key="buffGuardianReloadDesc" icon="ui_game_symbol_deep_cuts" icon_color="255,184,0">
 			<duration value="12"/>
 		</buff>
 		
-		<buff name="buffIndianaSurgeon" name_key="buffIndianaSurgeonName" description_key="buffIndianaSurgeonDesc" icon="ui_game_symbol_knife" icon_color="255,184,0">
+		<buff name="buffSurgeon" name_key="buffSurgeonName" description_key="buffSurgeonDesc" icon="ui_game_symbol_knife" icon_color="255,184,0">
 			<stack_type value="replace"/>
 			<duration value="3"/>
 			
@@ -2154,7 +2157,6 @@
 				<passive_effect name="HarvestCount" operation="perc_add" value="1" tags="butcherHarvest"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value="1" tags="butcherHarvestMutation"/>
 			</effect_group>
-			
 		</buff>
 		
 		<!-- TRAINING -->

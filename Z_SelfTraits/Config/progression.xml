@@ -665,11 +665,17 @@
 			<effect_group name="Develop">
 				<requirement name="CVarCompare" cvar="$SelfTraitsProgressionStatus" operation="EQ" value="1"/>				
 					<triggered_effect trigger="onSelfHarvestOther" action="ModifyCVar" cvar="CounterClumsy1" operation="subtract" value="1">
-						<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="1"/></triggered_effect>
+						<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="1"/>
+						<requirement name="!ItemHasTags" tags="tool"/>
+					</triggered_effect>
 					<triggered_effect trigger="onSelfHarvestOther" action="ModifyCVar" cvar="CounterClumsy2" operation="subtract" value="1">
-						<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="2"/></triggered_effect>
+						<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="2"/>
+						<requirement name="!ItemHasTags" tags="tool"/>
+					</triggered_effect>
 					<triggered_effect trigger="onSelfHarvestOther" action="ModifyCVar" cvar="CounterClumsy3" operation="subtract" value="1">
-						<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="3"/></triggered_effect>
+						<requirement name="CVarCompare" cvar="$NegTraitsClumsy_Current" operation="EQ" value="3"/>
+						<requirement name="!ItemHasTags" tags="tool"/>
+					</triggered_effect>
 					
 					<triggered_effect trigger="onSelfProgressionUpdate" action="CallGameEvent" event="setPerkClumsy0">
 						<requirement name="CVarCompare" cvar="CounterClumsy1" operation="LT" value="1"/>
@@ -2213,12 +2219,15 @@
 					<triggered_effect trigger="onSelfHarvestOther" action="ModifyCVar" cvar="CounterJackOfAllTrades0" operation="subtract" value="1">
 						<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="LT" value="1"/>
 						<requirement name="CVarCompare" cvar="$blockJackOfAllTrades" operation="LT" value="1"/>
+						<requirement name="!ItemHasTags" tags="tool"/>
 					</triggered_effect>
 					<triggered_effect trigger="onSelfHarvestOther" action="ModifyCVar" cvar="CounterJackOfAllTrades1" operation="subtract" value="1">
 						<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="1"/>
+						<requirement name="!ItemHasTags" tags="tool"/>
 					</triggered_effect>
 					<triggered_effect trigger="onSelfHarvestOther" action="ModifyCVar" cvar="CounterJackOfAllTrades2" operation="subtract" value="1">
 						<requirement name="CVarCompare" cvar="$PosTraitsJackOfAllTrades_Current" operation="EQ" value="2"/>
+						<requirement name="!ItemHasTags" tags="tool"/>
 					</triggered_effect>
 					
 					<triggered_effect trigger="onSelfProgressionUpdate" action="CallGameEvent" event="setPerkJackOfAllTrades1">

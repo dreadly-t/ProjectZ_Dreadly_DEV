@@ -1,5 +1,115 @@
 <config>
 	
+	<!-- Balance of extraction of primitive resources perkSalvageOperations -->
+	
+	<insertAfter xpath="/items/item[@name='meleeToolSalvageT1Wrench']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="oreWoodHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeToolSalvageT2Ratchet']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="oreWoodHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeToolSalvageT3ImpactDriver']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="oreWoodHarvest"/>
+	</insertAfter>
+	
+	<!--
+	
+	CUTTING OF CARCASSES
+	A penalty and bonus have been added for butchering animal or zombie carcasses. The bonus is distributed as follows
+	
+	= TOOL =
+	perkSalvageOperations, Pickaxe and auger - 25%
+	Shovel - 50%
+	StoneAxe - 75%
+	Axes,Chainsaw - 100%
+
+	= MELEE WEAPON =
+	Sledgehammers, Clubs and Stun Batons - 50%
+	Spear and Brass Knuckles - 75%
+	BoneKnife - 100%
+	HuntingKnife - 125%
+	Machete - 100%
+	 -->
+	 
+	<insertAfter xpath="/items/item[@name='meleeToolRepairT1ClawHammer']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeToolSalvageT1Wrench']/effect_group/passive_effect[@name='HarvestCount']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeToolSalvageT2Ratchet']/effect_group/passive_effect[@name='HarvestCount']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeToolSalvageT3ImpactDriver']/effect_group/passive_effect[@name='HarvestCount']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeToolPickT1IronPickaxe']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeToolPickT2SteelPickaxe']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeToolShovelT0StoneShovel']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeToolShovelT1IronShovel']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeToolShovelT2SteelShovel']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+	</insertAfter>
+	<set xpath="/items/item[@name='meleeToolRepairT0StoneAxe']/effect_group/passive_effect[@name='HarvestCount']/@value">.75</set>
+	<set xpath="/items/item[@name='meleeToolAxeT1IronFireaxe']/effect_group/passive_effect[@name='HarvestCount']/@value">1</set>
+	<set xpath="/items/item[@name='meleeToolAxeT2SteelAxe']/effect_group/passive_effect[@name='HarvestCount']/@value">1</set>	
+	
+	
+	<insertAfter xpath="/items/item[@name='meleeWpnSledgeT0StoneSledgehammer']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnSledgeT1IronSledgehammer']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnSledgeT3SteelSledgehammer']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnClubT0WoodenClub']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnClubT1BaseballBat']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnClubT1CandyClub']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnClubT3SteelClub']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnBatonT0PipeBaton']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnSpearT0StoneSpear']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnSpearT1IronSpear']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnSpearT3SteelSpear']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnKnucklesT0LeatherKnuckles']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
+	</insertAfter>
+	<insertAfter xpath="/items/item[@name='meleeWpnKnucklesT1IronKnuckles']/effect_group/passive_effect[@name='AttacksPerMinute']">
+		<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
+	</insertAfter>
+	<set xpath="/items/item[@name='meleeWpnKnucklesT3SteelKnuckles']/effect_group/passive_effect[@name='HarvestCount']/@value">.75</set>	
+	
+	<set xpath="/items/item[@name='meleeWpnBladeT1HuntingKnife']/effect_group/passive_effect[@name='HarvestCount']/@value">1.25</set>
+	
+	
+	
+	
+	<!-- Balance sheet price of supercorn -->
 	<set xpath="/items/item[@name='foodCropGraceCorn']/property[@name='EconomicValue']/@value">40</set>
 	
 	<set xpath="/items/item[@name='resourceCoal']/property[@name='EconomicValue']/@value">6</set>

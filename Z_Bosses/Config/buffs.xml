@@ -35,9 +35,9 @@
 			<duration value=".1"/>
 			
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$IRradiationStatus" operation="add" value="5">
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$IRradiationStatus" operation="add" value="7.5">
 					<requirement name="CVarCompare" cvar="$buffstimIrradiatedShellStatus" operation="LT" value="1"/></triggered_effect>
-				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$IRradiationStatus" operation="add" value="5">
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$IRradiationStatus" operation="add" value="7.5">
 					<requirement name="CVarCompare" cvar="$buffstimIrradiatedShellStatus" operation="LT" value="1"/></triggered_effect>
 			</effect_group>
 			
@@ -47,9 +47,9 @@
 			<duration value=".1"/>
 			
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$IRradiationStatus" operation="add" value="7.5">
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$IRradiationStatus" operation="add" value="15">
 					<requirement name="CVarCompare" cvar="$buffstimIrradiatedShellStatus" operation="LT" value="1"/></triggered_effect>
-				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$IRradiationStatus" operation="add" value="7.5">
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$IRradiationStatus" operation="add" value="15">
 					<requirement name="CVarCompare" cvar="$buffstimIrradiatedShellStatus" operation="LT" value="1"/></triggered_effect>
 			</effect_group>
 			
@@ -1650,7 +1650,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseBuff"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffInjuryKnockdown01">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 					<requirement name="CVarCompare" cvar="$StabilityStatus" target="other" operation="Equals" value="0"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffBullBattlePhase2">
@@ -1671,7 +1671,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseBuff"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffInjuryKnockdown01">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 					<requirement name="CVarCompare" cvar="$StabilityStatus" target="other" operation="Equals" value="0"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffBullBattlePhase3">
@@ -1692,7 +1692,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseBuff"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffInjuryKnockdown01">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 					<requirement name="CVarCompare" cvar="$StabilityStatus" target="other" operation="Equals" value="0"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffBullBattlePhase4">
@@ -1713,7 +1713,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseBuff"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffInjuryKnockdown01">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 					<requirement name="CVarCompare" cvar="$StabilityStatus" target="other" operation="Equals" value="0"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffBullBattlePhase5">
@@ -1735,7 +1735,7 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseBuff"/>
 				
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffInjuryKnockdown01">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 					<requirement name="CVarCompare" cvar="$StabilityStatus" target="other" operation="Equals" value="0"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffBullBattlePhase6">
@@ -1895,7 +1895,7 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CustomEffect"/>
 				
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffShocked">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 					<requirement name="CVarCompare" target="other" cvar="$ShokedResist" operation="LT" value="1"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffBossShockerPhase">
@@ -1919,7 +1919,7 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CustomEffect"/>
 				
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffShocked">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 					<requirement name="CVarCompare" target="other" cvar="$ShokedResist" operation="LT" value="1"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffBossShockerPhase">
@@ -1943,7 +1943,7 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CustomEffect"/>
 				
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffShocked">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 					<requirement name="CVarCompare" target="other" cvar="$ShokedResist" operation="LT" value="1"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffBossShockerPhase">
@@ -1967,7 +1967,7 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CustomEffect"/>
 				
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffShocked">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 					<requirement name="CVarCompare" target="other" cvar="$ShokedResist" operation="LT" value="1"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffBossShockerPhase">
@@ -1991,7 +1991,7 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$CustomEffect"/>
 				
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffShocked">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 					<requirement name="CVarCompare" target="other" cvar="$ShokedResist" operation="LT" value="1"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffBossShockerPhase">
@@ -2214,7 +2214,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseVeteran"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffBossesDropItem">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffVeteranBattlePhase2">
 					<requirement name="CVarCompare" cvar="$BattlePhaseVeteran" operation="NotEquals" value="2"/>
@@ -2237,7 +2237,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseVeteran"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffBossesDropItem">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffVeteranBattlePhase3">
 					<requirement name="CVarCompare" cvar="$BattlePhaseVeteran" operation="NotEquals" value="3"/>
@@ -2260,7 +2260,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseVeteran"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffBossesDropItem">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffVeteranBattlePhase4">
 					<requirement name="CVarCompare" cvar="$BattlePhaseVeteran" operation="NotEquals" value="4"/>
@@ -2283,7 +2283,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseVeteran"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffBossesDropItem">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffVeteranBattlePhase5">
 					<requirement name="CVarCompare" cvar="$BattlePhaseVeteran" operation="NotEquals" value="5"/>
@@ -2307,7 +2307,7 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseVeteran"/>
 				
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffBossesDropItem">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffVeteranBattlePhase6">
 					<requirement name="CVarCompare" cvar="$BattlePhaseVeteran" operation="NotEquals" value="6"/>
@@ -2461,7 +2461,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseAncientYeti"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffСongealment">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffAncientYetiBattlePhase2">
 					<requirement name="CVarCompare" cvar="$BattlePhaseAncientYeti" operation="NotEquals" value="2"/>
@@ -2484,7 +2484,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseAncientYeti"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffСongealment">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffAncientYetiBattlePhase3">
 					<requirement name="CVarCompare" cvar="$BattlePhaseAncientYeti" operation="NotEquals" value="3"/>
@@ -2507,7 +2507,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseAncientYeti"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffСongealment">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffAncientYetiBattlePhase4">
 					<requirement name="CVarCompare" cvar="$BattlePhaseAncientYeti" operation="NotEquals" value="4"/>
@@ -2530,7 +2530,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseAncientYeti"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffСongealment">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffAncientYetiBattlePhase5">
 					<requirement name="CVarCompare" cvar="$BattlePhaseAncientYeti" operation="NotEquals" value="5"/>
@@ -2554,7 +2554,7 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$phaseAncientYeti"/>
 				
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="BuffСongealment">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffAncientYetiBattlePhase6">
 					<requirement name="CVarCompare" cvar="$BattlePhaseAncientYeti" operation="NotEquals" value="6"/>
@@ -2802,7 +2802,7 @@
 			
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffEmissionPlayer">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffCarrierBattlePhase2">
 					<requirement name="CVarCompare" cvar="$BattlePhaseCarrier" operation="NotEquals" value="2"/>
@@ -2814,7 +2814,7 @@
 			
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffEmissionPlayer">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffCarrierBattlePhase3">
 					<requirement name="CVarCompare" cvar="$BattlePhaseCarrier" operation="NotEquals" value="3"/>
@@ -2826,7 +2826,7 @@
 			
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffEmissionPlayer">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffCarrierBattlePhase4">
 					<requirement name="CVarCompare" cvar="$BattlePhaseCarrier" operation="NotEquals" value="4"/>
@@ -2838,7 +2838,7 @@
 			
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffEmissionPlayer">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffCarrierBattlePhase5">
 					<requirement name="CVarCompare" cvar="$BattlePhaseCarrier" operation="NotEquals" value="5"/>
@@ -2850,7 +2850,7 @@
 			
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffEmissionPlayer">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffCarrierBattlePhase6">
 					<requirement name="CVarCompare" cvar="$BattlePhaseCarrier" operation="NotEquals" value="6"/>
@@ -2862,7 +2862,7 @@
 			
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffEmissionPlayer">
-					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone"/>
+					<requirement name="!EntityTagCompare" target="other" tags="vehicle,turret,drone,zombie"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BuffCarrierBattlePhase7">
 					<requirement name="CVarCompare" cvar="$BattlePhaseCarrier" operation="NotEquals" value="7"/>

@@ -117,6 +117,26 @@
 		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 		
 		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- GATHERER IMPROVED -->
+		
+		<item_display_info display_type="armorGathererHelmetImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dPlayerExpGainRepairTool"  title_key="statPlayerExpGainRepairTool" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dPlayerExpGainMining"  title_key="statPlayerExpGainMining" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorGathererOutfitImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dHealthMax" title_key="statMaxHealthBonus" display_leading_plus="true"/>
+			<display_entry name="dCarryCapacity"  title_key="statCarryCapacity" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorGathererGlovesImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dBlockDamage" title_key="statOreBlockDamage" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dDegradationPerUseConst" title_key="statDegradationPerUseConst" display_type="Percent" display_leading_plus="true" negative_preferred="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorGathererBootsImp" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dStaminaMax" title_key="statStaminaAmount" display_leading_plus="true"/>
+			<display_entry name="dFallDamage" title_key="statSafeFallDist" display_type="Decimal1" display_leading_plus="true"/>
+		</item_display_info>
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 		<!-- NOMAD IMPROVED -->
 		
 		<item_display_info display_type="armorNomadHelmetImp" display_group="groupAttire" extends="armorHeavy" >

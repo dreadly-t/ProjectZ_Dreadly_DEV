@@ -508,6 +508,41 @@
 			<item name="ZingerLegBerserk"/>
 		</lootgroup>
 		
+		<lootgroup name="groupLegend_MeleeWeapon" loot_quality_template="QLTemplateLegend">
+			<item name="CombistickLegCrisis"/>
+			<item name="CombistickLegCrusher"/>
+			<item name="CombistickLegMasterpiece"/>
+			<item name="CombistickLegGuardian"/>
+			<item name="CombistickLegSurgeon"/>
+			
+			<item name="BarbarianLegCrisis"/>
+			<item name="BarbarianLegCrusher"/>
+			<item name="BarbarianLegMasterpiece"/>
+			<item name="BarbarianLegGuardian"/>
+			
+			<item name="DestructorLegCrisis"/>
+			<item name="DestructorLegCrusher"/>
+			<item name="DestructorLegMasterpiece"/>
+			<item name="DestructorLegGuardian"/>
+			
+			<item name="MausClawsLegCrisis"/>
+			<item name="MausClawsLegCrusher"/>
+			<item name="MausClawsLegMasterpiece"/>
+			<item name="MausClawsLegGuardian"/>
+			<item name="MausClawsLegSurgeon"/>
+			
+			<item name="IndianaLegCrisis"/>
+			<item name="IndianaLegCrusher"/>
+			<item name="IndianaLegMasterpiece"/>
+			<item name="IndianaLegGuardian"/>
+			<item name="IndianaLegSurgeon"/>			
+			
+			<item name="FlugenLegCrisis"/>
+			<item name="FlugenLegCrusher"/>
+			<item name="FlugenLegMasterpiece"/>
+			<item name="FlugenLegGuardian"/>
+		</lootgroup>
+		
 		<lootgroup name="groupRareMods">
 			<item name="modMotorBooster" prob=".25"/>
 			<item name="modReactorBooster" prob=".08"/>
@@ -798,6 +833,7 @@
 			<item group="groupUniqModsShoker" prob=".35" force_prob="true"/>
 			<item group="groupSkillBook" prob=".18" force_prob="true"/>
 			<item group="groupLegend_Weapon" prob=".08" force_prob="true"/>
+			<item group="groupLegend_MeleeWeapon" prob=".12" force_prob="true"/>
 			<item group="groupPerkPlundererChanceHightLoot" count="3" buffs="buffPerkPlundererSuccess">
 				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
 			</item>
@@ -815,6 +851,7 @@
 			<item group="groupUniqModsBull" prob=".35" force_prob="true"/>
 			<item group="groupSkillBook" prob=".18" force_prob="true"/>
 			<item group="groupLegend_Weapon" prob=".08" force_prob="true"/>
+			<item group="groupLegend_MeleeWeapon" prob=".12" force_prob="true"/>
 			<item group="groupPerkPlundererChanceHightLoot" count="3" buffs="buffPerkPlundererSuccess">
 				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
 			</item>
@@ -832,6 +869,7 @@
 			<item group="groupUniqModsVeteran" prob=".35" force_prob="true"/>
 			<item group="groupSkillBook" prob=".18" force_prob="true"/>
 			<item group="groupLegend_Weapon" prob=".08" force_prob="true"/>
+			<item group="groupLegend_MeleeWeapon" prob=".12" force_prob="true"/>
 			<item group="groupPerkPlundererChanceHightLoot" count="3" buffs="buffPerkPlundererSuccess">
 				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
 			</item>
@@ -849,6 +887,7 @@
 			<item group="groupUniqModsAncientYeti" prob=".35" force_prob="true"/>
 			<item group="groupSkillBook" prob=".18" force_prob="true"/>
 			<item group="groupLegend_Weapon" prob=".08" force_prob="true"/>
+			<item group="groupLegend_MeleeWeapon" prob=".12" force_prob="true"/>
 			<item group="groupPerkPlundererChanceHightLoot" count="3" buffs="buffPerkPlundererSuccess">
 				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
 			</item>
@@ -865,6 +904,7 @@
 			<item group="groupUniqModsAll" count="1"/>
 			<item group="groupSkillBook" prob=".35" force_prob="true"/>
 			<item group="groupLegend_Weapon" prob=".15" force_prob="true"/>
+			<item group="groupLegend_MeleeWeapon" prob=".25" force_prob="true"/>
 			<item group="groupPerkPlundererChanceHightLoot" count="5" buffs="buffPerkPlundererSuccess">
 				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$plundererSuccess"/>
 			</item>

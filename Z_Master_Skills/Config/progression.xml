@@ -512,12 +512,24 @@
 				<unlock_entry item="modLuckyMiningUnique" unlock_tier="14" />
 			</display_entry>
 			
+			<display_entry icon="modMeleeWoodSplitter,modMeleeGraveDigger,modMeleeBunkerBuster,modMeleeIronBreaker" name_key="LightMeleeWeaponT4" has_quality="false" unlock_level="5,10,15,20">
+				<unlock_entry item="modEnhancedWood" unlock_tier="1" />
+				<unlock_entry item="modEnhancedClay" unlock_tier="2" />
+				<unlock_entry item="modEnhancedStone" unlock_tier="3" />
+				<unlock_entry item="modEnhancedMetal" unlock_tier="4" />
+			</display_entry>
+			
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="meleeToolPickT4AugerImp"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="meleeToolAxeT4ChainsawImp"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="meleeToolSalvageT4ImpactDriverImp"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="meleeToolPickT5AugerReact"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="meleeToolSalvageT5ImpactDriverReact"/>
+				
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="modEnhancedWood"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="modEnhancedClay"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,100" value="1" tags="modEnhancedStone"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="modEnhancedMetal"/>
 				
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="modReinforcedParts"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="modElongatedCore"/>
@@ -572,7 +584,7 @@
 			</display_entry>
 			
 			<display_entry icon="armorRogueHelmet" name_key="MasterArmorImp" has_quality="true" unlock_level="4,8,12,16,20,24">
-				<unlock_entry item="armorRogueHelmetImp,armorEnforcerHelmetImp,armorRangerHelmetImp,armorCommandoHelmetImp,armorAssassinHelmetImp,armorNomadHelmetImp,armorNerdHelmetImp,armorRaiderHelmetImp" unlock_tier="1" recipes="armorRogueHelmetImp,armorRogueOutfitImp,armorRogueGlovesImp,armorRogueBootsImp,armorEnforcerHelmetImp,armorEnforcerOutfitImp,armorEnforcerGlovesImp,armorEnforcerBootsImp,armorRangerHelmetImp,armorRangerOutfitImp,armorRangerGlovesImp,armorRangerBootsImp,armorCommandoHelmetImp,armorCommandoOutfitImp,armorCommandoGlovesImp,armorCommandoBootsImp,armorAssassinHelmetImp,armorAssassinOutfitImp,armorAssassinGlovesImp,armorAssassinBootsImp,armorNomadHelmetImp,armorNomadOutfitImp,armorNomadGlovesImp,armorNomadBootsImp,armorNerdHelmetImp,armorNerdOutfitImp,armorNerdGlovesImp,armorNerdBootsImp,armorRaiderHelmetImp,armorRaiderOutfitImp,armorRaiderGlovesImp,armorRaiderBootsImp"/>
+				<unlock_entry item="armorRogueHelmetImp,armorEnforcerHelmetImp,armorRangerHelmetImp,armorCommandoHelmetImp,armorAssassinHelmetImp,armorGathererHelmetImp,armorNomadHelmetImp,armorNerdHelmetImp,armorRaiderHelmetImp" unlock_tier="1" recipes="armorRogueHelmetImp,armorRogueOutfitImp,armorRogueGlovesImp,armorRogueBootsImp,armorEnforcerHelmetImp,armorEnforcerOutfitImp,armorEnforcerGlovesImp,armorEnforcerBootsImp,armorRangerHelmetImp,armorRangerOutfitImp,armorRangerGlovesImp,armorRangerBootsImp,armorCommandoHelmetImp,armorCommandoOutfitImp,armorCommandoGlovesImp,armorCommandoBootsImp,armorAssassinHelmetImp,armorAssassinOutfitImp,armorAssassinGlovesImp,armorAssassinBootsImp,armorGathererHelmetImp,armorGathererOutfitImp,armorGathererGlovesImp,armorGathererBootsImp,armorNomadHelmetImp,armorNomadOutfitImp,armorNomadGlovesImp,armorNomadBootsImp,armorNerdHelmetImp,armorNerdOutfitImp,armorNerdGlovesImp,armorNerdBootsImp,armorRaiderHelmetImp,armorRaiderOutfitImp,armorRaiderGlovesImp,armorRaiderBootsImp"/>
 			</display_entry>
 			
 			<display_entry icon="armorAssassinHelmet" name_key="MasterArmorUniq" has_quality="true" unlock_level="25,30,35,40,45,50">
@@ -627,9 +639,9 @@
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modRareArmorARResistBoots"/>
 				
 				<!-- Improved Armor -->
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,100" value="1" tags="armorRogueHelmetImp,armorRogueOutfitImp,armorRogueGlovesImp,armorRogueBootsImp,armorEnforcerHelmetImp,armorEnforcerOutfitImp,armorEnforcerGlovesImp,armorEnforcerBootsImp,armorRangerHelmetImp,armorRangerOutfitImp,armorRangerGlovesImp,armorRangerBootsImp,armorCommandoHelmetImp,armorCommandoOutfitImp,armorCommandoGlovesImp,armorCommandoBootsImp,armorAssassinHelmetImp,armorAssassinOutfitImp,armorAssassinGlovesImp,armorAssassinBootsImp,armorAssassinBootsImp,armorNomadHelmetImp,armorNomadOutfitImp,armorNomadGlovesImp,armorNomadBootsImp,armorNerdHelmetImp,armorNerdOutfitImp,armorNerdGlovesImp,armorNerdBootsImp,armorRaiderHelmetImp,armorRaiderOutfitImp,armorRaiderGlovesImp,armorRaiderBootsImp"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,100" value="1" tags="armorRogueHelmetImp,armorRogueOutfitImp,armorRogueGlovesImp,armorRogueBootsImp,armorEnforcerHelmetImp,armorEnforcerOutfitImp,armorEnforcerGlovesImp,armorEnforcerBootsImp,armorRangerHelmetImp,armorRangerOutfitImp,armorRangerGlovesImp,armorRangerBootsImp,armorCommandoHelmetImp,armorCommandoOutfitImp,armorCommandoGlovesImp,armorCommandoBootsImp,armorAssassinHelmetImp,armorAssassinOutfitImp,armorAssassinGlovesImp,armorAssassinBootsImp,armorAssassinBootsImp,armorGathererHelmetImp,armorGathererOutfitImp,armorGathererGlovesImp,armorGathererBootsImp,armorNomadHelmetImp,armorNomadOutfitImp,armorNomadGlovesImp,armorNomadBootsImp,armorNerdHelmetImp,armorNerdOutfitImp,armorNerdGlovesImp,armorNerdBootsImp,armorRaiderHelmetImp,armorRaiderOutfitImp,armorRaiderGlovesImp,armorRaiderBootsImp"/>
 				
-				<passive_effect name="CraftingTier" operation="base_add" level="8,12,16,20,24,100" value="1,2,3,4,5,5" tags="armorRogueHelmetImp,armorRogueOutfitImp,armorRogueGlovesImp,armorRogueBootsImp,armorEnforcerHelmetImp,armorEnforcerOutfitImp,armorEnforcerGlovesImp,armorEnforcerBootsImp,armorRangerHelmetImp,armorRangerOutfitImp,armorRangerGlovesImp,armorRangerBootsImp,armorCommandoHelmetImp,armorCommandoOutfitImp,armorCommandoGlovesImp,armorCommandoBootsImp,armorAssassinHelmetImp,armorAssassinOutfitImp,armorAssassinGlovesImp,armorAssassinBootsImp,armorAssassinBootsImp,armorNomadHelmetImp,armorNomadOutfitImp,armorNomadGlovesImp,armorNomadBootsImp,armorNerdHelmetImp,armorNerdOutfitImp,armorNerdGlovesImp,armorNerdBootsImp,armorRaiderHelmetImp,armorRaiderOutfitImp,armorRaiderGlovesImp,armorRaiderBootsImp"/>
+				<passive_effect name="CraftingTier" operation="base_add" level="8,12,16,20,24,100" value="1,2,3,4,5,5" tags="armorRogueHelmetImp,armorRogueOutfitImp,armorRogueGlovesImp,armorRogueBootsImp,armorEnforcerHelmetImp,armorEnforcerOutfitImp,armorEnforcerGlovesImp,armorEnforcerBootsImp,armorRangerHelmetImp,armorRangerOutfitImp,armorRangerGlovesImp,armorRangerBootsImp,armorCommandoHelmetImp,armorCommandoOutfitImp,armorCommandoGlovesImp,armorCommandoBootsImp,armorAssassinHelmetImp,armorAssassinOutfitImp,armorAssassinGlovesImp,armorAssassinBootsImp,armorAssassinBootsImp,armorGathererHelmetImp,armorGathererOutfitImp,armorGathererGlovesImp,armorGathererBootsImp,armorNomadHelmetImp,armorNomadOutfitImp,armorNomadGlovesImp,armorNomadBootsImp,armorNerdHelmetImp,armorNerdOutfitImp,armorNerdGlovesImp,armorNerdBootsImp,armorRaiderHelmetImp,armorRaiderOutfitImp,armorRaiderGlovesImp,armorRaiderBootsImp"/>
 				
 				<!-- Unique Armor -->
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="armorRescuerHelmet,armorRescuerOutfit,armorRescuerGloves,armorRescuerBoots"/>
@@ -868,6 +880,12 @@
 				<unlock_entry item="modEnhancedSledgehammer" unlock_tier="3" />
 			</display_entry>
 			
+			<display_entry icon="meleeWpnSpearT3SteelSpear" name_key="MeleeWeaponT5" has_quality="false" unlock_level="50,50,50">
+				<unlock_entry item="UniqueCombistickBundle" unlock_tier="1" />
+				<unlock_entry item="UniqueBarbarianBundle" unlock_tier="2" />
+				<unlock_entry item="UniqueDestructorBundle" unlock_tier="3" />
+			</display_entry>
+			
 			<effect_group>
 				<!-- Enhanced equipment -->
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="modEnhancedSpear"/>
@@ -887,6 +905,10 @@
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modMeleeDimondPartsHeavyUnique"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modMeleeTheHunterUnique"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modMeleeTerribleSpikesUnique"/>
+				
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="UniqueCombistickBundle"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="UniqueBarbarianBundle"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="UniqueDestructorBundle"/>
 
 				<passive_effect name="CraftingTier" operation="base_add" level="10,15,20,25,28,100" value="1,2,3,4,5,5" tags="meleeWpnSledgeT4SteelSledgehammerImp"/>
 				<passive_effect name="CraftingTier" operation="base_add" level="10,15,20,25,28,100" value="1,2,3,4,5,5" tags="meleeWpnClubT4SteelClubImp"/>
@@ -922,6 +944,12 @@
 				<unlock_entry item="modEnhancedStunBaton" unlock_tier="3" />
 			</display_entry>
 			
+			<display_entry icon="meleeWpnKnucklesT3SteelKnuckles" name_key="MeleeWeaponT5" has_quality="false" unlock_level="50,50,50">
+				<unlock_entry item="UniqueMausClawsBundle" unlock_tier="1" />
+				<unlock_entry item="UniqueIndianaBundle" unlock_tier="2" />
+				<unlock_entry item="UniqueFlugenBundle" unlock_tier="3" />
+			</display_entry>
+			
 			<effect_group>
 				<!-- Enhanced equipment -->
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="modEnhancedKnuckles"/>
@@ -940,6 +968,10 @@
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modMeleeDimondPartsLightUnique"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modMeleeErgonomicGripUnique"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="modMeleeClubBurningUnique"/>
+				
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="UniqueMausClawsBundle"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="UniqueIndianaBundle"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="UniqueFlugenBundle"/>
 
 				<passive_effect name="CraftingTier" operation="base_add" level="10,15,20,25,28,100" value="1,2,3,4,5,5" tags="meleeWpnBatonT4PlasmaBaton"/>
 				<passive_effect name="CraftingTier" operation="base_add" level="10,15,20,25,28,100" value="1,2,3,4,5,5" tags="meleeWpnKnucklesT4SteelKnucklesImp"/>

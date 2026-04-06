@@ -516,8 +516,8 @@
 		<item name="Elixir_HealthT1">
 			<property name="Tags" value="Contract"/>
 			<property name="DescriptionKey" value="Elixir_HealthT1Desc"/>
-			<property name="HoldType" value="86"/>
-			<property name="Meshfile" value="@:Other/Items/Health/syringeMedical_01Prefab.prefab"/>
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Mglass"/>
 			<property name="Stacknumber" value="10"/>
@@ -530,7 +530,7 @@
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1"/>
-				<property name="Sound_start" value="player_syringe"/>
+				<property name="Sound_start" value="player_drinking"/>
 			</property>
 			
 			<effect_group tiered="false">

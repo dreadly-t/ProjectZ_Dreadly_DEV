@@ -848,8 +848,9 @@
 			<property name="CustomIcon" value="cntLootChestHero"/>
 			<property name="UnlockedBy" value="MasterBuilder"/>
 			<property name="LootList" value="BigStorageSmall"/>
+			<property name="EconomicValue" value="10"/>
 			<property name="DescriptionKey" value="cntLootChestHeroStorageDesc"/>
-			<property name="Group" value="Building"/>
+			<property name="Group" value="Building,advBuilding"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Material" value="Mmetal_weak"/>
 			<property name="Shape" value="ModelEntity"/>
@@ -871,7 +872,6 @@
 			<property name="Tags" value="timecharge"/>
 			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
 		</block>
-
 		<block name="cntHardenedChestSecureStorage">
 			<property name="CreativeMode" value="Player"/>
 			<property name="Class" value="SecureLoot"/>
@@ -904,13 +904,14 @@
 			<property name="Tags" value="timecharge"/>
 			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
 		</block>
-					
 		<block name="cntHardenedChestSecureT5Storage">
 			<property name="Extends" value="cntHardenedChestSecureStorage"/>
 			<property name="CustomIcon" value="cntHardenedChestSecureT5"/>
+			<property name="UnlockedBy" value="MasterBuilder"/>
 			<property name="LootList" value="BigStorageLarge"/>
 			<property name="EconomicValue" value="10"/>
 			<property name="DescriptionKey" value="cntHardenedChestSecureT5StorageDesc"/>
+			<property name="SellableToTrader" value="false"/>
 			<property name="Model" value="@:Entities/LootContainers/tier5LootChestPrefab.prefab"/>
 			<property name="ModelOffset" value="0,0.5,0"/>
 			<property name="MultiBlockDim" value="2,1,1"/>

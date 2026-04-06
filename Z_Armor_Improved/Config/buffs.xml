@@ -72,6 +72,20 @@
 			</triggered_effect>
 		</effect_group>
 		
+		<!-- *** GATHERER_IMP_FULL_SET_BONUS -->
+		<effect_group>
+			<!-- If armor set NOT complete, remove bonus buff -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffGathererImpSetBonus">
+				<requirement name="ArmorGroupCount" group_name="groupGathererImp" operation="LTE" value="3" />
+				<requirement name="HasBuff" buff="buffGathererImpSetBonus"/>
+			</triggered_effect>
+			<!-- If armor set complete, add bonus buff -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffGathererImpSetBonus">
+				<requirement name="ArmorGroupCount" group_name="groupGathererImp" operation="Equals" value="4" />
+				<requirement name="!HasBuff" buff="buffGathererImpSetBonus"/>
+			</triggered_effect>
+		</effect_group>
+		
 		<!-- *** NOMAD_IMP_FULL_SET_BONUS -->
 		<effect_group>
 			<!-- If armor set NOT complete, remove bonus buff -->
@@ -2694,7 +2708,92 @@
 		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 		<!-- HEAVY ARMOR -->
 		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-
+		
+		<!-- *** buffGathererImpSetBonus -->
+		<!-- TRIGGERED_BY: Buffs = buffStatusCheck02 -->
+		<buff name="buffGathererImpSetBonus" name_key="buffGathererImpSetBonusName" description_key="buffGathererImpSetBonusDesc" tooltip_key="buffGathererImpSetBonusTooltip" icon="ui_game_symbol_armor_iron" icon_color="190,190,255">
+			<stack_type value="ignore"/>
+			<display_value_key value="buffGathererImpSetBonus"/>
+			<display_value value="xxx"/>
+			
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="miningTool,repairTool"/>
+					<passive_effect name="GeneralDamageResist" operation="base_add" value=".15"/>
+			</effect_group>
+			
+			<!-- TIER 1 -->
+			<effect_group>
+				<requirement name="ArmorGroupLowestQuality" group_name="groupGathererImp" operation="Equals" value="1"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="10"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="10"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armorGathererImpFSBDisplay"/>
+					
+					<passive_effect name="HarvestCount" operation="perc_add" value=".1" tags="oreWoodHarvest,lumberjackHarvest">
+						<requirement name="HoldingItemHasTags" tags="miningTool"/>
+					</passive_effect>
+			</effect_group>
+			
+			<!-- TIER 2 -->
+			<effect_group>
+				<requirement name="ArmorGroupLowestQuality" group_name="groupGathererImp" operation="Equals" value="2"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="20"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="20"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armorGathererImpFSBDisplay"/>
+					
+					<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="oreWoodHarvest,lumberjackHarvest">
+						<requirement name="HoldingItemHasTags" tags="miningTool"/>
+					</passive_effect>
+			</effect_group>
+			
+			<!-- TIER 3 -->
+			<effect_group>
+				<requirement name="ArmorGroupLowestQuality" group_name="groupGathererImp" operation="Equals" value="3"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="30"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="30"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armorGathererImpFSBDisplay"/>
+					
+					<passive_effect name="HarvestCount" operation="perc_add" value=".3" tags="oreWoodHarvest,lumberjackHarvest">
+						<requirement name="HoldingItemHasTags" tags="miningTool"/>
+					</passive_effect>
+			</effect_group>
+			
+			<!-- TIER 4 -->
+			<effect_group>
+				<requirement name="ArmorGroupLowestQuality" group_name="groupGathererImp" operation="Equals" value="4"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="40"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armorGathererImpFSBDisplay"/>
+					
+					<passive_effect name="HarvestCount" operation="perc_add" value=".4" tags="oreWoodHarvest,lumberjackHarvest">
+						<requirement name="HoldingItemHasTags" tags="miningTool"/>
+					</passive_effect>
+			</effect_group>
+			
+			<!-- TIER 5 -->
+			<effect_group>
+				<requirement name="ArmorGroupLowestQuality" group_name="groupGathererImp" operation="Equals" value="5"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="50"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armorGathererImpFSBDisplay"/>
+					
+					<passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="oreWoodHarvest,lumberjackHarvest">
+						<requirement name="HoldingItemHasTags" tags="miningTool"/>
+					</passive_effect>
+			</effect_group>
+			
+			<!-- TIER 6 -->
+			<effect_group>
+				<requirement name="ArmorGroupLowestQuality" group_name="groupGathererImp" operation="Equals" value="6"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armorGathererImpFSBDisplay" operation="set" value="75"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armorGathererImpFSBDisplay"/>
+					
+					<passive_effect name="HarvestCount" operation="perc_add" value=".75" tags="oreWoodHarvest,lumberjackHarvest">
+						<requirement name="HoldingItemHasTags" tags="miningTool"/>
+					</passive_effect>
+			</effect_group>
+		</buff>
+		
 		<!-- *** buffNomadImpSetBonus -->
 		<!-- TRIGGERED_BY: Buffs = buffStatusCheck02 -->
 		<buff name="buffNomadImpSetBonus" name_key="buffNomadImpSetBonusName" description_key="buffNomadImpSetBonusDesc" tooltip_key="buffNomadImpSetBonusTooltip" icon="ui_game_symbol_armor_iron" icon_color="190,190,255">

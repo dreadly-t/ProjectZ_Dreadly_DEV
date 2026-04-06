@@ -28,6 +28,23 @@
 			<ingredient name="resourcePreciousMetals" count="10"/>
 		</recipe>
 		
+		<recipe name="modEnhancedWood" count="1" craft_time="300" tags="learnable,workbenchCrafting">
+			<ingredient name="modMeleeWoodSplitter" count="10"/>
+			<ingredient name="resourcePreciousMetals" count="5"/>
+		</recipe>
+		<recipe name="modEnhancedMetal" count="1" craft_time="300" tags="learnable,workbenchCrafting">
+			<ingredient name="modMeleeIronBreaker" count="10"/>
+			<ingredient name="resourcePreciousMetals" count="5"/>
+		</recipe>
+		<recipe name="modEnhancedStone" count="1" craft_time="300" tags="learnable,workbenchCrafting">
+			<ingredient name="modMeleeBunkerBuster" count="10"/>
+			<ingredient name="resourcePreciousMetals" count="5"/>
+		</recipe>
+		<recipe name="modEnhancedClay" count="1" craft_time="300" tags="learnable,workbenchCrafting">
+			<ingredient name="modMeleeGraveDigger" count="10"/>
+			<ingredient name="resourcePreciousMetals" count="5"/>
+		</recipe>
+		
 		<!-- ROGUE IMP -->
 		<recipe name="armorRogueHelmetImp" craft_time="600" count="1" craft_area="workbenchImp" tags="learnable">
 			<ingredient name="armorRogueHelmet" count="1"/>
@@ -312,6 +329,70 @@
 				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
 			</effect_group>
 		</recipe>
+		
+		<!-- Gatherer IMP -->
+		
+		<!-- Gatherer IMP -->
+		<recipe name="armorGathererHelmetImp" craft_time="600" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorLumberjackHelmet" count="1"/>
+			<ingredient name="armorMinerHelmet" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceForgedSteel" count="30"/>
+			<ingredient name="resourceUltraLightAlloys" count="4"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="30,150" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="4,20" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorGathererOutfitImp" craft_time="750" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorLumberjackOutfit" count="1"/>
+			<ingredient name="armorMinerOutfit" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="50,250" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorGathererGlovesImp" craft_time="450" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorLumberjackGloves" count="1"/>
+			<ingredient name="armorMinerGloves" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="armorGathererBootsImp" craft_time="500" count="1" craft_area="workbenchImp" tags="learnable">
+			<ingredient name="armorLumberjackBoots" count="1"/>
+			<ingredient name="armorMinerBoots" count="1"/>
+			<ingredient name="resourceArmorCraftingKitImp" count="2"/>
+			<ingredient name="resourceUltraLightAlloys" count="3"/>
+			<ingredient name="resourceUltraStrengthAlloys" count="3"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="3,6" operation="base_add" value="2,8" tags="resourceArmorCraftingKitImp"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraLightAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="3,15" tags="resourceUltraStrengthAlloys"/>
+				<passive_effect name="CraftingIngredientCount" level="4,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
 		
 		<!-- Nomad IMP -->
 		<recipe name="armorNomadHelmetImp" craft_time="600" count="1" craft_area="workbenchImp" tags="learnable">

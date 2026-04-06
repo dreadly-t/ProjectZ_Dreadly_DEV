@@ -4070,6 +4070,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -4131,6 +4132,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -4198,6 +4200,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 				
 				<triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Health" operation="add" value="5"/>
@@ -4265,6 +4268,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -4333,6 +4337,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -4396,6 +4401,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -4459,6 +4465,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 				
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffMeleeWeaponBleeding">
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
@@ -4530,6 +4537,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -4597,6 +4605,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -4664,6 +4673,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -4716,6 +4726,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -4768,6 +4779,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 				
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryKnockdown01">
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
@@ -4826,6 +4838,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -4884,6 +4897,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -4946,6 +4960,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 				
 				<triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="16"/>
 				<triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Health" operation="add" value="8"/>
@@ -5004,6 +5019,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -5063,6 +5079,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -5117,6 +5134,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -5170,6 +5188,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -5230,6 +5249,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.75" tags="secondary"/>
@@ -5290,6 +5310,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 				
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryKnockdown01">
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
@@ -5357,6 +5378,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -5423,6 +5445,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -5484,6 +5507,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -5545,6 +5569,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.75" tags="secondary"/>
@@ -5614,6 +5639,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -5675,6 +5701,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 				
 				<triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="20"/>
 				<triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Health" operation="add" value="10"/>
@@ -5739,6 +5766,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 
 				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="@:Other/Items/Weapons/Melee/KnuckleWraps/knuckleWrapsLeft_Prefab.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>
@@ -5798,6 +5826,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 
 				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="@:Other/Items/Weapons/Melee/KnuckleWraps/knuckleWrapsLeft_Prefab.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>
@@ -5856,6 +5885,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 
 				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="@:Other/Items/Weapons/Melee/KnuckleWraps/knuckleWrapsLeft_Prefab.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>
@@ -5911,6 +5941,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 
 				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="@:Other/Items/Weapons/Melee/Knuckles/knucklesLeft_Prefab.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>
@@ -5966,6 +5997,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 
 				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="@:Other/Items/Weapons/Melee/Knuckles/knucklesLeft_Prefab.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>
@@ -6021,6 +6053,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 
 				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="@:Other/Items/Weapons/Melee/Knuckles/knucklesLeft_Prefab.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>
@@ -6078,7 +6111,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="1.7" tags="organic"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 
 				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="@:Other/Items/Weapons/Melee/Knuckles/knucklesSpikedLeft_Prefab.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>
@@ -6139,7 +6172,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="1.7" tags="organic"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 
 				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="@:Other/Items/Weapons/Melee/Knuckles/knucklesSpikedLeft_Prefab.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>
@@ -6196,7 +6229,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="1.7" tags="organic"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 
 				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="@:Other/Items/Weapons/Melee/Knuckles/knucklesSpikedLeft_Prefab.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>
@@ -6258,10 +6291,8 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="1.7" tags="organic"/>
-
-				<passive_effect name="HarvestCount" operation="base_set" value="1.0" tags="butcherHarvest"/>
-				<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="butcherHarvest"/>
-				<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="butcherHarvestMutation"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.25" tags="butcherHarvestMutation"/>
 
 				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="@:Other/Items/Weapons/Melee/Knuckles/knucklesSpikedLeft_Prefab.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>
@@ -6511,7 +6542,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value=".6" tags="organic"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.5" tags="butcherHarvest"/>
 				
 				<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="butcherHarvest"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="butcherHarvestMutation"/>
@@ -6577,7 +6608,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value=".6" tags="organic"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="base_add" value="6" tags="secondary"/>
@@ -6645,7 +6676,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value=".6" tags="organic"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="base_add" value="6" tags="secondary"/>
@@ -6891,6 +6922,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -6944,6 +6976,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 				
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyStats" stat="Health" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyStats" stat="Health" operation="add" value="2"/>
@@ -7000,6 +7033,7 @@
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -7056,7 +7090,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
@@ -7310,7 +7344,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
@@ -7564,7 +7598,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
@@ -7826,7 +7860,7 @@
 				<passive_effect name="BlockDamage" operation="perc_add" value=".5" tags="wood"/>
 				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 				<display_value name="dBlockRepairAmount" value="100"/>
-				<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.33" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
@@ -7899,7 +7933,7 @@
 				<passive_effect name="BlockDamage" operation="perc_add" value=".5" tags="stone,metal"/>
 				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 				<display_value name="dBlockRepairAmount" value="100"/>
-				<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.33" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
@@ -7971,7 +8005,7 @@
 				<passive_effect name="BlockDamage" operation="base_set" value="22" tags="perkMiner69r"/>
 				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 				<display_value name="dBlockRepairAmount" value="100"/>
-				<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.33" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
@@ -8041,7 +8075,7 @@
 				<passive_effect name="BlockDamage" operation="base_set" value="28" tags="perkMiner69r"/>
 				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 				<display_value name="dBlockRepairAmount" value="100"/>
-				<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".75" tags="butcherHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.33" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
@@ -8112,7 +8146,7 @@
 				<passive_effect name="BlockDamage" operation="base_set" value="47.0" tags="perkMiner69r"/>
 				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random rng -->
 				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
-				<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
@@ -8187,7 +8221,7 @@
 				<passive_effect name="BlockDamage" operation="base_set" value="47.0" tags="perkMiner69r"/>
 				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random rng -->
 				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
-				<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
@@ -8260,7 +8294,7 @@
 				<passive_effect name="BlockDamage" operation="base_set" value="47.0" tags="perkMiner69r"/>
 				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random rng -->
 				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
-				<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
@@ -8334,7 +8368,7 @@
 				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
 				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
-				<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
@@ -8409,7 +8443,7 @@
 				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
 				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
-				<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
@@ -8482,7 +8516,7 @@
 				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
 				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
-				<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
@@ -8555,7 +8589,7 @@
 				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
 				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
-				<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
@@ -8642,6 +8676,7 @@
 				
 				<passive_effect name="DamageModifier" operation="perc_add" value=".35" tags="metal"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -8717,6 +8752,7 @@
 				
 				<passive_effect name="DamageModifier" operation="perc_add" value=".35" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -8789,6 +8825,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value=".8" tags="terrGravel"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -8866,6 +8903,7 @@
 				
 				<passive_effect name="DamageModifier" operation="perc_add" value=".35" tags="metal"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -8942,6 +8980,7 @@
 				
 				<passive_effect name="DamageModifier" operation="perc_add" value=".35" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9015,6 +9054,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.6" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value=".8" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value=".8" tags="terrGravel"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9088,6 +9128,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.6" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value=".8" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value=".8" tags="terrGravel"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9162,6 +9203,7 @@
 				
 				<passive_effect name="DamageModifier" operation="perc_add" value=".35" tags="earth"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9232,6 +9274,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9302,6 +9345,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9378,6 +9422,7 @@
 				
 				<passive_effect name="DamageModifier" operation="perc_add" value=".35" tags="earth"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9450,6 +9495,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9522,6 +9568,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9600,6 +9647,7 @@
 				
 				<passive_effect name="DamageModifier" operation="perc_add" value=".35" tags="earth"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9674,6 +9722,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9746,6 +9795,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -9821,6 +9871,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1.25" tags="salvageHarvest"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".25" tags="HarvestRareRecources"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -9857,6 +9908,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="salvageHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -9893,6 +9945,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="salvageHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -9930,6 +9983,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1.25" tags="salvageHarvest"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".25" tags="HarvestRareRecources"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -9965,6 +10019,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="salvageHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -10000,6 +10055,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="salvageHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -10037,6 +10093,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1.25" tags="salvageHarvest"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".25" tags="HarvestRareRecources"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -10072,6 +10129,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="salvageHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -10107,6 +10165,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="salvageHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -10164,6 +10223,7 @@
 				
 				<passive_effect name="DamageModifier" operation="perc_add" value=".35" tags="metal"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$minerNatHealing" operation="set" value="1">
@@ -10252,6 +10312,7 @@
 				
 				<passive_effect name="DamageModifier" operation="perc_add" value=".35" tags="stone"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$minerNatHealing" operation="set" value="1">
@@ -10340,6 +10401,7 @@
 				
 				<passive_effect name="DamageModifier" operation="perc_add" value=".35" tags="earth"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="oreWoodHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$minerNatHealing" operation="set" value="1">
@@ -10423,6 +10485,7 @@
 
 				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
 				<passive_effect name="WeaponHandling" operation="base_set" value="5" tags="perkMiner69r"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".25" tags="butcherHarvest"/>
 				
 				<passive_effect name="HarvestCount" operation="perc_add" value=".2"/>
 			</effect_group>
@@ -10513,6 +10576,8 @@
 
 				<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="oreWoodHarvest"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value="1" tags="lumberjackHarvest"/>
+				
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 
 				<passive_effect name="DismemberChance" operation="base_add" value="1"/>
 			</effect_group>
@@ -10602,6 +10667,8 @@
 				<passive_effect name="WeaponHandling" operation="base_set" value="5" tags="perkMiner69r"/>
 
 				<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="oreWoodHarvest"/>
+				
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 
 				<passive_effect name="DismemberChance" operation="base_add" value="1"/>
 			</effect_group>

@@ -109,7 +109,7 @@
 			<display_entry name="dRegHealthIncreaseSpeedAOE" title_key="statRegHealthIncreaseSpeedAOE" display_type="Percent" display_leading_plus="true"/>
 		</item_display_info>
 		<item_display_info display_type="armorRescuerGloves" display_group="groupAttire" extends="armorLight" >
-			<display_entry name="dLootTime" title_key="statLootTime" display_type="Decimal1" display_leading_plus="true" negative_preferred="true"/>
+			<display_entry name="dLootTime" title_key="statLootTime" display_type="Percent" display_leading_plus="true" negative_preferred="true"/>
 			<display_entry name="dHarvestSalvage" title_key="statHarvestSalvage" display_type="Percent" display_leading_plus="true"/>
 			<display_entry name="dLootQuantityFood" title_key="statLootQuantityFood" display_type="Percent" display_leading_plus="true"/>
 		</item_display_info>
@@ -153,6 +153,23 @@
 			<display_entry name="dFallDamage"  title_key="statSafeFallDist" display_type="Decimal1" display_leading_plus="true"/>
 		</item_display_info>
 		
+		<item_display_info display_type="armorSonnyHelmet" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dPlayerExpGain" title_key="statShowPlayerExpGain" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dLootStage" title_key="statLootStage" display_type="Decimal1" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorSonnyOutfit" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dSonnyRareRecources" title_key="statSonnyRareRecources" display_type="Decimal1" display_leading_plus="true"/>
+			<display_entry name="dHealthMax" title_key="statMaxHealthBonus" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorSonnyGloves" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dRaiderAtackSpeed"  title_key="statAttacksPerMinuteMelee" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dHarvestSalvage" title_key="statHarvestSalvage" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+		<item_display_info display_type="armorSonnyBoots" display_group="groupAttire" extends="armorHeavy" >
+			<display_entry name="dVehicleSpeed" title_key="statVehicleSpeed" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dStaminaLossMelee"  title_key="statStaminaLossMelee" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
+
 		<item_display_info display_type="armorMausHelmet" display_group="groupAttire" extends="armorHeavy" >
 			<display_entry name="dPlayerExpGain" title_key="statShowPlayerExpGain" display_type="Percent" display_leading_plus="true"/>
 			<display_entry name="dLootStage" title_key="statLootStage" display_type="Decimal1" display_leading_plus="true"/>

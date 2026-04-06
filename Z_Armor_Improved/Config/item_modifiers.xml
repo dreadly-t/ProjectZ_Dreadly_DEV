@@ -97,6 +97,64 @@
 			</effect_group>
 		</item_modifier>
 		
+		<!-- Enhanced Gatherer -->
+		
+		<item_modifier name="modEnhancedWood" installable_tags="enhancedGatherer" modifier_tags="enhancedWood" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="DescriptionKey" value="modEnhancedWoodDesc"/>
+			<property name="Material" value="MUniversalParts"/>
+			<property name="UnlockedBy" value="MasterTools"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="CustomIcon" value="modMeleeWoodSplitter"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			
+			<effect_group tiered="false">
+				<passive_effect name="HarvestCount" operation="perc_add" value=".25" tags="lumberjackHarvest"/>
+			</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="modEnhancedMetal" installable_tags="enhancedGatherer" modifier_tags="enhancedMetal" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="DescriptionKey" value="modEnhancedMetalDesc"/>
+			<property name="Material" value="MUniversalParts"/>
+			<property name="UnlockedBy" value="MasterTools"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="CustomIcon" value="modMeleeIronBreaker"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			
+			<effect_group tiered="false">
+				<passive_effect name="HarvestCount" operation="perc_add" value=".25" tags="oreIronBonus,oreLeadBonus"/>
+			</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="modEnhancedStone" installable_tags="enhancedGatherer" modifier_tags="enhancedStone" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="DescriptionKey" value="modEnhancedStoneDesc"/>
+			<property name="Material" value="MUniversalParts"/>
+			<property name="UnlockedBy" value="MasterTools"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="CustomIcon" value="modMeleeBunkerBuster"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			
+			<effect_group tiered="false">
+				<passive_effect name="HarvestCount" operation="perc_add" value=".25" tags="oreOilDepositBonus,orePotassiumNitrateBonus,oreCoalBonus"/>
+			</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="modEnhancedClay" installable_tags="enhancedGatherer" modifier_tags="enhancedClay" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="DescriptionKey" value="modEnhancedClayDesc"/>
+			<property name="Material" value="MUniversalParts"/>
+			<property name="UnlockedBy" value="MasterTools"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="CustomIcon" value="modMeleeGraveDigger"/>
+			<property name="CustomIconTint" value="FF6666"/>
+			
+			<effect_group tiered="false">
+				<passive_effect name="HarvestCount" operation="perc_add" value=".25" tags="ClayBonus"/>
+			</effect_group>
+		</item_modifier>
+		
 	</append>
 	
 </config>

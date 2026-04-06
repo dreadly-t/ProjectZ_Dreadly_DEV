@@ -58,7 +58,7 @@
 		</block>	
 
 
-		<!-- Signal smoke to start the quest -->
+		<!-- Smoke signal to start the quest -->
 		<block name="SignalSmokeFaint">
 			<property name="DescriptionKey" value="SignalSmokeFaintDesc"/>
 			<property name="CustomIcon" value="capChimney"/>	
@@ -75,8 +75,8 @@
 			<property class="RepairItems">
 				<property name="UniversalParts" value="10"/>
 			</property>
-			<drop event="Harvest" name="UniversalParts" count="3" tag="salvageHarvest"/>
-			<drop event="Harvest" name="resourceForgedSteel" count="5" tag="salvageHarvest"/>
+			<drop event="Harvest" name="UniversalParts" count="2,3" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceForgedSteel" count="4,6" tag="salvageHarvest"/>
 			<drop event="Harvest" name="resourceScrapIron" count="15" tag="allHarvest"/>
 			<drop event="Destroy" count="0"/>
 			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>

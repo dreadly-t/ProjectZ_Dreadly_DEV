@@ -628,5 +628,91 @@
 			<property name="SideScale" value="1,1,1"/>
 		</item_property_overrides>
 	</insertAfter>
+	
+	<insertAfter xpath="/item_modifiers/item_modifier[@name='modMeleeClubBurningShaft']/item_property_overrides[@name='meleeWpnSpearT0StoneSpear']">
+	
+		<item_property_overrides name="meleeWpnSpearT4SteelSpearImp">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_steel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSpearT5SteelSpearCombistick">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_steel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="CombistickLegCrisis">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_steel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="CombistickLegCrusher">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_steel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="CombistickLegMasterpiece">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_steel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="CombistickLegGuardian">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_steel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="CombistickLegSurgeon">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_steel_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeWpnClubT4SteelClubImp">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_club_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnClubT5SteelAxeBarbarian">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="BarbarianLegCrisis">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="BarbarianLegCrusher">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="BarbarianLegMasterpiece">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="BarbarianLegGuardian">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeWpnSledgeT4SteelSledgehammerImp">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelSledgehammer_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnSledgeT5SteelSledgehammerDestructor">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelSledgehammer_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="DestructorLegCrisis">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelSledgehammer_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="DestructorLegCrusher">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelSledgehammer_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="DestructorLegMasterpiece">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelSledgehammer_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="DestructorLegGuardian">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelSledgehammer_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnBladeT4MacheteImp">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnBladeT5MacheteIndiana">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="IndianaLegCrisis">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="IndianaLegCrusher">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="IndianaLegMasterpiece">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="IndianaLegGuardian">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="IndianaLegSurgeon">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
+		</item_property_overrides>
+	
+	</insertAfter>
 
 </config>

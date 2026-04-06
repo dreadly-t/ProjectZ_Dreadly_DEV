@@ -32,7 +32,7 @@
 			<property class="Action0">
 				<property name="Delay" value=".8"/> <!-- obsolete if rounds per minute exists -->
 				<property name="Range" value="2.6"/>
-				<property name="DamageEntity" value="112"/>
+				<property name="DamageEntity" value="136"/>
 				<property name="DamageBlock" value="320"/>
 			</property>
 			<effect_group name="meleeHandAnimalWolf" tiered="false">
@@ -79,7 +79,7 @@
 				<property name="Delay" value=".8"/> <!-- obsolete if rounds per minute exists -->
 				<property name="Range" value="2"/>
 				<property name="DamageEntity" value="69"/>
-				<property name="DamageBlock" value="104"/>
+				<property name="DamageBlock" value="96"/>
 			</property>
 			<effect_group name="meleeHandAnimalWolf" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -99,7 +99,7 @@
 			<property name="CreativeMode" value="None"/>
 			<property class="Action0">
 				<property name="Range" value="4"/>
-				<property name="DamageEntity" value="180"/>
+				<property name="DamageEntity" value="226"/>
 				<property name="DamageBlock" value="500"/>
 			</property>
 			<effect_group name="meleeHandAnimalZombieBear" tiered="false">
@@ -164,7 +164,7 @@
 			<property name="CreativeMode" value="None"/>
 			<property class="Action0">
 				<property name="Delay" value=".1"/>
-				<property name="DamageEntity" value="160"/>
+				<property name="DamageEntity" value="204"/>
 				<property name="DamageBlock" value="360"/>
 			</property>
 			<property class="Action1">
@@ -273,7 +273,7 @@
 			<property name="CustomIcon" value="missingIcon"/>
 			<property class="Action1">
 				<property name="Class" value="Projectile"/>
-				<property name="DamageEntity" value="120"/>
+				<property name="DamageEntity" value="152"/>
 				<property name="DamageBlock" value="180"/>
 				<property name="Explosion.ParticleIndex" value="7"/>
 				<property name="Velocity" value="12"/>
@@ -322,7 +322,7 @@
 			<property name="CreativeMode" value="None"/>
 			<property class="Action0">
 				<property name="Range" value="2.6"/>
-				<property name="DamageEntity" value="340"/>
+				<property name="DamageEntity" value="420"/>
 				<property name="DamageBlock" value="960"/>
 				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch"/>
 				<property class="HitSounds">
@@ -347,7 +347,7 @@
 			<property name="CreativeMode" value="None"/>
 			<property class="Action0">
 				<property name="Range" value="2.6"/>
-				<property name="DamageEntity" value="112"/>
+				<property name="DamageEntity" value="142"/>
 				<property name="DamageBlock" value="250"/>
 				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
 				<property class="HitSounds">
@@ -373,7 +373,7 @@
 			<property name="CreativeMode" value="None"/>
 			<property class="Action0">
 				<property name="Range" value="2.6"/>
-				<property name="DamageEntity" value="140"/>
+				<property name="DamageEntity" value="192"/>
 				<property name="DamageBlock" value="250"/>
 				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
 				<property class="HitSounds">
@@ -399,7 +399,7 @@
 			<property name="CreativeMode" value="None"/>
 			<property class="Action0">
 				<property name="Range" value="2.6"/>
-				<property name="DamageEntity" value="128"/>
+				<property name="DamageEntity" value="152"/>
 				<property name="DamageBlock" value="250"/>
 				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
 				<property class="HitSounds">
@@ -424,7 +424,7 @@
 			<property name="CreativeMode" value="None"/>
 			<property class="Action0">
 				<property name="Range" value="2.6"/>
-				<property name="DamageEntity" value="204"/>
+				<property name="DamageEntity" value="260"/>
 				<property name="DamageBlock" value="320"/>
 				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
 				<property class="HitSounds">
@@ -452,7 +452,7 @@
 			<property name="Degradation" value="99999" param1="true"/>
 			<property class="Action0">
 				<property name="Range" value="2.6"/>
-				<property name="DamageEntity" value="120"/>
+				<property name="DamageEntity" value="180"/>
 				<property name="DamageBlock" value="500"/>
 				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch,buffInjuryStunned01"/>
 				<property class="HitSounds">
@@ -495,7 +495,7 @@
 			<property name="Degradation" value="99999" param1="true"/>
 			<property class="Action0">
 				<property name="Range" value="2.6"/>
-				<property name="DamageEntity" value="250"/>
+				<property name="DamageEntity" value="306"/>
 				<property name="DamageBlock" value="720"/>
 				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch"/>
 				<property class="HitSounds">
@@ -596,7 +596,7 @@
 			<property name="CreativeMode" value="None"/>
 			<property class="Action1">
 				<property name="Class" value="Projectile"/>
-				<property name="DamageEntity" value="40"/>
+				<property name="DamageEntity" value="80"/>
 				<property name="DamageBlock" value="150"/>
 				<!--property name="Explosion.ParticleIndex" value="4"/-->
 				<property name="Explosion.ParticleIndex" value="5"/>
@@ -627,7 +627,7 @@
 			<property name="CustomIcon" value="missingIcon"/>
 			<property class="Action1">
 				<property name="Class" value="Projectile"/>
-				<property name="DamageEntity" value="260"/>
+				<property name="DamageEntity" value="320"/>
 				<property name="DamageBlock" value="1200"/>
 				<property name="Explosion.ParticleIndex" value="36"/>
 				<property name="Explosion.RadiusBlocks" value="2.5"/>

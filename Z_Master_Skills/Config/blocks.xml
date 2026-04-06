@@ -2722,38 +2722,71 @@
 	<!-- Light Alloys -->
 	<insertAfter xpath="/blocks/block[@name='cntSedan01White']/drop[@name='carBattery']">
 		<drop event="Harvest" name="resourceUltraLightAlloys" count="2,4" prob=".2" tag="HarvestRareRecources"/>
+		<drop event="Harvest" name="resourceElectricPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceMechanicalPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceReactorBattery" count="1" prob=".04" tag="SonnyRareRecources"/>
 	</insertAfter>
 	<insertAfter xpath="/blocks/block[@name='cntSedan3Wide01White']/drop[@name='carBattery']">
 		<drop event="Harvest" name="resourceUltraLightAlloys" count="2,4" prob=".2" tag="HarvestRareRecources"/>
+		<drop event="Harvest" name="resourceElectricPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceMechanicalPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceReactorBattery" count="1" prob=".04" tag="SonnyRareRecources"/>
 	</insertAfter>
 	<insertAfter xpath="/blocks/block[@name='cntMinivan01White']/drop[@name='carBattery']">
 		<drop event="Harvest" name="resourceUltraLightAlloys" count="2,4" prob=".2" tag="HarvestRareRecources"/>
+		<drop event="Harvest" name="resourceElectricPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceMechanicalPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceReactorBattery" count="1" prob=".04" tag="SonnyRareRecources"/>
 	</insertAfter>
 	<insertAfter xpath="/blocks/block[@name='cntMinivan3Wide01White']/drop[@name='carBattery']">
 		<drop event="Harvest" name="resourceUltraLightAlloys" count="2,4" prob=".2" tag="HarvestRareRecources"/>
+		<drop event="Harvest" name="resourceElectricPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceMechanicalPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceReactorBattery" count="1" prob=".04" tag="SonnyRareRecources"/>
 	</insertAfter>
 	<insertAfter xpath="/blocks/block[@name='cntSUV3Wide01White']/drop[@name='carBattery']">
 		<drop event="Harvest" name="resourceUltraLightAlloys" count="2,4" prob=".2" tag="HarvestRareRecources"/>
+		<drop event="Harvest" name="resourceElectricPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceMechanicalPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceReactorBattery" count="1" prob=".04" tag="SonnyRareRecources"/>
 	</insertAfter>
 	<insertAfter xpath="/blocks/block[@name='cntPickupTruck01White']/drop[@name='carBattery']">
 		<drop event="Harvest" name="resourceUltraLightAlloys" count="2,4" prob=".2" tag="HarvestRareRecources"/>
+		<drop event="Harvest" name="resourceElectricPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceMechanicalPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceReactorBattery" count="1" prob=".04" tag="SonnyRareRecources"/>
 	</insertAfter>
 	<insertAfter xpath="/blocks/block[@name='cntPickupTruck3Wide01White']/drop[@name='carBattery']">
 		<drop event="Harvest" name="resourceUltraLightAlloys" count="2,4" prob=".2" tag="HarvestRareRecources"/>
+		<drop event="Harvest" name="resourceElectricPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceMechanicalPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceReactorBattery" count="1" prob=".04" tag="SonnyRareRecources"/>
 	</insertAfter>
 	
 	<!-- Strength Alloys -->
 	<insertAfter xpath="/blocks/block[@name='cntSemiTruck01White']/drop[@name='carBattery']">
 		<drop event="Harvest" name="resourceUltraStrengthAlloys" count="2,4" prob=".2" tag="HarvestRareRecources"/>
+		<drop event="Harvest" name="resourceElectricPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceMechanicalPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="IndustrialEngine" count="1" prob=".04" tag="SonnyRareRecources"/>
 	</insertAfter>
 	<insertAfter xpath="/blocks/block[@name='cntFireTruck01White']/drop[@name='carBattery']">
 		<drop event="Harvest" name="resourceUltraStrengthAlloys" count="2,4" prob=".2" tag="HarvestRareRecources"/>
+		<drop event="Harvest" name="resourceElectricPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceMechanicalPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="IndustrialEngine" count="1" prob=".04" tag="SonnyRareRecources"/>
 	</insertAfter>
 	<insertAfter xpath="/blocks/block[@name='cntBusSchool']/drop[@name='carBattery']">
 		<drop event="Harvest" name="resourceUltraStrengthAlloys" count="2,4" prob=".2" tag="HarvestRareRecources"/>
+		<drop event="Harvest" name="resourceElectricPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceMechanicalPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="IndustrialEngine" count="1" prob=".04" tag="SonnyRareRecources"/>
 	</insertAfter>
 	<insertAfter xpath="/blocks/block[@name='cntFarmTruckClosed']/drop[@name='carBattery']">
 		<drop event="Harvest" name="resourceUltraStrengthAlloys" count="2,4" prob=".2" tag="HarvestRareRecources"/>
+		<drop event="Harvest" name="resourceElectricPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="resourceMechanicalPartsImp" count="1" prob=".1" tag="SonnyRareRecources"/>
+		<drop event="Harvest" name="IndustrialEngine" count="1" prob=".04" tag="SonnyRareRecources"/>
 	</insertAfter>
 	
 	<!-- Experimental Alloys -->

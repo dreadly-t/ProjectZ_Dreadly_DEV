@@ -81,7 +81,7 @@
 			</effect_group>
 			
 			<effect_group name='Bonus'>
-				<requirement name="CVarCompare" cvar="$strickCount" operation="EQ" value="10"/>
+				<requirement name="CVarCompare" cvar="$strickCount" operation="GTE" value="10"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ComboReward" operation="set" value="randomint(1,3)"/>
 					
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffComboBonusDamage1">

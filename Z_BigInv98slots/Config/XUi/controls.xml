@@ -7,7 +7,7 @@
 	
 	<insertAfter xpath="controls/item_stack">
 		<backpack_item_stack controller="ItemStack" on_scroll="false" allow_dropping="true" prefix_id="false">
-			<rect controller="${controller}" style="itemStack, hover" collider_scale="1.0" on_scroll="${on_scroll}" allow_dropping="${allow_dropping}" prefix_id="${prefix_id}" tooltip="{tooltip}" enabled="{# !userlockmode}" >
+			<rect controller="${controller}" style="itemStack, hover" collider_scale="1.0" on_scroll="${on_scroll}" allow_dropping="${allow_dropping}" prefix_id="${prefix_id}" tooltip="{tooltip}" enabled="{# !userlockmode}" width="59" height="53">
 				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="62" height="56" color="[black]" type="sliced" fillcenter="false" />
 				<sprite depth="3" name="background" sprite="menu_empty3px" width="56" height="50" color="{selectionbordercolor}" type="sliced" globalopacity="true" fillcenter="false"/>
 				
@@ -42,4 +42,5 @@
 			</rect>
 		</backpack_item_stack>
 	</insertAfter>
+
 </config>
