@@ -467,17 +467,7 @@
 		</item>
 	</append>
 	
-	<!-- PerkBrittleBones -->
-	<append xpath="/items/item[@name='foodEgg']">
-		<effect_group tiered="false">
-			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="15">
-				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="1"/></triggered_effect>
-			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="15">
-				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="2"/></triggered_effect>
-			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="15">
-				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="3"/></triggered_effect>
-		</effect_group>
-	</append>
+
 	<!-- WeakImmunity -->
 	<append xpath="/items/item[@name='foodHoney']">
 		<effect_group tiered="false">
@@ -557,15 +547,27 @@
 			<requirement name="ProgressionLevel" progression_name="perkWeakImmunity" operation="Equals" value="3"/>
 		</triggered_effect>
 	</insertAfter>
-	
+
+	<!-- PerkBrittleBones -->
+	<append xpath="/items/item[@name='foodEgg']">
+		<effect_group tiered="false" name="Brittle Bones Recovery">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="60">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="60">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="60">
+				<requirement name="ProgressionLevel" progression_name="perkBrittleBones" operation="Equals" value="3"/></triggered_effect>
+		</effect_group>
+	</append>
+
 	<append xpath="/items/item[@name='foodCropCorn']">
 		<effect_group tiered="false" name="Brittle Bones Recovery">
 			<requirement name="CVarCompare" cvar="$SelfTraitsProgressionStatus" operation="EQ" value="1"/>				
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="3">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones1" operation="subtract" value="5">
 					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="1"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="3">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones2" operation="subtract" value="5">
 					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="2"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="3">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="TimerBrittleBones3" operation="subtract" value="5">
 					<requirement name="CVarCompare" cvar="$NegTraitsBrittleBones_Current" operation="EQ" value="3"/></triggered_effect>	
 		</effect_group>
 	</append>
