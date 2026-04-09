@@ -611,7 +611,7 @@
 				<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-1"/>
 				
 				<display_value name="dPlayerExpGain" value=".05"/>
-				<display_value name="dLootStage" value="10"/>
+				<display_value name="dLootStageFlat" value="10"/>
 				<display_value name="dTreasureBlocksPerReduction" value="-1"/>
 			</effect_group>
 		</item_modifier>
@@ -733,7 +733,7 @@
 				<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-2"/>
 				
 				<display_value name="dPlayerExpGain" value=".1"/>
-				<display_value name="dLootStage" value="25"/>
+				<display_value name="dLootStageFlat" value="25"/>
 				<display_value name="dTreasureBlocksPerReduction" value="-2"/>
 			</effect_group>
 		</item_modifier>
@@ -755,7 +755,7 @@
 				<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-3"/>
 				
 				<display_value name="dPlayerExpGain" value=".15"/>
-				<display_value name="dLootStage" value="50"/>
+				<display_value name="dLootStageFlat" value="50"/>
 				<display_value name="dTreasureBlocksPerReduction" value="-3"/>
 			</effect_group>
 		</item_modifier>

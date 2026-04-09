@@ -4,7 +4,7 @@
 	
 		<item_display_info display_type="SmartGlass" display_group="groupAttire">
 			<display_entry name="dPlayerExpGain" title_key="statShowPlayerExpGain" display_type="Percent" display_leading_plus="true"/>
-			<display_entry name="dLootStage" title_key="statLootStage" display_type="Decimal1" display_leading_plus="true"/>
+			<display_entry name="dLootStageFlat" title_key="statLootStage" display_leading_plus="true"/>
 			<display_entry name="dTreasureBlocksPerReduction" title_key="statTreasureRadius" display_leading_plus="true" negative_preferred="true"/>
 		</item_display_info>
 		<item_display_info display_type="modArmorHeadset" display_group="groupAttire">

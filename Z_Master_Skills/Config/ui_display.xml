@@ -100,7 +100,7 @@
 		
 		<item_display_info display_type="armorRescuerHelmet" display_group="groupAttire" extends="armorLight" >
 			<display_entry name="dPlayerExpGain" title_key="statShowPlayerExpGain" display_type="Percent" display_leading_plus="true"/>
-			<display_entry name="dLootStage" title_key="statLootStage" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dLootStagePerc" title_key="statLootStage" display_type="Percent" display_leading_plus="true"/>
 			<display_entry name="dFoodWaterUseAOE" title_key="statFoodWaterUseAOE" display_type="Percent" display_leading_plus="true" negative_preferred="true"/>
 		</item_display_info>
 		<item_display_info display_type="armorRescuerOutfit" display_group="groupAttire" extends="armorLight" >
@@ -121,7 +121,7 @@
 		
 		<item_display_info display_type="armorPredatorHelmet" display_group="groupAttire" extends="armorMediumNew" >
 			<display_entry name="dPlayerExpGain" title_key="statShowPlayerExpGain" display_type="Percent" display_leading_plus="true"/>
-			<display_entry name="dLootStage" title_key="statLootStage" display_type="Decimal1" display_leading_plus="true"/>
+			<display_entry name="dLootStageFlat" title_key="statLootStage" display_leading_plus="true"/>
 		</item_display_info>
 		<item_display_info display_type="armorPredatorOutfit" display_group="groupAttire" extends="armorMediumNew" >
 			<display_entry name="dNaturalCritHealing"  title_key="statNaturalCritHealing" display_type="Percent" display_leading_plus="true"/>
@@ -155,7 +155,7 @@
 		
 		<item_display_info display_type="armorSonnyHelmet" display_group="groupAttire" extends="armorHeavy" >
 			<display_entry name="dPlayerExpGain" title_key="statShowPlayerExpGain" display_type="Percent" display_leading_plus="true"/>
-			<display_entry name="dLootStage" title_key="statLootStage" display_type="Decimal1" display_leading_plus="true"/>
+			<display_entry name="dLootStageFlat" title_key="statLootStage" display_type="Decimal1" display_leading_plus="true"/>
 		</item_display_info>
 		<item_display_info display_type="armorSonnyOutfit" display_group="groupAttire" extends="armorHeavy" >
 			<display_entry name="dSonnyRareRecources" title_key="statSonnyRareRecources" display_type="Decimal1" display_leading_plus="true"/>
@@ -172,7 +172,7 @@
 
 		<item_display_info display_type="armorMausHelmet" display_group="groupAttire" extends="armorHeavy" >
 			<display_entry name="dPlayerExpGain" title_key="statShowPlayerExpGain" display_type="Percent" display_leading_plus="true"/>
-			<display_entry name="dLootStage" title_key="statLootStage" display_type="Decimal1" display_leading_plus="true"/>
+			<display_entry name="dLootStageFlat" title_key="statLootStage" display_leading_plus="true"/>
 		</item_display_info>
 		<item_display_info display_type="armorMausOutfit" display_group="groupAttire" extends="armorHeavy" >
 			<display_entry name="dNaturalCritHealing"  title_key="statNaturalCritHealing" display_type="Percent" display_leading_plus="true"/>
