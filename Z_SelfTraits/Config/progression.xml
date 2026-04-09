@@ -1281,15 +1281,15 @@
 						<requirement name="HasBuff" buff="buffInjuryAbrasion"/>
 					</triggered_effect>
 					
-					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="TimerFearPain1" operation="subtract" value="3">
+					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="TimerFearPain2" operation="subtract" value="3">
 						<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="2"/>
 						<requirement name="HasBuff" buff="buffArmBroken"/>
 					</triggered_effect>
-					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="TimerFearPain1" operation="subtract" value="3">
+					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="TimerFearPain2" operation="subtract" value="3">
 						<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="2"/>
 						<requirement name="HasBuff" buff="buffLegBroken"/>
 					</triggered_effect>
-					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="TimerFearPain1" operation="subtract" value="3">
+					<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="TimerFearPain2" operation="subtract" value="3">
 						<requirement name="CVarCompare" cvar="$NegTraitsFearPain_Current" operation="EQ" value="2"/>
 						<requirement name="HasBuff" buff="buffLaceration"/>
 					</triggered_effect>
@@ -2333,9 +2333,9 @@
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar=".CounterExperiencedHunter2" operation="set" value="@CounterExperiencedHunter2"/>
 				
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$blockExperiencedHunter_Pacifist" operation="set" value="1">
-					<requirement name="CVarCompare" cvar="$NegTraitsPacifis_Current" operation="GT" value="0"/></triggered_effect>
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="GT" value="0"/></triggered_effect>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="RemoveCVar" cvar="$blockExperiencedHunter_Pacifist">
-					<requirement name="CVarCompare" cvar="$NegTraitsPacifis_Current" operation="LT" value="1"/></triggered_effect>	
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="LT" value="1"/></triggered_effect>	
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$blockExperiencedHunter_FearAnimals" operation="set" value="1">
 					<requirement name="CVarCompare" cvar="$NegTraitsFearAnimals_Current" operation="GT" value="0"/></triggered_effect>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="RemoveCVar" cvar="$blockExperiencedHunter_FearAnimals">
@@ -2415,9 +2415,9 @@
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar=".CounterCrusher2" operation="set" value="@CounterCrusher2"/>
 				
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$blockCrusher_Pacifist" operation="set" value="1">
-					<requirement name="CVarCompare" cvar="$NegTraitsPacifis_Current" operation="GT" value="0"/></triggered_effect>
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="GT" value="0"/></triggered_effect>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="RemoveCVar" cvar="$blockCrusher_Pacifist">
-					<requirement name="CVarCompare" cvar="$NegTraitsPacifis_Current" operation="LT" value="1"/></triggered_effect>	
+					<requirement name="CVarCompare" cvar="$NegTraitsPacifist_Current" operation="LT" value="1"/></triggered_effect>	
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$blockCrusher_FearZombie" operation="set" value="1">
 					<requirement name="CVarCompare" cvar="$NegTraitsFearZombie_Current" operation="GT" value="0"/></triggered_effect>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="RemoveCVar" cvar="$blockCrusher_FearZombie">
