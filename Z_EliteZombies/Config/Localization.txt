@@ -1,108 +1,108 @@
 Key,Source,Context,Changes,English,Russian,Spanish
 
 zombieDemolitionElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Demolition,[A7FF9F]ЭЛИТНЫЙ[-] Разрушитель,[A7FF9F]ÉLITE[-] Demolición
-zombieDemolitionInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Demolition,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Разрушитель,[FF9E7B]ÉLITE INFIERNO[-] Demolición
+zombieDemolitionInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Demolition,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Разрушитель,[FF9E7B]ÉLITE INFERNAL[-] Demolición
 
 zombieFemaleFatElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Big Mama,[A7FF9F]ЭЛИТНАЯ[-] Толстуха,[A7FF9F]ÉLITE[-] Gran Mamá
 zombieFemaleFatChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Big Mama,[71FFFF]ЗАРЯЖЕННАЯ ЭЛИТНАЯ[-] Толстуха,[71FFFF]ÉLITE CARGADA[-] Gran Mamá
-zombieFemaleFatInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Big Mama,[FF9E7B]АДСКАЯ ЭЛИТНАЯ[-] Толстуха,[FF9E7B]ÉLITE INFIERNO[-] Gran Mamá
+zombieFemaleFatInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Big Mama,[FF9E7B]АДСКАЯ ЭЛИТНАЯ[-] Толстуха,[FF9E7B]ÉLITE INFERNAL[-] Gran Mamá
 
 zombieFatHawaiianElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Tourist,[A7FF9F]ЭЛИТНЫЙ[-] Турист,[A7FF9F]ÉLITE[-] Turista
-zombieFatHawaiianChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Tourist,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНАЫЙ[-] Турист,[71FFFF]ÉLITE CARGADA[-] Turista
-zombieFatHawaiianInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Tourist,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Турист,[FF9E7B]ÉLITE INFIERNO[-] Turista
+zombieFatHawaiianChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Tourist,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Турист,[71FFFF]ÉLITE CARGADA[-] Turista
+zombieFatHawaiianInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Tourist,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Турист,[FF9E7B]ÉLITE INFERNAL[-] Turista
 
 zombieCopElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Cop,[A7FF9F]ЭЛИТНЫЙ[-] Полицейский,[A7FF9F]ÉLITE[-] Policía
 zombieCopChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Cop,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Полицейский,[71FFFF]ÉLITE CARGADA[-] Policía
-zombieCopInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Cop,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Полицейский,[FF9E7B]ÉLITE INFIERNO[-] Policía
+zombieCopInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Cop,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Полицейский,[FF9E7B]ÉLITE INFERNAL[-] Policía
 
 zombieWightElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Wight,[A7FF9F]ЭЛИТНЫЙ[-] Упырь,[A7FF9F]ÉLITE[-] Espectro
 zombieWightChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Wight,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Упырь,[71FFFF]ÉLITE CARGADA[-] Espectro
-zombieWightInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Wight,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Упырь,[FF9E7B]ÉLITE INFIERNO[-] Espectro
+zombieWightInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Wight,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Упырь,[FF9E7B]ÉLITE INFERNAL[-] Espectro
 
 zombieSoldierElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Soldier,[A7FF9F]ЭЛИТНЫЙ[-] Солдат,[A7FF9F]ÉLITE[-] Soldado
 zombieSoldierChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Soldier,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Солдат,[71FFFF]ÉLITE CARGADA[-] Soldado
-zombieSoldierInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Soldier,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Солдат,[FF9E7B]ÉLITE INFIERNO[-] Soldado
+zombieSoldierInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Soldier,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Солдат,[FF9E7B]ÉLITE INFERNAL[-] Soldado
 
 zombieSkaterElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Skater,[A7FF9F]ЭЛИТНЫЙ[-] Скейтер,[A7FF9F]ÉLITE[-] Patinador
 zombieSkaterChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Skater,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Скейтер,[71FFFF]ÉLITE CARGADA[-] Patinador
-zombieSkaterInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Skater,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Скейтер,[FF9E7B]ÉLITE INFIERNO[-] Patinador
+zombieSkaterInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Skater,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Скейтер,[FF9E7B]ÉLITE INFERNAL[-] Patinador
 
 zombieBikerElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Biker,[A7FF9F]ЭЛИТНЫЙ[-] Байкер,[A7FF9F]ÉLITE[-] Motociclista
 zombieBikerChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Biker,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Байкер,[71FFFF]ÉLITE CARGADA[-] Motociclista
-zombieBikerInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Biker,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Байкер,[FF9E7B]ÉLITE INFIERNO[-] Motociclista
+zombieBikerInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Biker,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Байкер,[FF9E7B]ÉLITE INFERNAL[-] Motociclista
 
 zombieHazmatElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Hazmat,[A7FF9F]ЭЛИТНЫЙ[-] Ликвидатор,[A7FF9F]ÉLITE[-] Hazmat
-zombieHazmatChargedElite,entityclasses,Entity,,[71FFFF] CHARGEDELITE[-] Hazmat,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Ликвидатор,[71FFFF]ÉLITE CARGADA[-] Hazmat
-zombieHazmatInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Hazmat,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Ликвидатор,[FF9E7B]ÉLITE INFIERNO[-] Hazmat
+zombieHazmatChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Hazmat,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Ликвидатор,[71FFFF]ÉLITE CARGADA[-] Hazmat
+zombieHazmatInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Hazmat,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Ликвидатор,[FF9E7B]ÉLITE INFERNAL[-] Hazmat
 
 zombieLumberjackElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Lumberjack,[A7FF9F]ЭЛИТНЫЙ[-] Лесоруб,[A7FF9F]ÉLITE[-] Leñador
 zombieLumberjackChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Lumberjack,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Лесоруб,[71FFFF]ÉLITE CARGADA[-] Leñador
-zombieLumberjackInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Lumberjack,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Лесоруб,[FF9E7B]ÉLITE INFIERNO[-] Leñador
+zombieLumberjackInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Lumberjack,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Лесоруб,[FF9E7B]ÉLITE INFERNAL[-] Leñador
 
 zombieMoeElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Moe,[A7FF9F]ЭЛИТНЫЙ[-] Пухляш,[A7FF9F]ÉLITE[-] Moe
 zombieMoeChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Moe,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Пухляш,[71FFFF]ÉLITE CARGADA[-] Moe
-zombieMoeInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Moe,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Пухляш,[FF9E7B]ÉLITE INFIERNO[-] Moe
+zombieMoeInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Moe,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Пухляш,[FF9E7B]ÉLITE INFERNAL[-] Moe
 
 zombieUtilityWorkerElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Worker,[A7FF9F]ЭЛИТНЫЙ[-] Строитель,[A7FF9F]ÉLITE[-] Trabajador de Servicios
 zombieUtilityWorkerChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Worker,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Строитель,[71FFFF]ÉLITE CARGADA[-] Trabajador de Servicios
-zombieUtilityWorkerInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Worker,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Строитель,[FF9E7B]ÉLITE INFIERNO[-] Trabajador de Servicios
+zombieUtilityWorkerInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Worker,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Строитель,[FF9E7B]ÉLITE INFERNAL[-] Trabajador de Servicios
 
 zombieMarleneElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Marlene,[A7FF9F]ЭЛИТНАЯ[-] Марлен,[A7FF9F]ÉLITE[-] Marlene
 zombieMarleneChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Marlene,[71FFFF]ЗАРЯЖЕННАЯ ЭЛИТНАЯ[-] Марлен,[71FFFF]ÉLITE CARGADA[-] Marlene
-zombieMarleneInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Marlene,[FF9E7B]АДСКАЯ ЭЛИТНАЯ[-] Марлен,[FF9E7B]ÉLITE INFIERNO[-] Marlene
+zombieMarleneInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Marlene,[FF9E7B]АДСКАЯ ЭЛИТНАЯ[-] Марлен,[FF9E7B]ÉLITE INFERNAL[-] Marlene
 
 zombieSpiderElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Spider,[A7FF9F]ЭЛИТНЫЙ[-] Паук,[A7FF9F]ÉLITE[-] Araña
 zombieSpiderChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Spider,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Паук,[71FFFF]ÉLITE CARGADA[-] Araña
-zombieSpiderInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Spider,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Паук,[FF9E7B]ÉLITE INFIERNO[-] Araña
+zombieSpiderInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Spider,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Паук,[FF9E7B]ÉLITE INFERNAL[-] Araña
 
 zombieBoeElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Boe,[A7FF9F]ЭЛИТНЫЙ[-] Бо,[A7FF9F]ÉLITE[-] Boe
 zombieBoeChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Boe,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Бо,[71FFFF]ÉLITE CARGADA[-] Boe
-zombieBoeInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Boe,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Бо,[FF9E7B]ÉLITE INFIERNO[-] Boe
+zombieBoeInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Boe,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Бо,[FF9E7B]ÉLITE INFERNAL[-] Boe
 
 zombieDarleneElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Darlene,[A7FF9F]ЭЛИТНАЯ[-] Дарлин,[A7FF9F]ÉLITE[-] Darlene
 zombieDarleneChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Darlene,[71FFFF]ЗАРЯЖЕННАЯ ЭЛИТНАЯ[-] Дарлин,[71FFFF]ÉLITE CARGADA[-] Darlene
-zombieDarleneInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Darlene,[FF9E7B]АДСКАЯ ЭЛИТНАЯ[-] Дарлин,[FF9E7B]ÉLITE INFIERNO[-] Darlene
+zombieDarleneInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Darlene,[FF9E7B]АДСКАЯ ЭЛИТНАЯ[-] Дарлин,[FF9E7B]ÉLITE INFERNAL[-] Darlene
 
 zombieJoeElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Joe,[A7FF9F]ЭЛИТНЫЙ[-] Джо,[A7FF9F]ÉLITE[-] Joe
 zombieJoeChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Joe,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Джо,[71FFFF]ÉLITE CARGADA[-] Joe
-zombieJoeInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Joe,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Джо,[FF9E7B]ÉLITE INFIERNO[-] Joe
+zombieJoeInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Joe,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Джо,[FF9E7B]ÉLITE INFERNAL[-] Joe
 
 zombieSteveElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Steve,[A7FF9F]ЭЛИТНЫЙ[-] Стив,[A7FF9F]ÉLITE[-] Steve
 zombieSteveChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Steve,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Стив,[71FFFF]ÉLITE CARGADA[-] Steve
-zombieSteveInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Steve,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Стив,[FF9E7B]ÉLITE INFIERNO[-] Steve
+zombieSteveInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Steve,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Стив,[FF9E7B]ÉLITE INFERNAL[-] Steve
 
 zombieYoElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Yo,[A7FF9F]ЭЛИТНЫЙ[-] Йо,[A7FF9F]ÉLITE[-] Yo
 zombieYoChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Yo,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Йо,[71FFFF]ÉLITE CARGADA[-] Yo
-zombieYoInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Yo,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Йо,[FF9E7B]ÉLITE INFIERNO[-] Yo
+zombieYoInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Yo,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Йо,[FF9E7B]ÉLITE INFERNAL[-] Yo
 
 zombieNurseElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Nurse,[A7FF9F]ЭЛИТНАЯ[-] Санитарка,[A7FF9F]ÉLITE[-] Enfermera
 zombieNurseChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Nurse,[71FFFF]ЗАРЯЖЕННАЯ ЭЛИТНАЯ[-] Санитарка,[71FFFF]ÉLITE CARGADA[-] Enfermera
-zombieNurseInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Nurse,[FF9E7B]АДСКАЯ ЭЛИТНАЯ[-] Санитарка,[FF9E7B]ÉLITE INFIERNO[-] Enfermera
+zombieNurseInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Nurse,[FF9E7B]АДСКАЯ ЭЛИТНАЯ[-] Санитарка,[FF9E7B]ÉLITE INFERNAL[-] Enfermera
 
 zombiePartyGirlElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Party Girl,[A7FF9F]ЭЛИТНАЯ[-] Стриптизерша,[A7FF9F]ÉLITE[-] Chica de Fiesta
-zombiePartyGirlChargedElite,entityclasses,Entity,,[71FFFF]ELITE[-] Party Girl,[71FFFF]ЗАРЯЖЕННАЯ ЭЛИТНАЯ[-] Стриптизерша,[71FFFF]ÉLITE CARGADA[-] Chica de Fiesta
-zombiePartyGirlInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Party Girl,[FF9E7B]АДСКАЯ ЭЛИТНАЯ[-] Стриптизерша,[FF9E7B]ÉLITE INFIERNO[-] Chica de Fiesta
+zombiePartyGirlChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Party Girl,[71FFFF]ЗАРЯЖЕННАЯ ЭЛИТНАЯ[-] Стриптизерша,[71FFFF]ÉLITE CARGADA[-] Chica de Fiesta
+zombiePartyGirlInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Party Girl,[FF9E7B]АДСКАЯ ЭЛИТНАЯ[-] Стриптизерша,[FF9E7B]ÉLITE INFERNAL[-] Chica de Fiesta
 
 zombieLabElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Lab Worker,[A7FF9F]ЭЛИТНЫЙ[-] Лаборант,[A7FF9F]ÉLITE[-] Trabajador de Laboratorio
 zombieLabChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Lab Worker,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Лаборант,[71FFFF]ÉLITE CARGADA[-] Trabajador de Laboratorio
-zombieLabInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Lab Worker,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Лаборант,[FF9E7B]ÉLITE INFIERNO[-] Trabajador de Laboratorio
+zombieLabInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Lab Worker,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Лаборант,[FF9E7B]ÉLITE INFERNAL[-] Trabajador de Laboratorio
 
 zombieTomClarkElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Tom Clark,[A7FF9F]ЭЛИТНЫЙ[-] Том Кларк,[A7FF9F]ÉLITE[-] Tom Clark
 zombieTomClarkChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Tom Clark,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Том Кларк,[71FFFF]ÉLITE CARGADA[-] Tom Clark
-zombieTomClarkInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Tom Clark,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Том Кларк,[FF9E7B]ÉLITE INFIERNO[-] Tom Clark
+zombieTomClarkInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Tom Clark,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Том Кларк,[FF9E7B]ÉLITE INFERNAL[-] Tom Clark
 
 zombieJanitorElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Janitor,[A7FF9F]ЭЛИТНЫЙ[-] Уборщик,[A7FF9F]ÉLITE[-] Conserje
 zombieJanitorChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Janitor,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Уборщик,[71FFFF]ÉLITE CARGADA[-] Conserje
-zombieJanitorInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Janitor,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Уборщик,[FF9E7B]ÉLITE INFIERNO[-] Conserje
+zombieJanitorInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Janitor,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Уборщик,[FF9E7B]ÉLITE INFERNAL[-] Conserje
 
 zombieBurntElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Burnt,[A7FF9F]ЭЛИТНЫЙ[-] Тлеющий зомби,[A7FF9F]ÉLITE[-] Quemado
 zombieBurntChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Burnt,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Тлеющий зомби,[71FFFF]ÉLITE CARGADA[-] Quemado
-zombieBurntInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Burnt,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Тлеющий зомби,[FF9E7B]ÉLITE INFIERNO[-] Quemado
+zombieBurntInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Burnt,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Тлеющий зомби,[FF9E7B]ÉLITE INFERNAL[-] Quemado
 
 zombieBusinessManElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Business Man,[A7FF9F]ЭЛИТНЫЙ[-] Бизнесмен,[A7FF9F]ÉLITE[-] Hombre de Negocios
 zombieBusinessManChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Business Man,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Бизнесмен,[71FFFF]ÉLITE CARGADA[-] Hombre de Negocios
-zombieBusinessManInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Business Man,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Бизнесмен,[FF9E7B]ÉLITE INFIERNO[-] Hombre de Negocios
+zombieBusinessManInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Business Man,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Бизнесмен,[FF9E7B]ÉLITE INFERNAL[-] Hombre de Negocios
 
 zombieInmateElite,entityclasses,Entity,,[A7FF9F]ELITE[-] Inmate,[A7FF9F]ЭЛИТНЫЙ[-] Заключенный,[A7FF9F]ÉLITE[-] Recluso
 zombieInmateChargedElite,entityclasses,Entity,,[71FFFF]CHARGED ELITE[-] Inmate,[71FFFF]ЗАРЯЖЕННЫЙ ЭЛИТНЫЙ[-] Заключенный,[71FFFF]ÉLITE CARGADA[-] Recluso
-zombieInmateInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Inmate,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Заключенный,[FF9E7B]ÉLITE INFIERNO[-] Recluso
+zombieInmateInfernalElite,entityclasses,Entity,,[FF9E7B]INFERNAL ELITE[-] Inmate,[FF9E7B]АДСКИЙ ЭЛИТНЫЙ[-] Заключенный,[FF9E7B]ÉLITE INFERNAL[-] Recluso

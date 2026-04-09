@@ -588,7 +588,7 @@
 			</display_entry>
 			
 			<display_entry icon="armorAssassinHelmet" name_key="MasterArmorUniq" has_quality="true" unlock_level="25,30,35,40,45,50">
-				<unlock_entry item="armorRescuerHelmet,armorPredatorHelmet,armorPlundererHelmet,armorMausHelmet" unlock_tier="1" recipes="armorRescuerHelmet,armorRescuerOutfit,armorRescuerGloves,armorRescuerBoots,armorPredatorHelmet,armorPredatorOutfit,armorPredatorGloves,armorPredatorBoots,armorPlundererHelmet,armorPlundererOutfit,armorPlundererGloves,armorPlundererBoots,armorMausHelmet,armorMausOutfit,armorMausGloves,armorMausBoots"/>
+				<unlock_entry item="armorRescuerHelmet,armorPredatorHelmet,armorPlundererHelmet,armorSonnyHelmet,armorMausHelmet" unlock_tier="1" recipes="armorRescuerHelmet,armorRescuerOutfit,armorRescuerGloves,armorRescuerBoots,armorPredatorHelmet,armorPredatorOutfit,armorPredatorGloves,armorPredatorBoots,armorPlundererHelmet,armorPlundererOutfit,armorPlundererGloves,armorPlundererBoots,armorSonnyHelmet,armorSonnyOutfit,armorSonnyGloves,armorSonnyBoots,armorMausHelmet,armorMausOutfit,armorMausGloves,armorMausBoots"/>
 			</display_entry>
 			
 			<display_entry icon="modArmorTreasureHunter,poiPartHelper,modArmorStealthBoots,armorFarmerBoots,electricwirerelay,meleeWpnKnucklesT0LeatherKnuckles,modArmorNightVision,armorNerdOutfit" name_key="MasterArmorModsUniq,modIrradiationResistUnique,falloutFlush" has_quality="false" unlock_level="50,50,50,50,50,50,50,50,50">
@@ -647,11 +647,13 @@
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="armorRescuerHelmet,armorRescuerOutfit,armorRescuerGloves,armorRescuerBoots"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="armorPredatorHelmet,armorPredatorOutfit,armorPredatorGloves,armorPredatorBoots"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="armorPlundererHelmet,armorPlundererOutfit,armorPlundererGloves,armorPlundererBoots"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="armorSonnyHelmet,armorSonnyOutfit,armorSonnyGloves,armorSonnyBoots"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="armorMausHelmet,armorMausOutfit,armorMausGloves,armorMausBoots"/>
 				
 				<passive_effect name="CraftingTier" operation="base_add" level="30,35,40,45,50,100" value="1,2,3,4,5,5" tags="armorRescuerHelmet,armorRescuerOutfit,armorRescuerGloves,armorRescuerBoots"/>
 				<passive_effect name="CraftingTier" operation="base_add" level="30,35,40,45,50,100" value="1,2,3,4,5,5" tags="armorPredatorHelmet,armorPredatorOutfit,armorPredatorGloves,armorPredatorBoots"/>
 				<passive_effect name="CraftingTier" operation="base_add" level="30,35,40,45,50,100" value="1,2,3,4,5,5" tags="armorPlundererHelmet,armorPlundererOutfit,armorPlundererGloves,armorPlundererBoots"/>
+				<passive_effect name="CraftingTier" operation="base_add" level="30,35,40,45,50,100" value="1,2,3,4,5,5" tags="armorSonnyHelmet,armorSonnyOutfit,armorSonnyGloves,armorSonnyBoots"/>
 				<passive_effect name="CraftingTier" operation="base_add" level="30,35,40,45,50,100" value="1,2,3,4,5,5" tags="armorMausHelmet,armorMausOutfit,armorMausGloves,armorMausBoots"/>
 			</effect_group>
 		</crafting_skill>

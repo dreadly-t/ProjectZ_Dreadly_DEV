@@ -5550,6 +5550,13 @@
 			<passive_effect name="PlayerExpGain" operation="perc_add" value=".5" tags="Kill"/>
 		</effect_group>
 		
+		<effect_group name="Sonny Bonus">
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5">
+				<requirement name="HasBuff" buff="buffSonnySetBonus"/></passive_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$SonnyBonusStatus" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$SonnyBonusStatus"/>
+		</effect_group>
+		
 		<effect_group name="Contract check">			
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="Holding_Axe,Holding_Club,Holding_Melee,Holding_Melee_Heavy"/>
 			<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="Holding_Axe">
@@ -5686,6 +5693,13 @@
 			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffMeleeWeaponBleeding">
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="75"/>
 			</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Sonny Bonus">
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5">
+				<requirement name="HasBuff" buff="buffSonnySetBonus"/></passive_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$SonnyBonusStatus" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$SonnyBonusStatus"/>
 		</effect_group>
 		
 		<effect_group name="XP Bonus">
@@ -5827,6 +5841,13 @@
 			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffMeleeWeaponBleeding">
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="75"/>
 			</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Sonny Bonus">
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5">
+				<requirement name="HasBuff" buff="buffSonnySetBonus"/></passive_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$SonnyBonusStatus" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$SonnyBonusStatus"/>
 		</effect_group>
 		
 		<effect_group name="XP Bonus">
@@ -5971,6 +5992,13 @@
 			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffMeleeWeaponBleeding">
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="75"/>
 			</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Sonny Bonus">
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5">
+				<requirement name="HasBuff" buff="buffSonnySetBonus"/></passive_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$SonnyBonusStatus" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$SonnyBonusStatus"/>
 		</effect_group>
 		
 		<effect_group name="XP Bonus">
@@ -6128,6 +6156,13 @@
 				<requirement name="!HasBuff" buff="buffGuardianReload"/>
 				<requirement name="StatCompareCurrent" target="self" stat="health" operation="LTE" value="200"/>
 			</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Sonny Bonus">
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5">
+				<requirement name="HasBuff" buff="buffSonnySetBonus"/></passive_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$SonnyBonusStatus" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$SonnyBonusStatus"/>
 		</effect_group>
 		
 		<effect_group name="XP Bonus">
@@ -6418,6 +6453,13 @@
 			</triggered_effect>
 		</effect_group>
 		
+		<effect_group name="Sonny Bonus">
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5">
+				<requirement name="HasBuff" buff="buffSonnySetBonus"/></passive_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$SonnyBonusStatus" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$SonnyBonusStatus"/>
+		</effect_group>
+		
 		<effect_group name="XP Bonus">
 			<passive_effect name="PlayerExpGain" operation="perc_add" value=".5" tags="Kill"/>
 		</effect_group>
@@ -6572,6 +6614,13 @@
 			</triggered_effect>
 		</effect_group>
 		
+		<effect_group name="Sonny Bonus">
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5">
+				<requirement name="HasBuff" buff="buffSonnySetBonus"/></passive_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$SonnyBonusStatus" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$SonnyBonusStatus"/>
+		</effect_group>
+		
 		<effect_group name="XP Bonus">
 			<passive_effect name="PlayerExpGain" operation="perc_add" value=".75" tags="Kill"/>
 		</effect_group>
@@ -6723,6 +6772,13 @@
 				<requirement name="IsAlive" target="other"/>
 				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
 			</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Sonny Bonus">
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5">
+				<requirement name="HasBuff" buff="buffSonnySetBonus"/></passive_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$SonnyBonusStatus" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$SonnyBonusStatus"/>
 		</effect_group>
 		
 		<effect_group name="XP Bonus">
@@ -6879,6 +6935,13 @@
 				<requirement name="IsAlive" target="other"/>
 				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
 			</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Sonny Bonus">
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5">
+				<requirement name="HasBuff" buff="buffSonnySetBonus"/></passive_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$SonnyBonusStatus" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$SonnyBonusStatus"/>
 		</effect_group>
 		
 		<effect_group name="XP Bonus">
@@ -7048,6 +7111,13 @@
 				<requirement name="!HasBuff" buff="buffGuardianReload"/>
 				<requirement name="StatCompareCurrent" target="self" stat="health" operation="LTE" value="200"/>
 			</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="Sonny Bonus">
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5">
+				<requirement name="HasBuff" buff="buffSonnySetBonus"/></passive_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$SonnyBonusStatus" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$SonnyBonusStatus"/>
 		</effect_group>
 		
 		<effect_group name="XP Bonus">

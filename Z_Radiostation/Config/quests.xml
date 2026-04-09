@@ -40,12 +40,7 @@
 				<property name="rally_marker_type" value="questRallyMarkerFetchClear"/>
 			</objective>
 							
-			<action type="GameEvent" id="SmallCase_Event" phase="3"/>
-			<objective type="ClearSleepers">
-				<property name="phase" value="3"/>
-				<property name="nav_object" value="sleeper_volume"/>
-			</objective>
-			
+			<action type="GameEvent" id="SmallCase_Event" phase="3"/>			
 			<objective type="EntityKill" value="15" phase="3"/>
 			<objective type="Time">
 				<property name="phase" value="3"/>
@@ -56,17 +51,21 @@
 				<property name="radius" value="50"/>
 			</objective>
 			
-			<action type="GameEvent" id="action_spawn_reward_SmallCase_UltraLightAlloys" phase="4"/>	
-			<action type="UnlockPOI" >
+			<action type="GameEvent" id="action_spawn_reward_SmallCase_UltraLightAlloys" phase="4"/>
+			<objective type="ClearSleepers">
 				<property name="phase" value="4"/>
-			</action>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
 			
+			<action type="UnlockPOI" >
+				<property name="phase" value="5"/>
+			</action>			
 			<objective type="ReturnToNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			<objective type="InteractWithNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			
@@ -115,13 +114,7 @@
 				<property name="nav_object" value="rally"/>
 				<property name="rally_marker_type" value="questRallyMarkerFetchClear"/>
 			</objective>
-							
-			<action type="GameEvent" id="SmallCase_Event" phase="3"/>
-			<objective type="ClearSleepers">
-				<property name="phase" value="3"/>
-				<property name="nav_object" value="sleeper_volume"/>
-			</objective>
-					
+												
 			<action type="GameEvent" id="MediumCase_Event" phase="3"/>
 			<objective type="EntityKill" value="25" phase="3"/>
 			<objective type="Time">
@@ -134,15 +127,20 @@
 			</objective>
 
 			<action type="GameEvent" id="action_spawn_reward_MediumCase_UltraLightAlloys" phase="4"/>
-			<action type="UnlockPOI" >
+			<objective type="ClearSleepers">
 				<property name="phase" value="4"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<action type="UnlockPOI" >
+				<property name="phase" value="5"/>
 			</action>
 			<objective type="ReturnToNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			<objective type="InteractWithNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			
@@ -192,13 +190,7 @@
 				<property name="nav_object" value="rally"/>
 				<property name="rally_marker_type" value="questRallyMarkerFetchClear"/>
 			</objective>
-							
-			<action type="GameEvent" id="SmallCase_Event" phase="3"/>
-			<objective type="ClearSleepers">
-				<property name="phase" value="3"/>
-				<property name="nav_object" value="sleeper_volume"/>
-			</objective>
-						
+												
 			<action type="GameEvent" id="BigCase_Event" phase="3"/>
 			<objective type="EntityKill" value="50" phase="3"/>
 			<objective type="Time">
@@ -211,15 +203,20 @@
 			</objective>
 			
 			<action type="GameEvent" id="action_spawn_reward_BigCase_UltraLightAlloys" phase="4"/>
-			<action type="UnlockPOI" >
+			<objective type="ClearSleepers">
 				<property name="phase" value="4"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<action type="UnlockPOI" >
+				<property name="phase" value="5"/>
 			</action>
 			<objective type="ReturnToNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			<objective type="InteractWithNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			
@@ -272,15 +269,8 @@
 				<property name="nav_object" value="rally"/>
 				<property name="rally_marker_type" value="questRallyMarkerFetchClear"/>
 			</objective>
-							
+				
 			<action type="GameEvent" id="SmallCase_Event" phase="3"/>
-			<objective type="ClearSleepers">
-				<property name="phase" value="3"/>
-				<property name="nav_object" value="sleeper_volume"/>
-			</objective>
-							
-			<action type="GameEvent" id="SmallCase_Event" phase="3"/>
-			
 			<objective type="EntityKill" value="15" phase="3"/>
 			<objective type="Time">
 				<property name="phase" value="3"/>
@@ -291,16 +281,21 @@
 				<property name="radius" value="50"/>
 			</objective>
 			
-			<action type="GameEvent" id="action_spawn_reward_SmallCase_UltraStrengthAlloys" phase="4"/>	
-			<action type="UnlockPOI" >
+			<action type="GameEvent" id="action_spawn_reward_SmallCase_UltraStrengthAlloys" phase="4"/>
+			<objective type="ClearSleepers">
 				<property name="phase" value="4"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<action type="UnlockPOI" >
+				<property name="phase" value="5"/>
 			</action>
 			<objective type="ReturnToNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			<objective type="InteractWithNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			
@@ -349,13 +344,7 @@
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally"/>
 				<property name="rally_marker_type" value="questRallyMarkerFetchClear"/>
-			</objective>
-							
-			<action type="GameEvent" id="SmallCase_Event" phase="3"/>
-			<objective type="ClearSleepers">
-				<property name="phase" value="3"/>
-				<property name="nav_object" value="sleeper_volume"/>
-			</objective>
+			</objective>		
 					
 			<action type="GameEvent" id="MediumCase_Event" phase="3"/>
 			<objective type="EntityKill" value="25" phase="3"/>
@@ -369,15 +358,20 @@
 			</objective>
 
 			<action type="GameEvent" id="action_spawn_reward_MediumCase_UltraStrengthAlloys" phase="4"/>
-			<action type="UnlockPOI" >
+			<objective type="ClearSleepers">
 				<property name="phase" value="4"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<action type="UnlockPOI" >
+				<property name="phase" value="5"/>
 			</action>
 			<objective type="ReturnToNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			<objective type="InteractWithNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 						
@@ -427,13 +421,7 @@
 				<property name="nav_object" value="rally"/>
 				<property name="rally_marker_type" value="questRallyMarkerFetchClear"/>
 			</objective>
-							
-			<action type="GameEvent" id="SmallCase_Event" phase="3"/>
-			<objective type="ClearSleepers">
-				<property name="phase" value="3"/>
-				<property name="nav_object" value="sleeper_volume"/>
-			</objective>
-						
+													
 			<action type="GameEvent" id="BigCase_Event" phase="3"/>
 			<objective type="EntityKill" value="50" phase="3"/>
 			<objective type="Time">
@@ -446,15 +434,20 @@
 			</objective>
 			
 			<action type="GameEvent" id="action_spawn_reward_BigCase_UltraStrengthAlloys" phase="4"/>
-			<action type="UnlockPOI" >
+			<objective type="ClearSleepers">
 				<property name="phase" value="4"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<action type="UnlockPOI" >
+				<property name="phase" value="5"/>
 			</action>
 			<objective type="ReturnToNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			<objective type="InteractWithNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			
@@ -507,15 +500,8 @@
 				<property name="nav_object" value="rally"/>
 				<property name="rally_marker_type" value="questRallyMarkerFetchClear"/>
 			</objective>
-							
+														
 			<action type="GameEvent" id="SmallCase_Event" phase="3"/>
-			<objective type="ClearSleepers">
-				<property name="phase" value="3"/>
-				<property name="nav_object" value="sleeper_volume"/>
-			</objective>
-							
-			<action type="GameEvent" id="SmallCase_Event" phase="3"/>
-			
 			<objective type="EntityKill" value="15" phase="3"/>
 			<objective type="Time">
 				<property name="phase" value="3"/>
@@ -526,16 +512,21 @@
 				<property name="radius" value="50"/>
 			</objective>
 			
-			<action type="GameEvent" id="action_spawn_reward_SmallCase_ExperimentalAlloys" phase="4"/>	
-			<action type="UnlockPOI" >
+			<action type="GameEvent" id="action_spawn_reward_SmallCase_ExperimentalAlloys" phase="4"/>
+			<objective type="ClearSleepers">
 				<property name="phase" value="4"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+				
+			<action type="UnlockPOI" >
+				<property name="phase" value="5"/>
 			</action>
 			<objective type="ReturnToNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			<objective type="InteractWithNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			
@@ -585,13 +576,7 @@
 				<property name="nav_object" value="rally"/>
 				<property name="rally_marker_type" value="questRallyMarkerFetchClear"/>
 			</objective>
-							
-			<action type="GameEvent" id="SmallCase_Event" phase="3"/>
-			<objective type="ClearSleepers">
-				<property name="phase" value="3"/>
-				<property name="nav_object" value="sleeper_volume"/>
-			</objective>
-					
+												
 			<action type="GameEvent" id="MediumCase_Event" phase="3"/>
 			<objective type="EntityKill" value="25" phase="3"/>
 			<objective type="Time">
@@ -604,15 +589,20 @@
 			</objective>
 
 			<action type="GameEvent" id="action_spawn_reward_MediumCase_ExperimentalAlloys" phase="4"/>
-			<action type="UnlockPOI" >
+			<objective type="ClearSleepers">
 				<property name="phase" value="4"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<action type="UnlockPOI" >
+				<property name="phase" value="5"/>
 			</action>
 			<objective type="ReturnToNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			<objective type="InteractWithNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 						
@@ -662,13 +652,7 @@
 				<property name="nav_object" value="rally"/>
 				<property name="rally_marker_type" value="questRallyMarkerFetchClear"/>
 			</objective>
-							
-			<action type="GameEvent" id="SmallCase_Event" phase="3"/>
-			<objective type="ClearSleepers">
-				<property name="phase" value="3"/>
-				<property name="nav_object" value="sleeper_volume"/>
-			</objective>
-						
+										
 			<action type="GameEvent" id="BigCase_Event" phase="3"/>
 			<objective type="EntityKill" value="50" phase="3"/>
 			<objective type="Time">
@@ -681,15 +665,20 @@
 			</objective>
 			
 			<action type="GameEvent" id="action_spawn_reward_BigCase_ExperimentalAlloys" phase="4"/>
-			<action type="UnlockPOI" >
+			<objective type="ClearSleepers">
 				<property name="phase" value="4"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<action type="UnlockPOI" >
+				<property name="phase" value="5"/>
 			</action>
 			<objective type="ReturnToNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			<objective type="InteractWithNPC">
-				<property name="phase" value="4"/>
+				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 			

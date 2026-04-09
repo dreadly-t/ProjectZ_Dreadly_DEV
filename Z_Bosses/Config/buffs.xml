@@ -783,7 +783,7 @@
 			<stack_type value="replace"/>
 			<duration value="0"/>
 			<update_rate value="1"/>
-			<display_value_key value="buffBuffDevourerAOE"/>
+			<display_value_key value="buffDevourerAOE"/>
 			<display_value value="xxx"/>
 			
 			<effect_group>

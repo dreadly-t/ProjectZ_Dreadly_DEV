@@ -1,0 +1,29 @@
+<config>
+	
+	<append xpath="/items">
+		
+		<!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+		<!-- Custom Quest's -->
+		
+		<item name="customQuestTest">
+			<property name="Tags" value="projectZ_start"/>
+			<property name="CustomIcon" value="cntBookPile13"/>
+			<property name="ItemTypeIcon" value="quest"/>
+			<property name="DescriptionKey" value="customQuestTestDesc"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourcePaper"/>
+			<property name="Group" value="Books,questItem,DonateBooks"/>
+			<property name="Stacknumber" value="1"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="test_Ambush"/>
+				<property name="Delay" value="0.5"/>
+				<property name="UseAnimation" value="false"/>
+			</property>
+		</item>
+		
+	</append>
+	
+</config>

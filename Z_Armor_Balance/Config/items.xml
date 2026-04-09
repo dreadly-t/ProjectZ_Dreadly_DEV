@@ -221,7 +221,7 @@
 			</passive_effect>
 			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.02,-.04,-.06,-.08,-.1,-.2" tier="1,2,3,4,5,6"/>
 			<passive_effect name="CrouchSpeed" operation="perc_add" value=".04,.08,.12,.16,.2,.4" tier="1,2,3,4,5,6"/>
-			<passive_effect name="EnemySearchDuration" operation="perc_add" value="-.02,-.04,-.06,-.08,-.1,-.2" tier="1,2,3,4,5,6"/>
+			<passive_effect name="EnemySearchDuration" operation="perc_add" value=".02,.04,.06,.08,.1,.2" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</append>
 	

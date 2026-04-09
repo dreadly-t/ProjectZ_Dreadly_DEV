@@ -1,9 +1,9 @@
 Key,Source,Context,Changes,English,Russian,Spanish
 
-questRewardSkillMagazineBundleT3,items,item,,Crafting Skill Magazine [DECEA3]Bundle Small[-],Журналы по навыкам изготовления: [DECEA3]Малый набор[-],Paquete de Revistas de Habilidad de Fabricación [DECEA3]Pequeño[-]
-questRewardSkillMagazineBundleT4,items,item,,Crafting Skill Magazine [DECEA3]Bundle Medium[-],Журналы по навыкам изготовления: [DECEA3]Средний набор[-],Paquete de Revistas de Habilidad de Fabricación [DECEA3]Mediano[-]
-questRewardSkillMagazineBundleT5,items,item,,Crafting Skill Magazine [DECEA3]Bundle Big[-],Журналы по навыкам изготовления: [DECEA3]Большой набор[-],Paquete de Revistas de Habilidad de Fabricación [DECEA3]Grande[-]
-questRewardSkillMagazineBundleT6,items,item,,Crafting Skill Magazine [DECEA3]Bundle Huge[-],Журналы по навыкам изготовления: [DECEA3]Огромный набор[-],Paquete de Revistas de Habilidad de Fabricación [DECEA3]Enorme[-]
+questRewardSkillMagazineBundleT3,items,item,,Crafting Skill Magazine [DECEA3]Small Bundle[-],Журналы по навыкам изготовления: [DECEA3]Малый набор[-],Paquete de Revistas de Habilidad de Fabricación [DECEA3]Pequeño[-]
+questRewardSkillMagazineBundleT4,items,item,,Crafting Skill Magazine [DECEA3]Medium Bundle[-],Журналы по навыкам изготовления: [DECEA3]Средний набор[-],Paquete de Revistas de Habilidad de Fabricación [DECEA3]Mediano[-]
+questRewardSkillMagazineBundleT5,items,item,,Crafting Skill Magazine [DECEA3]Big Bundle[-],Журналы по навыкам изготовления: [DECEA3]Большой набор[-],Paquete de Revistas de Habilidad de Fabricación [DECEA3]Grande[-]
+questRewardSkillMagazineBundleT6,items,item,,Crafting Skill Magazine [DECEA3]Huge Bundle[-],Журналы по навыкам изготовления: [DECEA3]Огромный набор[-],Paquete de Revistas de Habilidad de Fabricación [DECEA3]Enorme[-]
 
 questRewardFoodBundleT3,items,item,,Food and water [DECEA3]Bundle Small[-],Еда и вода: [DECEA3]Малый набор[-],Paquete de Comida y Agua [DECEA3]Pequeño[-]
 questRewardFoodBundleT4,items,item,,Food and water [DECEA3]Bundle Medium[-],Еда и вода: [DECEA3]Средний набор[-],Paquete de Comida y Agua [DECEA3]Mediano[-]
@@ -12,20 +12,20 @@ questRewardFoodBundleT6,items,item,,Food and water [DECEA3]Bundle Huge[-],Еда
 
 questRewardVehicleBundleT3,items,item,,Minibike parts,Деталь минибайка,Partes de Minimoto
 questRewardVehicleBundleT4,items,item,,Motorcycle parts,Деталь мотоцикла,Partes de Motocicleta
-questRewardVehicleBundleT5,items,item,,Truck4x4 parts,Деталь грузовика 4х4,Partes de Camión 4x4
-questRewardVehicleBundleT6,items,item,,Gyroсopter parts,Деталь автожира,Partes de Girocóptero
+questRewardVehicleBundleT5,items,item,,Truck 4x4 parts,Деталь грузовика 4х4,Partes de Camión 4x4
+questRewardVehicleBundleT6,items,item,,Gyrocopter parts,Деталь автожира,Partes de Girocóptero
 
-questRewardMagazineBundleT3Desc,items,item,,"A small bundle of [DECEA3]3[-] random crafting skill magazines.\n[DECEA3]3[-] pieces of each magazine.","Малый набор состоит из [DECEA3]3[-] случайных журналов по навыкам изготовления.\nПо [DECEA3]3[-] штуки каждого журнала.","Un pequeño paquete de [DECEA3]3[-] revistas de habilidades de fabricación aleatorias.\n[DECEA3]3[-] unidades de cada revista."
-questRewardMagazineBundleT4Desc,items,item,,"A medium bundle of [DECEA3]3[-] random crafting skill magazines.\n[DECEA3]4[-] pieces of each magazine.","Средний набор состоит из [DECEA3]3[-] случайных журналов по навыкам изготовления.\nПо [DECEA3]4[-] штуки каждого журнала.","Un paquete mediano de [DECEA3]3[-] revistas de habilidades de fabricación aleatorias.\n[DECEA3]4[-] unidades de cada revista."
-questRewardMagazineBundleT5Desc,items,item,,"A big bundle of [DECEA3]3[-] random crafting skill magazines.\n[DECEA3]5[-] pieces of each magazine.","Большой набор состоит из [DECEA3]3[-] случайных журналов по навыкам изготовления.\nПо [DECEA3]5[-] штук каждого журнала.","Un gran paquete de [DECEA3]3[-] revistas de habilidades de fabricación aleatorias.\n[DECEA3]5[-] unidades de cada revista."
-questRewardMagazineBundleT6Desc,items,item,,"A huge bundle of [DECEA3]4[-] random crafting skill magazines.\n[DECEA3]5[-] pieces of each magazine.","Огромный набор состоит из [DECEA3]4[-] случайных журналов по навыкам изготовления.\nПо [DECEA3]5[-] штук каждого журнала.","Un enorme paquete de [DECEA3]4[-] revistas de habilidades de fabricación aleatorias.\n[DECEA3]5[-] unidades de cada revista."
+questRewardMagazineBundleT3Desc,items,item,,"A small bundle of [DECEA3]3[-] random crafting skill magazines.\n[DECEA3]3[-] pieces per each copy.","Малый набор состоит из [DECEA3]3[-] случайных журналов по навыкам изготовления.\nПо [DECEA3]3[-] штуки каждого экземпляра.","Un pequeño paquete de [DECEA3]3[-] revistas de habilidades de fabricación aleatorias.\n[DECEA3]3[-] unidades de cada revista."
+questRewardMagazineBundleT4Desc,items,item,,"A medium bundle of [DECEA3]3[-] random crafting skill magazines.\n[DECEA3]4[-] pieces per each copy.","Средний набор состоит из [DECEA3]3[-] случайных журналов по навыкам изготовления.\nПо [DECEA3]4[-] штуки каждого экземпляра.","Un paquete mediano de [DECEA3]3[-] revistas de habilidades de fabricación aleatorias.\n[DECEA3]4[-] unidades de cada revista."
+questRewardMagazineBundleT5Desc,items,item,,"A big bundle of [DECEA3]3[-] random crafting skill magazines.\n[DECEA3]5[-] pieces per each copy.","Большой набор состоит из [DECEA3]3[-] случайных журналов по навыкам изготовления.\nПо [DECEA3]5[-] штук каждого экземпляра.","Un gran paquete de [DECEA3]3[-] revistas de habilidades de fabricación aleatorias.\n[DECEA3]5[-] unidades de cada revista."
+questRewardMagazineBundleT6Desc,items,item,,"A huge bundle of [DECEA3]4[-] random crafting skill magazines.\n[DECEA3]5[-] pieces per each copy.","Огромный набор состоит из [DECEA3]4[-] случайных журналов по навыкам изготовления.\nПо [DECEA3]5[-] штук каждого экземпляра.","Un enorme paquete de [DECEA3]4[-] revistas de habilidades de fabricación aleatorias.\n[DECEA3]5[-] unidades de cada revista."
 
 questRewardFoodBundleT3Desc,items,item,,A small bundle of food and water.,Малый набор еды и воды.,Un pequeño paquete de comida y agua.
 questRewardFoodBundleT4Desc,items,item,,"A medium bundle of Home Cooking Weekly magazines, food and water.","Средний набор журналов «Еженедельник домашней готовки», еды и воды.","Un paquete mediano de revistas de Cocina Casera Semanal, comida y agua."
 questRewardFoodBundleT5Desc,items,item,,"A big bundle of Home Cooking Weekly magazines, food and water.","Большой набор журналов «Еженедельник домашней готовки», еды и воды.","Un gran paquete de revistas de Cocina Casera Semanal, comida y agua."
 questRewardFoodBundleT6Desc,items,item,,"A huge bundle of Home Cooking Weekly magazines, food and water.","Огромный набор журналов «Еженедельник домашней готовки», еды и воды.","Un enorme paquete de revistas de Cocina Casera Semanal, comida y agua."
 
-questRewardVehicleBundleT3Desc,items,item,,"One of the parts of the minibike.","Одна из деталей минибайка","Una de las partes de la minimoto."
-questRewardVehicleBundleT4Desc,items,item,,"One of the parts of the motorcycle.","Одна из деталей мотоцикла","Una de las partes de la motocicleta."
-questRewardVehicleBundleT5Desc,items,item,,"One of the parts of the truck4x4.","Одна из деталей грузовика 4х4","Una de las partes del camión 4x4."
-questRewardVehicleBundleT6Desc,items,item,,"One of the parts of the gyroсopter.","Одна из деталей автожира","Una de las partes del girocóptero."
+questRewardVehicleBundleT3Desc,items,item,,"One of the parts of the minibike.","Одна из деталей минибайка.","Una de las partes de la minimoto."
+questRewardVehicleBundleT4Desc,items,item,,"One of the parts of the motorcycle.","Одна из деталей мотоцикла.","Una de las partes de la motocicleta."
+questRewardVehicleBundleT5Desc,items,item,,"One of the parts of the truck 4x4.","Одна из деталей грузовика 4х4.","Una de las partes del camión 4x4."
+questRewardVehicleBundleT6Desc,items,item,,"One of the parts of the gyrocopter.","Одна из деталей автожира.","Una de las partes del girocóptero."

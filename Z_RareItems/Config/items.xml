@@ -6291,8 +6291,9 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="1.7" tags="organic"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1.25" tags="butcherHarvestMutation"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.0" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="butcherHarvestMutation"/>
 
 				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="@:Other/Items/Weapons/Melee/Knuckles/knucklesSpikedLeft_Prefab.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>

@@ -22,7 +22,7 @@
 	<set xpath="/item_modifiers/item_modifier[@name='modArmorFortitude']/@installable_tags">armorHands</set>
 	<set xpath="/item_modifiers/item_modifier[@name='modArmorIntellect']/@installable_tags">armorHands</set>
 
-	<!-- <set xpath="/item_modifiers/item_modifier[@name='modVehicleStorage']/@installable_tags">dupeerror</set> -->
+	<set xpath="/item_modifiers/item_modifier[@name='modVehicleStorage']/@installable_tags">dupeerror</set>
 	
 	<!-- <set xpath="/item_modifiers/item_modifier[@name='modArmorInsulatedLinerT1']/effect_group/passive_effect[@name='HypothermalResist']/@value">4</set> -->
 	<!-- <set xpath="/item_modifiers/item_modifier[@name='modArmorInsulatedLinerT1']/effect_group/passive_effect[@name='HyperthermalResist']/@value">-2</set> -->

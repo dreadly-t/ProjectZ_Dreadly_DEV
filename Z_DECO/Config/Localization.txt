@@ -4,7 +4,7 @@ zdecoSmallWoodenStructuresVariantHelper,blocks,Variant,,[DECEA3]Design:[-] Woode
 zdecoSmallWoodenStructuresVariantHelperDesc,blocks,Variant,,Wooden platform parts kit,Набор частей деревянной платформы.,Kit de piezas para plataforma de madera.
 
 zdecoIronStructuresVariantHelper,blocks,Variant,,[DECEA3]Design:[-] Iron sheets,[DECEA3]Конструкция:[-] Железные листы,[DECEA3]Diseño[-] Láminas de hierro
-zdecoMetalStructuresVariantHelperDesc,blocks,Variant,,Set of Iron sheets parts,Набор частей железных листов.,Juego de piezas de láminas de hierro.
+zdecoMetalStructuresVariantHelperDesc,blocks,Variant,,Set of iron sheet parts,Набор частей железных листов.,Juego de piezas de láminas de hierro.
 
 zdecoTarpFencesVariantHelper,blocks,Variant,,[DECEA3]Design:[-] Tarp fence,[DECEA3]Конструкция:[-] Забор из брезента,[DECEA3]Diseño[-] Valla de lona
 zdecoTarpFencesVariantHelperDesc,blocks,Variant,,Set of fence parts with tarp,Набор частей забора из брезента.,Juego de piezas de valla con lona.
@@ -12,8 +12,8 @@ zdecoTarpFencesVariantHelperDesc,blocks,Variant,,Set of fence parts with tarp,Н
 zdecoOutdoorPlantsVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Outdoor plants,[FFCEF0]Деко:[-] Уличные растения,[FFCEF0]Decoración[-] Plantas de exterior
 zdecoWildPlantsVariantHelperDesc,blocks,Variant,,A variety of outdoor plants for the exterior decoration of your base.,Набор разнообразных уличных растений для внешнего декора вашей базы.,Una variedad de plantas de exterior para la decoración exterior de su base.
 
-zdecoLargeWoodenStructuresVariantHelper,blocks,Variant,,[DECEA3]Design:[-] Wooden fence,[DECEA3]Конструкция:[-] Деревянный забор,[DECEA3]Diseño[-] Estacas de madera
-zdecoLargeWoodenStructuresVariantHelperDesc,blocks,Variant,,Set of wooden fence parts,Набор частей деревянного забора.,Juego de piezas de valla de madera.
+zdecoLargeWoodenStructuresVariantHelper,blocks,Variant,,[DECEA3]Design:[-] Wooden fence,[DECEA3]Конструкция:[-] Деревянный забор,[DECEA3]Diseño[-] Valla de madera
+zdecoLargeWoodenStructuresVariantHelperDesc,blocks,Variant,,Set of wooden fence parts,Набор частей деревянного забора.,Juego de piezas para valla de madera.
 doorWoodLargeGateConst,blocks,block,,Large Wood Gate,Большие деревянные ворота,Gran Puerta de Madera
 logWallLeftConst,blocks,block,,Log Wall Left 01,Левая бревенчатая стена 01,Muro de Troncos Izquierdo 01
 logWallLeft2Const,blocks,block,,Log Wall Left 02,Левая бревенчатая стена 02,Muro de Troncos Izquierdo 02
@@ -41,11 +41,11 @@ zdecoElectConstVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Electronics,[FFCEF0
 zdecoElectConstVariantHelperDesc,blocks,Variant,,Industrial Electronics Decor Set,Набор декора промышленной электроники.,Juego de decoración de electrónica industrial.
 
 zdecoSmallVehicleVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Small vehicle,[FFCEF0]Деко:[-] Малый транспорт,[FFCEF0]Decoración[-] Vehículo pequeño
-zdecoSmallVehicleVariantHelperDesc,blocks,Variant,,Set of small vehicle,Набор малого транспорта.,Juego de vehículos pequeños.
+zdecoSmallVehicleVariantHelperDesc,blocks,Variant,,Set of small vehicles,Набор малого транспорта.,Juego de vehículos pequeños.
 zdecoBigVehicleVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Large vehicle,[FFCEF0]Деко:[-] Крупный транспорт,[FFCEF0]Decoración[-] Vehículo grande
-zdecoBigVehicleVariantHelperDesc,blocks,Variant,,Set of large vehicle,Набор крупного транспорта.,Juego de vehículos grandes.
+zdecoBigVehicleVariantHelperDesc,blocks,Variant,,Set of large vehicles,Набор крупного транспорта.,Juego de vehículos grandes.
 
-zdecoCCarsVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Fortification from cars,[FFCEF0]Деко:[-] Укрепление из автомобилей,[FFCEF0]Decoración[-] Fortificación de coches
+zdecoCCarsVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Fortifications made from cars,[FFCEF0]Деко:[-] Укрепление из автомобилей,[FFCEF0]Decoración[-] Fortificación de coches
 zdecoCCarsVariantHelperDesc,blocks,Variant,,Set of car enhancements,Набор укреплений из автомобилей.,Juego de mejoras para coches.
 
 zdecoSignRoadVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Road signs,[FFCEF0]Деко:[-] Дорожные знаки,[FFCEF0]Decoración[-] Señales de tráfico
@@ -56,7 +56,7 @@ zdecoSignBannersVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Banners,[FFCEF0]Д
 zdecoSignBannersVariantHelperDesc,blocks,Variant,,Set of Banners,Набор баннеров.,Juego de pancartas.
 
 zdecoCampingVariantHelper,blocks,Variant,,[FFCEF0]Deco[-] Tents,[FFCEF0]Деко:[-] Палатки,[FFCEF0]Decoración[-] Tiendas de campaña
-zdecoCampingVariantHelperDesc,blocks,Variant,,Set of tents enhancements,Набор палаток.,Juego de mejoras para tiendas de campaña.
+zdecoCampingVariantHelperDesc,blocks,Variant,,Set of tent upgrades,Набор палаток.,Juego de mejoras para tiendas de campaña.
 
 cntLootChestHeroStorage,blocks,Container,,[DECEA3]Storage[-] Reinforced Chest,[DECEA3]Хранилище:[-] Укрепленный сундук,[DECEA3]Almacenamiento[-] Cofre Reforzado
 cntLootChestHeroStorageDesc,blocks,Container,,A reliable chest for storing 80 items,Надежный сундук для хранения 80 предметов.,Un cofre fiable para almacenar 80 objetos.

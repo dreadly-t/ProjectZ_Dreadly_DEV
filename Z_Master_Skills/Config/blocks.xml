@@ -38,7 +38,6 @@
 			<property name="CustomIcon" value="mineAirFilter"/>
 			<property name="CustomIconTint" value="8692FF"/>
 			<property name="UnlockedBy" value="craftingExplosives"/>
-			
 			<property name="DisplayType" value="blockLandmine"/>
 			<property name="TriggerDelay" value="0"/>
 			<property name="TriggerSound" value="landmine_trigger"/>
